@@ -30,10 +30,8 @@
   }
   &__inner {
     min-height: 610px;
-    padding: 80px 24px 0;
+    padding: 80px 24px;
     @include tablet {
-      display: flex;
-      flex-direction: column;
       min-height: 100dvh;
       padding: 102px 24px 32px;
     }
@@ -100,12 +98,18 @@
   }
 }
 
-// page
+// page별 레이아웃
 .page-login {
+  .section {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   @include tablet {
     .header {
       display: none;
-    }
+    } 
     .footer {
       display: none;
     }
@@ -113,12 +117,20 @@
 }
 
 .page-join {
+  .section {
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   @include tablet {
     .header {
       display: none;
     }
     .section {
       &__inner {
+        display: flex;
+        flex-direction: column;
         padding: 62px 16px calc(96px + env(safe-area-inset-bottom));
       }
     }

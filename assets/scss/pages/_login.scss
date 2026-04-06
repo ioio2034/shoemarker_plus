@@ -245,6 +245,9 @@
     max-width: none;
     min-height: 100%;
   }
+  &--center {
+    flex: 1;
+  }
   &__inner {
     display: flex;
     flex-direction: column;
