@@ -11520,7 +11520,6 @@ img, video, canvas, svg {
 }
 @media (max-width: 1024px) {
   .section__inner {
-    height: 100dvh;
     min-height: auto;
     padding: 102px 24px 32px;
   }
