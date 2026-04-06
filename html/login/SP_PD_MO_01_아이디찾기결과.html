@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-login">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section">
+        <div class="section__inner">
+
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">아이디 찾기 결과</h2>
+          </div>
+
+          <!-- result -->
+          <div class="result">
+            <div class="result__inner">              
+              <div class="result__content">
+                <img class="result__img" src="../../assets/images/icon_success.svg" alt="">
+                <div class="result__header">
+                  <h3 class="result__title result__title--md">shoemarker</h3>
+                  <!-- <h3 class="result__subtitle">네이버 간편가입</h3> -->
+                  <!-- <h3 class="result__subtitle">카카오톡 간편가입</h3> -->
+                  <p class="result__text">
+                    회원 가입일 : <span class="result__value">0000.00.00</span>
+                  </p>
+                </div>
+              </div>
+    
+              <!-- 버튼 -->
+              <div class="cta cta--fixed">
+                <button type="button" class="btn btn--line">비밀번호 찾기</button>
+                <button type="button" class="btn btn--primary">로그인하러 가기</button>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </section> 
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

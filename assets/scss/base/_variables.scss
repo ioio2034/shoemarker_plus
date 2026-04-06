@@ -1,0 +1,42 @@
+/*******************************************
+*    VARIABLES
+********************************************/
+
+/* font */
+$font-base: "Pretendard", sans-serif;
+$font-en: "WorkSans", sans-serif;
+
+/* breakpoints */
+$breakpoints: (
+  "xs": 280px,
+  "sm": 375px,
+  "md": 768px, //mobile
+  "lg": 1024px, //tablet
+  "xl": 1399px
+);
+
+/* colors */
+$black: #000000;
+$white: #FFFFFF;
+
+$success: #008A1E;
+$error: #FE4C58;
+
+/* gray scale */
+$gray-0: #FFFFFF;
+$gray-5: #F8F8F8;
+$gray-10: #F0F0F0;
+$gray-20: #E4E4E4;
+$gray-30: #D8D8D8;
+$gray-40: #C6C6C6;
+$gray-50: #8E8E8E;
+$gray-60: #717171;
+$gray-70: #555555;
+$gray-80: #2D2D2D;
+$gray-90: #1D1D1D;
+
+$grayscale-200: #CCCCCC;
+$grayscale-600: #666666;
+$grayscale-700: #4D4D4D;
+$grayscale-800: #333333;
+$grayscale-900: #1A1A1A;

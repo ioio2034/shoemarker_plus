@@ -1,0 +1,61 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.checkbox {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  vertical-align: middle;
+  & + .checkbox {
+    margin-left: 12px;
+  }
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    &:checked {
+      & + .checkbox__label {
+        font-weight: 600;
+        &::before {
+          @include bgimage('icon_checkbox_checked', 'svg');
+        }
+      }
+    }
+    &:disabled {
+      cursor: default;
+      & + .checkbox__label {
+        cursor: default;
+        &::before {
+          @include bgimage('icon_checkbox_disabled', 'svg');
+        }
+      }
+    }
+  }
+  &__label {
+    display: inline-flex;
+    justify-items: center;
+    align-items: center;
+    color: $grayscale-800;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    &::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      margin-right: 4px;
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon_checkbox', 'svg');
+    }
+    &.checkbox__label--hide {
+      margin: 0;
+      font-size: 0;
+      &::before {
+        margin: 0;
+      }
+    }
+  }
+}

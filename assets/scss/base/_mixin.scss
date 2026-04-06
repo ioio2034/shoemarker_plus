@@ -1,0 +1,173 @@
+@use "sass:map";
+@use 'variables' as *;
+
+@mixin mobile {
+  @media (max-width: map.get($breakpoints, 'md')) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: map.get($breakpoints, 'lg')) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: map.get($breakpoints, 'xl')) {
+    @content;
+  }
+}
+
+@mixin flex($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin bgimage ($name, $type) {
+  $url: "../images/#{$name}.#{$type}";
+  background: url($url) no-repeat;
+}
+
+@mixin before_after {
+  display: block;
+  content: "";
+}
+
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@mixin inputhide {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin line-clamp($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+//button group
+@mixin action-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  .btn {
+    flex: 1;
+  }
+}
+
+@mixin action-group-stack {
+  flex-direction: column;
+  .btn {
+    width: 100%;
+  }
+}
+
+$max: 180;
+/* padding */
+@mixin padding-classes {
+  @for $i from 0 through $max {
+    $padding: $i * 1px;
+    .pa#{$i} {
+      padding: $padding;
+    }
+    .pl#{$i} {
+      padding-left: $padding;
+    }
+    .pr#{$i} {
+      padding-right: $padding;
+    }
+    .pt#{$i} {
+      padding-top: $padding;
+    }
+    .pb#{$i} {
+      padding-bottom: $padding;
+    }
+    .px#{$i} {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+    .py#{$i} {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+  }
+}
+@include padding-classes;
+
+/* margin */
+@mixin margin-classes {
+  @for $i from 0 through $max {
+    $margin: $i * 1px;
+    .ma#{$i} {
+      margin: $margin;
+    }
+    .ml#{$i} {
+      margin-left: $margin;
+    }
+    .mr#{$i} {
+      margin-right: $margin;
+    }
+    .mt#{$i} {
+      margin-top: $margin;
+    }
+    .mb#{$i} {
+      margin-bottom: $margin;
+    }
+    .mx#{$i} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my#{$i} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+@include margin-classes;

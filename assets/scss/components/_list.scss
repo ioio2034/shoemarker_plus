@@ -1,0 +1,33 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.list {
+  li {
+    position: relative;
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &--sm {
+    li {
+      color: $grayscale-600;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }    
+  }
+  &--dot {
+    &.list--sm {
+      li {
+        padding-left: 16px;
+        &::before {
+          content: '·';
+          display: inline-block;
+          position: absolute;
+          left: 8px;
+        }
+      }
+    }    
+  }
+}

@@ -1,0 +1,42 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.select {
+  position: relative;
+  &__field {
+    width: 100%;
+    appearance: none;
+    padding: 14px 12px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    background-color: $white;
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    outline: none;
+  }
+  &__label {
+    &--hide {
+      overflow: hidden;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    @include bgimage('icon_chevron_down','svg');
+    background-size: cover;
+  }
+  &:focus-within::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

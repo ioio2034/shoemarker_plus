@@ -1,0 +1,45 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.radio {
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  vertical-align: middle;
+  & + .radio {
+    margin-left: 12px;
+  }
+  &__input {
+    @include inputhide;
+    width: 24px;
+    height: 24px;
+    left: -9999em;
+    cursor: pointer;
+    &:checked {
+      & + .radio__label {
+        font-weight: 600;
+        &::before {
+          @include bgimage('icon_radio_checked','svg');
+        }
+      }
+    }
+  }
+  &__label {
+    display: inline-flex;
+    justify-items: center;
+    align-items: center;
+    gap: 4px;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    cursor: pointer;
+    &::before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      @include bgimage('icon_radio','svg');
+    }
+  }
+}

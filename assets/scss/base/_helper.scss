@@ -1,0 +1,26 @@
+@use 'mixin' as *;
+
+.blind {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.is-pc {
+  display: block;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.is-mo {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+

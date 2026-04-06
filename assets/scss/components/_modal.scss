@@ -1,0 +1,96 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  display: none;
+  &.is-open {
+    display: block;
+  }
+  &__dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    @include tablet {
+      display: none;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 560px;
+    max-height: 756px;
+    padding: 40px;
+    background-color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    @include tablet {
+      gap: 24px;
+      max-width: 100%;
+      max-height: 100%;
+      min-height: 100%;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: center;
+      flex-shrink: 0;
+      height: 62px;
+      border-bottom: 1px solid $gray-20;
+    }
+  }
+  &__title {
+    color: $gray-90;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    @include tablet {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+  }
+  &__close {
+    @include tablet {
+      position: absolute;
+      right: 24px;
+      z-index: 1;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 630px;    
+    @include tablet {
+      padding: 0 16px 24px;
+      max-height: 100%;
+    }
+  }
+}

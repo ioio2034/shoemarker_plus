@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-join">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section">
+        <div class="section__inner">
+
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">본인인증</h2>
+          </div>
+
+          <div class="login">
+            <div class="login__inner">
+              <!-- 프로세스 -->
+              <div class="login__steps">
+                <ul class="steps">
+                  <li class="steps__item is-current">
+                    <span class="steps__num">01</span>
+                    <span class="steps__text">본인인증</span>
+                  </li>
+                  <li class="steps__item">
+                    <span class="steps__num">02</span>
+                    <span class="steps__text">약관동의</span>
+                  </li>
+                  <li class="steps__item">
+                    <span class="steps__num">03</span>
+                    <span class="steps__text">정보입력</span>
+                  </li>
+                  <li class="steps__item">
+                    <span class="steps__num">04</span>
+                    <span class="steps__text">가입완료</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p class="login__text">회원가입을 위해 <br />본인인증을 먼저 해주세요</p>
+
+              <!-- 버튼 -->
+              <div class="cta">
+                <button type="button" class="btn btn--line">본인 인증하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

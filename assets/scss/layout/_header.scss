@@ -1,0 +1,200 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 81px;
+  border-bottom: 1px solid $gray-30;
+  background-color: $white;
+  z-index: 50;
+  @include tablet {
+    position: relative;
+    height: auto;
+    border-bottom: none;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 24px 84px;
+    @include desktop {
+      padding: 24px;
+    }
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
+      padding: 24px 0;
+    }
+  }
+  &__logo {
+    @include tablet {
+      padding: 0 24px;
+    }
+  }
+  &__nav {
+    display: flex;
+    gap: 40px;
+    @include desktop {
+      gap: 24px;
+    }
+    @include tablet {
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+  &__util {
+    display: flex;
+    gap: 24px;
+    @include desktop {
+      gap: 16px;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  &__link {
+    display: block; 
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    height: 30px;
+    @include tablet {
+      height: 22px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  @include desktop {
+    gap: 24px;
+  }
+  @include tablet {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: max-content;
+    white-space: nowrap;
+    padding: 0 24px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    &.is-active {
+      &::after {
+        display: none;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #222;
+        @include tablet {
+          display: block;
+        }
+      }
+      
+    }
+  }
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: $gray-90;
+    font-family: $font-en;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    @include desktop {
+      font-size: 18px;
+    }
+    @include tablet {
+      color: #222;
+      font-weight: 500;
+    }
+  }
+
+  &--etc {
+    position: relative;
+    &::before {
+      @include before_after;
+      width: 1px;
+      height: 24px;
+      background-color: $gray-40;
+      @include desktop {
+        height: 20px;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+    @include tablet {
+      display: none;
+    }
+    .nav__link {
+      color: $gray-80;
+      font-family: $font-base;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      @include desktop {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.util {
+  &__item {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--search {
+      @include bgimage('icon_search', 'svg');
+    }
+    &--cart {
+      @include bgimage('icon_cart', 'svg');
+    }
+    &--mypage {
+      @include bgimage('icon_mypage', 'svg');
+    }
+  }
+  &__badge {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    background-color: #00883E;
+    border-radius: 50%;
+    color: $white;
+    font-family: $font-en;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+  }
+}

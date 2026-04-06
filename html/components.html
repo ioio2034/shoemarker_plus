@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+  <style>
+    /* Guide style */
+    .guide {position:relative; z-index:1; overflow:hidden; width:100%; max-width:1325px; margin:0 auto; padding:48px;}
+    .guide__box {overflow:hidden; margin-top:16px; padding:32px; border:1px solid #ddd;    }
+    .guide__title {margin:80px 0 12px; font-size:28px; font-weight:700; line-height:1.4;}
+    .guide__title:first-child {margin-top:0 !important;}
+    .guide__subtitle {margin:48px 0 4px; font-size:20px; font-weight:700; line-height:1.4;}
+    .guide__subtitle:first-child {margin-top:0 !important;}
+    .guide__table {width:100%; min-width:100%; table-layout:fixed; border-spacing:0; border:1px solid #ddd;}
+    .guide__table th, .guide__table td {min-width:100px; padding:.75rem 1rem; border:0; border-top:1px solid #ddd;}
+    .guide__table thead th {font-weight:500; text-align:left; border:0; background:#fcfcfc;}
+    .guide__table thead tr + tr th {padding-top:0; padding-bottom:10px !important; vertical-align:top;}
+    .guide__table tbody th {font-size:14px; font-weight:500; padding-left:2rem; text-align:left;} 
+    .guide__table tbody tr:hover td, .guide__table tbody tr:hover th {background-color:#f6f6f6;}
+    .guide__table .guide__note {font-size:13px; color:#aaaaaa;}
+  </style>
+</head>
+<body>
+  <div id="wrap" class="page-login">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">Page title</h2>
+          </div>
+
+          <!-- components -->
+          <div class="guide">
+            <h2 class="guide__title">기본 가이드</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">브레이크 포인트</h3>
+              <ul class="list list--dot">
+                <li>모바일(md) ~767</li>
+                <li>태블릿(lg) 768~1024</li>
+                <li>데스크탑 1025~</li>
+              </ul>
+            </div>
+
+            <h2 class="guide__title">버튼</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:15%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:20%">
+                <col style="width:0">
+              </colgroup>
+              <thead>
+              <tr>
+                <th></th>
+                <th>default</th>
+                <th>Medium</th>
+                <th>Small</th>
+                <th><!--X-Small--></th>
+              </tr>
+              <tr>
+                <th></th>
+                <th class="guide__note">Size 100% <br> Height 48px <br>Weight 600</th>
+                <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
+                <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
+                <th class="guide__note"><!-- --></th>
+              </tr>
+              </thead> 
+              <tbody>
+              <tr>
+                <th>Primary</th>
+                <td>
+                  <button type="button" class="btn btn--primary">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--primary btn--md">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--primary btn--sm">로그인하기</button>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Line</th>
+                <td>
+                  <button type="button" class="btn btn--line">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--line btn--md">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--line btn--sm">로그인하기</button>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Text</th>
+                <td>
+                  <button type="button" class="btn btn--text">아이디찾기</button>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Text + underline</th>
+                <td><button type="button" class="btn btn--text btn--underline">아이디찾기</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>block</th>
+                <td><button type="button" class="btn btn--primary btn--block">로그인하기</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Icon</th>
+                <td>
+                  24px <br>
+                  <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                    <span class="btn-icon__icon"></span>
+                  </button>
+                </td>
+                <td>
+                  16px <br>
+                  <button type="button" class="btn-icon btn-icon--sm btn-icon--next">
+                    <span class="btn-icon__icon"></span>
+                  </button>
+                </td>
+                <td></td>
+                <td></td>
+              </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">리스트</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">리스트</h3>
+              <ul class="list">
+                <li>font-size:14px</li>
+                <li>리스트입니다.</li>
+                <li>리스트입니다.</li>
+              </ul>
+              <h3 class="guide__subtitle">도트 리스트</h3>
+              <ul class="list list--dot list--sm">
+                <li>font-size:12px</li>
+                <li>도트 리스트입니다.</li>
+                <li>도트 리스트입니다.</li>
+              </ul>
+            </div>
+
+            <h2 class="guide__title">폼</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">인풋</h3>
+              <div class="form__field">
+                <label for="input1" class="form__label">이름</label>
+                <input type="text" id="input1" class="form__input" value=""/>
+              </div>
+
+              <h3 class="guide__subtitle">인풋 + disabled</h3>
+              <div class="form__field">
+                <label for="input2" class="form__label">이름</label>
+                <input type="text" id="input2" class="form__input" value="" disabled/>
+              </div>
+
+              <h3 class="guide__subtitle">인풋 + 필수값</h3>
+              <div class="form__field is-required">
+                <label for="input3" class="form__label">이름</label>
+                <input type="text" id="input3" class="form__input" value=""/>
+              </div>
+
+              <h3 class="guide__subtitle">인풋 + readonly </h3>
+              <div class="form__field is-readonly">
+                <label for="input4" class="form__label">이름</label>
+                <input type="text" id="input4" class="form__input" value="readonly" readonly/>
+              </div>              
+              
+              <h3 class="guide__subtitle">인풋 + 안에 버튼 + 설명</h3>
+              <div class="form__field is-required">
+                <label for="input5" class="form__label">아이디</label>
+                <div class="form__control">
+                  <input type="text" id="input5" class="form__input"/>
+                  <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                </div>
+                <p class="form__desc">영문 또는 영문과 숫자조합 6~12자리</p>
+              </div>
+
+              <h3 class="guide__subtitle">인풋 + 성공,에러메세지</h3>
+              <div class="form__field is-required is-error">
+                <label for="input6" class="form__label">새로운 비밀번호 확인</label>
+                <input type="password" id="input6" class="form__input" placeholder="한 번 더 비밀번호를 입력해 주세요!"/>
+                <p class="form__message">동일한 비밀번호를 입력해 주세요.</p>
+                <!-- <p class="form__message">비밀번호 일치</p> -->
+              </div>
+              <br>
+              <div class="form__field is-required is-success">
+                <label for="input7" class="form__label">새로운 비밀번호 확인</label>
+                <input type="password" id="input7" class="form__input" placeholder="한 번 더 비밀번호를 입력해 주세요!"/>
+                <!-- <p class="form__message">동일한 비밀번호를 입력해 주세요.</p> -->
+                <p class="form__message">비밀번호 일치</p>
+              </div>
+
+              <h3 class="guide__subtitle">체크박스</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check1" class="checkbox__input" />
+                <label for="check1" class="checkbox__label">자동 로그인</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" id="check2"  class="checkbox__input"/>
+                <label for="check2" class="checkbox__label">아이디 저장</label>
+              </div>
+              <h3 class="guide__subtitle">체크박스 + disabled</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check3" class="checkbox__input" disabled/>
+                <label for="check3" class="checkbox__label">자동 로그인</label>
+              </div>
+              <h3 class="guide__subtitle">체크박스 + 라벨 숨기기</h3>
+              <div class="checkbox">
+                <input type="checkbox" id="check4" class="checkbox__input"/>
+                <label for="check4" class="checkbox__label checkbox__label--hide">자동 로그인</label>
+              </div>
+
+              <h3 class="guide__subtitle">라디오버튼</h3>
+              <div class="radio">
+                <input type="radio" id="radio1" name="userGender" class="radio__input" />
+                <label for="radio1" class="radio__label">휴대폰번호</label>
+              </div>
+              <div class="radio">
+                <input type="radio" id="radio2" name="userGender" class="radio__input" />
+                <label for="radio2" class="radio__label">이메일 주소</label>
+              </div>
+
+            </div>
+
+            <h2 class="guide__title">셀렉트</h2>
+            <div class="guide__box">
+              <div class="select">
+                <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+                <select id="termsDate" class="select__field">
+                  <option value="">옵션1</option>
+                  <option value="">옵션2</option>
+                  <option value="">옵션3</option>
+                </select>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Modal</h2>
+            <div class="guide__box">
+              <button type="button" class="js-modal-open btn btn--primary btn--md">Modal open</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- modal -->
+  <div class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이용약관</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__body">
+          <div class="modal__filter is-mo">
+            <div class="select">
+              <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+              <select id="termsDate" class="select__field">
+                <option value="">2013.11.08_개정</option>
+                <option value="">옵션2</option>
+                <option value="">옵션3</option>
+              </select>
+            </div>
+          </div>
+          <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nobis id praesentium rem quisquam deleniti beatae. Odio iusto ab voluptate quis, porro unde amet est obcaecati laboriosam quidem modi similique, officiis nulla perferendis aperiam, officia fugit ducimus commodi labore. Odio tempora, quis repudiandae consequuntur ipsam inventore eum assumenda perspiciatis vel soluta rem ab porro in iure dolor nihil cupiditate esse? Voluptatem iure fugit hic nesciunt quibusdam in, recusandae aliquam, eaque deserunt incidunt molestias laborum, non consectetur suscipit dolor quia consequuntur sed quod est. Tempore libero eum, deleniti itaque pariatur voluptas architecto officiis eius magni non nesciunt ea harum earum, officia dicta optio nulla nostrum tenetur! Ratione molestias eius optio aliquam totam laboriosam impedit quae sit consectetur, consequatur in deleniti quaerat amet tempore iusto veritatis illum recusandae. Explicabo minima adipisci animi, ex illo sed voluptatibus sunt ut itaque, provident non! Quasi cum voluptate rerum dignissimos, necessitatibus consequatur quam magnam debitis sed distinctio doloremque quaerat deleniti illum amet? Cupiditate dignissimos itaque laudantium aliquam sint ratione et non repellat distinctio perferendis, velit assumenda, reiciendis dicta, aspernatur officia nemo sed illo iste repudiandae amet quos? Libero iure ea nostrum quibusdam ipsum minima, dicta corrupti sapiente nemo laborum cumque adipisci mollitia ut. Praesentium, fuga! Earum.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`./include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

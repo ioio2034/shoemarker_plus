@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-join">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">정보입력</h2>
+          </div>
+          <div class="login">
+            <div class="login__inner">
+              <!-- 프로세스 -->
+              <div class="login__steps">
+                <ul class="steps">
+                  <li class="steps__item">
+                    <span class="steps__num">01</span>
+                    <span class="steps__text">본인인증</span>
+                  </li>
+                  <li class="steps__item">
+                    <span class="steps__num">02</span>
+                    <span class="steps__text">약관동의</span>
+                  </li>
+                  <li class="steps__item is-current">
+                    <span class="steps__num">03</span>
+                    <span class="steps__text">정보입력</span>
+                  </li>
+                  <li class="steps__item">
+                    <span class="steps__num">04</span>
+                    <span class="steps__text">가입완료</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="form">
+                <!-- 아이디 -->
+                <div class="form__field is-required">
+                  <label for="input1" class="form__label">아이디</label>
+                  <div class="form__control">
+                    <input type="text" id="input1" class="form__input"/>
+                    <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                  </div>
+                  <p class="form__desc">영문 또는 영문과 숫자조합 6~12자리</p>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form__field is-required">
+                  <label for="input2" class="form__label">비밀번호</label>
+                  <input type="password" id="input2" class="form__input"/>
+                  <p class="form__desc">
+                    <em>영문 대</em> + 소문자,숫자,특수문자 2개이상 조합​ <br />동일한 숫자/영문 4자리 이상은 사용불가 함​
+                  </p>
+                </div>
+
+                <!-- 비밀번호 확인 -->
+                <div class="form__field is-required">
+                  <label for="input3" class="form__label">비밀번호 확인</label>
+                  <input type="password" id="input3" class="form__input"/>
+                </div>
+
+                <!-- 이름 -->
+                <div class="form__field is-readonly">
+                  <label for="input4" class="form__label">이름</label>
+                  <input type="text" id="input4" class="form__input" value="슈마커" readonly/>
+                </div>
+
+                <!-- 연락처 -->
+                <div class="form__field is-readonly">
+                  <label for="input5" class="form__label">연락처</label>
+                  <input type="text" id="input5" class="form__input" value="010-1234-5678" readonly/>
+                </div>
+
+                <!-- 주소 -->
+                <div class="form__field is-required">
+                  <span class="form__label">주소</span>
+                  <div class="form__address">
+                    <input type="text" id="postCode" class="form__input" value="05510" readonly/>
+                    <input type="text" id="address" class="form__input" value="서울시 송파구 오금로 58" readonly/>
+                    <input type="text" id="addressDetail" class="form__input" placeholder="상세주소를 입력해 주세요."/>
+                  </div>
+                  <button type="button" class="btn btn--line btn--md btn--block">주소검색</button>
+                </div>
+
+                <!-- 이메일 주소 -->
+                <div class="form__field is-required">
+                  <label for="input6" class="form__label">이메일 주소</label>
+                  <div class="form__control">
+                    <input type="text" id="input6" class="form__input"/>
+                    <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 버튼 -->
+              <div class="cta cta--fixed">
+                <button type="button" class="btn btn--primary">가입하기</button>
+              </div>
+            </div>
+          </ㅇ>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

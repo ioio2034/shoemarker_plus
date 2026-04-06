@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-login">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container">
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">회원가입</h2>
+          </div>
+
+          <div class="login">
+            <div class="login__inner">
+              <!-- welcome -->
+              <div class="login__welcome">
+                <img class="login__welcome-logo" src="../../assets/images/logo.svg" alt="SHOEMARKER +">
+                <p class="login__welcome-text">슈마커 플러스몰에 오신 것을 <br />환영합니다!</p>
+              </div>
+    
+              <!-- 버튼 -->
+              <div class="cta">
+                <button type="submit" class="btn btn--primary">14세 이상 회원가입</button>
+              </div>
+    
+              <!-- 간편 로그인 -->
+              <div class="login__sns">
+                <h3 class="login__sns-title">간편 회원 가입</h3>
+                <div class="login__sns-list">
+                  <button class="btn-sns btn-sns--naver" aria-label="네이버로 로그인">
+                    <span class="btn-sns__icon"></span>
+                  </button>
+                  <button class="btn-sns btn-sns--kakao" aria-label="카카오로 로그인">
+                    <span class="btn-sns__icon"></span>
+                  </button>
+                </div>
+              </div>
+    
+              <div class="login__notice">
+                <ul class="list list--dot list--sm">
+                  <li>본인인증에 문제가 있을 경우, NICE평가정보㈜로 문의 주세요. <br />(고객센터 1600-1522)</li>
+                  <li>만14세 미만 아동은 회원 가입을 받지 않습니다.</li>
+                </ul>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

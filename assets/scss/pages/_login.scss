@@ -1,0 +1,338 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 로그인, 회원가입 페이지
+.login {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 390px;
+    margin: 0 auto;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__options {
+    display: flex;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    .btn {
+      & + .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        &::before {
+          @include before_after;
+          width: 1px;
+          height: 12px;
+          background-color: $gray-30;
+        }
+      }
+    }
+  }
+  &__sns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+    &-title {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &-list {
+      display: flex;
+    }
+  }
+  &__captcha {
+    .captcha {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      &__title {
+        color: $gray-80;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      &__box {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        min-height: 65px;
+        border-radius: 6px;
+        border: 1px solid $gray-30;
+        background: $gray-5;
+      }
+    }
+  }
+  &__welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    &-text {
+      color: $gray-70;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+  &__notice {
+    margin-top: 8px;
+  }
+  &__steps {
+    width: 100%;
+  }
+  &__text {
+    color: $grayscale-900;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+}
+
+// 회원가입 프로세스
+.steps {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    height: 1px;
+    background-color: $gray-30;
+    z-index: 0;
+    @include tablet {
+      left: 30px;
+      right: 30px;
+      top: 30px;
+    }
+  }
+  @include tablet {    
+    width: 100vw;
+    padding: 16px;
+    margin: 0 -16px;
+    border-bottom: 6px solid $gray-10;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 0;
+    gap: 4px;
+    max-width: 60px;
+    &.is-current {
+      .steps__num {
+        font-size: 0;
+        background-color: $gray-80;
+        &::before {
+          content: '';
+          width: 24px;
+          height: 24px;
+          @include bgimage('icon_check_w','svg');
+          z-index: 1;
+        }       
+      }
+      .steps__text {
+        color: $gray-80;
+        font-weight: 600;
+      }
+    }
+  }
+  &__num {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: $gray-40;
+    color: $gray-0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    z-index: 1;
+  }
+  &__text {
+    color: $gray-50;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+// 이용 약관
+.terms {
+  margin-bottom: 16px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  &__sub {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: $gray-5;
+    .checkbox {
+      & + .checkbox {
+        margin-left: 0;
+      }
+    }
+  }
+  &__notice {
+    color: $gray-60;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+
+// 결과
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 390px;
+  max-width: 390px;
+  margin: 0 auto;
+  @include tablet {
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 158px);
+  }
+  &--center {
+    min-height: 530px;
+    @include tablet {
+      min-height: calc(100vh - 158px);
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 40px 0;
+    @include tablet {
+      padding: 0;
+    }
+  }
+  &__logo {
+    width: 200px;
+    height: 30px;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__title {
+    color: $gray-80;
+    text-align: center;
+    &--lg {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 36px;
+      letter-spacing: -0.14px;
+    }
+    &--md {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    &--sm {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+  }    
+  &__text {
+    color: $gray-70;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  &__subtext {
+    color: $gray-70;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 12px;
+    background: $gray-5;
+    flex-shrink: 0;
+    .list {
+      li {
+        text-align: center;
+      }
+    }
+  }
+}
+// 가입 완료 화면
+.page-join {
+  .result {
+    &__content {
+      padding: 0;
+    }
+  }
+}
