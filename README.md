@@ -84,14 +84,15 @@ project/
 │  ├─ include/
 │  │  ├─ header.html
 │  │  └─ footer.html
-│  └─ page.html
+│  ├─ page별 폴더/
+│  └─ components.html //컴포넌트 가이드
 └─ README.md
 ```
 
 ## 🔗 Path Rules
 - 모든 리소스(css, js, images, fonts)는 상대경로 기준으로 작성
 - 루트 절대경로(/assets/...)는 사용하지 않음
-- HTML 위치 기준으로 ../assets/... 형식으로 통일
+- HTML 위치 기준으로 ../../assets/... 형식으로 통일
 
 ## 🧩 Include 구조 (Header / Footer)
 - `header`, `footer`는 `html/include` 폴더로 분리
