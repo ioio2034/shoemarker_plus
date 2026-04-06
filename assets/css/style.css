@@ -11520,7 +11520,8 @@ img, video, canvas, svg {
 }
 @media (max-width: 1024px) {
   .section__inner {
-    min-height: 100dvh;
+    height: 100dvh;
+    min-height: auto;
     padding: 102px 24px 32px;
   }
 }
@@ -12409,8 +12410,7 @@ body.modal-open {
   .result {
     width: 100%;
     max-width: none;
-    min-height: calc(100vh - 158px);
-    min-height: calc(100dvh - 158px);
+    min-height: 100%;
   }
 }
 .result--center {
@@ -12418,8 +12418,7 @@ body.modal-open {
 }
 @media (max-width: 1024px) {
   .result--center {
-    min-height: calc(100vh - 158px);
-    min-height: calc(100dvh - 158px);
+    min-height: 100%;
   }
 }
 .result__inner {
