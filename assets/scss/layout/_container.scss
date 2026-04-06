@@ -32,7 +32,9 @@
     min-height: 610px;
     padding: 80px 24px 0;
     @include tablet {
-      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
       padding: 102px 24px 32px;
     }
   }

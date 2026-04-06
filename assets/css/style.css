@@ -11520,7 +11520,9 @@ img, video, canvas, svg {
 }
 @media (max-width: 1024px) {
   .section__inner {
-    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
     padding: 102px 24px 32px;
   }
 }
@@ -11974,6 +11976,7 @@ img, video, canvas, svg {
     padding: 8px 16px;
     padding-bottom: calc(8px + env(safe-area-inset-bottom));
     background-color: #FFFFFF;
+    z-index: 1;
   }
 }
 
@@ -12407,16 +12410,9 @@ body.modal-open {
 }
 @media (max-width: 1024px) {
   .result {
+    flex: 1;
     width: 100%;
     max-width: none;
-    min-height: 100%;
-  }
-}
-.result--center {
-  min-height: 530px;
-}
-@media (max-width: 1024px) {
-  .result--center {
     min-height: 100%;
   }
 }

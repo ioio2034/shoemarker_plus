@@ -78,6 +78,7 @@
       padding-bottom: calc(8px + env(safe-area-inset-bottom));
       background-color: $white;
       // box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+      z-index: 1;
     }
   }
 }
