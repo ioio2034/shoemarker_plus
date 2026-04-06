@@ -101,6 +101,7 @@ project/
 
 ## 📊 Publishing Status Board
 - 최상위 `index.html`은 **퍼블리싱 작업 현황판**으로 사용
+- URL : https://ioio2034.github.io/shoemarker_plus/
 - 페이지 리스트, 작업 상태(완료 / 진행중 / 대기), 각 페이지로 이동 가능한 링크를 포함
 
 ## ⚠️ Notes
