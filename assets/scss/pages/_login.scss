@@ -243,11 +243,13 @@
     width: 100%;
     max-width: none;
     min-height: calc(100vh - 158px);
+    min-height: calc(100dvh - 158px);
   }
   &--center {
     min-height: 530px;
     @include tablet {
       min-height: calc(100vh - 158px);
+      min-height: calc(100dvh - 158px);
     }
   }
   &__inner {
