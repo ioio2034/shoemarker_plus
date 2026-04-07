@@ -325,7 +325,7 @@
     width: 100%;
     padding: 40px 0;
     @include tablet {
-      padding: 0;
+      padding: 0 16px;
     }
   }
   &__logo {
@@ -393,6 +393,9 @@
   .result {
     &__content {
       padding: 0;
+      @include tablet {
+        padding: 0 16px;
+      }
     }
   }
 }

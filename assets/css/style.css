@@ -12491,7 +12491,7 @@ body.modal-open {
 }
 @media (max-width: 1024px) {
   .result__content {
-    padding: 0;
+    padding: 0 16px;
   }
 }
 .result__logo {
@@ -12553,4 +12553,9 @@ body.modal-open {
 
 .page-join .result__content {
   padding: 0;
+}
+@media (max-width: 1024px) {
+  .page-join .result__content {
+    padding: 0 16px;
+  }
 }
