@@ -157,12 +157,14 @@
       // padding: 40px 24px 0;
     }
   }
-  &__text {
-    padding: 0 16px;
+  &__text {    
     color: $grayscale-900;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
+    @include tablet {
+      padding: 0 16px;
+    }
   }
   &__steps {
     @include tablet {

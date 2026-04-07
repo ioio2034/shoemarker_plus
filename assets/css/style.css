@@ -12323,11 +12323,15 @@ body.modal-open {
   }
 }
 .join__text {
-  padding: 0 16px;
   color: #1A1A1A;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
+}
+@media (max-width: 1024px) {
+  .join__text {
+    padding: 0 16px;
+  }
 }
 @media (max-width: 1024px) {
   .join__steps {
