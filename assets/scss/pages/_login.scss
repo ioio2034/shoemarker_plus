@@ -1,7 +1,7 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
-// 로그인, 회원가입 페이지
+// 로그인
 .login {
   &__inner {
     display: flex;
@@ -11,6 +11,7 @@
     margin: 0 auto;
     @include tablet {
       max-width: 100%;
+      padding: 40px 24px 0;
     }
   }
   &__form {
@@ -103,14 +104,76 @@
   &__notice {
     margin-top: 8px;
   }
-  &__steps {
-    width: 100%;
+}
+
+// 아이디, 비밀번호 찾기
+.login-find {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 390px;
+    margin: 0 auto;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+  &__intro {
+    @include tablet  {
+      padding: 24px 16px 0;
+      margin-bottom: 0;
+    }
+  } 
+  &__desc {
+    color: $grayscale-900;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    @include tablet {
+      text-align: left;      
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include tablet {
+      padding: 0 16px;
+    }
+  }
+}
+
+// 회원가입
+.join {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 390px;
+    margin: 0 auto;
+    @include tablet {
+      max-width: 100%;
+      // padding: 40px 24px 0;
+    }
   }
   &__text {
+    padding: 0 16px;
     color: $grayscale-900;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
+  }
+  &__steps {
+    @include tablet {
+      padding: 16px;
+      border-bottom: 6px solid $gray-10;
+    }
+  }
+  &__form {
+    @include tablet {
+      padding: 0 16px;
+    }
   }
 }
 
@@ -132,14 +195,8 @@
     @include tablet {
       left: 30px;
       right: 30px;
-      top: 30px;
+      top: 15px;
     }
-  }
-  @include tablet {    
-    width: 100vw;
-    padding: 16px;
-    margin: 0 -16px;
-    border-bottom: 6px solid $gray-10;
   }
   &__item {
     position: relative;
@@ -192,7 +249,9 @@
 
 // 이용 약관
 .terms {
-  margin-bottom: 16px;
+  @include tablet {
+    padding: 0 16px;
+  }
   &__list {
     display: flex;
     flex-direction: column;
@@ -326,7 +385,8 @@
     }
   }
 }
-// 가입 완료 화면
+
+// 가입 완료 결과
 .page-join {
   .result {
     &__content {

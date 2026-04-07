@@ -65,6 +65,14 @@
 // wrap
 .cta {
   @include action-group;
+  @include tablet {
+    &--px-16 {
+      padding: 0 16px;
+    }
+    &--px-24 {
+      padding: 0 24px;
+    }
+  }  
   &--stack {
     @include action-group-stack;
   }

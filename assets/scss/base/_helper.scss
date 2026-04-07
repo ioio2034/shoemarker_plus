@@ -1,4 +1,5 @@
 @use 'mixin' as *;
+@use '../base/variables' as *;
 
 .blind {
   overflow: hidden;
@@ -24,3 +25,9 @@
   }
 }
 
+.divider {
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: $gray-10;
+}
