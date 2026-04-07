@@ -29,9 +29,6 @@
 <body>
   <div id="wrap" class="page-login">
 
-    <!-- Header -->
-    <header id="header" class="header"></header>
-
     <!-- Content -->
     <main class="container">
       <section class="section">
@@ -272,8 +269,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="footer"></footer>
   </div>
 
   <!-- modal -->
@@ -311,18 +306,5 @@
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/swiper-bundle.min.js"></script>
   <script src="../assets/js/ui.js"></script>
-  <!-- Script for loading header and footer (퍼블용) -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      ["header", "footer"].forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const file = el.dataset.file || `${id}.html`;
-        fetch(`./include/${file}`)
-          .then(res => res.text())
-          .then(html => (el.innerHTML = html));
-      });
-    });
-  </script>
 </body>
 </html>
