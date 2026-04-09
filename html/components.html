@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <!-- Library -->
   <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <style>
     /* Guide style */
     .guide {position:relative; z-index:1; overflow:hidden; width:100%; max-width:1325px; margin:0 auto; padding:48px;}
@@ -60,19 +61,22 @@
                 <col style="width:20%">
                 <col style="width:20%">
                 <col style="width:20%">
+                <col style="width:20%">
                 <col style="width:0">
               </colgroup>
               <thead>
               <tr>
                 <th></th>
                 <th>default</th>
+                <th>Large</th>
                 <th>Medium</th>
                 <th>Small</th>
                 <th><!--X-Small--></th>
               </tr>
               <tr>
                 <th></th>
-                <th class="guide__note">Size 100% <br> Height 48px <br>Weight 600</th>
+                <th class="guide__note">Size fit-content <br> Height 48px <br>Weight 600</th>
+                <th class="guide__note">Size fit-content <br> Height 44px <br>Weight 400</th>
                 <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
                 <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
                 <th class="guide__note"><!-- --></th>
@@ -83,6 +87,9 @@
                 <th>Primary</th>
                 <td>
                   <button type="button" class="btn btn--primary">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--primary btn--lg">로그인하기</button>
                 </td>
                 <td>
                   <button type="button" class="btn btn--primary btn--md">로그인하기</button>
@@ -98,10 +105,29 @@
                   <button type="button" class="btn btn--line">로그인하기</button>
                 </td>
                 <td>
+                  <button type="button" class="btn btn--line btn--lg">로그인하기</button>
+                </td>
+                <td>
                   <button type="button" class="btn btn--line btn--md">로그인하기</button>
                 </td>
                 <td>
                   <button type="button" class="btn btn--line btn--sm">로그인하기</button>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Line secondary</th>
+                <td>
+                  <button type="button" class="btn btn--line btn--secondary">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--line btn--secondary btn--lg">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--line btn--secondary btn--md">로그인하기</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn--line btn--secondary btn--sm">로그인하기</button>
                 </td>
                 <td></td>
               </tr>
@@ -237,11 +263,11 @@
 
               <h3 class="guide__subtitle">라디오버튼</h3>
               <div class="radio">
-                <input type="radio" id="radio1" name="userGender" class="radio__input" />
+                <input type="radio" id="radio1" name="" class="radio__input" />
                 <label for="radio1" class="radio__label">휴대폰번호</label>
               </div>
               <div class="radio">
-                <input type="radio" id="radio2" name="userGender" class="radio__input" />
+                <input type="radio" id="radio2" name="" class="radio__input" />
                 <label for="radio2" class="radio__label">이메일 주소</label>
               </div>
 
@@ -251,17 +277,76 @@
             <div class="guide__box">
               <div class="select">
                 <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
-                <select id="termsDate" class="select__field">
-                  <option value="">옵션1</option>
-                  <option value="">옵션2</option>
-                  <option value="">옵션3</option>
-                </select>
+                <div class="select__box">
+                  <select id="termsDate" class="select__field">
+                    <option value="">옵션1</option>
+                    <option value="">옵션2</option>
+                    <option value="">옵션3</option>
+                  </select>
+                </div>                
+              </div>
+              <br>
+              <div class="select">
+                <label for="cancelReason" class="select__label">사유 선택</label>
+                <div class="select__box">
+                  <select id="cancelReason" class="select__field">
+                    <!-- placeholder -->
+                    <option value="" disabled selected hidden>취소 사유를 선택해 주세요!</option>
+                    <option value="">옵션1</option>
+                    <option value="">옵션2</option>
+                    <option value="">옵션3</option>
+                  </select>
+                </div>
               </div>
             </div>
 
             <h2 class="guide__title">Modal</h2>
             <div class="guide__box">
               <button type="button" class="js-modal-open btn btn--primary btn--md">Modal open</button>
+            </div>
+
+            <h2 class="guide__title">Bottom Sheet</h2>
+            <div class="guide__box">
+              <button type="button" class="filter__btn btn-icon btn-icon--filter js-bottom-sheet-open" data-target="#filterSheet">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+
+            <h2 class="guide__title">Alert</h2>
+            <div class="guide__box">
+              <button type="button" class="btn btn--md btn--line js-alert-open" data-target="#confirmPurchaseAlert">구매확정</button>
+            </div>
+
+            <h2 class="guide__title">상품 UI</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">기본형</h3>
+              <!-- <div class="product-card">
+                <a href="/" class="product-card__link">
+                  <div class="product-card__img">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                  </div>
+                  <div class="product-card__info">
+                    <span class="product-card__brand">NIKE</span>
+                    <span class="product-card__name">나이키 알파플라이 3글램</span>
+                    <div class="product-card__price">
+                      <span class="product-card__percent">12%</span>
+                      <span class="product-card__price-value">
+                        <span class="product-card__price-number">349,000</span>
+                        <span class="product-card__price-currency">원</span>
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              </div> -->
+            </div>
+
+            <h2 class="guide__title">empty</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">텍스트 + 링크</h3>
+              <div class="empty">
+                <p class="empty__text">제품이 없습니다.</p>
+                <a href="/" class="empty__link">홈으로 가기</a>
+              </div>
             </div>
 
           </div>
@@ -298,6 +383,143 @@
           <div class="content">
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nobis id praesentium rem quisquam deleniti beatae. Odio iusto ab voluptate quis, porro unde amet est obcaecati laboriosam quidem modi similique, officiis nulla perferendis aperiam, officia fugit ducimus commodi labore. Odio tempora, quis repudiandae consequuntur ipsam inventore eum assumenda perspiciatis vel soluta rem ab porro in iure dolor nihil cupiditate esse? Voluptatem iure fugit hic nesciunt quibusdam in, recusandae aliquam, eaque deserunt incidunt molestias laborum, non consectetur suscipit dolor quia consequuntur sed quod est. Tempore libero eum, deleniti itaque pariatur voluptas architecto officiis eius magni non nesciunt ea harum earum, officia dicta optio nulla nostrum tenetur! Ratione molestias eius optio aliquam totam laboriosam impedit quae sit consectetur, consequatur in deleniti quaerat amet tempore iusto veritatis illum recusandae. Explicabo minima adipisci animi, ex illo sed voluptatibus sunt ut itaque, provident non! Quasi cum voluptate rerum dignissimos, necessitatibus consequatur quam magnam debitis sed distinctio doloremque quaerat deleniti illum amet? Cupiditate dignissimos itaque laudantium aliquam sint ratione et non repellat distinctio perferendis, velit assumenda, reiciendis dicta, aspernatur officia nemo sed illo iste repudiandae amet quos? Libero iure ea nostrum quibusdam ipsum minima, dicta corrupti sapiente nemo laborum cumque adipisci mollitia ut. Praesentium, fuga! Earum.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom sheet -->
+  <div class="bottom-sheet" id="filterSheet">
+    <!-- dim -->
+    <div class="bottom-sheet__dim"></div>
+    <!-- content -->
+    <div class="bottom-sheet__content">
+      <div class="bottom-sheet__indicator"></div>
+      <div class="bottom-sheet__header">
+        <h3 class="bottom-sheet__title">조회 설정</h3>
+        <button type="button" class="bottom-sheet__close btn-icon btn-icon--sheet-close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+      <div class="bottom-sheet__body">
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">주문유형</h4>
+          <div class="radio-group radio-group--col3">
+            <div class="radio radio--button">
+              <input type="radio" id="radio1" name="order-type" class="radio__input" checked />
+              <label for="radio1" class="radio__label">전체</label>
+            </div>
+            <div class="radio radio--button">
+              <input type="radio" id="radio2" name="order-type" class="radio__input" />
+              <label for="radio2" class="radio__label">주문접수</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio3" name="order-type" class="radio__input" />
+              <label for="radio3" class="radio__label">결제완료</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio4" name="order-type" class="radio__input" />
+              <label for="radio4" class="radio__label">상품준비</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio5" name="order-type" class="radio__input" />
+              <label for="radio5" class="radio__label">출고완료</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio6" name="order-type" class="radio__input" />
+              <label for="radio6" class="radio__label">배송완료</label>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">조회기간</h4>
+          <div class="radio-group radio-group--col4 mb12">
+            <div class="radio radio--button">
+              <input type="radio" id="radio7" name="order-period" class="radio__input" />
+              <label for="radio7" class="radio__label">1개월</label>
+            </div>
+            <div class="radio radio--button">
+              <input type="radio" id="radio8" name="order-period" class="radio__input" checked />
+              <label for="radio8" class="radio__label">3개월</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio9" name="order-period" class="radio__input" />
+              <label for="radio9" class="radio__label">6개월</label>
+            </div>
+  
+            <div class="radio radio--button">
+              <input type="radio" id="radio10" name="order-period" class="radio__input" />
+              <label for="radio10" class="radio__label">직접입력</label>
+            </div>
+          </div>
+          <!-- 기간 직접 입력 -->
+          <div class="date-range">
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="startDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="시작일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+            <span class="date-range__dash" aria-hidden="true">~</span>
+
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="endDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="종료일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button type="button" class="btn btn--primary btn--block">조회</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- alert -->
+  <div id="confirmPurchaseAlert" class="alert">
+    <div class="alert__dim"></div>
+    <div class="alert__content">
+      <div class="alert__body">
+        <p class="alert__text">구매 확정 후 해당 상품은 <br />반품 및 환불이 불가합니다! <br />구매확정하시겠습니까?</p>
+      </div>
+      <div class="alert__footer">
+        <button class="btn btn--line js-alert-cancel">취소</button>
+        <button class="btn btn--primary js-alert-confirm">확인</button>
       </div>
     </div>
   </div>
@@ -305,6 +527,8 @@
   <!-- Scripts  -->
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
   <script src="../assets/js/ui.js"></script>
 </body>
 </html>
