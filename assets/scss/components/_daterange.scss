@@ -1,0 +1,20 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  &__item {
+    flex: 1;
+    min-width: 0;
+  }
+  &__dash {
+    flex-shrink: 0;
+    color: $grayscale-500;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}

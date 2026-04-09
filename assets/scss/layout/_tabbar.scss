@@ -1,0 +1,80 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78px;
+  padding-bottom: calc(env(safe-area-inset-bottom));
+  background-color: $gray-90;
+  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  z-index: 101;
+  &.is-hidden {
+    transform: translateY(100%);
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  &__btn {
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    position: relative;
+    opacity: 0.5;
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+    &--menu {
+      &::before {
+        @include bgimage('icon_tabbar_menu', 'svg');
+      }
+    }
+    &--brand {
+      &::before {
+        @include bgimage('icon_tabbar_brand', 'svg');
+      }
+    }
+    &--home {
+      &::before {
+        @include bgimage('icon_tabbar_home', 'svg');
+      }
+    }
+    &--cart {
+      &::before {
+        @include bgimage('icon_tabbar_cart', 'svg');
+      }
+    }
+    &--my {
+      &::before {
+        @include bgimage('icon_tabbar_my', 'svg');
+      }
+    }
+    &.is-active {
+      opacity: 1;
+      .tabbar__btn-text {
+        font-weight: 600;
+      }
+    }
+  }
+  &__btn-text {
+    color: $white;
+    text-align: center;
+    font-family: $font-en;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    text-transform: capitalize;
+  }
+}

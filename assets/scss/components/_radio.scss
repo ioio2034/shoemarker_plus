@@ -42,4 +42,65 @@
       @include bgimage('icon_radio','svg');
     }
   }
+
+  // button type
+  &--button {
+    width: 100%;
+    min-width: 0;
+
+    .radio__label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 32px;
+      padding: 8px;
+      border: 1px solid $gray-30;
+      border-radius: 6px;
+      background-color: $white;
+      color: $gray-70;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: center;
+
+      &::before {
+        display: none;
+      }
+    }
+    .radio__input {
+      &:checked + .radio__label {
+        border-color: $gray-80;
+        color: $gray-80;
+        font-weight: 600;
+      }
+
+    }
+  }
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &--col3,
+  &--col4 {
+    display: grid;
+
+    .radio {
+      width: 100%;
+      min-width: 0;
+
+      & + .radio {
+        margin-left: 0;
+      }
+    }
+  }
+  &--col3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  &--col4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }

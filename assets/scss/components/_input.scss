@@ -49,6 +49,25 @@
         }
       }
     }
+
+    // date picker
+    &--calendar {
+      .form__control {
+        padding: 14px 12px;
+        border-color: $grayscale-200;
+        .form__input {
+          padding-right: 20px;
+          color: $grayscale-700;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+        }
+        .form__icon {
+          pointer-events: none;
+          @include bgimage('icon_calendar','svg');
+        }
+      }
+    }
   }
   &__label {
     color: $gray-70;
@@ -82,6 +101,17 @@
       cursor: default;
       background-color: $gray-5;
       color: $gray-50;
+    }
+    &[type='date'] {
+      position: relative;
+      &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
     }
   }
   &__control {
@@ -134,5 +164,15 @@
     flex-direction: column;
     gap: 4px;
     margin-bottom: 4px;
+  }
+  &__icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
   }
 }

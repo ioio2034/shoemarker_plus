@@ -1,0 +1,63 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.product-card {
+  width: 100%;
+  &__link {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  &__img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__brand {
+    margin-bottom: 4px;
+    color: $gray-80;
+    font-family: $font-en;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+  &__name {
+    @include line-clamp(2);
+    color: $gray-70;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+  }
+  &__percent {
+    color: #F92424;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  &__price-value {
+    display: flex;
+  }
+  &__price-number,
+  &__price-currency {
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}

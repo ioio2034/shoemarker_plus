@@ -1,7 +1,7 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
-/* main z-index: 1~20, header: 50~100, gnb: 101~200, footer: 201~*/
+/* main z-index: 1~20, header: 50~100, gnb, tabbar: 101~200, footer: 201~, bottom sheet: 999, modal: 1000 */
 
 #wrap {
   position: relative;
@@ -25,14 +25,17 @@
   &--fixed {
     @include tablet {
       .section__inner {
-        padding-bottom: calc(96px + env(safe-area-inset-bottom));
+        padding-bottom: calc(102px + env(safe-area-inset-bottom));
       }
     }    
   }
   &__inner {
+    max-width: 1280px;
     min-height: 690px;
     padding: 80px 0;
+    margin: 0 auto;
     @include tablet {
+      max-width: 100%;
       min-height: 100dvh;
       padding: 62px 0 32px;
     }
@@ -54,7 +57,8 @@
       height: 62px;
       padding: 0 24px;
       margin-bottom: 0;
-      border-bottom: 1px solid $gray-20;
+      border-bottom: 1px solid $gray-30;
+      background: #FFF;
       background: $white;
     }
     .btn-icon--back {
@@ -67,6 +71,18 @@
         transform: translateY(-50%);
         z-index: 1;
       }
+    }
+  }
+  &__util {
+    display: none;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
     }
   }
   &__title {
@@ -88,8 +104,15 @@
 
 // page별 레이아웃
 .page-login,
-.page-join  {
+.page-join {
   .section {
+    &--fixed {
+      @include tablet {
+        .section__inner {
+          padding-bottom: calc(88px + env(safe-area-inset-bottom));
+        }
+      }
+    }
     &__inner {
       display: flex;
       flex-direction: column;
@@ -101,6 +124,16 @@
     } 
     .footer {
       display: none;
+    }
+  }
+}
+
+.page-mypage ,
+.page-order {
+  .section {
+    &__inner {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

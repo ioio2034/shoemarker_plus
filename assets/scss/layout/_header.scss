@@ -11,6 +11,7 @@
   background-color: $white;
   z-index: 50;
   @include tablet {
+    display: none;
     position: relative;
     height: auto;
     border-bottom: none;
@@ -177,7 +178,7 @@
       @include bgimage('icon_search', 'svg');
     }
     &--cart {
-      @include bgimage('icon_cart', 'svg');
+      @include bgimage('icon_cart_32', 'svg');
     }
     &--mypage {
       @include bgimage('icon_mypage', 'svg');

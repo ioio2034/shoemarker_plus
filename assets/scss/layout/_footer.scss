@@ -15,11 +15,12 @@
     }
   }
   @include tablet {
+    display: none;
     margin-top: 0;
     background: #F5F5F5;
   }
   &__inner {
-    max-width: 1278px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 48px 24px;
     @include tablet {
@@ -147,7 +148,7 @@
       @include before_after;
       width: 12px;
       height: 12px;
-      @include bgimage('icon_chevron_down', 'svg');
+      @include bgimage('icon_chevron_down_20', 'svg');
       background-position: center;
     }
   }

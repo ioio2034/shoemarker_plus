@@ -11,6 +11,7 @@
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/container';
+@use 'layout/tabbar';
 
 // components
 @use 'components/input';
@@ -20,7 +21,13 @@
 @use 'components/button';
 @use 'components/list';
 @use 'components/modal';
+@use 'components/productcard';
+@use 'components/empty';
+@use 'components/bottomsheet';
+@use 'components/daterange';
+@use 'components/alert';
 
 // pages
 // @use 'pages/main';
 @use 'pages/login';
+@use 'pages/mypage';

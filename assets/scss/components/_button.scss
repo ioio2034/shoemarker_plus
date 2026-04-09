@@ -5,7 +5,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: fit-content;
   height: 48px;
   padding: 14px 24px;
   border-radius: 6px;
@@ -13,6 +13,7 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
+  text-align: center;
   &:disabled{ 
     cursor: default;
   }
@@ -20,10 +21,14 @@
   &--primary {
     background-color: $gray-90; 
   }
+
   &--line {
     background-color: $white;
     border: 1px solid $gray-80;
-    color: $gray-80
+    color: $gray-80;
+  }
+  &--secondary {
+    border-color: $gray-30;
   }
   &--text {
     width: auto;
@@ -55,6 +60,15 @@
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
+    line-height: 16px;
+  }
+  &--lg {
+    width: fit-content;
+    height: 44px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 16px;
   }
   &--block {
@@ -96,6 +110,30 @@
   &--stack {
     @include action-group-stack;
   }
+  &--grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    .btn {
+      width: 100%;
+    }
+  }
+  &--grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    .btn {
+      width: 100%;
+    }
+  }
+  &--grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    .btn {
+      width: 100%;
+    }
+  }
 }
 
 .btn-sns {
@@ -124,7 +162,7 @@
   height: 24px;
   border: 0;
   padding: 0;
-  background: $white;
+  // background: $white;
   cursor: pointer;
   &__icon {
     width: 24px;
@@ -141,12 +179,21 @@
     }
   }
   &--back .btn-icon__icon {
-    @include bgimage('icon_chevron_left', 'svg');
+    @include bgimage('icon_chevron_left_24', 'svg');
   }
   &--next .btn-icon__icon {
-    @include bgimage('icon_chevron_right', 'svg');
+    @include bgimage('icon_chevron_right_16', 'svg');
   }
   &--close .btn-icon__icon {
     @include bgimage('icon_close', 'svg');
+  }
+  &--cart .btn-icon__icon {
+    @include bgimage('icon_cart_24', 'svg');
+  }
+  &--filter .btn-icon__icon {
+    @include bgimage('icon_filter', 'svg');
+  }
+  &--sheet-close .btn-icon__icon {
+    @include bgimage('icon_sheet_close', 'svg');
   }
 }
