@@ -14287,6 +14287,11 @@ body.sheet-open {
   font-weight: 400;
 }
 
+@media (max-width: 1024px) {
+  .mypage {
+    padding-bottom: 88px;
+  }
+}
 .mypage .profile {
   display: flex;
   flex-direction: column;
@@ -14999,7 +15004,7 @@ body.sheet-open {
 .order-block {
   padding: 0 20px;
   border-radius: 6px;
-  border: 1px solid #808080;
+  border: 1px solid #D8D8D8;
 }
 @media (max-width: 1024px) {
   .order-block {

@@ -352,6 +352,9 @@
 // 페이지
 // 마이페이지 홈
 .mypage {
+  @include tablet {
+    padding-bottom: 88px;
+  }
   // 회원 정보 요약
   .profile {
     display: flex;
@@ -1035,7 +1038,7 @@
 .order-block {
   padding: 0 20px;
   border-radius: 6px;
-  border: 1px solid $grayscale-500;
+  border: 1px solid $gray-30;
   @include tablet {
     padding: 24px;
     border-radius: 0;
