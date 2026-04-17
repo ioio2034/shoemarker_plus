@@ -266,6 +266,7 @@ let UI = {
     const $tabbar = $('.tabbar');
     let lastScrollTop = 0;
     const threshold = 5;
+    const bottomOffset = 10;
 
     if (!$tabbar.length) return;
 
@@ -276,31 +277,25 @@ let UI = {
       const maxScrollTop = documentHeight - windowHeight;
       const scrollTop = Math.max(0, Math.min(rawScrollTop, maxScrollTop));
 
-      // 최상단에서는 항상 노출
       if (scrollTop <= 0) {
         $tabbar.removeClass('is-hidden');
         lastScrollTop = 0;
         return;
       }
 
-      // 최하단 근처에서는 숨김 유지
       if (scrollTop >= maxScrollTop - bottomOffset) {
         $tabbar.addClass('is-hidden');
         lastScrollTop = scrollTop;
         return;
       }
 
-      // 너무 미세한 스크롤은 무시
       if (Math.abs(scrollTop - lastScrollTop) <= threshold) {
         return;
       }
 
-      // 아래로 스크롤
       if (scrollTop > lastScrollTop) {
         $tabbar.addClass('is-hidden');
-      }
-      // 위로 스크롤
-      else {
+      } else {
         $tabbar.removeClass('is-hidden');
       }
 
