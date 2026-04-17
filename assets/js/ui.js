@@ -142,7 +142,7 @@ let UI = {
 
       const picker = flatpickr(this, {
         dateFormat: 'Y.m.d',
-        allowInput: true,
+        allowInput: false,
         disableMobile: true,
         defaultDate: null,
         locale: 'ko',
@@ -270,14 +270,23 @@ let UI = {
     if (!$tabbar.length) return;
 
     $win.on('scroll', function () {
-      const scrollTop = $win.scrollTop();
+      const rawScrollTop = $win.scrollTop();
       const windowHeight = $win.height();
       const documentHeight = $(document).height();
+      const maxScrollTop = documentHeight - windowHeight;
+      const scrollTop = Math.max(0, Math.min(rawScrollTop, maxScrollTop));
 
       // 최상단에서는 항상 노출
       if (scrollTop <= 0) {
         $tabbar.removeClass('is-hidden');
         lastScrollTop = 0;
+        return;
+      }
+
+      // 최하단 근처에서는 숨김 유지
+      if (scrollTop >= maxScrollTop - bottomOffset) {
+        $tabbar.addClass('is-hidden');
+        lastScrollTop = scrollTop;
         return;
       }
 
