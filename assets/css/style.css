@@ -13012,6 +13012,7 @@ body.sheet-open {
 }
 .form__field--calendar .form__control .form__input {
   padding-right: 20px;
+  background-color: #FFFFFF;
   color: #4D4D4D;
   font-size: 14px;
   font-weight: 500;
