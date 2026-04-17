@@ -1,0 +1,107 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.accordion {
+  width: 100%;
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-30;
+    @include tablet {
+      padding: 16px 0;
+    }
+    &:last-child {
+      border-bottom: 0;
+      @include tablet {
+        border-bottom: 1px solid $gray-30;
+      } 
+    }
+    &.is-active {
+      .accordion__header {
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+  }
+  &__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    padding: 0;    
+    &::after {
+      @include before_after;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      @include bgimage('icon_chevron_down_16', 'svg');
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+  }
+  &__question {
+    flex: 1;
+    text-align: left;
+  }
+  &__label {
+    color: $gray-60;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__title {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: padding 0.3s ease, max-height 0.3s ease;
+    will-change: height;
+  }
+  &__body {
+    padding-top: 16px;
+    text-align: left;
+  }
+  &__answer {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  // Q&A
+  &--qna {
+    .accordion__header {
+      &::before {
+        content: 'Q';
+        display: block;
+        color: #00883E;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        flex-shrink: 0;
+      }
+    }
+    .accordion__collapse {
+      position: relative;
+      display: flex;
+      gap: 8px;
+      &::before {
+        content: 'A';
+        display: block;
+        padding-top: 16px;
+        color: #00883E;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

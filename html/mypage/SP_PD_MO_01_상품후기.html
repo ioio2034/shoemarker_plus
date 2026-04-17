@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-activity">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+      
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+      
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">상품 후기</h2>
+          </div>
+
+          <div class="product-review">
+            <div class="summary">
+              <p class="summary__text">
+                총 <span class="summary__number">28</span>건의 상품 후기 가능 주문 상품이 있습니다.
+              </p>
+            </div>
+
+            <div class="notice">
+              <ul class="list list--dot">
+                <li>리뷰 작성은 구매확정일로 부터 30일 이내 가능</li>
+                <li>작성한 리뷰는 수정 및 삭제 불가능</li>
+                <li>글 리뷰 50원, 사진/동영상리뷰 200원, 주간 베스트 3인 선정하여 각 1,000원 적립 (사진/동영상 리뷰는 관리자 확인 후 지급)</li>
+              </ul>
+            </div>
+          
+            <div class="divider"></div>
+            
+            <div class="review-list">
+              <div class="review-list__header">
+                <p class="review-list__summary">
+                  총 <strong class="review-list__count">28</strong>개
+                </p>
+              </div>
+              <div class="review-list__items">
+                <!-- [s] 리스트 없음 -->
+                <!-- <div class="empty empty--center">
+                  <div class="empty__content">
+                    <span class="empty__icon empty__icon--message"></span>
+                    <p class="empty__text">조회 결과가 없어요.</p>
+                  </div>
+                </div> -->
+                <!-- [e] 리스트 없음 -->
+                <div class="review-item">
+                  <div class="review-item__header">
+                    <div class="review-item__left">
+                      <span class="review-item__status">구매확정</span>
+                      <span class="review-item__date">2025.03.05</span>
+                    </div>
+                    <a href="#" class="btn-link">주문 상세보기</a>
+                  </div>
+                  <div class="review-item__body">
+                    <div class="order-group__content">
+                      <!-- [s] item -->
+                      <div class="order-item">
+                        <div class="order-item__thumb">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                        </div>
+                        <div class="order-item__content">
+                          <div class="order-item__content-left">
+                            <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                            <ul class="order-item__meta">
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">옵션</span>
+                                <span class="order-item__meta-value">225 / White</span>
+                              </li>
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">수량</span>
+                                <span class="order-item__meta-value">1개</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] item -->
+                    </div>
+                  </div>
+                  <div class="review-item__footer">
+                    <ul class="list list--dot">
+                      <li>구매 후기 남기고 최대 1,500포인트 받으세요!</li>
+                    </ul>
+                    <button type="button" class="btn btn--md btn--line btn--secondary">후기 쓰기</button>
+                  </div>
+                </div>
+                <div class="review-item">
+                  <div class="review-item__header">
+                    <div class="review-item__left">
+                      <span class="review-item__status">구매확정</span>
+                      <span class="review-item__date">2025.03.05</span>
+                    </div>
+                    <a href="#" class="btn-link">주문 상세보기</a>
+                  </div>
+                  <div class="review-item__body">
+                    <div class="order-group__content">
+                      <!-- [s] item -->
+                      <div class="order-item">
+                        <div class="order-item__thumb">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                        </div>
+                        <div class="order-item__content">
+                          <div class="order-item__content-left">
+                            <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                            <ul class="order-item__meta">
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">옵션</span>
+                                <span class="order-item__meta-value">225 / White</span>
+                              </li>
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">수량</span>
+                                <span class="order-item__meta-value">1개</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] item -->
+                    </div>
+                  </div>
+                  <div class="review-item__footer">
+                    <ul class="list list--dot">
+                      <li>구매 후기 남기고 최대 1,500포인트 받으세요!</li>
+                    </ul>
+                    <button type="button" class="btn btn--md btn--line btn--secondary">후기 쓰기</button>
+                  </div>
+                </div>
+                <div class="review-item">
+                  <div class="review-item__header">
+                    <div class="review-item__left">
+                      <span class="review-item__status">구매확정</span>
+                      <span class="review-item__date">2025.03.05</span>
+                    </div>
+                    <a href="#" class="btn-link">주문 상세보기</a>
+                  </div>
+                  <div class="review-item__body">
+                    <div class="order-group__content">
+                      <!-- [s] item -->
+                      <div class="order-item">
+                        <div class="order-item__thumb">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                        </div>
+                        <div class="order-item__content">
+                          <div class="order-item__content-left">
+                            <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                            <ul class="order-item__meta">
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">옵션</span>
+                                <span class="order-item__meta-value">225 / White</span>
+                              </li>
+                              <li class="order-item__meta-row">
+                                <span class="order-item__meta-label">수량</span>
+                                <span class="order-item__meta-value">1개</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] item -->
+                    </div>
+                  </div>
+                  <div class="review-item__footer">
+                    <ul class="list list--dot">
+                      <li>구매 후기 남기고 최대 1,500포인트 받으세요!</li>
+                    </ul>
+                    <button type="button" class="btn btn--md btn--line btn--secondary">후기 쓰기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-wrap">
+              <button type="button" class="btn btn--line btn--secondary btn--lg btn--block">더보기</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

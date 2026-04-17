@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-inquiry">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+      
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">1:1 문의 내역</h2>
+          </div>
+
+          <div class="inquiry">
+            <div class="content__inner">
+              <div class="filter">
+                <h3 class="filter__title">조회기간</h3>
+                <div class="filter__group">
+                  <div class="radio-group radio-group--col4">
+                    <div class="radio-btn">
+                      <input type="radio" id="radio1" name="period" class="radio-btn__input" checked />
+                      <label for="radio1" class="radio-btn__label">이번달</label>
+                    </div>
+                    <div class="radio-btn">
+                      <input type="radio" id="radio2" name="period" class="radio-btn__input" />
+                      <label for="radio2" class="radio-btn__label">3개월</label>
+                    </div>
+                    <div class="radio-btn">
+                      <input type="radio" id="radio3" name="period" class="radio-btn__input" />
+                      <label for="radio3" class="radio-btn__label">6개월</label>
+                    </div>
+                    <div class="radio-btn">
+                      <input type="radio" id="radio4" name="period" class="radio-btn__input" />
+                      <label for="radio4" class="radio-btn__label">직접입력</label>
+                    </div>
+                  </div>
+                  <!-- 기간 직접 입력 -->
+                  <div class="date-range">
+                    <div class="date-range__item">
+                      <div class="form__field form__field--calendar">
+                        <div class="form__control">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="form__input js-datepicker"
+                            placeholder="YYYY.MM.DD"
+                            inputmode="numeric"
+                            autocomplete="off"
+                          />
+                          <button
+                            type="button"
+                            class="form__icon"
+                            aria-label="시작일 달력 열기"
+                          ></button>
+                        </div>
+                      </div>
+                    </div>
+                    <span class="date-range__dash" aria-hidden="true">~</span>
+                    <div class="date-range__item">
+                      <div class="form__field form__field--calendar">
+                        <div class="form__control">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="form__input js-datepicker"
+                            placeholder="YYYY.MM.DD"
+                            inputmode="numeric"
+                            autocomplete="off"
+                          />
+                          <button
+                            type="button"
+                            class="form__icon"
+                            aria-label="종료일 달력 열기"
+                          ></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <ul class="list list--sm list--dot">
+                  <li>최대 1년까지 조회할 수 있습니다.</li>
+                </ul>
+              </div>
+              <div class="group">
+                <div class="count">
+                  <p class="count__text">
+                    총 <span class="count__number">24</span>개
+                  </p>
+                </div>
+                <!-- 문의 내역 없을 경우 is-empty 추가 -->
+                <div class="inquiry-list">
+                  <!-- [s] 문의 내역 없음 -->
+                  <!-- <div class="empty">
+                    <div class="empty__content">
+                      <span class="empty__icon empty__icon--message"></span>
+                      <p class="empty__text">등록된 1:1문의 글이 없습니다.</p>
+                    </div>
+                  </div> -->
+                  <!-- [e] 문의 내역 없음 -->
+  
+                  <div class="accordion accordion--qna">
+                    <div class="accordion__item">
+                      <button type="button" class="accordion__header">
+                        <div class="accordion__question">
+                          <div class="accordion__label">
+                            <span>[답변 대기중]</span>
+                            <span>2026.03.26 00:00:00</span>
+                          </div>
+                          <p class="accordion__title">
+                             주문 상품 사이즈 변경 가능 할까요?
+                          </p>
+                        </div>
+                      </button>
+                      <div class="accordion__collapse">
+                        <div class="accordion__body">
+                          <div class="accordion__label">
+                            <span>[답변 내용]</span>
+                            <!-- <span>2026.05.12 15:30</span> -->
+                          </div>
+                          <p class="accordion__answer">
+                            답변 대기 중입니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion__item">
+                      <button type="button" class="accordion__header">
+                        <div class="accordion__question">
+                          <div class="accordion__label">
+                            <span>[답변완료]</span>
+                            <span>2026.05.12 15:30</span>
+                          </div>
+                          <p class="accordion__title">
+                            주문 상품 사이즈 변경 가능한가요?
+                          </p>
+                        </div>
+                      </button>
+                      <div class="accordion__collapse">
+                        <div class="accordion__body">
+                          <div class="accordion__label">
+                            <span>[답변 내용]</span>
+                            <span>2026.05.12 15:30</span>
+                          </div>
+                          <p class="accordion__answer">
+                            항상 고객님의 불편함을 가장 먼저 걱정하고 해결하는 슈마커 플러스입니다. 고객님께서 말씀하신 주문 상품 이 첨부해 주신 이미지 확인 상 오배송으로 확인되었습니다. 서비스 이용에 불편을 드려 죄송합니다.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrap btn-wrap--fixed">
+                <button type="button" class="btn btn--primary">1:1문의 하기</button>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

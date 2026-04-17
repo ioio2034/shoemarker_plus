@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-order">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">주문/배송</h2>
+          </div>
+
+          <div class="order">
+            <div class="filter__pc">
+              <div class="radio-group radio-group--col5">
+                <div class="radio-btn">
+                  <input type="radio" id="radio1" name="radioSet" class="radio-btn__input" checked />
+                  <label for="radio1" class="radio-btn__label">주문접수</label>
+                </div>  
+                <div class="radio-btn">
+                  <input type="radio" id="radio2" name="radioSet" class="radio-btn__input" />
+                  <label for="radio2" class="radio-btn__label">결제완료</label>
+                </div>  
+                <div class="radio-btn">
+                  <input type="radio" id="radio3" name="radioSet" class="radio-btn__input" />
+                  <label for="radio3" class="radio-btn__label">상품준비</label>
+                </div>  
+                <div class="radio-btn">
+                  <input type="radio" id="radio4" name="radioSet" class="radio-btn__input" />
+                  <label for="radio4" class="radio-btn__label">출고완료</label>
+                </div>  
+                <div class="radio-btn">
+                  <input type="radio" id="radio5" name="radioSet" class="radio-btn__input" />
+                  <label for="radio5" class="radio-btn__label">배송완료</label>
+                </div>
+              </div>
+              <div class="filter__group">
+                <div class="radio-group radio-group--col4">
+                  <div class="radio-btn radio-btn--sm radio-btn--line">
+                    <input type="radio" id="radio6" name="radioSet2" class="radio-btn__input" checked />
+                    <label for="radio6" class="radio-btn__label">이번달</label>
+                  </div>
+                  <div class="radio-btn radio-btn--sm radio-btn--line">
+                    <input type="radio" id="radio7" name="radioSet2" class="radio-btn__input" />
+                    <label for="radio7" class="radio-btn__label">3개월</label>
+                  </div>  
+                  <div class="radio-btn radio-btn--sm radio-btn--line">
+                    <input type="radio" id="radio8" name="radioSet2" class="radio-btn__input" />
+                    <label for="radio8" class="radio-btn__label">6개월</label>
+                  </div>  
+                  <div class="radio-btn radio-btn--sm radio-btn--line">
+                    <input type="radio" id="radio9" name="radioSet2" class="radio-btn__input" />
+                    <label for="radio9" class="radio-btn__label">직접입력</label>
+                  </div>
+                </div>
+                <!-- 기간 직접 입력 -->
+                <div class="date-range">
+                  <div class="date-range__item">
+                    <div class="form__field form__field--calendar">
+                      <div class="form__control">
+                        <input
+                          type="text"
+                          id="startDate"
+                          class="form__input js-datepicker"
+                          placeholder="YYYY.MM.DD"
+                          inputmode="numeric"
+                          autocomplete="off"
+                        />
+                        <button
+                          type="button"
+                          class="form__icon"
+                          aria-label="시작일 달력 열기"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="date-range__dash" aria-hidden="true">~</span>
+                  <div class="date-range__item">
+                    <div class="form__field form__field--calendar">
+                      <div class="form__control">
+                        <input
+                          type="text"
+                          id="endDate"
+                          class="form__input js-datepicker"
+                          placeholder="YYYY.MM.DD"
+                          inputmode="numeric"
+                          autocomplete="off"
+                        />
+                        <button
+                          type="button"
+                          class="form__icon"
+                          aria-label="종료일 달력 열기"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn--primary btn--md ">조회하기</button>
+                </div>
+              </div>
+              <ul class="list list--dot list--md">
+                <li>최대 6개월까지 조회할 수 있습니다.</li>
+              </ul>
+            </div>
+            <div class="filter__mobile">
+              <div class="filter__summary">
+                <span class="filter__type">전체</span>
+                <span class="filter__period">3개월</span>
+              </div>
+              <button type="button" class="filter__btn btn-icon btn-icon--filter js-bottom-sheet-open" data-target="#filterSheet">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+
+            <!-- 조회 결과 없을 경우 is-empty 추가 -->
+            <div class="order__content is-empty">
+              <!-- [s] 주문 배송 없음 -->
+              <div class="empty empty--center">
+                <div class="empty__content">
+                  <span class="empty__icon empty__icon--message"></span>
+                  <p class="empty__text">조회 결과가 없어요.</p>
+                </div>
+              </div>
+              <!-- [e] 주문 배송 없음 -->
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- bottom sheet -->
+  <div class="bottom-sheet" id="filterSheet">
+    <!-- dim -->
+    <div class="bottom-sheet__dim"></div>
+    <!-- content -->
+    <div class="bottom-sheet__content">
+      <div class="bottom-sheet__indicator"></div>
+      <div class="bottom-sheet__header">
+        <h3 class="bottom-sheet__title">조회 설정</h3>
+        <button type="button" class="bottom-sheet__close btn-icon btn-icon--sheet-close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+      <div class="bottom-sheet__body">
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">주문유형</h4>
+          <div class="radio-group radio-group--col5">
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio10" name="radioSet3" class="radio-btn__input" checked />
+              <label for="radio10" class="radio-btn__label">주문접수</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio11" name="radioSet3" class="radio-btn__input" />
+              <label for="radio11" class="radio-btn__label">결제완료</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio12" name="radioSet3" class="radio-btn__input" />
+              <label for="radio12" class="radio-btn__label">상품준비</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio13" name="radioSet3" class="radio-btn__input" />
+              <label for="radio13" class="radio-btn__label">출고완료</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio14" name="radioSet3" class="radio-btn__input" />
+              <label for="radio14" class="radio-btn__label">배송완료</label>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-sheet__section">
+          <h4 class="bottom-sheet__subtitle">조회기간</h4>
+          <div class="radio-group radio-group--col4 mb12">
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio15" name="radioSet4" class="radio-btn__input" />
+              <label for="radio15" class="radio-btn__label">이번달</label>
+            </div>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio16" name="radioSet4" class="radio-btn__input" checked />
+              <label for="radio16" class="radio-btn__label">3개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio17" name="radioSet4" class="radio-btn__input" />
+              <label for="radio17" class="radio-btn__label">6개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio18" name="radioSet4" class="radio-btn__input" />
+              <label for="radio18" class="radio-btn__label">직접입력</label>
+            </div>
+          </div>
+          <!-- 기간 직접 입력 -->
+          <div class="date-range">
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="startDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="시작일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+            <span class="date-range__dash" aria-hidden="true">~</span>
+
+            <div class="date-range__item">
+              <div class="form__field form__field--calendar">
+                <div class="form__control">
+                  <input
+                    type="text"
+                    id="endDate"
+                    class="form__input js-datepicker"
+                    placeholder="YYYY.MM.DD"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="button"
+                    class="form__icon"
+                    aria-label="종료일 달력 열기"
+                  ></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <ul class="list list--dot list--sm mt12">
+            <li>최대 6개월까지 조회할 수 있습니다.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button type="button" class="btn btn--primary btn--block">조회</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

@@ -2,16 +2,21 @@
 @use '../base/variables' as *;
 
 .tabbar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 78px;
-  padding-bottom: calc(env(safe-area-inset-bottom));
-  background-color: $gray-90;
-  box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  z-index: 101;
+  display: none;
+  @include tablet {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 78px;
+    padding-bottom: calc(env(safe-area-inset-bottom));
+    background-color: $gray-90;
+    box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    z-index: 101;
+  }
+  
   &.is-hidden {
     transform: translateY(100%);
   }

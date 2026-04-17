@@ -22,7 +22,10 @@
   &__inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 48px 24px;
+    padding: 48px 0;
+    @include desktop {
+      padding: 48px 24px;
+    }
     @include tablet {
       padding: 24px;
     }

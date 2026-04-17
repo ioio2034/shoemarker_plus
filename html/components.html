@@ -44,7 +44,7 @@
 
           <!-- components -->
           <div class="guide">
-            <h2 class="guide__title">기본 가이드</h2>
+            <h2 class="guide__title">Guide</h2>
             <div class="guide__box">
               <h3 class="guide__subtitle">브레이크 포인트</h3>
               <ul class="list list--dot">
@@ -54,7 +54,7 @@
               </ul>
             </div>
 
-            <h2 class="guide__title">버튼</h2>
+            <h2 class="guide__title">Button</h2>
             <table class="guide__table">
               <colgroup>
                 <col style="width:15%">
@@ -171,18 +171,31 @@
                 <td></td>
                 <td></td>
               </tr>
+              <tr>
+                <th>link</th>
+                <td><button type="button" class="btn-link">상세보기</button></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
               </tbody>
             </table>
 
-            <h2 class="guide__title">리스트</h2>
+            <h2 class="guide__title">List</h2>
             <div class="guide__box">
-              <h3 class="guide__subtitle">리스트</h3>
+              <h3 class="guide__subtitle">default</h3>
               <ul class="list">
                 <li>font-size:14px</li>
                 <li>리스트입니다.</li>
                 <li>리스트입니다.</li>
               </ul>
-              <h3 class="guide__subtitle">도트 리스트</h3>
+              <h3 class="guide__subtitle">dot list</h3>
+              <ul class="list list--dot">
+                <li>font-size:14px</li>
+                <li>도트 리스트입니다.</li>
+                <li>도트 리스트입니다.</li>
+              </ul>
+              <br>
               <ul class="list list--dot list--sm">
                 <li>font-size:12px</li>
                 <li>도트 리스트입니다.</li>
@@ -190,33 +203,33 @@
               </ul>
             </div>
 
-            <h2 class="guide__title">폼</h2>
+            <h2 class="guide__title">Form Input</h2>
             <div class="guide__box">
-              <h3 class="guide__subtitle">인풋</h3>
+              <h3 class="guide__subtitle">default</h3>
               <div class="form__field">
                 <label for="input1" class="form__label">이름</label>
                 <input type="text" id="input1" class="form__input" value=""/>
               </div>
 
-              <h3 class="guide__subtitle">인풋 + disabled</h3>
+              <h3 class="guide__subtitle">disabled</h3>
               <div class="form__field">
                 <label for="input2" class="form__label">이름</label>
                 <input type="text" id="input2" class="form__input" value="" disabled/>
               </div>
 
-              <h3 class="guide__subtitle">인풋 + 필수값</h3>
+              <h3 class="guide__subtitle">required</h3>
               <div class="form__field is-required">
                 <label for="input3" class="form__label">이름</label>
                 <input type="text" id="input3" class="form__input" value=""/>
               </div>
 
-              <h3 class="guide__subtitle">인풋 + readonly </h3>
+              <h3 class="guide__subtitle">readonly</h3>
               <div class="form__field is-readonly">
                 <label for="input4" class="form__label">이름</label>
                 <input type="text" id="input4" class="form__input" value="readonly" readonly/>
-              </div>              
+              </div>
               
-              <h3 class="guide__subtitle">인풋 + 안에 버튼 + 설명</h3>
+              <h3 class="guide__subtitle">button + description</h3>
               <div class="form__field is-required">
                 <label for="input5" class="form__label">아이디</label>
                 <div class="form__control">
@@ -226,7 +239,7 @@
                 <p class="form__desc">영문 또는 영문과 숫자조합 6~12자리</p>
               </div>
 
-              <h3 class="guide__subtitle">인풋 + 성공,에러메세지</h3>
+              <h3 class="guide__subtitle">success, error message</h3>
               <div class="form__field is-required is-error">
                 <label for="input6" class="form__label">새로운 비밀번호 확인</label>
                 <input type="password" id="input6" class="form__input" placeholder="한 번 더 비밀번호를 입력해 주세요!"/>
@@ -240,8 +253,11 @@
                 <!-- <p class="form__message">동일한 비밀번호를 입력해 주세요.</p> -->
                 <p class="form__message">비밀번호 일치</p>
               </div>
+            </div>
 
-              <h3 class="guide__subtitle">체크박스</h3>
+            <h2 class="guide__title">Form Checkbox</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
               <div class="checkbox">
                 <input type="checkbox" id="check1" class="checkbox__input" />
                 <label for="check1" class="checkbox__label">자동 로그인</label>
@@ -250,30 +266,107 @@
                 <input type="checkbox" id="check2"  class="checkbox__input"/>
                 <label for="check2" class="checkbox__label">아이디 저장</label>
               </div>
-              <h3 class="guide__subtitle">체크박스 + disabled</h3>
+              <h3 class="guide__subtitle">disabled</h3>
               <div class="checkbox">
                 <input type="checkbox" id="check3" class="checkbox__input" disabled/>
                 <label for="check3" class="checkbox__label">자동 로그인</label>
               </div>
-              <h3 class="guide__subtitle">체크박스 + 라벨 숨기기</h3>
+              <h3 class="guide__subtitle">label hide</h3>
               <div class="checkbox">
                 <input type="checkbox" id="check4" class="checkbox__input"/>
                 <label for="check4" class="checkbox__label checkbox__label--hide">자동 로그인</label>
               </div>
+            </div>
 
-              <h3 class="guide__subtitle">라디오버튼</h3>
+            <h2 class="guide__title">Form Radio</h2>
+            <div class="guide__box">
+              <h3 class="guide__subtitle">default</h3>
               <div class="radio">
-                <input type="radio" id="radio1" name="" class="radio__input" />
+                <input type="radio" id="radio1" name="radioSet" class="radio__input" />
                 <label for="radio1" class="radio__label">휴대폰번호</label>
               </div>
               <div class="radio">
-                <input type="radio" id="radio2" name="" class="radio__input" />
+                <input type="radio" id="radio2" name="radioSet" class="radio__input" />
                 <label for="radio2" class="radio__label">이메일 주소</label>
               </div>
+              <h3 class="guide__subtitle">button type col3</h3>
+              <div class="radio-group radio-group--col3">
+                <div class="radio-btn">
+                  <input type="radio" id="radio3" name="radioSet2" class="radio-btn__input" checked />
+                  <label for="radio3" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio4" name="radioSet2" class="radio-btn__input" />
+                  <label for="radio4" class="radio-btn__label">주문접수</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio5" name="radioSet2" class="radio-btn__input" />
+                  <label for="radio5" class="radio-btn__label">결제완료</label>
+                </div>
+              </div>
 
+              <h3 class="guide__subtitle">button type col4</h3>
+              <div class="radio-group radio-group--col4">
+                <div class="radio-btn">
+                  <input type="radio" id="radio6" name="radioSet3" class="radio-btn__input" />
+                  <label for="radio6" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio7" name="radioSet3" class="radio-btn__input" checked />
+                  <label for="radio7" class="radio-btn__label">3개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio8" name="radioSet3" class="radio-btn__input" />
+                  <label for="radio8" class="radio-btn__label">6개월</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio9" name="radioSet3" class="radio-btn__input" />
+                  <label for="radio9" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type small</h3>
+              <div class="radio-group radio-group--col4">
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio10" name="radioSet4" class="radio-btn__input" />
+                  <label for="radio10" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio11" name="radioSet4" class="radio-btn__input" checked />
+                  <label for="radio11" class="radio-btn__label">3개월</label>
+                </div>      
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio12" name="radioSet4" class="radio-btn__input" />
+                  <label for="radio12" class="radio-btn__label">6개월</label>
+                </div>      
+                <div class="radio-btn radio-btn--sm">
+                  <input type="radio" id="radio13" name="radioSet4" class="radio-btn__input" />
+                  <label for="radio13" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type small line</h3>
+              <div class="radio-group radio-group--col4">
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio14" name="radioSet5" class="radio-btn__input" />
+                  <label for="radio14" class="radio-btn__label">1개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio15" name="radioSet5" class="radio-btn__input" checked />
+                  <label for="radio15" class="radio-btn__label">3개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio16" name="radioSet5" class="radio-btn__input" />
+                  <label for="radio16" class="radio-btn__label">6개월</label>
+                </div>
+                <div class="radio-btn radio-btn--sm radio-btn--line">
+                  <input type="radio" id="radio17" name="radioSet5" class="radio-btn__input" />
+                  <label for="radio17" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
             </div>
 
-            <h2 class="guide__title">셀렉트</h2>
+            <h2 class="guide__title">Select</h2>
             <div class="guide__box">
               <div class="select">
                 <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
@@ -300,6 +393,24 @@
               </div>
             </div>
 
+            <h2 class="guide__title">Textarea</h2>
+            <div class="guide__box">
+              <div class="textarea">
+                <label for="cancelReasonDetail" class="textarea__label">상세사유 입력</label>
+                <textarea
+                  name="cancelReasonDetail"
+                  id="cancelReasonDetail" 
+                  class="textarea__field"
+                  placeholder="사유를 입력해 주세요!"
+                ></textarea>
+              </div>
+            </div>
+
+            <h2 class="guide__title">Alert</h2>
+            <div class="guide__box">
+              <button type="button" class="btn btn--md btn--line js-alert-open" data-target="#confirmPurchaseAlert">구매확정</button>
+            </div>
+
             <h2 class="guide__title">Modal</h2>
             <div class="guide__box">
               <button type="button" class="js-modal-open btn btn--primary btn--md">Modal open</button>
@@ -312,14 +423,46 @@
               </button>
             </div>
 
-            <h2 class="guide__title">Alert</h2>
+            <h2 class="guide__title">Tabs</h2>
             <div class="guide__box">
-              <button type="button" class="btn btn--md btn--line js-alert-open" data-target="#confirmPurchaseAlert">구매확정</button>
+              <h3 class="guide__subtitl">Line type</h3>
+              <div class="tab js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    마이 Picks
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    최근 본 상품
+                  </button>
+                </div>
+
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">제품이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">제품이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <h2 class="guide__title">상품 UI</h2>
             <div class="guide__box">
-              <h3 class="guide__subtitle">기본형</h3>
+              <h3 class="guide__subtitle">row</h3>
               <!-- <div class="product-card">
                 <a href="/" class="product-card__link">
                   <div class="product-card__img">
@@ -335,17 +478,117 @@
                         <span class="product-card__price-currency">원</span>
                       </span>
                     </div>
+                  </a>
                   </div>
-                </a>
               </div> -->
+              <h3 class="guide__subtitle">column</h3>
+              <div class="order-group">
+                <div class="order-group__body">
+                  <div class="order-group__content">
+                    <!-- [s] item -->
+                    <div class="order-item">
+                      <div class="order-item__thumb">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [e] item -->
+                  </div>
+                </div>
+              </div>
+              <h3 class="guide__subtitle">column + checkbox</h3>
+              <!-- 상품 + 체크박스 order-group--selectable 추가 -->
+              <div class="order-group order-group--selectable">
+                <div class="order-group__body">
+                  <div class="order-group__content">
+                    <!-- [s] item -->
+                    <div class="order-item">
+                      <div class="order-item__check">
+                        <div class="checkbox">
+                          <input type="checkbox" id="orderItemCheck1" class="checkbox__input"/>
+                          <label for="orderItemCheck1" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                        </div>
+                      </div>
+                      <div class="order-item__thumb">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [e] item -->
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <h2 class="guide__title">empty</h2>
             <div class="guide__box">
-              <h3 class="guide__subtitle">텍스트 + 링크</h3>
+              <h3 class="guide__subtitle">text + icon</h3>
               <div class="empty">
-                <p class="empty__text">제품이 없습니다.</p>
-                <a href="/" class="empty__link">홈으로 가기</a>
+                <div class="empty__content">
+                  <span class="empty__icon empty__icon--message"></span>
+                  <p class="empty__text">제품이 없습니다.</p>
+                </div>
               </div>
             </div>
 
@@ -369,20 +612,18 @@
         </button>
       </div>
       <div class="modal__body">
-        <div class="modal__body">
-          <div class="modal__filter is-mo">
-            <div class="select">
-              <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
-              <select id="termsDate" class="select__field">
-                <option value="">2013.11.08_개정</option>
-                <option value="">옵션2</option>
-                <option value="">옵션3</option>
-              </select>
-            </div>
+        <div class="modal__filter is-mo">
+          <div class="select">
+            <label for="termsDate2" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+            <select id="termsDate2" class="select__field">
+              <option value="">2013.11.08_개정</option>
+              <option value="">옵션2</option>
+              <option value="">옵션3</option>
+            </select>
           </div>
-          <div class="content">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nobis id praesentium rem quisquam deleniti beatae. Odio iusto ab voluptate quis, porro unde amet est obcaecati laboriosam quidem modi similique, officiis nulla perferendis aperiam, officia fugit ducimus commodi labore. Odio tempora, quis repudiandae consequuntur ipsam inventore eum assumenda perspiciatis vel soluta rem ab porro in iure dolor nihil cupiditate esse? Voluptatem iure fugit hic nesciunt quibusdam in, recusandae aliquam, eaque deserunt incidunt molestias laborum, non consectetur suscipit dolor quia consequuntur sed quod est. Tempore libero eum, deleniti itaque pariatur voluptas architecto officiis eius magni non nesciunt ea harum earum, officia dicta optio nulla nostrum tenetur! Ratione molestias eius optio aliquam totam laboriosam impedit quae sit consectetur, consequatur in deleniti quaerat amet tempore iusto veritatis illum recusandae. Explicabo minima adipisci animi, ex illo sed voluptatibus sunt ut itaque, provident non! Quasi cum voluptate rerum dignissimos, necessitatibus consequatur quam magnam debitis sed distinctio doloremque quaerat deleniti illum amet? Cupiditate dignissimos itaque laudantium aliquam sint ratione et non repellat distinctio perferendis, velit assumenda, reiciendis dicta, aspernatur officia nemo sed illo iste repudiandae amet quos? Libero iure ea nostrum quibusdam ipsum minima, dicta corrupti sapiente nemo laborum cumque adipisci mollitia ut. Praesentium, fuga! Earum.</p>
-          </div>
+        </div>
+        <div class="content">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus nobis id praesentium rem quisquam deleniti beatae. Odio iusto ab voluptate quis, porro unde amet est obcaecati laboriosam quidem modi similique, officiis nulla perferendis aperiam, officia fugit ducimus commodi labore. Odio tempora, quis repudiandae consequuntur ipsam inventore eum assumenda perspiciatis vel soluta rem ab porro in iure dolor nihil cupiditate esse? Voluptatem iure fugit hic nesciunt quibusdam in, recusandae aliquam, eaque deserunt incidunt molestias laborum, non consectetur suscipit dolor quia consequuntur sed quod est. Tempore libero eum, deleniti itaque pariatur voluptas architecto officiis eius magni non nesciunt ea harum earum, officia dicta optio nulla nostrum tenetur! Ratione molestias eius optio aliquam totam laboriosam impedit quae sit consectetur, consequatur in deleniti quaerat amet tempore iusto veritatis illum recusandae. Explicabo minima adipisci animi, ex illo sed voluptatibus sunt ut itaque, provident non! Quasi cum voluptate rerum dignissimos, necessitatibus consequatur quam magnam debitis sed distinctio doloremque quaerat deleniti illum amet? Cupiditate dignissimos itaque laudantium aliquam sint ratione et non repellat distinctio perferendis, velit assumenda, reiciendis dicta, aspernatur officia nemo sed illo iste repudiandae amet quos? Libero iure ea nostrum quibusdam ipsum minima, dicta corrupti sapiente nemo laborum cumque adipisci mollitia ut. Praesentium, fuga! Earum.</p>
         </div>
       </div>
     </div>
@@ -404,57 +645,47 @@
       <div class="bottom-sheet__body">
         <div class="bottom-sheet__section">
           <h4 class="bottom-sheet__subtitle">주문유형</h4>
-          <div class="radio-group radio-group--col3">
-            <div class="radio radio--button">
-              <input type="radio" id="radio1" name="order-type" class="radio__input" checked />
-              <label for="radio1" class="radio__label">전체</label>
+          <div class="radio-group radio-group--col5">
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio19" name="order-type" class="radio-btn__input" checked />
+              <label for="radio19" class="radio-btn__label">주문접수</label>
             </div>
-            <div class="radio radio--button">
-              <input type="radio" id="radio2" name="order-type" class="radio__input" />
-              <label for="radio2" class="radio__label">주문접수</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio20" name="order-type" class="radio-btn__input" />
+              <label for="radio20" class="radio-btn__label">결제완료</label>
             </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio3" name="order-type" class="radio__input" />
-              <label for="radio3" class="radio__label">결제완료</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio21" name="order-type" class="radio-btn__input" />
+              <label for="radio21" class="radio-btn__label">상품준비</label>
             </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio4" name="order-type" class="radio__input" />
-              <label for="radio4" class="radio__label">상품준비</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio22" name="order-type" class="radio-btn__input" />
+              <label for="radio22" class="radio-btn__label">출고완료</label>
             </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio5" name="order-type" class="radio__input" />
-              <label for="radio5" class="radio__label">출고완료</label>
-            </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio6" name="order-type" class="radio__input" />
-              <label for="radio6" class="radio__label">배송완료</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio23" name="order-type" class="radio-btn__input" />
+              <label for="radio23" class="radio-btn__label">배송완료</label>
             </div>
           </div>
         </div>
         <div class="bottom-sheet__section">
           <h4 class="bottom-sheet__subtitle">조회기간</h4>
           <div class="radio-group radio-group--col4 mb12">
-            <div class="radio radio--button">
-              <input type="radio" id="radio7" name="order-period" class="radio__input" />
-              <label for="radio7" class="radio__label">1개월</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio24" name="order-period" class="radio-btn__input" />
+              <label for="radio24" class="radio-btn__label">1개월</label>
             </div>
-            <div class="radio radio--button">
-              <input type="radio" id="radio8" name="order-period" class="radio__input" checked />
-              <label for="radio8" class="radio__label">3개월</label>
-            </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio9" name="order-period" class="radio__input" />
-              <label for="radio9" class="radio__label">6개월</label>
-            </div>
-  
-            <div class="radio radio--button">
-              <input type="radio" id="radio10" name="order-period" class="radio__input" />
-              <label for="radio10" class="radio__label">직접입력</label>
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio25" name="order-period" class="radio-btn__input" checked />
+              <label for="radio25" class="radio-btn__label">3개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio26" name="order-period" class="radio-btn__input" />
+              <label for="radio26" class="radio-btn__label">6개월</label>
+            </div>  
+            <div class="radio-btn radio-btn--sm">
+              <input type="radio" id="radio27" name="order-period" class="radio-btn__input" />
+              <label for="radio27" class="radio-btn__label">직접입력</label>
             </div>
           </div>
           <!-- 기간 직접 입력 -->

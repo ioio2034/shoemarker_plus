@@ -12,15 +12,16 @@ $breakpoints: (
   "sm": 375px,
   "md": 768px, //mobile
   "lg": 1024px, //tablet
-  "xl": 1399px
+  "xl": 1280px
 );
 
 /* colors */
 $black: #000000;
 $white: #FFFFFF;
+$red: #FE4C58;
 
 $success: #008A1E;
-$error: #FE4C58;
+
 
 /* gray scale */
 $gray-0: #FFFFFF;
@@ -35,6 +36,7 @@ $gray-70: #555555;
 $gray-80: #2D2D2D;
 $gray-90: #1D1D1D;
 
+$grayscale-75: #F5F5F5;
 $grayscale-200: #CCCCCC;
 $grayscale-500: #808080;
 $grayscale-600: #666666;

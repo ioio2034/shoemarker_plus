@@ -11,21 +11,27 @@
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/container';
+@use 'layout/lnb';
 @use 'layout/tabbar';
 
 // components
+@use 'components/alert';
+@use 'components/modal';
+@use 'components/bottomsheet';
+
+@use 'components/button';
+@use 'components/list';
+@use 'components/accordion';
+@use 'components/tabs';
+@use 'components/empty';
+@use 'components/productcard';
+
 @use 'components/input';
 @use 'components/checkbox';
 @use 'components/radio';
 @use 'components/select';
-@use 'components/button';
-@use 'components/list';
-@use 'components/modal';
-@use 'components/productcard';
-@use 'components/empty';
-@use 'components/bottomsheet';
+@use 'components/textarea';
 @use 'components/daterange';
-@use 'components/alert';
 
 // pages
 // @use 'pages/main';

@@ -37,6 +37,9 @@
   }
   &__box {
     position: relative;
+    & + .select__box {
+      margin-top: 4px;
+    }
     &::after {
       content: '';
       position: absolute;

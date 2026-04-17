@@ -1,4 +1,29 @@
 let UI = {
+  // alert
+  alert: function () {
+    let $trigger = null;
+
+    // 열기
+    $(document).on('click', '.js-alert-open', function () {
+      const target = $(this).data('target');
+
+      $trigger = $(this);
+
+      $(target).addClass('is-open');
+      $('body').addClass('alert-open');
+    });
+
+    // 닫기
+    $(document).on(
+      'click',
+      '.alert__dim, .js-alert-cancel, .js-alert-confirm',
+      function () {
+        const $alert = $(this).closest('.alert');
+        $alert.removeClass('is-open');
+        $('body').removeClass('alert-open');
+      }
+    );
+  },
   // modal
   modal: function () {
     let $trigger = null;
@@ -44,39 +69,6 @@ let UI = {
     window.closeModal = function (selector) {
       closeModal($(selector));
     };
-  },
-  // tabs
-  tabs: function () {
-    var $tab = $('.js-tabs');
-
-    $tab.each(function () {
-      const $root = $(this);
-
-      if ($root.data('init')) return;
-      $root.data('init', true);
-
-      const $tabBtns = $root.find('.js-tab-btn');
-      const $tabPanels = $root.find('.js-tab-panel');
-
-      if (!$tabBtns.filter('.is-active').length) {
-        $tabBtns.first().addClass('is-active').attr('aria-selected', 'true');
-        $tabPanels.attr('hidden', true).first().addClass('is-active');
-      }
-
-      $tabBtns.on('click.default', function (e) {
-        const $btn = $(this);
-        const idx = $tabBtns.index($btn);
-        const $targetPanel = $tabPanels.eq(idx);
-
-        if ($btn.is('a')) e.preventDefault();
-
-        $tabBtns.removeClass('is-active').attr('aria-selected', 'false');
-        $btn.addClass('is-active').attr('aria-selected', 'true');
-
-        $tabPanels.removeClass('is-active').attr('hidden', true);
-        $targetPanel.addClass('is-active');
-      });
-    });
   },
   // bottom sheet
   bottomSheet: function () {
@@ -139,10 +131,6 @@ let UI = {
 
     if (!$datepicker.length) return;
 
-    const today = new Date();
-    const threeMonthsLater = new Date();
-    threeMonthsLater.setMonth(threeMonthsLater.getMonth() + 3);
-
     $datepicker.each(function () {
       const $input = $(this);
 
@@ -158,7 +146,6 @@ let UI = {
         disableMobile: true,
         defaultDate: null,
         locale: 'ko',
-        defaultDate: isStart ? today : isEnd ? threeMonthsLater : null,
       });
 
       // 아이콘 클릭 시 열기
@@ -169,30 +156,109 @@ let UI = {
       });
     });
   },
-  // alert
-  alert: function () {
-    let $trigger = null;
+  // accordion
+  accordion: function () {
+    $(".accordion .accordion__item").each(function() {
+      var $item = $(this);
+      var $header = $item.find(".accordion__header");
+      var $content = $item.find(".accordion__collapse");
 
-    // 열기
-    $(document).on('click', '.js-alert-open', function () {
-      const target = $(this).data('target');
-
-      $trigger = $(this);
-
-      $(target).addClass('is-open');
-      $('body').addClass('alert-open');
-    });
-
-    // 닫기
-    $(document).on(
-      'click',
-      '.alert__dim, .js-alert-cancel, .js-alert-confirm',
-      function () {
-        const $alert = $(this).closest('.alert');
-        $alert.removeClass('is-open');
-        $('body').removeClass('alert-open');
+      if ($item.hasClass("is-active")) {
+        $content.css("max-height", $content[0].scrollHeight + "px");
+      } else {
+        $content.css("max-height", 0);
       }
-    );
+
+      $header.on("click", function(e) {
+        if ($(e.target).is("input")) return;
+
+        var isOpen = $item.hasClass("is-active");
+
+        $(".accordion__item.is-active").not($item).removeClass("is-active")
+          .find(".accordion__collapse").css("max-height", 0);
+
+        if (!isOpen) {
+          $item.addClass("is-active");
+          $content.css("max-height", $content[0].scrollHeight + "px");
+        } else {
+          $item.removeClass("is-active");
+          $content.css("max-height", 0);
+        }
+      });
+    });
+  },
+  // lnb
+  lnbAccordion: function () {
+    $(document)
+    .off('click.lnb', '.lnb__link')
+    .on('click.lnb', '.lnb__link', function (e) {
+      var $this = $(this);
+      var $lnb = $this.closest('.lnb');
+
+      if (!$lnb.length) return;
+
+      var $item = $this.closest('.lnb__item');
+      var $sub = $item.children('.lnb__sub');
+      var $items = $lnb.find('.lnb__item');
+      var isExpanded = $this.attr('aria-expanded') === 'true';
+
+      if (!$sub.length) return;
+
+      e.preventDefault();
+
+      $items.not($item).each(function () {
+        var $otherItem = $(this);
+        var $otherBtn = $otherItem.children('.lnb__link');
+        var $otherSub = $otherItem.children('.lnb__sub');
+
+        $otherItem.removeClass('is-open');
+        $otherBtn.attr('aria-expanded', 'false');
+        $otherSub.css('height', 0);
+      });
+
+      if (isExpanded) {
+        $item.removeClass('is-open');
+        $this.attr('aria-expanded', 'false');
+        $sub.css('height', 0);
+      } else {
+        $item.addClass('is-open');
+        $this.attr('aria-expanded', 'true');
+        $sub.css('height', $sub[0].scrollHeight + 'px');
+      }
+    });
+  },
+  // tabs
+  tabs: function () {
+    var $tab = $('.js-tabs');
+
+    $tab.each(function () {
+      const $root = $(this);
+
+      if ($root.data('init')) return;
+      $root.data('init', true);
+
+      const $tabBtns = $root.find('.js-tab-btn');
+      const $tabPanels = $root.find('.js-tab-panel');
+
+      if (!$tabBtns.filter('.is-active').length) {
+        $tabBtns.first().addClass('is-active').attr('aria-selected', 'true');
+        $tabPanels.attr('hidden', true).first().addClass('is-active');
+      }
+
+      $tabBtns.on('click.default', function (e) {
+        const $btn = $(this);
+        const idx = $tabBtns.index($btn);
+        const $targetPanel = $tabPanels.eq(idx);
+
+        if ($btn.is('a')) e.preventDefault();
+
+        $tabBtns.removeClass('is-active').attr('aria-selected', 'false');
+        $btn.addClass('is-active').attr('aria-selected', 'true');
+
+        $tabPanels.removeClass('is-active').attr('hidden', true);
+        $targetPanel.addClass('is-active');
+      });
+    });
   },
   // tab bar
   tabBar: function () {
@@ -231,14 +297,85 @@ let UI = {
 
       lastScrollTop = scrollTop;
     });
+  },
+  // order detail accordion
+  orderBlock: function () {
+    const isMobile = window.innerWidth <= 1024;
+
+    $('.order-block').each(function () {
+      const $block = $(this);
+      const $header = $block.children('.order-block__header');
+      const $content = $block.children('.order-block__content');
+      const $inner = $content.children('.order-block__inner');
+
+      $header.off('click.orderBlock');
+
+      if (isMobile) {
+        $block.addClass('is-open');
+        $content.css('height', 'auto');
+        return;
+      }
+      
+      if ($block.hasClass('is-open')) {
+        $content.css('height', $inner.outerHeight());
+      }
+
+      $header.on('click.orderBlock', function () {        
+        if ($block.hasClass('is-open')) {
+          $block.removeClass('is-open');
+          $content.css('height', 0);
+        } else {
+          $block.addClass('is-open');
+          $content.css('height', $inner.outerHeight());
+        }
+      });
+    });
+  },
+  // textarea count
+  textCount: function () {
+     $('.textarea').each(function () {
+      const $wrap = $(this);
+      const $textarea = $wrap.find('.textarea__field');
+      const $current = $wrap.find('.textarea__count-current');
+      const $countWrap = $wrap.find('.textarea__count');
+
+      function updateCount() {
+        let value = $textarea.val();
+
+        if (value.length > 200) {
+          value = value.substring(0, 200);
+          $textarea.val(value);
+        }
+
+        const length = value.length;
+        $current.text(length);
+      }
+
+      $textarea.on('input', updateCount);
+
+      updateCount();
+    });
   }
 };
 
 $(function () {
+  UI.alert();
   UI.modal();
-  UI.tabs();
   UI.bottomSheet();
   UI.datePicker();
-  UI.alert();
+  UI.accordion();
+  UI.lnbAccordion();
+  UI.tabs();
   UI.tabBar();
+  UI.orderBlock();
+  UI.textCount();
+});
+
+// resize 대응
+let orderBlockResizeTimer;
+$(window).on('resize.orderBlock', function () {
+  clearTimeout(orderBlockResizeTimer);
+  orderBlockResizeTimer = setTimeout(function () {
+    UI.orderBlock();
+  }, );
 });

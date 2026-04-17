@@ -4,10 +4,17 @@
 .list {
   li {
     position: relative;
-    color: $gray-70;
+    color: $gray-60;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
+    & + li {
+      margin-top: 4px;
+    }
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
   &--sm {
     li {
@@ -17,17 +24,24 @@
       line-height: 16px;
     }    
   }
+  &--md {
+    li {
+      color: $gray-60;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.13px;
+    }
+  }
   &--dot {
-    &.list--sm {
-      li {
-        padding-left: 16px;
-        &::before {
-          content: '·';
-          display: inline-block;
-          position: absolute;
-          left: 8px;
-        }
+    li {
+      padding-left: 8px;
+      &::before {
+        content: '·';
+        display: inline-block;
+        position: absolute;
+        left: 0;
       }
-    }    
+    }
   }
 }

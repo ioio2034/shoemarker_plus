@@ -1,13 +1,101 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
-.product-card {
-  width: 100%;
-  &__link {
+// 상품 영역 (타이틀, 스와이프)
+.product {
+  position: relative;
+  padding-top: 20px;
+  @include tablet {
+    padding-top: 0;
+  }
+  &__inner {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 20px;
+    @include tablet {
+      gap: 12px;
+      padding: 24px;
+    }
+  }
+  &__title {
+    color: $grayscale-800;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    @include tablet {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+  .product-swiper {
+    &__btn {
+      display: flex;
+      gap: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 0;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__prev {
+      width: 32px;
+      height: 32px;
+      @include bgimage('icon_swiper_prev', 'svg');
+      &.swiper-button-disabled {
+        @include bgimage('icon_swiper_prev_disabled', 'svg');
+      }
+    }
+    &__next {
+      width: 32px;
+      height: 32px;
+      @include bgimage('icon_swiper_next', 'svg');
+      &.swiper-button-disabled {
+        @include bgimage('icon_swiper_next_disabled', 'svg');
+      }
+    }
+  }
+}
+
+// 상품 개별
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  &__link {
     width: 100%;
+    height: 100%;
+  }
+  &__label {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #F92424;
+    color: $white;
+    font-family: $font-en;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    @include tablet {
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 11px;
+      line-height: 12px;
+    }
   }
   &__img {
     width: 100%;
@@ -41,23 +129,52 @@
   }
   &__price {
     display: flex;
-    flex-wrap: wrap;
-    column-gap: 4px;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .price {
+    display: inline-flex;
+    align-items: center;
+  }
+  // 정가 
+  &__origin {
+    .price {
+      color: $gray-40;
+      font-size: 13px;      
+      line-height: 140%;
+      letter-spacing: -0.13px;
+      &__num {
+        font-weight: 500;
+        text-decoration: line-through;
+      }
+      &__unit {
+        font-weight: 400;
+      }
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+  // 금액
+  &__cost {
+    .price {
+      color: $gray-80;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      &__num {
+        font-weight: 700;
+      }
+      &__unit {
+        font-weight: 400;
+      }
+    }
   }
   &__percent {
-    color: #F92424;
+    color: $red;
     font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-  }
-  &__price-value {
-    display: flex;
-  }
-  &__price-number,
-  &__price-currency {
-    color: $gray-70;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-  }
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+  }  
 }

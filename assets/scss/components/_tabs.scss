@@ -1,0 +1,52 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.tab {
+  &__list {
+    display: flex;
+    gap: 16px;
+    padding: 16px 16px 0;
+    border-bottom: 1px solid $gray-30;
+  }
+  &__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 10px 4px;
+    margin-bottom: -1px;
+    color: $gray-80;;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: $grayscale-800;
+      opacity: 0;
+    }
+    &.is-active {
+      text-shadow: 0 0 0 currentColor;
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &__panels {
+    padding: 24px;
+  }
+  &__panel {
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    &.is-active {
+      display: flex;      
+    }    
+  }
+}

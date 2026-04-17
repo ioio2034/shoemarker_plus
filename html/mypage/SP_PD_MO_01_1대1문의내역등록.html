@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-inquiry">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+      
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">1:1 문의 내역</h2>
+          </div>
+
+          <div class="inquiry-regist">
+            <div class="inquiry-regist__inner">
+              <div class="type"> 
+                <h3 class="inquiry-regist__title">문의 하실 내용을 선택해 주세요.</h3>
+                <div class="radio-group radio-group--col3 mb10">
+                  <div class="radio-btn">
+                    <input type="radio" id="radio1" name="type" class="radio-btn__input" checked />
+                    <label for="radio1" class="radio-btn__label">온라인</label>
+                  </div>
+                  <div class="radio-btn">
+                    <input type="radio" id="radio2" name="type" class="radio-btn__input" />
+                    <label for="radio2" class="radio-btn__label">오프라인</label>
+                  </div>
+                  <div class="radio-btn">
+                    <input type="radio" id="radio3" name="type" class="radio-btn__input" />
+                    <label for="radio3" class="radio-btn__label">기타</label>
+                  </div>
+                </div>
+                <h4 class="inquiry-regist__subtitle">문의 예시</h4>
+                <ul class="list list--sm list--dot">
+                  <li>상품의 배송기간이 얼마나 되나요?</li>
+                  <li>품절 상품 재입고는 언제 되나요​?</li>
+                </ul>
+              </div>
+
+              <div class="content">
+                <h3 class="inquiry-regist__title">문의 내용 작성</h3>
+                <div class="textarea">
+                  <textarea
+                    name="inquiryContent"
+                    id="inquiryContent" 
+                    class="textarea__field"
+                    placeholder="문의 내용을 입력해 주세요."
+                    maxlength="200"
+                  ></textarea>
+                  <div class="textarea__count">
+                    <span class="textarea__count-current" id="currentCount">0</span>
+                    <span class="textarea__count-max"> / 200</span>
+                  </div>
+                </div>
+                <ul class="list list--md list--dot">
+                  <li>전화번호, 이메일, 주소, 계좌번호 등의 상세 개인정보가 문의 내용에 저장되지 않도록 주의해 주세요.</li>
+                </ul>
+              </div>
+
+              <div class="image">
+                <h3 class="inquiry-regist__title">이미지 첨부</h3>
+                <button type="button" class="btn btn--line btn--secondary btn--lg btn--block is-bold">사진 첨부하기</button>
+                <div class="image__list">
+                  <div class="image__item">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="">
+                    <button type="button" class="btn-icon btn-icon--delete" aria-label="상품 삭제">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                  </div>
+                  <div class="image__item">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="">
+                    <button type="button" class="btn-icon btn-icon--delete" aria-label="상품 삭제">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                  </div>
+                  <div class="image__item">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="">
+                    <button type="button" class="btn-icon btn-icon--delete" aria-label="상품 삭제">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                  </div>
+                  <div class="image__item">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="">
+                    <button type="button" class="btn-icon btn-icon--delete" aria-label="상품 삭제">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                  </div>
+                </div>
+                <ul class="list list--md list--dot">
+                  <li>이미지는 최대 4장까지 가능하며, 반드시 10mb 이하의 jpg, jpeg, png 형태로 업로드해 주세요.</li>
+                </ul>
+              </div>
+
+              <div class="reply">
+                <h3 class="inquiry-regist__title">답변 확인 수단 선택</h3>
+                <div class="radio-group">
+                  <div class="radio">
+                    <input type="radio" id="radio4" name="radioSet" class="radio__input" checked />
+                    <label for="radio4" class="radio__label">휴대폰</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" id="radio5" name="radioSet" class="radio__input" />
+                    <label for="radio5" class="radio__label">이메일</label>
+                  </div>
+                </div>
+                <div class="form__field is-readonly">
+                  <input type="text" id="input1" class="form__input" value="010-1234-****" readonly/>
+                </div>
+                <div class="reply__modify">
+                  <p class="reply__modify-text">회원가입 시 등록된 정보로 발송됩니다!</p>
+                  <a href="#" class="btn-link">회원정보 수정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap btn-wrap--fixed">
+            <button type="button" class="btn btn--primary">1:1문의 등록하기</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

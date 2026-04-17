@@ -42,39 +42,80 @@
       @include bgimage('icon_radio','svg');
     }
   }
+}
 
-  // button type
-  &--button {
+// button type
+.radio-btn {
+  width: 100%;
+  min-width: 0;
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    min-width: 0;
-
-    .radio__label {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      min-height: 32px;
+    min-height: 44px;
+    padding: 8px 16px;
+    border: 1px solid $gray-30;
+    border-radius: 6px;
+    background-color: $white;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    text-align: center;
+    cursor: pointer;
+    @include tablet {
       padding: 8px;
-      border: 1px solid $gray-30;
-      border-radius: 6px;
-      background-color: $white;
-      color: $gray-70;
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
-      text-align: center;
+      letter-spacing: 0;
+    }
+  }
+  &__input {
+    @include inputhide;
+    cursor: pointer;
+    &:checked + .radio-btn__label {
+      border-color: $gray-80;
+      background-color: $gray-80;
+      color: $white;
+      font-weight: 600;
+    }
+  }
 
-      &::before {
-        display: none;
+  &--sm {
+    .radio-btn__label {
+      min-height: 33px;
+      height: 33px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.13px;
+      @include tablet {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
       }
     }
-    .radio__input {
-      &:checked + .radio__label {
-        border-color: $gray-80;
-        color: $gray-80;
+    .radio-btn__input {
+      &:checked + .radio-btn__label {
         font-weight: 600;
       }
-
+    }
+  }
+  &--line {
+    .radio-btn__label {
+      color: $gray-70;
+    }
+    .radio-btn__input {
+      &:checked + .radio-btn__label {
+        border-color: $gray-80;
+        background-color: $white;
+        color: $gray-80;
+      }
     }
   }
 }
@@ -85,7 +126,8 @@
   gap: 8px;
 
   &--col3,
-  &--col4 {
+  &--col4,
+  &--col5 {
     display: grid;
 
     .radio {
@@ -102,5 +144,8 @@
   }
   &--col4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  &--col5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }

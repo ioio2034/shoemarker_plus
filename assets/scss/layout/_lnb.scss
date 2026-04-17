@@ -1,0 +1,89 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.lnb{
+  flex-shrink: 0;
+  width: 230px;
+  padding: 40px 0;
+  @include tablet {
+    display: none;
+  }
+  &__inner {
+    @include desktop {
+      padding-left: 24px;
+    }
+  }
+  &__title {
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $gray-80;
+    color: $gray-80;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -1px;
+  }
+  &__nav {}
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  // 1depth
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    &.is-open {
+      .lnb__link {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+    &::after {
+      @include before_after;
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon_chevron_down_24', 'svg');
+      transition: transform 0.2s ease;
+    }
+  }
+
+  // 2depth
+  &__sub {
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: height 0.3s ease;
+  }
+  &__sub-list {    
+    padding-top: 20px;    
+  }
+  &__sub-item {
+    & + .lnb__sub-item {
+      padding-top: 10px;
+    }
+  }
+  &__sub-link {
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+  }
+}
+
