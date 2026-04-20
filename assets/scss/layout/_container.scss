@@ -71,7 +71,7 @@
       flex-direction: row;
       align-items: center;      
       justify-content: center;
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       width: 100%;
@@ -81,6 +81,7 @@
       border-bottom: 1px solid $gray-30;
       background: #FFF;
       background: $white;
+      z-index: 50;
     }
     .btn-icon--back {
       display: none;

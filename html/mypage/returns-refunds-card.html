@@ -37,6 +37,29 @@
 
           <!-- 클레임(취소/교환/반품/환불) 화면에서는 order-detail에 is-claim 추가 -->
           <div class="order-detail is-claim">
+
+            <div class="refund-method order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">주문 반품 방법 선택</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="radio-group radio-group--col2">
+                    <div class="radio-btn">
+                      <input type="radio" id="radio1" name="method" class="radio-btn__input" checked />
+                      <label for="radio1" class="radio-btn__label">온라인 반품</label>
+                    </div>
+                    <div class="radio-btn">
+                      <input type="radio" id="radio2" name="method" class="radio-btn__input" />
+                      <label for="radio2" class="radio-btn__label">매장 반품</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
             <div class="summary">
               <span class="summary__date">2025.05.15 14:54</span>
               <p class="summary__number">주문번호 20250515132415001</p>
@@ -126,6 +149,24 @@
 
             <div class="divider"></div>
 
+            <div class="return-store order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">반품 매장 선택</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="return-store__content">
+                    <div class="form__field is-readonly">
+                      <input type="text" id="input1" class="form__input" value="" placeholder="반품 하실 매장을 선택해 주세요." readonly />
+                    </div>
+                    <button type="button" class="btn btn--lg btn--line btn--secondary">매장 찾기</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
             <div class="payment order-block is-open">
               <button type="button" class="order-block__header">
                 <h3 class="order-block__title">결제금액</h3>
@@ -170,6 +211,21 @@
               </button>
               <div class="order-block__content">
                 <div class="order-block__inner">
+                  
+                  <div class="select mb20">
+                    <label for="" class="select__label">배송비 결제 방식을 선택해 주세요</label>
+                    <div class="select__box">
+                      <select id="cancelReason" class="select__field">
+                        <!-- placeholder -->
+                        <option value="" disabled selected hidden>선택해 주세요!</option>
+                        <option value="">환불금액 차감</option>
+                        <option value="">신용카드</option>
+                        <option value="">쿠폰사용</option>
+                        <option value="">계좌이체</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div class="payment__list">
                     <dl class="payment__item">
                       <dt class="payment__label">환불방법</dt>

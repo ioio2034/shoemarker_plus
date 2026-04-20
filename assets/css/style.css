@@ -11597,7 +11597,7 @@ img, video, canvas, svg {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -11607,6 +11607,7 @@ img, video, canvas, svg {
     border-bottom: 1px solid #D8D8D8;
     background: #FFF;
     background: #FFFFFF;
+    z-index: 50;
   }
 }
 .section__header .btn-icon--back {
@@ -13245,10 +13246,6 @@ body.sheet-open {
   background: url("../images/icon_radio.svg") no-repeat;
 }
 
-.radio-btn {
-  width: 100%;
-  min-width: 0;
-}
 .radio-btn__label {
   display: flex;
   justify-content: center;
@@ -13329,12 +13326,24 @@ body.sheet-open {
 .radio-group--col3, .radio-group--col4, .radio-group--col5 {
   display: grid;
 }
-.radio-group--col3 .radio, .radio-group--col4 .radio, .radio-group--col5 .radio {
+.radio-group--col3 .radio + .radio, .radio-group--col4 .radio + .radio, .radio-group--col5 .radio + .radio {
+  margin-left: 0;
+}
+.radio-group--col3 .radio-btn, .radio-group--col4 .radio-btn, .radio-group--col5 .radio-btn {
   width: 100%;
   min-width: 0;
 }
-.radio-group--col3 .radio + .radio, .radio-group--col4 .radio + .radio, .radio-group--col5 .radio + .radio {
-  margin-left: 0;
+@media (max-width: 1024px) {
+  .radio-group--col2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1024px) {
+  .radio-group--col2 .radio-btn {
+    width: 100%;
+    min-width: 0;
+  }
 }
 .radio-group--col3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -15004,6 +15013,22 @@ body.sheet-open {
 .order-detail .claim__text--notice {
   color: #FE4C58;
 }
+.order-detail .return-store__content {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+.order-detail .return-store__content .form__field {
+  flex: 1;
+}
+.order-detail .return-store__content .btn {
+  width: 200px;
+}
+@media (max-width: 1024px) {
+  .order-detail .return-store__content .btn {
+    width: 100px;
+  }
+}
 
 .order-block {
   padding: 0 20px;
@@ -15029,7 +15054,7 @@ body.sheet-open {
 }
 @media (max-width: 1024px) {
   .order-block__header {
-    padding: 0 0 16px;
+    padding: 0 0 20px;
     cursor: default;
   }
 }
@@ -15054,7 +15079,7 @@ body.sheet-open {
   text-align: left;
   color: #2D2D2D;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 140%;
   letter-spacing: -0.18px;
 }
