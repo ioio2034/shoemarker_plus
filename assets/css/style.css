@@ -14719,6 +14719,9 @@ body.sheet-open {
   display: flex;
   align-items: center;
 }
+.order .order-group__head {
+  border-radius: 0;
+}
 .order__check-all {
   padding-bottom: 8px;
   margin-bottom: 12px;

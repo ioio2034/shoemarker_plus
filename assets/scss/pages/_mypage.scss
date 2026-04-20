@@ -746,6 +746,9 @@
       align-items: center;
     }
   }
+  .order-group__head {
+    border-radius: 0;
+  }
   // 상품 전체 선택
   &__check-all {
     padding-bottom: 8px;
