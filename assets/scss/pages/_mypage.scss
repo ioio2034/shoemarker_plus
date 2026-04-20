@@ -70,8 +70,10 @@
 .order-group {
   &:first-child {
     .order-group__head {
-      border-radius: 6px 6px 0 0;
-    }    
+      @include tablet {
+        border-radius: 6px 6px 0 0;
+      }
+    }
   }
   &--no-padding {
     .order-goup__body {
@@ -83,9 +85,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    border-radius: 6px;
     background: $gray-5;
     @include tablet {
       padding: 8px 16px;
+      border-radius: 0;
     }
   }
   &__status {
@@ -449,7 +453,6 @@
         flex-direction: column;
       }
     }
-
     &__orders-icon {
       display: block;
       width: 16px;

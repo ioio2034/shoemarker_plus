@@ -13992,8 +13992,10 @@ body.sheet-open {
   line-height: 20px;
 }
 
-.order-group:first-child .order-group__head {
-  border-radius: 6px 6px 0 0;
+@media (max-width: 1024px) {
+  .order-group:first-child .order-group__head {
+    border-radius: 6px 6px 0 0;
+  }
 }
 .order-group--no-padding .order-goup__body {
   padding: 0;
@@ -14003,11 +14005,13 @@ body.sheet-open {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  border-radius: 6px;
   background: #F8F8F8;
 }
 @media (max-width: 1024px) {
   .order-group__head {
     padding: 8px 16px;
+    border-radius: 0;
   }
 }
 .order-group__status {
