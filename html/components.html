@@ -426,7 +426,7 @@
             <h2 class="guide__title">Tabs</h2>
             <div class="guide__box">
               <h3 class="guide__subtitl">Line type</h3>
-              <div class="tab js-tabs">
+              <div class="tab tab--line js-tabs">
                 <!-- 탭 메뉴 -->
                 <div class="tab__list" role="tablist">
                   <!-- 활성화 상태 is-active -->
@@ -455,6 +455,47 @@
                         <p class="empty__text">제품이 없습니다.</p>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="guide__subtitl">Button type</h3>
+              <div class="tab tab--fill js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    상품
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    주문
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    기타
+                  </button>
+                </div>
+
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 배송기간이 얼마나 되나요?</li>
+                      <li>품절 상품 재입고는 언제 되나요​?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <h4 class="qna-regist__subtitle">문의 예시</h4>
+                    <ul class="list list--sm list--dot">
+                      <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                      <li>배송 전 주소지 변경이 가능 할까요?</li>
+                    </ul>
                   </div>
                 </div>
               </div>

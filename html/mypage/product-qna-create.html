@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-inquiry">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+      
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">상품 Q&A</h2>
+          </div>
+
+          <div class="qna-regist">
+            <div class="qna-regist__inner">
+              <div class="type"> 
+                <h3 class="qna-regist__title">문의 하실 내용을 선택해 주세요.</h3>
+                <div class="tab tab--fill js-tabs">
+                  <!-- 탭 메뉴 -->
+                  <div class="tab__list" role="tablist">
+                    <!-- 활성화 상태 is-active -->
+                    <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                      상품
+                    </button>
+                    <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                      주문
+                    </button>
+                    <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                      기타
+                    </button>
+                  </div>
+
+                  <!-- 탭 컨텐츠 -->
+                  <div class="tab__panels">
+                    <div class="tab__panel js-tab-panel is-active">
+                      <h4 class="qna-regist__subtitle">문의 예시</h4>
+                      <ul class="list list--sm list--dot">
+                        <li>상품의 배송기간이 얼마나 되나요?</li>
+                        <li>품절 상품 재입고는 언제 되나요​?</li>
+                      </ul>
+                    </div>
+                    <div class="tab__panel js-tab-panel">
+                      <h4 class="qna-regist__subtitle">문의 예시</h4>
+                      <ul class="list list--sm list--dot">
+                        <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                        <li>배송 전 주소지 변경이 가능 할까요?</li>
+                      </ul>
+                    </div>
+                    <div class="tab__panel js-tab-panel">
+                      <h4 class="qna-regist__subtitle">문의 예시</h4>
+                      <ul class="list list--sm list--dot">
+                        <li>상품의 교환 반품 환불 절차가 궁금해요</li>
+                        <li>배송 전 주소지 변경이 가능 할까요?</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-search">
+                <h3 class="qna-regist__title">문의 상품을 선택해 주세요!</h3>
+                <button type="button" class="btn btn--line btn--secondary btn--block js-modal-open">상품 조회하기</button>
+              </div>
+
+              <div class="content">
+                <h3 class="qna-regist__title">문의 내용 작성</h3>
+                <div class="textarea">
+                  <textarea
+                    name="inquiryContent"
+                    id="inquiryContent" 
+                    class="textarea__field"
+                    placeholder="문의 내용을 입력해 주세요."
+                    maxlength="200"
+                  ></textarea>
+                  <div class="textarea__count">
+                    <span class="textarea__count-current" id="currentCount">0</span>
+                    <span class="textarea__count-max"> / 200</span>
+                  </div>
+                </div>
+                <ul class="list list--md list--dot">
+                  <li>전화번호, 이메일, 주소, 계좌번호 등의 상세 개인정보가 문의 내용에 저장되지 않도록 주의해 주세요.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap btn-wrap--fixed">
+            <button type="button" class="btn btn--primary">등록하기</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+    <!-- modal -->
+  <div class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">
+          문의하실 상품을 선택해 주세요!
+        </h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>내용 수급</p>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+          <button type="button" class="btn btn--primary">선택하기</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>
