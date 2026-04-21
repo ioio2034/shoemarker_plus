@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">나의 체형</h2>
+          </div>
+
+          <div class="body-type">
+            <div class="intro">
+              <h3 class="intro__name">홍길동</h3>
+              <p class="intro__text">사이즈를 입력하시면 고객님의 체형을 기반으로 다양한 정보를 제공해 드릴게요!</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="body-type__content">
+
+              <div class="info">
+                <h3 class="info__title">MY FIT SIZE</h3>
+                <div class="info__list">
+
+                  <div class="form__field is-required">
+                    <label for="input1" class="form__label">키</label>
+                    <input type="number" id="input1" class="form__input" placeholder="cm" value=""/>
+                  </div>
+
+                  <div class="form__field is-required">
+                    <label for="input2" class="form__label">몸무게</label>
+                    <input type="number" id="input2" class="form__input" placeholder="kg" value="" />
+                  </div>
+
+                  <div class="form__field is-required">
+                    <label for="input3" class="form__label">상의 사이즈</label>
+                    <div class="radio-group">
+                      <div class="radio-btn">
+                        <input type="radio" id="radio1" name="size" class="radio-btn__input" />
+                        <label for="radio1" class="radio-btn__label">XS</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio2" name="size" class="radio-btn__input" checked/>
+                        <label for="radio2" class="radio-btn__label">S</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio3" name="size" class="radio-btn__input" />
+                        <label for="radio3" class="radio-btn__label">M</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio4" name="size" class="radio-btn__input" />
+                        <label for="radio4" class="radio-btn__label">L</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio5" name="size" class="radio-btn__input" />
+                        <label for="radio5" class="radio-btn__label">XL</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio6" name="size" class="radio-btn__input" />
+                        <label for="radio6" class="radio-btn__label">XXL</label>
+                      </div>
+                      <div class="radio-btn">
+                        <input type="radio" id="radio7" name="size" class="radio-btn__input" />
+                        <label for="radio7" class="radio-btn__label">XXL이상</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form__field is-required">
+                    <label for="input4" class="form__label">발사이즈</label>
+                    <input type="number" id="input4" class="form__input" placeholder="mm" value="" />
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="agree">
+                <div class="accordion">
+                  <div class="accordion__item is-active">
+                    <button type="button" class="accordion__header">
+                      <div class="checkbox">
+                        <input type="checkbox" id="check1"  class="checkbox__input" checked />
+                        <label for="check1" class="checkbox__label">사이즈 정보 수집 및 이용 동의</label>
+                      </div>
+                    </button>
+                    <div class="accordion__collapse">
+                      <div class="accordion__body">
+                        <ul class="agree__list">
+                          <li class="agree__item">
+                            수집목적 : 사이즈 추천 서비스 제공
+                          </li>
+                          <li class="agree__item">
+                            수집하는 개인정보 : 키, 몸무게 등의 개인 신체치수
+                          </li>
+                          <li class="agree__item">
+                            개인정보 처리 및 보유기간 : MY 사이즈 변경 및 회원 탈퇴 시까지 서비스를 거부할 권리가 있으며, 다만 동의를 하지 않을 경우 목적에 따른 혜택이 제한될 수 있으나 그 밖에 불이익은 없습니다.
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="btn-wrap btn-wrap--fixed">
+                <button type="button" class="btn btn--line btn--secondary">취소</button>
+                <button type="button" class="btn btn--primary">저장</button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">나의 체형</h2>
+          </div>
+
+          <div class="body-type">
+            <div class="intro">
+              <h3 class="intro__name">홍길동</h3>
+              <p class="intro__text">사이즈를 입력하시면 고객님의 체형을 기반으로 다양한 정보를 제공해 드릴게요!</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="body-type__content">
+
+              <div class="info">
+                <h3 class="info__title">MY FIT SIZE</h3>
+                <div class="info__list">
+
+                  <div class="form__field is-readonly">
+                    <label for="input1" class="form__label">키</label>
+                    <input type="text" id="input1" class="form__input" value="185cm" readonly/>
+                  </div>
+
+                  <div class="form__field is-readonly">
+                    <label for="input2" class="form__label">몸무게</label>
+                    <input type="text" id="input2" class="form__input" value="80kg" readonly/>
+                  </div>
+
+                  <div class="form__field is-readonly">
+                    <label for="input3" class="form__label">상의 사이즈</label>
+                    <input type="text" id="input3" class="form__input" value="XL" readonly/>
+                  </div>
+
+                  <div class="form__field is-readonly">
+                    <label for="input4" class="form__label">발사이즈</label>
+                    <input type="text" id="input4" class="form__input" value="265mm" readonly/>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="btn-wrap btn-wrap--fixed">
+                <button type="button" class="btn btn--primary">수정하기</button>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

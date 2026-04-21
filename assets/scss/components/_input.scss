@@ -23,6 +23,12 @@
       }
     }
     &.is-readonly {
+      .form__control {
+        background-color: $gray-5;
+        &:focus-within {
+          border-color: $gray-30;
+        }
+      }
       .form__input {
         background-color: $gray-5;
         color: $gray-50;

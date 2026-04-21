@@ -13014,6 +13014,12 @@ body.sheet-open {
   color: #FE4C58;
   padding: 0 4px;
 }
+.form__field.is-readonly .form__control {
+  background-color: #F8F8F8;
+}
+.form__field.is-readonly .form__control:focus-within {
+  border-color: #D8D8D8;
+}
 .form__field.is-readonly .form__input {
   background-color: #F8F8F8;
   color: #8E8E8E;
@@ -13349,16 +13355,9 @@ body.sheet-open {
 
 .radio-group {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
 }
-.radio-group--col3, .radio-group--col4, .radio-group--col5 {
-  display: grid;
-}
-.radio-group--col3 .radio + .radio, .radio-group--col4 .radio + .radio, .radio-group--col5 .radio + .radio {
-  margin-left: 0;
-}
-.radio-group--col3 .radio-btn, .radio-group--col4 .radio-btn, .radio-group--col5 .radio-btn {
+.radio-group .radio-btn {
   width: 100%;
   min-width: 0;
 }
@@ -13375,12 +13374,15 @@ body.sheet-open {
   }
 }
 .radio-group--col3 {
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .radio-group--col4 {
+  display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .radio-group--col5 {
+  display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
@@ -15527,6 +15529,185 @@ body.sheet-open {
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
+}
+
+.body-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .body-type {
+    gap: 0;
+    flex: 1;
+  }
+}
+@media (max-width: 1024px) {
+  .body-type__content.is-empty {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .body-type .intro {
+    padding: 24px;
+  }
+}
+.body-type .intro__name {
+  margin-bottom: 8px;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.body-type .intro__text {
+  color: #555555;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.body-type .info {
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .body-type .info {
+    padding: 24px 24px 0;
+    border-radius: 0;
+    border: 0;
+  }
+}
+.body-type .info__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D8D8D8;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+@media (max-width: 1024px) {
+  .body-type .info__title {
+    padding-bottom: 8px;
+    border-bottom: 0;
+  }
+}
+.body-type .info__title::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/icon_ruler.svg") no-repeat;
+}
+.body-type .info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+@media (max-width: 1024px) {
+  .body-type .info__list {
+    gap: 16px;
+    margin-top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .body-type .info__list .radio-group {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1024px) {
+  .body-type .agree {
+    padding: 0 24px;
+  }
+}
+.body-type .agree__list {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #F0F0F0;
+}
+.body-type .agree__item {
+  color: #555555;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.body-type .agree .accordion__item {
+  border-bottom: 0;
+}
+.body-type .coupon-group {
+  padding: 40px 0;
+}
+.body-type .coupon {
+  display: flex;
+  justify-content: center;
+}
+.body-type .coupon__link {
+  display: flex;
+}
+.body-type .coupon__label {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 65px;
+  border-radius: 15px 0 0 15px;
+  background-color: #00883E;
+  color: #FFFFFF;
+  font-family: "WorkSans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.9px;
+  writing-mode: sideways-lr;
+}
+.body-type .coupon__label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  transform: translateY(-50%);
+}
+.body-type .coupon__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-width: 245px;
+  max-width: 245px;
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 0 15px 15px 0;
+  border: 1px solid #D8D8D8;
+  border-left: 0;
+}
+.body-type .coupon__rate {
+  color: #00883E;
+  font-family: "WorkSans", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100%;
+}
+.body-type .coupon__text {
+  color: #2D2D2D;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
 }
 
 .qna .filter__title {

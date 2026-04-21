@@ -170,7 +170,7 @@ let UI = {
       }
 
       $header.on("click", function(e) {
-        if ($(e.target).is("input")) return;
+        if ($(e.target).closest(".checkbox").length) return;
 
         var isOpen = $item.hasClass("is-active");
 

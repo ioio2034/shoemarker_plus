@@ -1500,6 +1500,182 @@
     }
   }
 }
+// 나의 체형
+.body-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    gap: 0;
+    flex: 1;
+  }
+  &__content {
+    &.is-empty {
+      @include tablet {
+        height: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .intro {
+    @include tablet {
+      padding: 24px;
+    }
+    &__name {
+      margin-bottom: 8px;
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__text {
+      color: $gray-70;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  // 체형 정보
+  .info {
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      padding: 24px 24px 0;
+      border-radius: 0;
+      border: 0;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $gray-30;
+      color: $gray-80;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 26px;
+      @include tablet {
+        padding-bottom: 8px;
+        border-bottom: 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        @include bgimage('icon_ruler', 'svg');
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+      @include tablet {
+        gap: 16px;
+        margin-top: 0;
+      }
+      .radio-group {
+        @include tablet {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    }
+  }
+  // 정보 수집 동의
+  .agree {
+    @include tablet {
+      padding: 0 24px;
+    }
+    &__list {
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: $gray-10;
+    }
+    &__item {
+      color: $gray-70;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    .accordion__item {
+      border-bottom: 0;
+    }
+  }
+  // 쿠폰
+  .coupon-group {
+    padding: 40px 0;
+  }
+  .coupon {
+    display: flex;
+    justify-content: center;
+    &__link {
+      display: flex;
+    }
+    &__label {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 65px;
+      border-radius: 15px 0 0 15px;
+      background-color: #00883E;
+      color: $white;
+      font-family: $font-en;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0.9px;
+      writing-mode: sideways-lr;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $white;
+        transform: translateY(-50%);
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      min-width: 245px;
+      max-width: 245px;
+      min-height: 120px;
+      padding: 16px;
+      border-radius: 0 15px 15px 0;
+      border: 1px solid $gray-30;
+      border-left: 0;
+    }
+    &__rate {
+      color: #00883E;
+      font-family: $font-en;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 100%;
+    }
+    &__text {
+      color: $gray-80;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}
 // 1:1 문의 내역 리스트
 .qna {
   .filter {
