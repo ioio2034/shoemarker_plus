@@ -11758,18 +11758,16 @@ img, video, canvas, svg {
   }
 }
 
-.page-mypage .section__header {
+.page-mypage-home .section__header {
   display: none;
 }
 @media (max-width: 1024px) {
-  .page-mypage .section__header {
+  .page-mypage-home .section__header {
     display: flex;
   }
 }
 
-.page-mypage .section__inner,
-.page-order .section__inner,
-.page-claim .section__inner {
+.page-mypage .section__inner {
   display: flex;
   flex-direction: column;
 }

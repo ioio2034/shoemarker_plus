@@ -225,7 +225,7 @@
 }
 
 // 마이페이지 홈
-.page-mypage {
+.page-mypage-home {
   .section {
     &__header {
       display: none;
@@ -237,9 +237,7 @@
 }
 
 // 마이페이지
-.page-mypage,
-.page-order,
-.page-claim {
+.page-mypage {
   .section { 
     &__inner {
       display: flex;
