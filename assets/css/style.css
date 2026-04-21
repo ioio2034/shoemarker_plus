@@ -15444,6 +15444,91 @@ body.sheet-open {
   }
 }
 
+@media (max-width: 1024px) {
+  .social-connect {
+    padding: 40px 24px 24px;
+  }
+}
+.social-connect .sns-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+@media (max-width: 1024px) {
+  .social-connect .sns-list {
+    padding: 0 0 40px;
+  }
+}
+.social-connect .sns-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+@media (max-width: 1024px) {
+  .social-connect .sns-list__item {
+    width: 100%;
+  }
+}
+.social-connect .sns-list__item.is-linked .sns-list__icon {
+  border-color: #2D2D2D;
+  background-color: #FFFFFF;
+}
+.social-connect .sns-list__item.is-linked .sns-list__icon::after {
+  filter: none;
+}
+.social-connect .sns-list__item.is-linked .sns-list__icon--naver::after {
+  background: url("../images/icon_naver.svg") no-repeat;
+}
+.social-connect .sns-list__item.is-linked .sns-list__icon--kakao::after {
+  background: url("../images/icon_kakao.svg") no-repeat;
+}
+.social-connect .sns-list__icon {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  border-radius: 6px;
+  background-color: #F5F5F5;
+  border: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .social-connect .sns-list__icon {
+    width: 100%;
+  }
+}
+.social-connect .sns-list__icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  filter: grayscale(100%);
+}
+.social-connect .sns-list__icon--naver::after {
+  background: url("../images/icon_naver_gray.svg") no-repeat;
+}
+.social-connect .sns-list__icon--kakao::after {
+  background: url("../images/icon_kakao_gray.svg") no-repeat;
+}
+.social-connect .sns-list .btn {
+  width: 100%;
+}
+.social-connect .notice__title {
+  margin-bottom: 4px;
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.social-connect .notice .list li {
+  color: #555555;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
 .qna .filter__title {
   display: none;
 }
