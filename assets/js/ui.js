@@ -48,7 +48,10 @@ let UI = {
     // 열기
     $(document).on('click', '.js-modal-open', function (e) {
       e.preventDefault();
-      const $modal = $('.modal').first();
+
+      const target = $(this).data('target');
+      const $modal = $(target);
+
       openModal($modal, $(this));
     });
 
@@ -163,11 +166,17 @@ let UI = {
       var $header = $item.find(".accordion__header");
       var $content = $item.find(".accordion__collapse");
 
+      $content.css("transition", "none");
+
       if ($item.hasClass("is-active")) {
         $content.css("max-height", $content[0].scrollHeight + "px");
       } else {
         $content.css("max-height", 0);
       }
+
+      setTimeout(function() {
+        $content.css("transition", "");
+      }, 0);
 
       $header.on("click", function(e) {
         if ($(e.target).closest(".checkbox").length) return;

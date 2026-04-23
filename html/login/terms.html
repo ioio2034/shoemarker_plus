@@ -63,7 +63,7 @@
                         <input type="checkbox" id="check1"  class="checkbox__input" />
                         <label for="check1" class="checkbox__label">[필수] 만 14세 이상입니다.</label>
                       </div>
-                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기">
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal1">
                         <span class="btn-icon__icon"></span>
                       </button>
                     </div>
@@ -74,7 +74,7 @@
                         <input type="checkbox" id="check2"  class="checkbox__input" />
                         <label for="check2" class="checkbox__label">[필수] 이용약관</label>
                       </div>
-                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기">
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal2">
                         <span class="btn-icon__icon"></span>
                       </button>
                     </div>
@@ -85,7 +85,7 @@
                         <input type="checkbox" id="check3"  class="checkbox__input" />
                         <label for="check3" class="checkbox__label">[필수] 개인정보 이용 및 수집 동의</label>
                       </div>
-                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기">
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal3">
                         <span class="btn-icon__icon"></span>
                       </button>
                     </div>
@@ -96,7 +96,7 @@
                         <input type="checkbox" id="check4"  class="checkbox__input" />
                         <label for="check4" class="checkbox__label">[선택] 이벤트/마케팅 수신 동의</label>
                       </div>
-                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기">
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal4">
                         <span class="btn-icon__icon"></span>
                       </button>
                     </div>
@@ -136,7 +136,27 @@
   </div>
 
   <!-- modal -->
-  <div class="modal">
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">만 14세 이상입니다.</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div id="modal2" class="modal">
     <!-- dim -->
     <div class="modal__dim"></div>
     <!-- modal content -->
@@ -162,6 +182,46 @@
           </div>
         </div>
 
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div id="modal3" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">개인정보 이용 및 수집 동의</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal -->
+  <div id="modal4" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이벤트/마케팅 수신 동의</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
         <div class="content">
           <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
         </div>

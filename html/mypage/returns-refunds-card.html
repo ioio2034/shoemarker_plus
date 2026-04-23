@@ -271,7 +271,7 @@
                   </div>
                   <div class="btn-group">
                     <button type="button" class="btn btn--md btn--line btn--secondary">영수증 발급</button>
-                    <button type="button" class="btn btn--md btn--line btn--secondary">거래 명세서</button>
+                    <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">거래 명세서</button>
                   </div>
                 </div>
               </div>
@@ -338,6 +338,34 @@
         <button class="btn btn--line js-alert-cancel">취소</button>
         <button class="btn btn--primary js-alert-confirm">확인</button>
       </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">
+          거래명세서
+          <span class="modal__desc">(공급받는자 보관용)</span>
+        </h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>내용 수급</p>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+          <button type="button" class="btn btn--primary">이미지 저장</button>
+        </div>
     </div>
   </div>
 
