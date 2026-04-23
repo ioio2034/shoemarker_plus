@@ -22,7 +22,8 @@
         }
       }
     }
-    &.is-readonly {
+    &.is-readonly,
+    &.is-disabled {
       .form__control {
         background-color: $gray-5;
         &:focus-within {

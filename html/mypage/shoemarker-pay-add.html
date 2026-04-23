@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">슈마커PAY 설정</h2>
+          </div>
+
+          <div class="shoemarker-pay">
+
+            <div class="shoemarker-pay__content">
+
+              <div class="card">
+                <p class="card__desc">
+                  카드번호를 입력하고 <br />결제를 완료하세요. 10초면 끝!
+                </p>
+                <div class="form__field">
+                  <label for="input1" class="form__label">카드번호 입력</label>
+                  <input type="text" id="input1" class="form__input" placeholder="- 없이 입력해 주세요." />
+                </div>
+              </div>               
+
+              <div class="btn-wrap btn-wrap--fixed">
+                <button type="button" class="btn btn--primary">취소</button>
+              </div>
+
+  
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- alert -->
+  <div id="cancelAlert" class="alert">
+    <div class="alert__dim"></div>
+    <div class="alert__content">
+      <div class="alert__body">
+        <p class="alert__text">등록하신 결제 수단을 삭제하시겠습니까?</p>
+      </div>
+      <div class="alert__footer">
+        <button class="btn btn--line js-alert-cancel">취소</button>
+        <button class="btn btn--primary js-alert-confirm">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

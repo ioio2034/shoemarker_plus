@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">회원정보 수정</h2>
+          </div>
+
+          <div class="profile-edit">
+            <div class="profile-edit__content">
+              <div class="form">
+                <!-- 아이디 -->
+                <div class="form__field">
+                  <label for="input1" class="form__label">아이디</label>
+                  <input type="text" id="input1" class="form__input" value="SHOEMARKER" disabled/>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form__field">
+                  <label for="input2" class="form__label">비밀번호</label>
+                  <input type="password" id="input2" class="form__input" placeholder="현재 사용 중인 비밀번호를 입력해 주세요."/>
+                </div>
+
+                <!-- 새로운 비밀번호 -->
+                <div class="form__field">
+                  <label for="input3" class="form__label">새로운 비밀번호</label>
+                  <input type="password" id="input3" class="form__input" placeholder="새로운 비밀번호를 입력해 주세요."/>
+                  <p class="form__desc">
+                    <em>영문 대</em> + 소문자,숫자,특수문자 2개이상 조합​ <br />동일한 숫자/영문 4자리 이상은 사용불가 함​
+                  </p>
+                </div>
+
+                <!-- 새로운 비밀번호 확인-->
+                <div class="form__field">
+                  <label for="input4" class="form__label">새로운 비밀번호 확인</label>
+                  <input type="password" id="input4" class="form__input" placeholder="새로운 비밀번호를 다시 한번 입력해 주세요."/>
+                </div>
+
+                <!-- 연락처 -->
+                <div class="form__field is-disabled">
+                  <label for="input5" class="form__label">연락처</label>
+                  <div class="form__control">
+                    <input type="text" id="input5" class="form__input" value="01012345678" disabled />
+                    <button type="button" class="btn btn--line btn--sm">인증하기</button>
+                  </div>
+                </div>
+
+                <!-- 이메일 주소 -->
+                <div class="form__field">
+                  <label for="input6" class="form__label">이메일 주소</label>
+                  <div class="form__control">
+                    <input type="text" id="input6" class="form__input" value="1234@naver.com"/>
+                    <button type="button" class="btn btn--line btn--sm">중복확인</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="profile-edit__content">
+              <div class="terms">
+                <h3 class="terms__title">약관 및 마케팅 수신 동의</h3>
+                <ul class="terms__list">
+                  <li class="terms__item">
+                    <div class="terms__main">
+                      <div class="checkbox">
+                        <input type="checkbox" id="check1"  class="checkbox__input" />
+                        <label for="check1" class="checkbox__label">[선택] 개인정보의 선택적 수집 · 이용 동의</label>
+                      </div>
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal1">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="terms__item">
+                    <div class="terms__main">
+                      <div class="checkbox">
+                        <input type="checkbox" id="check2"  class="checkbox__input" />
+                        <label for="check2" class="checkbox__label">[선택] 개인정보의 선택적 제3자 제공 동의</label>
+                      </div>
+                      <button type="button" class="js-modal-open btn-icon btn-icon--sm btn-icon--next" aria-label="약관 보기" data-target="#modal2">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                    </div>
+                    <div class="terms__sub">
+                      <div class="checkbox">
+                        <input type="checkbox" id="check3"  class="checkbox__input" />
+                        <label for="check3" class="checkbox__label">SMS</label>
+                      </div>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check4"  class="checkbox__input" />
+                        <label for="check4" class="checkbox__label">Email</label>
+                      </div>
+                      <div class="checkbox">
+                        <input type="checkbox" id="check5"  class="checkbox__input" />
+                        <label for="check5" class="checkbox__label">App Push</label>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-wrap btn-wrap--fixed">
+            <button type="button" class="btn btn--primary">수정하기</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- modal -->
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이용약관</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__filter is-mo">
+          <div class="select">
+            <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+            <div class="select__box">
+              <select id="termsDate" class="select__field">
+                <option value="">2013.11.08_개정</option>
+                <option value="">옵션2</option>
+                <option value="">옵션3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div id="modal2" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이용약관</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="modal__filter is-mo">
+          <div class="select">
+            <label for="termsDate" class="select__label select__label--hide">개정 약관 날짜 선택</label>
+            <div class="select__box">
+              <select id="termsDate" class="select__field">
+                <option value="">2013.11.08_개정</option>
+                <option value="">옵션2</option>
+                <option value="">옵션3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)222</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

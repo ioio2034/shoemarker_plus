@@ -1407,6 +1407,74 @@
     }
   }
 }
+// 회원정보 관리
+.pw-confirm {
+  padding: 24px;
+  &__title {
+    margin-bottom: 8px;
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    @include tablet {
+      margin-bottom: 4px;
+    }
+  }
+  &__desc {
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__content {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      margin-top: 24px;
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+    }
+  }
+}
+.profile-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    gap: 0;
+  }
+  &__content {
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      padding: 24px;
+      border-radius: 0;
+      border: 0;
+    }
+    .form {
+      gap: 20px;
+    }
+    .terms {
+      gap: 16px; 
+      @include tablet {
+        padding: 0;
+      }
+      &__title {
+        color: $gray-80;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      .terms__sub {
+        flex-direction: row;
+      }
+    }
+  }
+}
 // sns 계정 연동
 .social-connect {
   @include tablet {
@@ -1508,18 +1576,6 @@
   @include tablet {
     gap: 0;
     flex: 1;
-  }
-  &__content {
-    &.is-empty {
-      @include tablet {
-        height: 100%;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
   .intro {
     @include tablet {
@@ -1673,6 +1729,109 @@
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
+    }
+  }
+}
+// 슈마커 페이
+.shoemarker-pay {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    gap: 0;
+    flex: 1;
+  }
+  .payment {
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      padding: 24px;
+      border-radius: 0;
+      border: 0;
+    }
+    &__title {
+      margin-bottom: 10px;
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid $gray-30;
+      @include tablet {
+        padding: 0;
+        border-radius: 0;
+        border: 0;
+      }
+      .btn {
+        @include tablet {
+          height: 44px;
+          padding: 12px 20px;
+          border-radius: 6px;
+          font-weight: 400;
+        }
+      }
+      &.is-disabled {
+        background: $gray-5;
+        @include tablet {
+          background: transparent;
+        }
+        .radio__label {
+          color: $gray-50;
+        }
+        .payment__main {
+          @include tablet {
+            border-color: $gray-30;
+            background: $gray-5;
+          }
+        }
+      }
+    }
+    &__main {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include tablet {
+        flex: 1;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: 1px solid $gray-80;
+      }
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      gap: 24px;
+      padding: 24px;
+      border-radius: 0;
+      border: 0;
+    }
+    &__desc {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
     }
   }
 }
@@ -1893,6 +2052,27 @@
     margin-top: 20px;
     @include tablet {
       margin-top: 24px;
+    }
+  }
+}
+// 상품 Q&A 상품 조회 모달
+.product-search {
+  padding: 0 0 20px;
+  @include tablet {
+    padding: 4px 8px 0;
+  }
+  .order-card__date {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray-30;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  .order-group {
+    & + .order-group {
+      margin-top: 20px;
     }
   }
 }

@@ -50,7 +50,7 @@
       height: 24px;
       @include bgimage('icon_checkbox', 'svg');
     }
-    &.checkbox__label--hide {
+    &--hide {
       margin: 0;
       font-size: 0;
       &::before {

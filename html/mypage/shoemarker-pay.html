@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">슈마커PAY 설정</h2>
+          </div>
+
+          <div class="shoemarker-pay">
+
+            <div class="shoemarker-pay__content">
+              <!-- 등록된 정보가 없을 경우 -->
+              <!-- <div class="empty">
+                <div class="empty__content">
+                  <span class="empty__icon empty__icon--message"></span>
+                  <p class="empty__text">등록된 결제 수단이 없습니다</p>
+                </div>
+              </div> -->
+              <div class="payment">
+                <h3 class="payment__title">결제수단</h3>
+                <ul class="payment__list">
+                  <li class="payment__item">
+                    <div class="payment__main">
+                      <div class="radio">
+                        <input type="radio" id="radio1" name="payment" class="radio__input" checked/>
+                        <label for="radio1" class="radio__label">현대카드 6887</label>
+                      </div>
+                      <span class="badge badge--round badge--red">기본</span>
+                    </div>
+                    <button type="button" class="btn btn--md btn--line btn--secondary js-alert-open" data-target="#cancelAlert">삭제</button>
+                  </li>
+                  <!-- 사용불가 수단에 is-disabled 클래스 추가 -->
+                  <li class="payment__item is-disabled">
+                    <div class="payment__main">
+                      <div class="radio">
+                        <input type="radio" id="radio2" name="payment" class="radio__input" disabled/>
+                        <label for="radio2" class="radio__label">현대카드 6889</label>
+                      </div>
+                      <span class="badge badge--round badge--gray">사용불가</span>
+                    </div>
+                    <button type="button" class="btn btn--md btn--line btn--secondary js-alert-open" data-target="#cancelAlert">삭제</button>
+                  </li>
+                </ul>
+              </div>
+               
+
+              <div class="btn-wrap btn-wrap--fixed">
+                <button type="button" class="btn btn--primary">결제 수단 추가</button>
+              </div>
+
+  
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- alert -->
+  <div id="cancelAlert" class="alert">
+    <div class="alert__dim"></div>
+    <div class="alert__content">
+      <div class="alert__body">
+        <p class="alert__text">등록하신 결제 수단을 삭제하시겠습니까?</p>
+      </div>
+      <div class="alert__footer">
+        <button class="btn btn--line js-alert-cancel">취소</button>
+        <button class="btn btn--primary js-alert-confirm">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>
