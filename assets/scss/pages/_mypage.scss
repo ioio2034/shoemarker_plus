@@ -2015,6 +2015,127 @@
     }
   }
 }
+// 배송지 관리
+.delivery-address {
+  @include tablet {
+    padding: 24px;
+  }
+  .delivery-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include tablet {
+      gap: 8px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid $gray-30;
+      &.is-default {
+        border-color: $gray-80;
+      }
+      @include tablet {
+        padding: 16px;
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      @include tablet {
+        gap: 8px;
+      }
+    }
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @include tablet {
+        gap: 8px;
+      }
+    }
+    &__name {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.16px;
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+      }
+    }
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      .btn-link {
+        padding: 0;
+      }
+      @include tablet {
+        gap: 4px;
+      }
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &__info-item {
+      display: flex;
+      gap: 4px;
+      color: $gray-60;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      &::before {
+        content: '·';
+      }
+      @include tablet {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0;
+      }
+    }
+    &__label {
+      flex-shrink: 0;
+      &::after {
+        content: ':';
+        padding-left: 4px;
+      }
+    }
+  }
+}
+// 배송지 등록 레이어
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid $gray-30;
+  @include tablet {
+    gap: 16px;
+    padding: 0 8px;
+    border-radius: 0;
+    border: 0;
+  }
+  .pickup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
 // 1:1 문의 내역 등록
 .qna-regist {
   &__inner {

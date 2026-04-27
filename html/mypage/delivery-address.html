@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap" class="page-mypage">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+      
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner"> 
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">배송지 관리</h2>
+          </div>
+
+          <div class="delivery-address">
+            <ul class="delivery-list">
+              <!-- 기본배송지일 경우 is-default 클래스 & badge 추가 -->
+              <li class="delivery-list__item is-default">
+                <div class="delivery-list__content">
+                  <div class="delivery-list__top">
+                    <div class="delivery-list__header">
+                      <span class="delivery-list__name">우리집</span>
+                      <!-- 기본배송지 badge -->
+                      <span class="badge badge--round">기본배송지</span>
+                    </div>
+                    <div class="delivery-list__actions">
+                      <button type="button" class="btn-link">수정</button>
+                    </div>
+                  </div>
+                  <ul class="delivery-list__info">
+                    <li class="delivery-list__info-item">
+                      <span class="delivery-list__label">주소</span>
+                      <span class="delivery-list__value">서울특별시 강남구 논현로 899 101-708호</span>
+                    </li>
+                    <li class="delivery-list__info-item">
+                      <span class="delivery-list__label">연락처</span>
+                      <span class="delivery-list__value">홍길동 010-1234-5678</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="delivery-list__item">
+                <div class="delivery-list__content">
+                  <div class="delivery-list__top">
+                    <div class="delivery-list__header">
+                      <span class="delivery-list__name">회사</span>
+                    </div>
+                    <div class="delivery-list__actions">
+                      <button type="button" class="btn-link btn-link--delete">삭제</button>
+                      <button type="button" class="btn-link">수정</button>
+                    </div>
+                  </div>
+                  <ul class="delivery-list__info">
+                    <li class="delivery-list__info-item">
+                      <span class="delivery-list__label">주소</span>
+                      <span class="delivery-list__value">서울특별시 강남구 논현로 899 101-708호</span>
+                    </li>
+                    <li class="delivery-list__info-item">
+                      <span class="delivery-list__label">연락처</span>
+                      <span class="delivery-list__value">홍길동 010-1234-5678</span>
+                    </li>
+                  </ul>
+                </div>
+                <button type="button" class="btn btn--md btn--block btn--line btn--secondary">기본배송지로 설정</button>
+              </li>
+            </ul>
+
+            <div class="btn-wrap btn-wrap--fixed">
+              <button type="button" class="btn btn--primary js-modal-open" data-target="#modal1">새로운 배송지 등록</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- modal -->
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">배송지 등록 및 수정</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <!-- 새로운 배송지 등록 컨텐츠 -->
+          <div class="delivery-form">
+            <!-- 배송지명 -->
+            <div class="form__field is-required">
+              <label for="input1" class="form__label">배송지명</label>
+              <div class="radio-group radio-group--col3">
+                <div class="radio-btn">
+                  <input type="radio" id="radio1" name="deliveryName" class="radio-btn__input" checked />
+                  <label for="radio1" class="radio-btn__label">우리집</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio2" name="deliveryName" class="radio-btn__input" />
+                  <label for="radio2" class="radio-btn__label">회사</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio3" name="deliveryName" class="radio-btn__input" />
+                  <label for="radio3" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+              <input type="text" id="input1" class="form__input"/>
+            </div>
+            <!-- 받는 사람 -->
+            <div class="form__field is-required">
+              <label for="input2" class="form__label">받는사람</label>
+              <input type="text" id="input2" class="form__input"/>
+            </div>
+            <!-- 배송지 주소 -->
+            <div class="form__field is-required">
+              <span class="form__label">배송지 주소</span>
+              <div class="form__address">
+                <input type="text" id="postCode" class="form__input" value="05510" readonly/>
+                <input type="text" id="address" class="form__input" value="서울시 송파구 오금로 58" readonly/>
+                <input type="text" id="addressDetail" class="form__input" placeholder="상세주소를 입력해 주세요."/>
+              </div>
+              <button type="button" class="btn btn--line btn--md btn--block">주소검색</button>
+            </div>
+            <!-- 연락처 -->
+            <div class="form__field is-required">
+              <label for="input3" class="form__label">연락처</label>
+              <input type="text" id="input3" class="form__input" value="" placeholder="- 없이 입력해 주세요."/>
+            </div>
+            <!-- 수령방법 -->
+            <div class="pickup">
+              <div class="select is-required">
+                <label for="pickup" class="select__label">수령방법</label>
+                <div class="select__box">
+                  <select id="pickup" class="select__field">
+                    <!-- placeholder -->
+                    <option value="" disabled selected hidden>선택해 주세요.</option>
+                    <option value="">문앞</option>
+                    <option value="">택배함</option>
+                    <option value="">기타</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 기타일 경우 -->
+              <input type="text" id="input4" class="form__input" value="" placeholder="내용을 입력해 주세요." />
+            </div>
+
+            <!-- 체크박스 -->
+            <div class="checkbox">
+              <input type="checkbox" id="check1" class="checkbox__input" checked>
+              <label for="check1" class="checkbox__label">기본배송지로 선택하기</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button type="button" class="btn btn--line">취소</button>
+        <button type="button" class="btn btn--primary">배송지 등록</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

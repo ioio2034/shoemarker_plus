@@ -6,6 +6,15 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  &.is-required {
+    .select__label {
+      &::after {
+        content: '*';
+        color: $red;
+        padding: 0 4px;
+      }
+    }
+  }
   &__field {
     width: 100%;
     appearance: none;

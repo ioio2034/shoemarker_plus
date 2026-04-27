@@ -12492,6 +12492,9 @@ body.sheet-open {
     letter-spacing: 0.48px;
   }
 }
+.btn-link--delete::after {
+  background: url("../images/icon_delete_16.svg") no-repeat;
+}
 
 .btn-icon {
   display: inline-flex;
@@ -13452,6 +13455,11 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+.select.is-required .select__label::after {
+  content: "*";
+  color: #FE4C58;
+  padding: 0 4px;
 }
 .select__field {
   width: 100%;
@@ -16145,6 +16153,143 @@ body.sheet-open {
 }
 .qna .inquiry-list.is-empty {
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .delivery-address {
+    padding: 24px;
+  }
+}
+.delivery-address .delivery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list {
+    gap: 8px;
+  }
+}
+.delivery-address .delivery-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+.delivery-address .delivery-list__item.is-default {
+  border-color: #2D2D2D;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__item {
+    padding: 16px;
+  }
+}
+.delivery-address .delivery-list__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__content {
+    gap: 8px;
+  }
+}
+.delivery-address .delivery-list__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.delivery-address .delivery-list__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__header {
+    gap: 8px;
+  }
+}
+.delivery-address .delivery-list__name {
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.16px;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__name {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+}
+.delivery-address .delivery-list__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.delivery-address .delivery-list__actions .btn-link {
+  padding: 0;
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__actions {
+    gap: 4px;
+  }
+}
+.delivery-address .delivery-list__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.delivery-address .delivery-list__info-item {
+  display: flex;
+  gap: 4px;
+  color: #717171;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+}
+.delivery-address .delivery-list__info-item::before {
+  content: "·";
+}
+@media (max-width: 1024px) {
+  .delivery-address .delivery-list__info-item {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+}
+.delivery-address .delivery-list__label {
+  flex-shrink: 0;
+}
+.delivery-address .delivery-list__label::after {
+  content: ":";
+  padding-left: 4px;
+}
+
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .delivery-form {
+    gap: 16px;
+    padding: 0 8px;
+    border-radius: 0;
+    border: 0;
+  }
+}
+.delivery-form .pickup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .qna-regist__inner {

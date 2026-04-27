@@ -207,6 +207,11 @@
     line-height: 16px;
     letter-spacing: 0.48px;
   }
+  &--delete {
+    &::after {
+      @include bgimage('icon_delete_16', 'svg');
+    }
+  }
 }
 
 .btn-icon {
