@@ -159,7 +159,7 @@
                     <div class="form__field is-readonly">
                       <input type="text" id="input1" class="form__input" value="" placeholder="반품 하실 매장을 선택해 주세요." readonly />
                     </div>
-                    <button type="button" class="btn btn--lg btn--line btn--secondary">매장 찾기</button>
+                    <button type="button" class="btn btn--lg btn--line btn--secondary js-modal-open" data-target="#modal1">매장찾기</button>
                   </div>
                 </div>
               </div>
@@ -271,7 +271,7 @@
                   </div>
                   <div class="btn-group">
                     <button type="button" class="btn btn--md btn--line btn--secondary">영수증 발급</button>
-                    <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">거래 명세서</button>
+                    <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal2">거래 명세서</button>
                   </div>
                 </div>
               </div>
@@ -341,8 +341,104 @@
     </div>
   </div>
 
-  <!-- modal -->
+  <!-- 매장 찾기 modal -->
   <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">매장찾기</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+
+          <div class="store-finder">
+            <div class="search">
+              <div class="select">
+                <label for="region" class="select__label">지역선택</label>
+                <div class="select__box">
+                  <select id="region" class="select__field">
+                    <option value="" disabled selected hidden>선택해 주세요.</option>
+                    <option value="">서울</option>
+                    <option value="">경기</option>
+                    <option value="">대구</option>
+                    <option value="">대전</option>
+                    <option value="">부산</option>
+                    <option value="">광주</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search__field">
+                <input type="text" id="input1" class="form__input" value="" placeholder="매장명을 입력해 주세요." />
+                <button type="button" class="btn btn--lg btn--line btn--secondary">검색</button>
+              </div>
+            </div>
+            <div class="map">
+              <div class="map__area">
+                <div id="map" class="map__inner">
+                  <!-- 지도 샘플 이미지 -->
+                  <img src="../../assets/images/img_map_sample.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <ul class="store-list">
+              <li class="store-list__item">
+                <!-- 선택 시 is-active 클래스 추가 -->
+                <button type="button" class="store-list__btn is-active">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+            </ul>
+            <button type="button" class="btn btn--lg btn--block btn--line btn--secondary">더보기</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- 거래명세서 modal -->
+  <div id="modal2" class="modal">
     <!-- dim -->
     <div class="modal__dim"></div>
     <!-- modal content -->

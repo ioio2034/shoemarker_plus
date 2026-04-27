@@ -634,11 +634,23 @@
     @include tablet {
       display: block;
     }
+    .btn {
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
   }
   .support {
     display: none;
     @include tablet {
       display: block;
+    }
+    .btn {
+      padding: 8px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
     }
   }
   .menu {
@@ -1048,12 +1060,6 @@
       .form__field {
         flex: 1;
       }
-      .btn {
-        width: 200px;
-        @include tablet {
-          width: 100px;
-        }
-      }
     }
   }
 }
@@ -1126,6 +1132,98 @@
     @include tablet {
       padding: 0;
       border-top: 0;
+    }
+  }
+}
+// 매장 찾기 레이어
+.store-finder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    gap: 16px;
+  }
+  .search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include tablet {
+      gap: 8px;
+    }
+    &__field {
+      display: flex;
+      gap: 10px;
+      .btn {
+        flex-shrink: 0;
+        padding: 12px 20px;
+      }
+    }
+  }
+  .map {
+    &__area {
+      overflow: hidden;
+      height: 128px;
+      border-radius: 6px;
+      border: 1px solid $gray-30;
+    }
+    &__inner {
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .store-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    @include tablet {
+      gap: 8px;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      border: 1px solid $gray-30;
+      text-align: left;
+      &.is-active {
+        border-color: $gray-80;
+        .store-list__icon {
+          @include bgimage('icon_location_black', 'svg');
+        }
+      }
+    }
+    &__name {
+      margin-bottom: 4px;
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    &__address,
+    &__tel {
+      display: block;
+      color: $gray-60;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    &__address {
+      margin-bottom: 2px;
+    }
+    &__icon {
+      flex-shrink: 0;
+      display: block;
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon_location_gray', 'svg');
     }
   }
 }

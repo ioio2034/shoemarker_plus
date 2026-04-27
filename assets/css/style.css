@@ -12301,10 +12301,10 @@ body.sheet-open {
   width: -moz-fit-content;
   width: fit-content;
   height: 44px;
-  padding: 8px;
+  padding: 12px 20px;
   border-radius: 6px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 20px;
 }
 .btn--block {
@@ -14697,6 +14697,12 @@ body.sheet-open {
     display: block;
   }
 }
+.mypage .account .btn {
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
 .mypage .support {
   display: none;
 }
@@ -14704,6 +14710,12 @@ body.sheet-open {
   .mypage .support {
     display: block;
   }
+}
+.mypage .support .btn {
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
 }
 .mypage .menu {
   display: none;
@@ -15116,14 +15128,6 @@ body.sheet-open {
 .order-detail .return-store__content .form__field {
   flex: 1;
 }
-.order-detail .return-store__content .btn {
-  width: 200px;
-}
-@media (max-width: 1024px) {
-  .order-detail .return-store__content .btn {
-    width: 100px;
-  }
-}
 
 .order-block {
   padding: 0 20px;
@@ -15201,6 +15205,102 @@ body.sheet-open {
     padding: 0;
     border-top: 0;
   }
+}
+
+.store-finder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .store-finder {
+    gap: 16px;
+  }
+}
+.store-finder .search {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .store-finder .search {
+    gap: 8px;
+  }
+}
+.store-finder .search__field {
+  display: flex;
+  gap: 10px;
+}
+.store-finder .search__field .btn {
+  flex-shrink: 0;
+  padding: 12px 20px;
+}
+.store-finder .map__area {
+  overflow: hidden;
+  height: 128px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+.store-finder .map__inner {
+  width: 100%;
+  height: 100%;
+}
+.store-finder .map__inner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.store-finder .store-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .store-finder .store-list {
+    gap: 8px;
+  }
+}
+.store-finder .store-list__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+  text-align: left;
+}
+.store-finder .store-list__btn.is-active {
+  border-color: #2D2D2D;
+}
+.store-finder .store-list__btn.is-active .store-list__icon {
+  background: url("../images/icon_location_black.svg") no-repeat;
+}
+.store-finder .store-list__name {
+  margin-bottom: 4px;
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.store-finder .store-list__address, .store-finder .store-list__tel {
+  display: block;
+  color: #717171;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+.store-finder .store-list__address {
+  margin-bottom: 2px;
+}
+.store-finder .store-list__icon {
+  flex-shrink: 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("../images/icon_location_gray.svg") no-repeat;
 }
 
 .order-done {
