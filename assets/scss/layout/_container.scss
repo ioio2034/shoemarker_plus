@@ -3,6 +3,13 @@
 
 /* main z-index: 1~20, header: 50~100, gnb, tabbar: 101~200, footer: 201~, bottom sheet: 999, modal: 1000 */
 
+body {
+  &.is-loading {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
 #wrap {
   position: relative;
   overflow: hidden;

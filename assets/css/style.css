@@ -11522,6 +11522,11 @@ img, video, canvas, svg {
   background-position: center;
 }
 /* main z-index: 1~20, header: 50~100, gnb, tabbar: 101~200, footer: 201~, bottom sheet: 999, modal: 1000 */
+body.is-loading {
+  overflow: hidden;
+  touch-action: none;
+}
+
 #wrap {
   position: relative;
   overflow: hidden;
@@ -13659,6 +13664,55 @@ body.sheet-open {
   line-height: 24px;
 }
 
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+.loading.is-active {
+  display: flex;
+}
+.loading__spinner {
+  display: block;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  border-radius: 50%;
+  --color: #000;
+  background: conic-gradient(var(--color) 0%, transparent 80%);
+  clip-path: path("M32 0 A32 32 0 0 0 32 64 A32 32 0 0 0 32 0 Z M32 10 A22 22 0 0 1 32 54 A22 22 0 0 1 32 10 Z");
+  animation: loadingSpin 1s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+.loading__spinner::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color);
+  transform: translateX(-50%);
+  clip-path: inset(0 50% 0 0);
+}
+.loading__text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@keyframes loadingSpin {
+  to {
+    transform: rotate(-1turn);
+  }
+}
 .login__inner {
   display: flex;
   flex-direction: column;

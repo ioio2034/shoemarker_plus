@@ -1,0 +1,49 @@
+@use '../base/mixin' as *;
+
+.loading {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  &.is-active {
+    display: flex;
+  }
+  &__spinner {
+    display: block;
+    width: 64px;
+    height: 64px;
+    position: relative;
+    border-radius: 50%;
+    --color: #000;
+    background: conic-gradient(var(--color) 0%, transparent 80%);
+    clip-path: path(
+      'M32 0 A32 32 0 0 0 32 64 A32 32 0 0 0 32 0 Z M32 10 A22 22 0 0 1 32 54 A22 22 0 0 1 32 10 Z'
+    );
+    animation: loadingSpin 1s linear infinite;
+    transform-origin: 50% 50%;
+    will-change: transform;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color);
+      transform: translateX(-50%);
+      clip-path: inset(0 50% 0 0);
+    }
+  }
+  &__text {
+    @include blind;
+  }
+}
+@keyframes loadingSpin {
+  to {
+    transform: rotate(-1turn);
+  }
+}

@@ -484,6 +484,16 @@
     <!-- Tab bar -->
     <nav id="tabbar" class="tabbar"></nav>
 
+    <!--
+      Loading
+      - 노출: body에 is-loading / .loading에 is-active 추가
+      - 숨김: body에 is-loading /.loading에서 is-active 제거
+    -->
+    <div class="loading" id="loading" role="status" aria-live="polite">
+      <span class="loading__spinner" aria-hidden="true"></span>
+      <span class="loading__text">로딩 중입니다</span>
+    </div>
+
   </div>
 
   <!-- Scripts  -->
