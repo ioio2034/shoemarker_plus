@@ -1,0 +1,81 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 상품 상세
+.product-detail {
+  position: relative;
+  // 상품 상세 상단
+  .prod-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 500px;
+    grid-template-rows: auto 1fr auto;
+    column-gap: 60px;
+    align-items: start;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    // 상품 이미지
+    .prod-visual {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    // 상품 정보 옵션
+    .prod-option {
+      grid-column: 2;
+      grid-row: 1 / 4;
+      @include tablet {
+        width: 100%;
+      }
+    }
+    // ai 추천
+    .prod-ai {
+      grid-column: 1;
+      grid-row: 3;
+    }
+  }
+
+  // 상품 상세 하단
+  .prod-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 272px;
+    column-gap: 80px;
+    align-items: start;
+    @include tablet {
+      display: block;
+    }
+    &__main {
+      grid-column: 1;
+      min-width: 0;
+      @include tablet 
+    }
+    // 탭
+    .prod-tabs {}
+    // 상세 정보
+    .prod-info {}
+    // 상품평
+    .prod-review {}
+    // 룩&스타일
+    .prod-styling {}
+    
+    .prod-buy {
+      grid-column: 2;
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      @include tablet {
+        display: none;
+      }
+      &__inner {
+        overflow-y: auto;
+        max-height: calc(100vh - 80px);
+        overscroll-behavior: contain;
+        @include tablet {
+          overflow: visible;
+          max-height: none;
+        } 
+      }
+    }
+  }
+}

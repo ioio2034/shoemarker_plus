@@ -363,12 +363,12 @@
   .profile {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     border-radius: 6px;
     background: #EFF4F9;
     @include tablet {
-      gap: 24px;
+      gap: 16px;
       padding: 32px 24px;
       border-radius: 0;
     }
@@ -412,6 +412,7 @@
     // 주문 현황
     &__orders {
       @include tablet {
+        margin-top: 8px;
         padding: 16px 8px;
         border-radius: 8px;
         background-color: $white;

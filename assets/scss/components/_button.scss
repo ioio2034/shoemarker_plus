@@ -238,26 +238,55 @@
       height: 16px;
     }
   }
-  &--back .btn-icon__icon {
-    @include bgimage('icon_chevron_left_24', 'svg');
+  &--back {
+    .btn-icon__icon {
+      @include bgimage('icon_chevron_left_24', 'svg');
+    }
   }
-  &--next .btn-icon__icon {
-    @include bgimage('icon_chevron_right_16', 'svg');
+  &--next {
+    .btn-icon__icon {
+      @include bgimage('icon_chevron_right_16', 'svg');
+    }
   }
-  &--close .btn-icon__icon {
-    @include bgimage('icon_close', 'svg');
+  &--close {
+    .btn-icon__icon {
+      @include bgimage('icon_close', 'svg');
+    }
   }
-  &--cart .btn-icon__icon {
-    @include bgimage('icon_cart_24', 'svg');
+  &--cart {
+    .btn-icon__icon {
+      @include bgimage('icon_cart_24', 'svg');
+    }
   }
-  &--filter .btn-icon__icon {
-    @include bgimage('icon_filter', 'svg');
+  &--filter {
+    .btn-icon__icon {
+      @include bgimage('icon_filter', 'svg');
+    }
+  }  
+  &--sheet-close {
+    .btn-icon__icon {
+      @include bgimage('icon_sheet_close', 'svg');
+    }
   }
-  &--sheet-close .btn-icon__icon {
-    @include bgimage('icon_sheet_close', 'svg');
+  &--delete {
+    .btn-icon__icon {
+      @include bgimage('icon_delete', 'svg');
+    }
   }
-  &--delete .btn-icon__icon {
-    @include bgimage('icon_delete', 'svg');
+  &--share {
+    .btn-icon__icon {
+      @include bgimage('icon_share', 'svg');
+    }
+  }
+  &--like {
+    .btn-icon__icon {
+      
+    }
+    &.is-active {
+      .btn-icon__icon {
+        @include bgimage('icon_like_on', 'svg');
+      }
+    }
   }
 }
 

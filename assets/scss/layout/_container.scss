@@ -8,6 +8,12 @@
   overflow: hidden;
   width: 100%;
   min-width: 280px;
+  &.page-product {
+    overflow: visible;
+    @include tablet {
+      overflow: hidden;
+    }
+  }
 }
 
 .container {
@@ -242,6 +248,28 @@
     &__inner {
       display: flex;
       flex-direction: column;
+    }
+  }
+}
+
+// 상품 상세
+.page-product {
+  .section {
+    overflow: visible;
+    @include tablet {
+      overflow: hidden;
+    }
+    &__inner {
+      padding: 80px 0;
+      @include tablet {
+        padding: 62px 0 calc(120px + env(safe-area-inset-bottom));
+      }
+    }
+    &__header {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
     }
   }
 }
