@@ -1,0 +1,67 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.rating-stars {
+  position: relative;
+  display: inline-flex;
+  &__star {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 1px;
+    flex-shrink: 0;
+    @include bgimage('icon_star_empty', 'svg');
+    background-size: 100% auto;
+  }
+  &__empty,
+  &__filled {
+    display: flex;
+  }
+  /* width는 인라인 style로 제어 (e.g. style="width:80%") */
+  &__filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    .rating-stars__star {
+      flex-shrink: 0;
+      @include bgimage('icon_star_filled', 'svg');
+      background-size: 100% auto;
+    }
+  }
+  &--md {
+    .rating-stars__star {
+      width: 20px;
+      height: 20px;
+      @include tablet {
+        width: 14px;
+        height: 13px;
+      }
+    }
+  }
+  &--lg {
+    .rating-stars__star {
+      width: 27px;
+      height: 26px;
+      margin: 0 5px;
+      @include tablet {
+        width: 17px;
+        height: 16px;
+        margin: 0 2px;
+      }
+    }
+  }
+  &--yellow {
+    .rating-stars__star {
+      @include bgimage('icon_star_empty_yellow', 'svg');
+      background-size: 100% auto;
+    }
+    .rating-stars__filled {
+      .rating-stars__star {
+        @include bgimage('icon_star_filled_yellow', 'svg');
+        background-size: 100% auto;
+      }
+    }
+  }
+}

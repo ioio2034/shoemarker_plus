@@ -19,7 +19,7 @@
     .guide__subtitle {margin:48px 0 4px; font-size:20px; font-weight:700; line-height:1.4;}
     .guide__subtitle:first-child {margin-top:0 !important;}
     .guide__table {width:100%; min-width:100%; table-layout:fixed; border-spacing:0; border:1px solid #ddd;}
-    .guide__table th, .guide__table td {min-width:100px; padding:.75rem 1rem; border:0; border-top:1px solid #ddd;}
+    .guide__table th, .guide__table td {min-width:100px; padding:.75rem 1rem; border:0; border-top:1px solid #ddd; vertical-align: middle;}
     .guide__table thead th {font-weight:500; text-align:left; border:0; background:#fcfcfc;}
     .guide__table thead tr + tr th {padding-top:0; padding-bottom:10px !important; vertical-align:top;}
     .guide__table tbody th {font-size:14px; font-weight:500; padding-left:2rem; text-align:left;} 
@@ -65,131 +65,221 @@
                 <col style="width:0">
               </colgroup>
               <thead>
-              <tr>
-                <th></th>
-                <th>default</th>
-                <th>Large</th>
-                <th>Medium</th>
-                <th>Small</th>
-                <th><!--X-Small--></th>
-              </tr>
-              <tr>
-                <th></th>
-                <th class="guide__note">Size fit-content <br> Height 48px <br>Weight 600</th>
-                <th class="guide__note">Size fit-content <br> Height 44px <br>Weight 400</th>
-                <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
-                <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
-                <th class="guide__note"><!-- --></th>
-              </tr>
+                <tr>
+                  <th></th>
+                  <th>default</th>
+                  <th>Large</th>
+                  <th>Medium</th>
+                  <th>Small</th>
+                  <th><!--X-Small--></th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th class="guide__note">Size fit-content <br> Height 48px <br>Weight 600</th>
+                  <th class="guide__note">Size fit-content <br> Height 44px <br>Weight 400</th>
+                  <th class="guide__note">Size fit-content <br> Height 32px <br>Weight 500 </th>
+                  <th class="guide__note">Size fit-content <br> Height 28px <br>Weight 400</th>
+                  <th class="guide__note"><!-- --></th>
+                </tr>
               </thead> 
               <tbody>
-              <tr>
-                <th>Primary</th>
-                <td>
-                  <button type="button" class="btn btn--primary">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--primary btn--lg">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--primary btn--md">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--primary btn--sm">로그인하기</button>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Line</th>
-                <td>
-                  <button type="button" class="btn btn--line">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--lg">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--md">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--sm">로그인하기</button>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Line secondary</th>
-                <td>
-                  <button type="button" class="btn btn--line btn--secondary">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--secondary btn--lg">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--secondary btn--md">로그인하기</button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn--line btn--secondary btn--sm">로그인하기</button>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Text</th>
-                <td>
-                  <button type="button" class="btn btn--text">아이디찾기</button>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Text + underline</th>
-                <td><button type="button" class="btn btn--text btn--underline">아이디찾기</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>block</th>
-                <td><button type="button" class="btn btn--primary btn--block">로그인하기</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>Icon</th>
-                <td>
-                  24px <br>
-                  <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
-                    <span class="btn-icon__icon"></span>
-                  </button>
-                </td>
-                <td>
-                  16px <br>
-                  <button type="button" class="btn-icon btn-icon--sm btn-icon--next">
-                    <span class="btn-icon__icon"></span>
-                  </button>
-                </td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>link</th>
-                <td><button type="button" class="btn-link">상세보기</button></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>icon + text</th>
-                <td>
-                  <button type="button" class="btn-cart">
-                    <span class="btn-cart__icon"></span>
-                    <span class="btn-cart__text">담기</span>
-                  </button>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+                <tr>
+                  <th>Primary</th>
+                  <td>
+                    <button type="button" class="btn btn--primary">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--primary btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line</th>
+                  <td>
+                    <button type="button" class="btn btn--line">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Line secondary</th>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--lg">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--md">로그인하기</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn--line btn--secondary btn--sm">로그인하기</button>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text</th>
+                  <td>
+                    <button type="button" class="btn btn--text">아이디찾기</button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Text + underline</th>
+                  <td><button type="button" class="btn btn--text btn--underline">아이디찾기</button></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>block</th>
+                  <td><button type="button" class="btn btn--primary btn--block">로그인하기</button></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Icon</th>
+                  <td>
+                    24px <br>
+                    <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td>
+                    16px <br>
+                    <button type="button" class="btn-icon btn-icon--sm btn-icon--next">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">Icon Button</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:20%">
+                <col>
+                <col style="width:20%">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>뒤로가기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>다음, 자세히 보기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--sm btn-icon--next" aria-label="다음, 자세히 보기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>모달 닫기</th>
+                  <td>
+                    <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>바텀시트 닫기</th>
+                  <td>
+                    <button type="button" class="bottom-sheet__close btn-icon btn-icon--sheet-close" aria-label="닫기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>필터</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--filter">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>공유</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>찜하기</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--like is-active" aria-label="찜하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                  <th>선물</th>
+                  <td>
+                    <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 class="guide__title">Button : Icon + Text</h2>
+            <table class="guide__table">
+              <colgroup>
+                <col style="width:20%">
+                <col>
+                <col style="width:20%">
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>상세보기</th>
+                  <td>
+                    <button type="button" class="btn-link">상세보기</button>
+                  </td>
+                  <th>담기</th>
+                  <td>
+                    <button type="button" class="btn-cart">
+                      <span class="btn-cart__icon"></span>
+                      <span class="btn-cart__text">담기</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>정렬</th>
+                  <td>
+                    <button type="button" class="btn-sort" aria-label="정렬">
+                      <span class="btn-sort__text">최신순</span>
+                      <span class="btn-sort__icon" aria-hidden="true"></span>
+                    </button>
+                  </td>
+                  <th>검색</th>
+                  <td>
+                    <button type="button" class="btn-search" aria-label="검색">
+                      <span class="btn-search__icon" aria-hidden="true"></span>
+                      <span class="btn-search__text">검색</span>
+                    </button>
+                  </td>
+                </tr>
               </tbody>
             </table>
 
@@ -374,6 +464,54 @@
                 <div class="radio-btn radio-btn--sm radio-btn--line">
                   <input type="radio" id="radio17" name="radioSet5" class="radio-btn__input" />
                   <label for="radio17" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type tag wrap</h3>
+              <div class="radio-group radio-group--tags radio-group--wrap">
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio18" name="radioSet6" class="radio-btn__input" checked />
+                  <label for="radio18" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio19" name="radioSet6" class="radio-btn__input"/>
+                  <label for="radio19" class="radio-btn__label">디자인</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio20" name="radioSet6" class="radio-btn__input" />
+                  <label for="radio20" class="radio-btn__label">마감처리</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio21" name="radioSet6" class="radio-btn__input" />
+                  <label for="radio21" class="radio-btn__label">착용감</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio22" name="radioSet6" class="radio-btn__input" />
+                  <label for="radio22" class="radio-btn__label">라인핏</label>
+                </div>
+              </div>
+
+              <h3 class="guide__subtitle">button type tag scroll</h3>
+              <div class="radio-group radio-group--tags radio-group--scroll">
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio23" name="radioSet7" class="radio-btn__input" checked />
+                  <label for="radio23" class="radio-btn__label">전체</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio24" name="radioSet7" class="radio-btn__input"/>
+                  <label for="radio24" class="radio-btn__label">디자인</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio25" name="radioSet7" class="radio-btn__input" />
+                  <label for="radio25" class="radio-btn__label">마감처리</label>
+                </div>      
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio26" name="radioSet7" class="radio-btn__input" />
+                  <label for="radio26" class="radio-btn__label">착용감</label>
+                </div>
+                <div class="radio-btn radio-btn--tag">
+                  <input type="radio" id="radio27" name="radioSet7" class="radio-btn__input" />
+                  <label for="radio27" class="radio-btn__label">라인핏</label>
                 </div>
               </div>
             </div>

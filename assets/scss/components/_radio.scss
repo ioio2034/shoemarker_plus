@@ -123,6 +123,32 @@
       }
     }
   }
+  &--tag {
+    .radio-btn__label {
+      width: auto;
+      min-height: 34px;
+      height: 34px;
+      padding: 0 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0;
+      white-space: nowrap;
+      @include tablet {
+        font-size: 13px;
+        padding: 0 14px;
+      }
+    }
+    .radio-btn__input {
+      &:checked + .radio-btn__label {
+        border-color: $gray-80;
+        background-color: $gray-80;
+        color: $white;
+        font-weight: 600;
+      }
+    }
+  }
 }
 
 .radio-group {
@@ -131,6 +157,13 @@
   .radio-btn {
     width: 100%;
     min-width: 0;
+  }
+  &--tags {
+    .radio-btn {
+      width: auto; 
+      min-width: 0;
+      flex-shrink: 0;
+    }
   }
 
   &--col2 {
@@ -156,5 +189,22 @@
   &--col5 {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  // 줄바꿈
+  &--wrap {
+    flex-wrap: wrap;
+  }
+  // 한줄 가로 스크롤
+  &--scroll {
+    position: relative;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { 
+      display: none; 
+    }
   }
 }

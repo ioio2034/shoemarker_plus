@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-product">
+ 
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <!-- Brand name -->
+            <h2 class="section__title">NIKE</h2>
+            <div class="section__util">
+              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="product-detail">
+
+            <!-- 상품 상세 상단 -->
+            <div class="prod-summary">
+              <!-- 상품 이미지 -->
+              <section class="prod-visual">
+                <!-- 상단 오버레이 플래그 -->
+                <div class="flag">    
+                  <!-- 스타일링 -->
+                  <a href="#" class="flag__item flag__item--style">
+                    <span class="flag__text">STYLE</span>
+                  </a>
+                  <!-- AI 피팅 -->
+                  <a href="#" class="flag__item flag__item--ai">
+                    <span class="flag__icon" aria-hidden="true"></span>
+                    <span class="flag__text">AI FITTING</span>
+                  </a>
+                </div>
+                <!-- //상단 오버레이 플래그 -->
+                <!-- 메인 이미지 -->
+                <div class="visual-swiper swiper js-prod-visual-main">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_04.jpg" alt="상품 이미지 4" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_05.jpg" alt="상품 이미지 5" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_06.jpg" alt="상품 이미지 6" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                    <div class="swiper-slide visual-swiper__slide">
+                      <div class="visual-swiper__img-box">
+                        <img src="../../assets/images/img_product_sample_07.jpg" alt="상품 이미지 7" class="visual-swiper__img" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 인디케이터 -->
+                  <div class="visual-swiper__fraction"></div>
+                </div>
+                <!-- //메인 이미지 -->
+                <!-- 썸네일 -->
+                <div class="thumb-swiper swiper js-prod-visual-thumb" aria-label="상품 이미지 썸네일">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_01.jpg" alt="상품 이미지 1 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_02.jpg" alt="상품 이미지 2 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_03.jpg" alt="상품 이미지 3 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_04.jpg" alt="상품 이미지 4 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_05.jpg" alt="상품 이미지 5 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_06.jpg" alt="상품 이미지 6 썸네일" />
+                      </button>
+                    </div>
+                    <div class="swiper-slide thumb-swiper__slide">
+                      <button type="button" class="thumb-swiper__btn">
+                        <img src="../../assets/images/img_product_sample_07.jpg" alt="상품 이미지 7 썸네일" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //썸네일 -->
+              </section>
+              <!-- 상품 정보 -->
+              <aside class="prod-option">
+                <div class="prod-option__inner">
+                  <!-- item-summary : 브랜드 + 상품명 + 메타 -->
+                  <div class="item-summary">
+                    <p class="item-summary__brand">NIKE</p>
+                    <h2 class="item-summary__name">나이키 줌 플라이 6</h2>
+                    <div class="item-summary__meta-wrap">
+                      <div class="item-summary__meta">
+                        <span class="item-summary__code">hj8485-100</span>
+                        <!-- rating-stars : empty/filled 레이어 방식 별점 -->
+                        <div class="item-summary__rating">
+                          <div class="item-summary__stars rating-stars">
+                            <!-- 빈 별 (베이스 레이어) -->
+                            <span class="rating-stars__empty">
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                            </span>
+                            <!-- 채워진 별 (width % 로 점수 표현) -->
+                            <span class="rating-stars__filled" style="width: 100%;">
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                              <span class="rating-stars__star"></span>
+                            </span>
+                          </div>
+                          <span class="item-summary__rating-count">5</span>
+                        </div>
+                        <span class="item-summary__review-count">(14)</span>
+                      </div>
+                      <div class="item-summary__actions">
+                        <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
+                          <span class="btn-icon__icon"></span>
+                        </button>
+                        <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
+                          <span class="btn-icon__icon"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //item-summary -->
+                  <!-- price : 가격 -->
+                  <div class="price">
+                    <div class="price__origin">
+                      <span class="price__num">240,000</span><span class="price__unit">원</span>
+                    </div>
+                    <div class="price__row">
+                      <div class="price__current">
+                        <span class="price__rate">5%</span>
+                        <span class="price__num">229,000</span><span class="price__unit">원</span>
+                      </div>
+                      <button type="button" class="price__coupon-btn">쿠폰받기</button>
+                    </div>
+                  </div>
+                  <!-- //price -->
+                  <!-- benefit : 나의 최대 혜택가 -->
+                  <div class="benefit">
+                    <button type="button" class="benefit__toggle" aria-expanded="false" aria-controls="benefit-layer">
+                      <span class="benefit__label">나의 최대 혜택가</span>
+                      <div class="benefit__price">
+                        <span class="benefit__price-num">152,300</span><span class="benefit__price-unit">원</span>
+                      </div>
+                    </button>
+                    <!-- 혜택 상세 레이어 -->
+                    <div class="benefit__layer" id="benefit-layer" role="region" aria-label="혜택 상세">
+                      <div class="benefit-detail">
+                        <!-- 할인 목록 -->
+                        <ul class="benefit-detail__list">
+                          <li class="benefit-detail__item">
+                            <span class="benefit-detail__name">상품할인</span>
+                            <span class="benefit-detail__value">
+                              <span class="benefit-detail__value-num">-24,000</span><span class="benefit-detail__value-unit">원</span>
+                            </span>
+                          </li>
+                          <li class="benefit-detail__item">
+                            <span class="benefit-detail__name">페이코 결제 혜택(14%)</span>
+                            <span class="benefit-detail__value">
+                              <span class="benefit-detail__value-num">-19,600</span><span class="benefit-detail__value-unit">원</span>
+                            </span>
+                          </li>
+                          <li class="benefit-detail__item">
+                            <span class="benefit-detail__name">플러스 혜택</span>
+                            <span class="benefit-detail__value">
+                              <span class="benefit-detail__value-num">-9,156</span><span class="benefit-detail__value-unit">원</span>
+                            </span>
+                          </li>
+                          <li class="benefit-detail__item">
+                            <span class="benefit-detail__name">배송쿠폰 할인</span>
+                            <span class="benefit-detail__value">
+                              <span class="benefit-detail__value-num">-3,000</span><span class="benefit-detail__value-unit">원</span>
+                            </span>
+                          </li>
+                        </ul>
+                        <!-- 최종 판매가 -->
+                        <div class="benefit-detail__total">
+                          <span class="benefit-detail__total-label">최종 판매가</span>
+                          <span class="benefit-detail__price">
+                            <span class="benefit-detail__price-num">142,250</span><span class="benefit-detail__price-unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 등급별 적립 혜택 -->
+                        <div class="benefit-detail__grade">
+                          <span class="benefit-detail__grade-title">등급별 적립 혜택</span>
+                          <ul class="benefit-detail__grade-list">
+                            <li class="benefit-detail__grade-item">CREW 1.3%적립</li>
+                            <li class="benefit-detail__grade-item">VIBE 1.3%적립</li>
+                            <li class="benefit-detail__grade-item">FLEX 2%적립</li>
+                            <li class="benefit-detail__grade-item">PRIME 2.3적립</li>
+                            <li class="benefit-detail__grade-item">LEGEND 2.5%적립</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //혜택 상세 레이어 -->
+                  </div>
+                  <!-- //benefit -->
+                  <!-- login-banner : 로그인 유도 배너 -->
+                  <a href="#" class="login-banner" aria-label="로그인 및 회원가입 페이지로 이동">
+                    <span class="login-banner__text">
+                      로그인 및 회원 가입 후 다양한 혜택을 받으세요.
+                    </span>
+                  </a>
+                  <!-- //login-banner -->
+                  <!-- color-selector : 컬러 선택 -->
+                  <div class="color-selector">
+                    <p class="color-selector__label">컬러</p>
+                    <ul class="color-selector__list" role="group" aria-label="컬러 선택">
+                      <li>
+                        <!-- 
+                          선택된 컬러 .color-selector__btn에 is-active 추가
+                          품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+                        -->
+                        <button type="button" class="color-selector__btn is-active">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- //color-selector -->
+                  <!-- size-selector : 사이즈 선택 -->
+                  <div class="size-selector">
+                    <p class="size-selector__label">사이즈</p>
+                    <ul class="size-selector__list" role="group" aria-label="사이즈 선택">
+                      <!-- 
+                        선택된 사이즈 .size-selector__btn에 is-active 추가
+                        품절된 사이즈 .size-selector__btn에 is-soldout, disabled,  aria-disabled="true" 추가
+                      -->
+                      <li><button type="button" class="size-selector__btn is-soldout" aria-label="220mm 품절" disabled aria-disabled="true">220</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="225mm">225</button></li>
+                      <li><button type="button" class="size-selector__btn is-active" aria-label="230mm">230</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="245mm">245</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="250mm">250</button></li>
+                      <li><button type="button" class="size-selector__btn is-soldout" aria-label="255mm 품절" disabled aria-disabled="true">255</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="260mm">260</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="265mm">265</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="270mm">270</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="275mm">275</button></li>
+                      <li><button type="button" class="size-selector__btn" aria-label="280mm">280</button></li>
+                    </ul>
+                    <div class="size-selector__guide">
+                      <a href="#" class="size-selector__guide-link">사이즈 안내!</a>
+                      <p class="size-selector__guide-text">고객님의 체형과 유사한 분들이 선택한 사이즈를 참고하여 추천드립니다.</p>
+                    </div>
+                  </div>
+                  <!-- //size-selector -->
+                  <!-- delivery : 배송정보 -->
+                  <div class="delivery">
+                    <h4 class="delivery__title">배송정보</h4>
+                    <ul class="delivery__list">
+                      <li class="delivery__item delivery__item--bold">제주 및 도서산간지역 배송불가 상품</li>
+                      <li class="delivery__item">배송비 3,000원(5만원 이상 무료)</li>
+                      <li class="delivery__item">오후 2시까지 주문 시 당일출고</li>
+                      <li class="delivery__item">복수배송지로 설정 시 각 배송지 별로 배송비 책정</li>
+                    </ul>
+                  </div>
+                  <!-- //delivery -->
+                  <!-- option-list : 선택된 옵션 목록 -->
+                  <div class="option-list" role="list" aria-label="선택된 옵션">
+                    <!-- option-item : 선택 항목 개별 -->
+                    <div class="option-item" role="listitem">
+                      <div class="option-item__header">
+                        <span class="option-item__name">230 / Black</span>
+                        <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+                      </div>
+                      <div class="option-item__body">
+                        <!-- qty : 수량 조절 -->
+                        <div class="qty">
+                          <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                          <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                          <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                        </div>
+                        <div class="option-item__price">
+                          <span class="option-item__origin">
+                            <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                          </span>
+                          <span class="option-item__sale">
+                            <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //option-item -->
+                    <!-- option-item : 선택 항목 개별 -->
+                    <div class="option-item" role="listitem">
+                      <div class="option-item__header">
+                        <span class="option-item__name">230 / Black</span>
+                        <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+                      </div>
+                      <div class="option-item__body">
+                        <!-- qty : 수량 조절 -->
+                        <div class="qty">
+                          <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                          <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                          <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                        </div>
+                        <div class="option-item__price">
+                          <span class="option-item__origin">
+                            <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                          </span>
+                          <span class="option-item__sale">
+                            <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //option-item -->
+                  </div>
+                  <!-- //option-list -->
+                  <!-- total : 총 상품 금액 -->
+                  <div class="total">
+                    <span class="total__label">총 상품 금액</span>
+                    <p class="total__price">
+                      <span class="total__price-num">229,000</span><span class="total__price-unit">원</span>
+                    </p>
+                  </div>
+                  <!-- //total -->
+                  <!-- buy-actions : 구매 버튼 그룹 -->
+                  <div class="buy-actions">
+                    <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                    <button type="button" class="btn btn--line">장바구니</button>
+                    <button type="button" class="btn btn--primary">바로구매</button>
+                  </div>
+                  <!-- //buy-actions -->
+                </div>
+              </aside>
+              <div class="divider"></div>
+              <!-- AI 추천 BEST -->
+              <section class="prod-recommend">
+                <h3 class="prod-recommend__title">AI 추천 BEST</h3>
+                <div class="product">
+                  <div class="product-swiper js-product-swiper">
+                    <ul class="product__list swiper-wrapper">
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="product__item swiper-slide">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <span class="product-card__label">sale</span>
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <!-- 정가 -->
+                                <div class="product-card__origin">
+                                  <span class="price">
+                                    <span class="price__num">219,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                                <!-- 할인 영역 -->
+                                <div class="product-card__cost">
+                                  <span class="product-card__percent">10%</span>
+                                  <span class="price">
+                                    <span class="price__num">209,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>                    
+                    </ul>
+                    <div class="product-swiper__btn">
+                      <button type="button" class="product-swiper__prev">이전</button>
+                      <button type="button" class="product-swiper__next">다음</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="divider"></div> 
+
+            <!-- 상품 상세 하단 -->
+            <div class="prod-content">
+              <div class="prod-content__main">
+                <nav class="prod-tabs" role="tablist" aria-label="상품 상세 탭">
+                  <ul class="prod-tabs__list">
+                    <li class="prod-tabs__item">
+                      <button
+                        type="button"
+                        class="prod-tabs__btn is-active"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="section-info"
+                        data-target="section-info"
+                      >
+                        상세정보
+                      </button>
+                    </li>
+                    <li class="prod-tabs__item">
+                      <button
+                        type="button"
+                        class="prod-tabs__btn"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="section-review"
+                        data-target="section-review"
+                      >
+                        상품평
+                        <span class="prod-tabs__count">(10)</span>
+                      </button>
+                    </li>
+                    <li class="prod-tabs__item">
+                      <button
+                        type="button"
+                        class="prod-tabs__btn"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="section-styling"
+                        data-target="section-styling"
+                      >
+                        룩&amp;스타일
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- 상품 상세 정보 -->
+                <section class="prod-info" id="section-info" aria-label="상세정보">
+                  <!-- 상세 이미지 영역 -->
+                  <div class="prod-info__body" id="prod-info-body">
+                    <div class="prod-info__img-wrap">
+                      <img
+                        src="../../assets/images/img_product_sample_01.jpg"
+                        alt="나이키 줌 플라이 6 상세 이미지"
+                      />
+                      <img
+                        src="../../assets/images/img_product_sample_01.jpg"
+                        alt="나이키 줌 플라이 6 상세 이미지"
+                      />
+                      <img
+                        src="../../assets/images/img_product_sample_01.jpg"
+                        alt="나이키 줌 플라이 6 상세 이미지"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- 상세정보 더보기 버튼 -->
+                  <div class="prod-info__fold" id="prod-info-fold">
+                    <button type="button" class="prod-info__more-btn" id="prod-info-more-btn" aria-expanded="false" aria-controls="prod-info-body">
+                      <span class="prod-info__more-text">상세정보 더보기</span>
+                      <span class="prod-info__more-icon" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </section>
+                <!-- //상품 상세 정보 -->
+                <!-- 상품평 -->
+                <section class="prod-review" id="section-review" aria-label="상품평">
+                  <h3 class="prod-review__title">REVIEW</h3>
+                  <!-- 평점 요약 -->
+                  <div class="review-summary">
+                    <!-- 평점 -->
+                    <div class="review-summary__score">
+                      <p class="review-summary__label">REVIEW</p>
+                      <div class="rating-stars rating-stars--lg rating-stars--yellow" aria-label="별점 4.5점" role="img">
+                        <span class="rating-stars__empty" aria-hidden="true">
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                        </span>
+                        <span class="rating-stars__filled" style="width: 90%;" aria-hidden="true">
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                          <span class="rating-stars__star"></span>
+                        </span>
+                      </div>
+
+                      <p class="review-summary__num">4.5 <em>/ 5</em></p>
+                      <p class="review-summary__count">리뷰 306개</p>
+                    </div>
+                    <!-- 만족도 -->
+                    <div class="review-summary__dist">
+                      <div class="review-bar" role="list" aria-label="만족도 분포">
+                        <div class="review-bar__item" role="listitem">
+                          <span class="review-bar__label">아주 좋아요</span>
+                          <div class="review-bar__track" aria-label="아주 좋아요 비율">
+                            <div class="review-bar__fill" style="width: 100%;"></div>
+                          </div>
+                        </div>
+                        <div class="review-bar__item" role="listitem">
+                          <span class="review-bar__label">맘에 들어요</span>
+                          <div class="review-bar__track" aria-label="맘에 들어요 비율">
+                            <div class="review-bar__fill" style="width: 80%;"></div>
+                          </div>
+                        </div>
+                        <div class="review-bar__item" role="listitem">
+                          <span class="review-bar__label">보통이에요</span>
+                          <div class="review-bar__track" aria-label="보통이에요 비율">
+                            <div class="review-bar__fill" style="width: 50%;"></div>
+                          </div>
+                        </div>
+                        <div class="review-bar__item" role="listitem">
+                          <span class="review-bar__label">그냥 그래요</span>
+                          <div class="review-bar__track" aria-label="그냥 그래요 비율">
+                            <div class="review-bar__fill" style="width: 30%;"></div>
+                          </div>
+                        </div>
+                        <div class="review-bar__item" role="listitem">
+                          <span class="review-bar__label">별로에요</span>
+                          <div class="review-bar__track" aria-label="별로에요 비율">
+                            <div class="review-bar__fill" style="width: 10%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //평점 요약 -->
+                  <!-- 정렬 + 필터 -->
+                  <div class="review-filter">
+                    <!-- 정렬 + 검색 -->
+                    <div class="review-filter__top">
+                      <!-- 정렬 버튼 + 레이어 -->
+                      <div class="sort">
+                        <button type="button" class="sort__btn" aria-label="정렬" aria-expanded="false" aria-controls="sort-layer">
+                          <span class="sort__text">최신순</span>
+                          <span class="sort__icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- 정렬 레이어 -->
+                        <div class="sort__layer" id="sort-layer">
+                          <ul class="sort__list">
+                            <li class="sort__item">
+                              <button type="button" class="sort__option is-active" data-value="latest">최신순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="popular">인기순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="rating">별점순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="price-low">낮은가격순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="price-high">높은가격순</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- //sort__layer -->
+                      </div>
+                      <!-- //sort -->
+                      <button type="button" class="btn-search" aria-label="검색">
+                        <span class="btn-search__icon" aria-hidden="true"></span>
+                        <span class="btn-search__text">검색</span>
+                      </button>
+                    </div>
+                    <!-- select 필터 -->
+                    <div class="review-filter__selects" role="group" aria-label="리뷰 필터">
+                      <div class="select">
+                        <div class="select__box">
+                          <select class="select__field" aria-label="별점 필터">
+                            <option value="" disabled selected hidden>별점</option>
+                            <option value="5">5점</option>
+                            <option value="4">4점</option>
+                            <option value="3">3점</option>
+                            <option value="2">2점</option>
+                            <option value="1">1점</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select class="select__field" aria-label="사이즈 필터">
+                            <option value="" disabled selected hidden>사이즈 어때요?</option>
+                            <option value="small">작아요</option>
+                            <option value="normal">정사이즈에요</option>
+                            <option value="big">커요</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select class="select__field" aria-label="발볼 필터">
+                            <option value="" disabled selected hidden>발볼</option>
+                            <option value="narrow">좁아요</option>
+                            <option value="normal">보통이에요</option>
+                            <option value="wide">넓어요</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select class="select__field" aria-label="착화감 필터">
+                            <option value="" disabled selected hidden>착화감</option>
+                            <option value="comfortable">편한해요</option>
+                            <option value="normal">보통이에요</option>
+                            <option value="uncomfortable">불편해요</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select class="select__field" aria-label="색상 필터">
+                            <option value="" disabled selected hidden>색상</option>
+                            <option value="same">화면과 같아요</option>
+                            <option value="different">달라요</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 카테고리 태그 필터 -->
+                    <div class="review-filter__tags">
+                      <div class="radio-group radio-group--tags radio-group--scroll">
+                        <div class="radio-btn radio-btn--tag">
+                          <input type="radio" id="radio1" name="radioSet" class="radio-btn__input" checked />
+                          <label for="radio1" class="radio-btn__label">전체</label>
+                        </div>
+                        <div class="radio-btn radio-btn--tag">
+                          <input type="radio" id="radio2" name="radioSet" class="radio-btn__input"/>
+                          <label for="radio2" class="radio-btn__label">디자인</label>
+                        </div>      
+                        <div class="radio-btn radio-btn--tag">
+                          <input type="radio" id="radio3" name="radioSet" class="radio-btn__input" />
+                          <label for="radio3" class="radio-btn__label">마감처리</label>
+                        </div>      
+                        <div class="radio-btn radio-btn--tag">
+                          <input type="radio" id="radio4" name="radioSet" class="radio-btn__input" />
+                          <label for="radio4" class="radio-btn__label">착용감</label>
+                        </div>
+                        <div class="radio-btn radio-btn--tag">
+                          <input type="radio" id="radio5" name="radioSet" class="radio-btn__input" />
+                          <label for="radio5" class="radio-btn__label">라인핏</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //카테고리 태그 필터 -->
+                  </div>
+                  <!-- //정렬 + 필터 -->
+                  <!-- 리뷰 목록 -->
+                  <ul class="review-list" aria-label="리뷰 목록">
+                    <!-- review-item -->
+                    <li class="review-item">
+                      <div class="review-item__header">
+                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                          <span class="rating-stars__empty" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                          <span class="rating-stars__filled" style="width: 80%;" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                        </div>
+                        <span class="review-item__author">김은******</span>
+                        <div class="review-item__badge-group">
+                          <span class="review-item__badge review-item__badge--new">NEW</span>
+                          <span class="review-item__badge review-item__badge--repurchase">재구매</span>
+                        </div>
+                        <span class="review-item__date">2026.05.31</span>
+                      </div>
+
+                      <p class="review-item__option">[옵션] 270 / White</p>
+
+                      <div class="review-item__attrs">
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">사이즈 어때요?</span>
+                          <span class="review-item__attr-val">정사이즈에요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">발볼</span>
+                          <span class="review-item__attr-val">넓어요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">착화감</span>
+                          <span class="review-item__attr-val">편한해요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">색상</span>
+                          <span class="review-item__attr-val">화면과 같아요</span>
+                        </div>
+                      </div>
+
+                      <p class="review-item__body">
+                        볼넓고 발등도 높은데 정사이즈 맞음. 발이 작아보임. 일상용으로 딱 좋음.
+                      </p> 
+                    </li>
+                    <!-- // review-item -->
+                    <!-- review-item -->
+                    <li class="review-item">
+                      <div class="review-item__header">
+                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                          <span class="rating-stars__empty" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                          <span class="rating-stars__filled" style="width: 80%;" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                        </div>
+                        <span class="review-item__author">김은******</span>
+                        <div class="review-item__badge-group">
+                          <span class="review-item__badge review-item__badge--new">NEW</span>
+                          <span class="review-item__badge review-item__badge--repurchase">재구매</span>
+                        </div>
+                        <span class="review-item__date">2026.05.31</span>
+                      </div>
+
+                      <p class="review-item__option">[옵션] 270 / White</p>
+
+                      <div class="review-item__attrs">
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">사이즈 어때요?</span>
+                          <span class="review-item__attr-val">정사이즈에요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">발볼</span>
+                          <span class="review-item__attr-val">넓어요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">착화감</span>
+                          <span class="review-item__attr-val">편한해요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">색상</span>
+                          <span class="review-item__attr-val">화면과 같아요</span>
+                        </div>
+                      </div>
+
+                      <p class="review-item__body">
+                        볼넓고 발등도 높은데 정사이즈 맞음. 발이 작아보임. 일상용으로 딱 좋음.
+                      </p> 
+                    </li>
+                    <!-- // review-item -->
+                    <!-- review-item -->
+                    <li class="review-item">
+                      <div class="review-item__header">
+                        <div class="rating-stars rating-stars--md rating-stars--yellow" aria-label="별점 4점" role="img">
+                          <span class="rating-stars__empty" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                          <span class="rating-stars__filled" style="width: 80%;" aria-hidden="true">
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                            <span class="rating-stars__star"></span>
+                          </span>
+                        </div>
+                        <span class="review-item__author">김은******</span>
+                        <div class="review-item__badge-group">
+                          <span class="review-item__badge review-item__badge--new">NEW</span>
+                          <span class="review-item__badge review-item__badge--repurchase">재구매</span>
+                        </div>
+                        <span class="review-item__date">2026.05.31</span>
+                      </div>
+
+                      <p class="review-item__option">[옵션] 270 / White</p>
+
+                      <div class="review-item__attrs">
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">사이즈 어때요?</span>
+                          <span class="review-item__attr-val">정사이즈에요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">발볼</span>
+                          <span class="review-item__attr-val">넓어요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">착화감</span>
+                          <span class="review-item__attr-val">편한해요</span>
+                        </div>
+                        <div class="review-item__attr">
+                          <span class="review-item__attr-key">색상</span>
+                          <span class="review-item__attr-val">화면과 같아요</span>
+                        </div>
+                      </div>
+
+                      <p class="review-item__body">
+                        볼넓고 발등도 높은데 정사이즈 맞음. 발이 작아보임. 일상용으로 딱 좋음.
+                      </p> 
+                    </li>
+                    <!-- // review-item -->
+                  </ul>
+                  <!-- //리뷰 목록 -->
+                </section>
+                <!-- //상품평 -->
+                <div class="divider"></div>
+                <!-- 룩&스타일 -->
+                <section class="prod-styling" id="section-styling" aria-label="슈마커 플러스 추천 스타일링">
+                  <h3 class="prod-styling__title">슈마커 플러스 추천 스타일링</h3>
+                  <!-- styling-visual -->
+                  <div class="styling-visual">
+                    <picture>
+                      <source
+                        media="(max-width: 1024px)"
+                        srcset="../../assets/images/img_styling_sample_mo.jpg"
+                      />
+                      <img
+                        src="../../assets/images/img_styling_sample_pc.jpg"
+                        alt="EFFORTLESS COOL, AIRY RUN"
+                        class="styling-visual__img"
+                      />
+                    </picture>
+                  </div>
+                  <!-- //styling-visual -->
+                  <!-- 상품 목록 -->
+                  <div class="styling-product">
+                    <div class="product">
+                      <div class="product-swiper js-product-swiper">
+                        <ul class="product__list swiper-wrapper">
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>
+                          <li class="product__item swiper-slide">
+                            <div class="product-card">
+                              <a href="#" class="product-card__link">
+                                <span class="product-card__label">sale</span>
+                                <div class="product-card__img">
+                                  <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                                </div>
+                              </a>
+                              <a href="#" class="product-card__link">
+                                <div class="product-card__info">
+                                  <span class="product-card__brand">NIKE</span>
+                                  <span class="product-card__name">나이키 알파플라이 3글램</span>
+                                  <div class="product-card__price">
+                                    <!-- 정가 -->
+                                    <div class="product-card__origin">
+                                      <span class="price">
+                                        <span class="price__num">219,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                    <!-- 할인 영역 -->
+                                    <div class="product-card__cost">
+                                      <span class="product-card__percent">10%</span>
+                                      <span class="price">
+                                        <span class="price__num">209,000</span>
+                                        <span class="price__unit">원</span>
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                            </div>
+                          </li>                    
+                        </ul>
+                        <div class="product-swiper__btn">
+                          <button type="button" class="product-swiper__prev">이전</button>
+                          <button type="button" class="product-swiper__next">다음</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //상품 목록 -->
+                  <!-- 스타일 안내 버튼 -->
+                  <div class="styling-more">
+                  <button type="button" class="styling-more__btn">
+                    <span class="styling-more__text">스타일 안내</span>
+                    <span class="styling-more__icon" aria-hidden="true"></span>
+                  </button>
+                </div>
+                  <!-- //스타일 안내 버튼 -->
+                </section>
+                <!-- //룩&스타일 -->
+              </div>
+              <aside class="prod-content__aside">
+                <div class="prod-content__aside-inner">
+                  <div class="option-panel">
+                    <!-- item-select -->
+                    <div class="item-select">
+                      <!-- color-selector : 컬러 선택 -->
+                      <div class="select">
+                        <label for="colorSelector" class="select__label select__label--hide">컬러 선택</label>
+                        <div class="select__box">
+                          <select id="colorSelector" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>컬러</option>
+                            <option value="">Black</option>
+                            <option value="">White</option>
+                          </select>
+                        </div>
+                      </div>
+                      <!-- size-selector : 사이즈 선택 -->
+                       <div class="select">
+                        <label for="sizeSelector" class="select__label select__label--hide">사이즈 선택</label>
+                        <div class="select__box">
+                          <select id="sizeSelector" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>사이즈</option>
+                            <option value="">220mm</option>
+                            <option value="">225mm</option>
+                            <option value="">230mm</option>
+                            <option value="">235mm</option>
+                            <option value="">240mm</option>
+                            <option value="">245mm</option>
+                            <option value="">250mm</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //item-select -->
+                    <!-- option-list -->
+                    <div class="option-list" role="list" aria-label="선택된 옵션">
+                      <!-- option-item : 개별 선택 항목 -->
+                      <!-- ※ 상단과 다르게 썸네일 이미지 추가됨 -->
+                      <div class="option-item" role="listitem">
+                        <div class="option-item__header">
+                          <span class="option-item__name">230 / Black</span>
+                          <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+                        </div>
+                        <div class="option-item__body">
+                          <img
+                            src="../../assets/images/img_product_thumb_01.jpg"
+                            alt="나이키 줌 플라이 6 230 Black"
+                            class="option-item__thumb"
+                          />
+                          <div class="option-item__price">
+                            <span class="option-item__origin">
+                              <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                            </span>
+                            <span class="option-item__sale">
+                              <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                        <!-- qty -->
+                        <div class="qty">
+                          <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                          <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                          <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                        </div>
+                      </div>
+                      <!-- //option-item -->
+                      <!-- option-item : 개별 선택 항목 -->
+                      <!-- ※ 상단과 다르게 썸네일 이미지 추가됨 -->
+                      <div class="option-item" role="listitem">
+                        <div class="option-item__header">
+                          <span class="option-item__name">235 / Black</span>
+                          <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+                        </div>
+                        <div class="option-item__body">
+                          <img
+                            src="../../assets/images/img_product_thumb_01.jpg"
+                            alt="나이키 줌 플라이 6 230 Black"
+                            class="option-item__thumb"
+                          />
+                          <div class="option-item__price">
+                            <span class="option-item__origin">
+                              <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                            </span>
+                            <span class="option-item__sale">
+                              <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                        <!-- qty -->
+                        <div class="qty">
+                          <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                          <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                          <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                        </div>
+                      </div>
+                      <!-- //option-item -->
+                    </div>
+                    <!-- //option-list -->
+                  </div>
+                  <!-- total : 총 상품 금액 -->
+                  <div class="total">
+                    <span class="total__label">총 상품 금액</span>
+                    <p class="total__price">
+                      <span class="total__price-num">229,000</span><span class="total__price-unit">원</span>
+                    </p>
+                  </div>
+                  <!-- //total -->
+                  <!-- buy-actions : 구매 버튼 그룹 -->
+                  <div class="buy-actions">
+                    <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+                      <span class="btn-icon__icon"></span>
+                    </button>
+                    <button type="button" class="btn btn--line">장바구니</button>
+                    <button type="button" class="btn btn--primary">바로구매</button>
+                  </div>
+                  <!-- //buy-actions -->
+                </div>
+              </aside>
+            </div>
+
+            <!-- 구매 버튼 -->
+            <div class="cta cta--fixed">
+              <div class="buy-actions buy-actions--sm">
+                <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+                  <span class="btn-icon__icon"></span>
+                </button>
+                <button type="button" class="btn btn--line js-bottom-sheet-open" data-target="#buySheet">장바구니</button>
+                <button type="button" class="btn btn--primary js-bottom-sheet-open" data-target="#buySheet">바로구매</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- bottom sheet -->
+  <div class="bottom-sheet" id="buySheet">
+    <!-- dim -->
+    <div class="bottom-sheet__dim"></div>
+    <!-- content -->
+    <div class="bottom-sheet__content">
+      <div class="bottom-sheet__indicator"></div>
+      <div class="bottom-sheet__header">
+        <h3 class="bottom-sheet__title">옵션 선택</h3>
+      </div>
+      <div class="bottom-sheet__body">
+        <div class="bottom-sheet__section">
+          <!-- color-selector : 컬러 선택 -->
+          <div class="color-selector">
+            <p class="color-selector__label">컬러</p>
+            <ul class="color-selector__list" role="group" aria-label="컬러 선택">
+              <li>
+                <!-- 
+                  선택된 컬러 .color-selector__btn에 is-active 추가
+                  품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+                -->
+                <button type="button" class="color-selector__btn is-active">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
+                </button>
+              </li>
+            </ul>
+          </div>
+          <!-- //color-selector -->
+        </div>
+        <div class="bottom-sheet__section">
+          <!-- size-selector : 사이즈 선택 -->
+          <div class="size-selector">
+            <p class="size-selector__label">사이즈</p>
+            <ul class="size-selector__list" role="group" aria-label="사이즈 선택">
+              <!-- 
+                선택된 사이즈 .size-selector__btn에 is-active 추가
+                품절된 사이즈 .size-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+              -->
+              <li><button type="button" class="size-selector__btn is-soldout" aria-label="220mm 품절" disabled aria-disabled="true">220</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="225mm">225</button></li>
+              <li><button type="button" class="size-selector__btn is-active" aria-label="230mm">230</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="245mm">245</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="250mm">250</button></li>
+              <li><button type="button" class="size-selector__btn is-soldout" aria-label="255mm 품절" disabled aria-disabled="true">255</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="260mm">260</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="265mm">265</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="270mm">270</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="275mm">275</button></li>
+              <li><button type="button" class="size-selector__btn" aria-label="280mm">280</button></li>
+            </ul>
+            <div class="size-selector__guide">
+              <a href="#" class="size-selector__guide-link">사이즈 안내!</a>
+              <p class="size-selector__guide-text">고객님의 체형과 유사한 분들이 선택한 사이즈를 참고하여 추천드립니다.</p>
+            </div>
+          </div>
+          <!-- //size-selector -->
+        </div>
+        <div class="bottom-sheet__section">
+          <!-- option-list : 선택된 옵션 목록 -->
+          <div class="option-list" role="list" aria-label="선택된 옵션">
+            <!-- option-item : 선택 항목 개별 -->
+            <div class="option-item" role="listitem">
+              <div class="option-item__header">
+                <span class="option-item__name">230 / Black</span>
+                <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+              </div>
+              <div class="option-item__body">
+                <!-- qty : 수량 조절 -->
+                <div class="qty">
+                  <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                  <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                  <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                </div>
+                <div class="option-item__price">
+                  <span class="option-item__origin">
+                    <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                  </span>
+                  <span class="option-item__sale">
+                    <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- //option-item -->
+            <!-- option-item : 선택 항목 개별 -->
+            <div class="option-item" role="listitem">
+              <div class="option-item__header">
+                <span class="option-item__name">230 / Black</span>
+                <button type="button" class="option-item__delete" aria-label="옵션 삭제"></button>
+              </div>
+              <div class="option-item__body">
+                <!-- qty : 수량 조절 -->
+                <div class="qty">
+                  <button type="button" class="qty__btn qty__btn--minus" aria-label="수량 감소"></button>
+                  <input type="text" data-name="prodAmount" readonly class="qty__count" title="수량 설정" value="1">
+                  <button type="button" class="qty__btn qty__btn--plus" aria-label="수량 증가"></button>
+                </div>
+                <div class="option-item__price">
+                  <span class="option-item__origin">
+                    <span class="option-item__price-num">240,000</span><span class="option-item__price-unit">원</span>
+                  </span>
+                  <span class="option-item__sale">
+                    <span class="option-item__price-num">229,000</span><span class="option-item__price-unit">원</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- //option-item -->
+          </div>
+          <!-- //option-list -->
+        </div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <div class="buy-actions buy-actions--sm">
+          <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
+            <span class="btn-icon__icon"></span>
+          </button>
+          <button type="button" class="btn btn--line">장바구니</button>
+          <button type="button" class="btn btn--primary">바로구매</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+
+    window.addEventListener('load', function () {
+      // 썸네일 슬라이드
+      const thumbSwiper = new Swiper('.js-prod-visual-thumb', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        watchSlidesProgress: true,
+        breakpoints: {
+          0: {
+            enabled: false,
+          },
+          1024: {
+            enabled: true,
+          },
+        },
+      });
+
+      // 메인 상품 슬라이드
+      new Swiper('.js-prod-visual-main', {
+        thumbs: {
+          swiper: thumbSwiper,
+        },
+        breakpoints: {
+          0: {
+            spaceBetween: 0,
+            slidesPerView: 1,
+          },
+          1024: {
+            spaceBetween: 8,
+            slidesPerView: 1.25,
+          },
+        },
+        pagination: {
+          el: '.visual-swiper__fraction',
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return `
+              <span class="${currentClass}"></span>
+              <span class="visual-swiper__fraction-sep">/</span>
+              <span class="${totalClass}"></span>
+            `;
+          },
+        },
+      });
+
+      // 상품 슬라이드
+      const swiperEls = document.querySelectorAll('.js-product-swiper');
+      if (!swiperEls.length) return;
+
+      swiperEls.forEach(function (swiperEl) {
+        new Swiper(swiperEl, {
+          navigation: {
+            nextEl: swiperEl.querySelector('.product-swiper__next'),
+            prevEl: swiperEl.querySelector('.product-swiper__prev'),
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2.25,
+              spaceBetween: 12,
+              freeMode: true,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+              freeMode: false,
+            },
+          },
+        });
+      });
+    });
+  </script>
+</body>
+</html>

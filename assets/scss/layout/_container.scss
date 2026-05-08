@@ -1,7 +1,7 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
-/* main z-index: 1~20, header: 50~100, gnb, tabbar: 101~200, footer: 201~, bottom sheet: 999, modal: 1000 */
+/* main z-index: 1~20, header: 50~100, gnb, tab, tab bar: 101~200, footer, bottom button: 201~, bottom sheet: 999, modal: 1000 */
 
 body {
   &.is-loading {
@@ -12,15 +12,8 @@ body {
 
 #wrap {
   position: relative;
-  overflow: hidden;
   width: 100%;
   min-width: 280px;
-  &.page-product {
-    overflow: visible;
-    @include tablet {
-      overflow: hidden;
-    }
-  }
 }
 
 .container {
@@ -105,6 +98,25 @@ body {
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+      }
+    }
+    &--dark {
+      @include tablet {
+        background: #0F0F0F;
+        border-bottom-color: transparent;
+      }
+      .section__title {
+        color: $white;
+      }
+      .btn-icon--back {
+        .btn-icon__icon {
+          @include bgimage('icon_chevron_left_24_w', 'svg');
+        }
+      }
+      .btn-icon--cart {
+        .btn-icon__icon {
+          @include bgimage('icon_cart_24_w', 'svg');
+        }
       }
     }
   }
@@ -263,13 +275,13 @@ body {
 .page-product {
   .section {
     overflow: visible;
-    @include tablet {
-      overflow: hidden;
-    }
     &__inner {
       padding: 80px 0;
+      @include desktop {
+        padding: 80px 24px;
+      }
       @include tablet {
-        padding: 62px 0 calc(120px + env(safe-area-inset-bottom));
+        padding: 62px 0 calc(88px + env(safe-area-inset-bottom));
       }
     }
     &__header {

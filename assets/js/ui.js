@@ -368,7 +368,143 @@ let UI = {
 
       updateCount();
     });
-  }
+  },
+  // 상품 상세 스크롤 탭
+  prodTabs: function () {
+    const $prodTabs = $('.prod-tabs');
+    const $tabBtns = $prodTabs.find('.prod-tabs__btn');
+
+    if (!$prodTabs.length) return;
+
+    // 탭 클릭 → 해당 섹션으로 스크롤 이동
+    $tabBtns.on('click', function () {
+      const $btn = $(this);
+      const targetId = $btn.data('target');
+      const $target = $('#' + targetId);
+
+      if (!$target.length) return;
+
+      $tabBtns.removeClass('is-active').attr('aria-selected', 'false');
+      $btn.addClass('is-active').attr('aria-selected', 'true');
+
+      const tabsHeight = $prodTabs.outerHeight();
+      const headerHeight = $('.section__header').outerHeight() || 0;
+      const targetTop = $target.offset().top - tabsHeight - headerHeight;
+
+      $('html, body').scrollTop(targetTop);
+    });
+
+    // 스크롤 위치에 따라 탭 active 자동 전환
+    const sectionIds = $tabBtns.map(function () {
+      return $(this).data('target');
+    }).get();
+
+    $(window).on('scroll.prodTabs', function () {
+      const tabsHeight = $prodTabs.outerHeight();
+      const headerHeight = $('.section__header').outerHeight() || 0;
+      const scrollTop = $(window).scrollTop();
+      let currentId = sectionIds[0];
+
+      sectionIds.forEach(function (id) {
+        const $section = $('#' + id);
+        if (!$section.length) return;
+        if ($section.offset().top - tabsHeight - headerHeight <= scrollTop) {
+          currentId = id;
+        }
+      });
+
+      $tabBtns.each(function () {
+        const $btn = $(this);
+        const isActive = $btn.data('target') === currentId;
+        $btn.toggleClass('is-active', isActive).attr('aria-selected', isActive ? 'true' : 'false');
+      });
+    });
+  },
+  // 상품 상세 더보기 / 접기
+  prodInfoMore: function () {
+    const $moreBtn = $('#prod-info-more-btn');
+    const $infoBody = $('#prod-info-body');
+    const $infoFold = $('#prod-info-fold');
+    const $moreText = $moreBtn.find('.prod-info__more-text');
+    const $moreIcon = $moreBtn.find('.prod-info__more-icon');
+
+    if (!$moreBtn.length) return;
+
+    $moreBtn.on('click', function () {
+      const isExpanded = $moreBtn.attr('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        // 접기
+        $infoBody.removeClass('is-expanded');
+        $moreBtn.attr('aria-expanded', 'false');
+        $moreText.text('상세정보 더보기');
+        $moreIcon.removeClass('is-open');
+        $infoFold.removeClass('is-expanded');
+      } else {
+        // 펼치기
+        $infoBody.addClass('is-expanded');
+        $moreBtn.attr('aria-expanded', 'true');
+        $moreText.text('상세정보 접기');
+        $moreIcon.addClass('is-open');
+        $infoFold.addClass('is-expanded');
+      }
+    });
+  },
+  // 상품 최대 혜택가 레이어
+  prodBenefit: function () {
+    const $toggle = $('.benefit__toggle');
+
+    $toggle.on('click', function () {
+      const $btn = $(this);
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+      const $layer = $('#' + $btn.attr('aria-controls'));
+
+      $btn.attr('aria-expanded', !isExpanded);
+      $layer.toggleClass('is-open', !isExpanded);
+    });
+
+    // 레이어 외부 클릭 시 닫기
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.benefit').length) {
+        $('.benefit__toggle').attr('aria-expanded', 'false');
+        $('.benefit__layer').removeClass('is-open');
+      }
+    });
+  },
+  // 정렬 레이어
+  reviewSort: function () {
+    const $sortBtn = $('.sort__btn');
+
+    $sortBtn.on('click', function () {
+      const $btn = $(this);
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+      const $layer = $('#' + $btn.attr('aria-controls'));
+
+      $btn.attr('aria-expanded', !isExpanded);
+      $layer.toggleClass('is-open', !isExpanded);
+    });
+
+    $(document).on('click', '.sort__option', function () {
+      const $option = $(this);
+      const $layer = $option.closest('.sort__layer');
+      const $btn = $layer.siblings('.sort__btn');
+
+      $layer.find('.sort__option').removeClass('is-active');
+      $option.addClass('is-active');
+
+      $btn.find('.sort__text').text($option.text());
+
+      $btn.attr('aria-expanded', 'false');
+      $layer.removeClass('is-open');
+    });
+
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.sort').length) {
+        $('.sort__btn').attr('aria-expanded', 'false');
+        $('.sort__layer').removeClass('is-open');
+      }
+    });
+  },
 };
 
 $(function () {
@@ -382,6 +518,10 @@ $(function () {
   UI.tabBar();
   UI.orderBlock();
   UI.textCount();
+  UI.prodTabs();
+  UI.prodInfoMore();
+  UI.prodBenefit();
+  UI.reviewSort();
 });
 
 // resize 대응

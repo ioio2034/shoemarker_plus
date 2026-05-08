@@ -14,7 +14,7 @@
     background-color: $gray-90;
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
-    z-index: 101;
+    z-index: 200;
   }
   
   &.is-hidden {
