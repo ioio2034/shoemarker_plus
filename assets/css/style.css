@@ -18327,7 +18327,7 @@ body.sheet-open {
 }
 .product-detail .prod-content .prod-styling .styling-product {
   overflow: hidden;
-  max-width: 765px;
+  max-width: 880px;
 }
 @media (max-width: 1024px) {
   .product-detail .prod-content .prod-styling .styling-product {
