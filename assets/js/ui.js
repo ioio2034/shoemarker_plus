@@ -86,13 +86,16 @@ let UI = {
 
     function closeSheet($sheet) {
       if (!$sheet.length) return;
-      $sheet.removeClass('is-open');
-      if (!$('.bottom-sheet.is-open').length) {
-        $('body').removeClass('sheet-open');
-      }
-      if ($trigger && $trigger.length) {
-        $trigger.focus();
-      }
+      $sheet.addClass('is-closing');
+      $sheet.one('transitionend', function () {
+        $sheet.removeClass('is-open is-closing');
+        if (!$('.bottom-sheet.is-open').length) {
+          $('body').removeClass('sheet-open');
+        }
+        if ($trigger && $trigger.length) {
+          $trigger.focus();
+        }
+      });
     }
 
     // 열기

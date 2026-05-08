@@ -12,17 +12,22 @@ body.sheet-open {
   justify-content: center;
   inset: 0;
   z-index: 999;
-  transform: translateY(100%);
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease transform 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   &.is-open {
-    transform: translateY(0);
     visibility: visible;
     opacity: 1;
   }
   &.is-open &__content {
     transform: translateY(0);
+  }
+  &.is-closing {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.is-closing &__content {
+    transform: translateY(100%);
   }
   &__dim {
     position: absolute;

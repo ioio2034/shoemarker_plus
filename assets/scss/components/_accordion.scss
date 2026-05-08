@@ -15,11 +15,9 @@
         border-bottom: 1px solid $gray-30;
       } 
     }
-    &.is-active {
-      .accordion__header {
-        &::after {
-          transform: translateY(-50%) rotate(180deg);
-        }
+    &.is-active &__header {
+      &::after {
+        transform: translateY(-50%) rotate(180deg);
       }
     }
   }
