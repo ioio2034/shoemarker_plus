@@ -423,7 +423,7 @@ let UI = {
       });
     });
   },
-  // 상품 상세 더보기 / 접기
+  // 상품 상세 더보기 / 닫기
   prodInfoMore: function () {
     const $moreBtn = $('#prod-info-more-btn');
     const $infoBody = $('#prod-info-body');
@@ -447,7 +447,7 @@ let UI = {
         // 펼치기
         $infoBody.addClass('is-expanded');
         $moreBtn.attr('aria-expanded', 'true');
-        $moreText.text('상세정보 접기');
+        $moreText.text('상세정보 닫기');
         $moreIcon.addClass('is-open');
         $infoFold.addClass('is-expanded');
       }
