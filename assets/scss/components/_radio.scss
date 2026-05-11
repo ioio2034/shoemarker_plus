@@ -2,8 +2,8 @@
 @use '../base/variables' as *;
 
 .radio {
-  @include inline-flex;
-  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
   & + .radio {
     margin-left: 12px;
   }

@@ -13375,7 +13375,6 @@ body.sheet-open {
 .checkbox {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   vertical-align: middle;
 }
 .checkbox + .checkbox {
@@ -13432,8 +13431,6 @@ body.sheet-open {
 .radio {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  vertical-align: middle;
 }
 .radio + .radio {
   margin-left: 12px;
@@ -18469,15 +18466,10 @@ body.sheet-open {
 .order-form .delivery-request {
   display: flex;
   flex-direction: column;
-  align-items: start;
   gap: 8px;
-}
-.order-form .delivery-request > * {
-  width: 100%;
 }
 .order-form .delivery-request .checkbox {
   margin-top: 8px;
-  justify-content: flex-start;
 }
 .order-form .discount-benefit {
   display: flex;

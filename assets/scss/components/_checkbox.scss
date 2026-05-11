@@ -2,7 +2,8 @@
 @use '../base/variables' as *;
 
 .checkbox {
-  @include inline-flex;
+  display: inline-flex;
+  align-items: center;
   vertical-align: middle;
   & + .checkbox {
     margin-left: 12px;
