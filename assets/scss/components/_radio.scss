@@ -2,9 +2,7 @@
 @use '../base/variables' as *;
 
 .radio {
-  display: inline-flex;
-  justify-items: center;
-  align-items: center;
+  @include inline-flex;
   vertical-align: middle;
   & + .radio {
     margin-left: 12px;
@@ -25,9 +23,7 @@
     }
   }
   &__label {
-    display: inline-flex;
-    justify-items: center;
-    align-items: center;
+    @include inline-flex;
     gap: 4px;
     color: $gray-80;
     font-size: 14px;
@@ -55,9 +51,7 @@
 // button type
 .radio-btn {
   &__label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex;
     width: 100%;
     min-height: 44px;
     padding: 8px 16px;

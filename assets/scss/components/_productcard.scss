@@ -3,15 +3,16 @@
 
 // 상품 영역 (타이틀, 스와이프)
 .product {
+  overflow: hidden;
   position: relative;
+  max-width: 100%;
   padding-top: 20px;
   @include tablet {
     padding-top: 0;
   }
   &__inner {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 20px;
     @include tablet {
       gap: 12px;
@@ -19,9 +20,7 @@
     }
   }
   &__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
   }
   &__title {
     color: $grayscale-800;
@@ -70,8 +69,7 @@
 // 상품 개별
 .product-card {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   gap: 8px;
   width: 100%;
   &__link {
@@ -82,9 +80,7 @@
     position: absolute;
     left: 12px;
     top: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex;
     padding: 4px 8px;
     border-radius: 4px;
     background: #F92424;
@@ -113,8 +109,7 @@
     }
   }
   &__info {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
   }
   &__brand {
     margin-bottom: 4px;
@@ -132,8 +127,7 @@
     line-height: 16px;
   }
   &__price {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 2px;
   }
   .price {

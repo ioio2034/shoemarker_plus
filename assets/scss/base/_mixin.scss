@@ -25,6 +25,17 @@
   justify-content: $justify;
 }
 
+@mixin inline-flex($align: center, $justify: center) {
+  display: inline-flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin bgimage ($name, $type) {
   $url: "../images/#{$name}.#{$type}";
   background: url($url) no-repeat;

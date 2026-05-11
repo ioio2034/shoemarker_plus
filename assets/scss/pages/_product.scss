@@ -3,8 +3,7 @@
 
 // 페이지 공통
 .color-selector {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   gap: 8px;
   @include tablet {
     gap: 4px;
@@ -44,9 +43,7 @@
       cursor: default;
       &::after {
         content: '품절';
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex;
         position: absolute;
         left: 0;
         top: 0;
@@ -70,8 +67,7 @@
 
 }
 .size-selector {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   gap: 8px;
   @include tablet {
     gap: 4px;
@@ -93,9 +89,7 @@
     gap: 4px;
   }
   &__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex;
     padding: 8px 16px;
     border-radius: 2px;
     border: 1px solid $gray-30;
@@ -114,13 +108,12 @@
     }
   }
   &__guide {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 4px;
     margin-top: 8px;
   }
   &__guide-link {
-    color: #246BEB;
+    color: $blue;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -165,9 +158,7 @@
     @include bgimage('icon_delete_20', 'svg');
   }
   &__body {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     gap: 8px;
     margin-top: 16px;
   }
@@ -270,9 +261,7 @@
   gap: 10px;
   margin-top: 24px;
   .btn-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex;
     width: 57px;
     height: 57px;
     padding: 0;
@@ -320,8 +309,7 @@
     column-gap: 60px;
     align-items: start;
     @include tablet {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
       gap: 0;
     }
     // 상품 이미지
@@ -348,9 +336,7 @@
           gap: 4px;
         }
         &__item {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          @include inline-flex;
           gap: 4px;
           padding: 8px;
           border-radius: 2px;
@@ -492,8 +478,7 @@
         }
       }
       .item-summary {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 4px;
         &__brand {
           color: $gray-80;
@@ -613,9 +598,7 @@
         }
         &__coupon-btn {
           margin-left: auto;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          @include inline-flex;
           padding: 12px 20px;
           border-radius: 4px;
           border: 1px solid $green;
@@ -636,9 +619,7 @@
       .benefit {
         position: relative;
         &__toggle {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flex(center, space-between);
           width: 100%;
           padding: 0;
           &[aria-expanded="true"] {
@@ -695,16 +676,13 @@
         }
         .benefit-detail {
           &__list {
-            display: flex;
-            flex-direction: column;
+            @include flex-col;
             gap: 8px;
             padding-bottom: 16px;
             border-bottom: 1px solid $gray-30;
           }
           &__item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(center, space-between);
             font-size: 14px;
             line-height: 20px;
             @include tablet {
@@ -726,9 +704,7 @@
             font-weight: 600;
           }
           &__total {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex(center, space-between);
             padding: 12px 0;
             border-bottom: 1px solid $gray-30;
             color: $gray-80;
@@ -753,8 +729,7 @@
           }
 
           &__grade {
-            display: flex;
-            flex-direction: column;
+            @include flex-col;
             gap: 8px;
             padding-top: 16px;
           }
@@ -772,8 +747,7 @@
             line-height: 16px;
           }
           &__grade-list {
-            display: flex;
-            flex-direction: column;
+            @include flex-col;
             gap: 4px;
           }
           &__grade-item {
@@ -848,8 +822,7 @@
           line-height: 24px;
         }
         &__list {
-          display: flex;
-          flex-direction: column;
+          @include flex-col;
           gap: 4px;
         }
         &__item {
@@ -957,8 +930,7 @@
         background: $gray-5;
       }
       .item-select {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 8px;
       }
       .option-list {
@@ -1081,9 +1053,7 @@
         }
       }
       &__more-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include inline-flex;
         gap: 8px;
         width: 100%;
         max-width: 552px;
@@ -1111,9 +1081,7 @@
         }
       }
       &__more-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        @include inline-flex;
         width: 24px;
         height: 24px;
         @include bgimage('icon_more', 'svg');
@@ -1145,7 +1113,7 @@
       }
       // 평점 요약
       .review-summary {
-        display:  flex;
+        display: flex;
         align-items: center;
         gap: 20px;
         padding: 30px 20px;
@@ -1159,8 +1127,7 @@
         // 평점
         &__score {
           flex-basis: 50%;
-          display: flex;
-          flex-direction: column;
+          @include flex-col;
           align-items: center;
           flex-shrink: 0;
           text-align: center;
@@ -1233,8 +1200,7 @@
           }
         }
         .review-bar {
-          display: flex;
-          flex-direction: column;
+          @include flex-col;
           gap: 8px;
           &__item {
             display: flex;
@@ -1272,9 +1238,7 @@
           margin-top: 24px;
         }
         &__top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          @include flex(center, space-between);
           margin-bottom: 15px;
         }
         &__selects {
@@ -1296,8 +1260,7 @@
       // 리뷰 목록
       .review-list {
         .review-item {
-          display: flex;
-          flex-direction: column;
+          @include flex-col;
           gap: 10px;
           padding: 30px 0;
           border-top: 1px solid $gray-20;
@@ -1338,9 +1301,7 @@
             flex-shrink: 0;
           }
           &__badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            @include inline-flex;
             padding: 2px 4px;
             border-radius: 3px;
             color: $white;
@@ -1467,9 +1428,7 @@
           margin-top: 16px;
         }
         &__btn {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          @include inline-flex;
           gap: 8px;
           width: 100%;
           max-width: 552px;
@@ -1496,9 +1455,7 @@
           }
         }
         &__icon {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
+          @include inline-flex;
           width: 24px;
           height: 24px;
           @include bgimage('icon_more', 'svg');

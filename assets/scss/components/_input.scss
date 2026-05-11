@@ -2,13 +2,11 @@
 @use '../base/variables' as *;
 
 .form {
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   gap: 16px;
   &__field {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 4px;
     // & + .form__field {
     //   margin-top: 16px;
@@ -173,8 +171,7 @@
     }
   }
   &__address {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 4px;
     margin-bottom: 4px;
   }

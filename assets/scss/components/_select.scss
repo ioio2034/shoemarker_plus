@@ -3,8 +3,7 @@
 
 .select {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  @include flex-col;
   gap: 4px;
   &.is-required {
     .select__label {

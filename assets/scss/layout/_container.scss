@@ -73,10 +73,8 @@ body {
     position: relative;
     margin-bottom: 20px;
     @include tablet {
-      display: flex;
+      @include flex;
       flex-direction: row;
-      align-items: center;      
-      justify-content: center;
       position: fixed;
       left: 0;
       top: 0;
@@ -203,16 +201,14 @@ body {
       }
     }
     &__inner {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
       padding: 80px 0;
       @include tablet {
         padding: 62px 0 32px;
       }
     }
     &__header {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
       gap: 24px;
       margin-bottom: 24px;
       @include tablet {
@@ -265,8 +261,7 @@ body {
 .page-mypage {
   .section { 
     &__inner {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
     }
   }
 }
@@ -284,6 +279,18 @@ body {
         padding: 62px 0 calc(88px + env(safe-area-inset-bottom));
       }
     }
+    &__header {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+}
+
+// 장바구니
+.page-cart {
+  .section {
     &__header {
       display: none;
       @include tablet {

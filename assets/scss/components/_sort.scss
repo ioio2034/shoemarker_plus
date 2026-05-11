@@ -4,9 +4,7 @@
 .sort {
   position: relative;
   &__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    @include inline-flex;
     gap: 5px;
     padding: 0 5px;
   }

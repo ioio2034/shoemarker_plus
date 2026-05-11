@@ -7,9 +7,7 @@ body.sheet-open {
 
 .bottom-sheet {
   position: fixed;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  @include flex(flex-end, center);
   inset: 0;
   z-index: 999;
   visibility: hidden;
@@ -36,8 +34,7 @@ body.sheet-open {
   }
   &__content {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 16px;
     width: 100%;
     max-width: 720px;
@@ -51,9 +48,7 @@ body.sheet-open {
     }
   }
   &__indicator {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex;
     flex-shrink: 0;
     position: relative;
     width: 100%;
@@ -72,9 +67,7 @@ body.sheet-open {
     }
   }
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     padding: 0 24px 12px;
   }
   &__title {

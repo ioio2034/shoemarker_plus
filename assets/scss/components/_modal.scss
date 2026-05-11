@@ -28,8 +28,7 @@ body.modal-open {
     }
   }
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 20px;
     position: absolute;
     left: 50%;
@@ -53,9 +52,7 @@ body.modal-open {
   }
   &__header {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     padding: 0 40px;
     @include tablet {
       justify-content: center;
@@ -100,8 +97,7 @@ body.modal-open {
     }
   }
   &__body {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 16px;
     overflow-x: hidden;
     overflow-y: auto;
