@@ -12956,7 +12956,6 @@ body.sheet-open {
 }
 .empty__content {
   display: flex;
-  align-items: center;
   gap: 8px;
 }
 .empty__icon {
