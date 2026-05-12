@@ -57,7 +57,7 @@
   }
   &--secondary {
     border-color: $gray-30;
-  }
+  }  
   &--text {
     width: auto;
     height: auto;
@@ -69,7 +69,11 @@
     line-height: 20px;
   }
   &--underline {
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-underline-position: from-font;
+  }
+  &--blue {
+    color: $blue;
   }
   &.is-bold {
     font-weight: 600;

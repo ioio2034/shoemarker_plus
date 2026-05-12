@@ -328,21 +328,33 @@ let UI = {
 
       if (isMobile) {
         $block.addClass('is-open');
-        $content.css('height', 'auto');
+        $content.css({ 'height': 'auto', 'overflow': 'visible' });
         return;
       }
-      
-      if ($block.hasClass('is-open')) {
-        $content.css('height', $inner.outerHeight());
+
+      if ($block.hasClass('order-block--static')) {
+        $block.addClass('is-open');
+        $content.css({ 'height': 'auto', 'overflow': 'visible' });
+        return;
       }
 
-      $header.on('click.orderBlock', function () {        
+      if ($block.hasClass('is-open')) {
+        $content.css({ 'height': $inner.outerHeight(), 'overflow': 'visible' });
+      } else {
+        $content.css({ 'height': 0, 'overflow': 'hidden' });
+      }
+
+      $header.on('click.orderBlock', function () {
         if ($block.hasClass('is-open')) {
           $block.removeClass('is-open');
-          $content.css('height', 0);
+          $content.css({ 'height': 0, 'overflow': 'hidden' });
         } else {
           $block.addClass('is-open');
           $content.css('height', $inner.outerHeight());
+
+          $content.one('transitionend', function () {
+            $content.css('overflow', 'visible');
+          });
         }
       });
     });
@@ -508,6 +520,79 @@ let UI = {
       }
     });
   },
+  // 결제수단 아코디언
+  paymentMethod: function () {
+    const $items = $('.payment-method__item');
+
+    if (!$items.length) return;
+
+    $('.payment-method__trigger').on('click', function () {
+      const $btn = $(this);
+      const $item = $btn.closest('.payment-method__item');
+      const $content = $('#' + $btn.attr('aria-controls'));
+      const isActive = $item.hasClass('is-active');
+
+      // 전체 닫기
+      $items.removeClass('is-active');
+      $('.payment-method__trigger').attr('aria-expanded', 'false');
+      $('.payment-method__content').attr('hidden', true);
+
+      // 선택한 항목 열기 (토글)
+      if (!isActive) {
+        $item.addClass('is-active');
+        $btn.attr('aria-expanded', 'true');
+        if ($content.length) $content.removeAttr('hidden');
+      }
+    });
+
+    // 간편결제 개별 선택
+    $(document).on('click', '.payment-method__quick-btn', function () {
+      $('.payment-method__quick-btn').removeClass('is-active');
+      $(this).addClass('is-active');
+    });
+  },
+  // 주문서 가격 툴팁
+  priceTooltip: function () {
+    $(document).on('click', '.price-tooltip__btn', function (e) {
+      e.stopPropagation();
+      const $btn = $(this);
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+      const $layer = $btn.siblings('.price-tooltip__layer'); // ← 형제 요소로 탐색
+
+      // 다른 툴팁 전부 닫기
+      $('.price-tooltip__btn').not($btn).attr('aria-expanded', 'false');
+      $('.price-tooltip__layer').not($layer).attr('hidden', true);
+
+      // 현재 토글
+      $btn.attr('aria-expanded', !isExpanded);
+      if (isExpanded) {
+        $layer.attr('hidden', true);
+      } else {
+        $layer.removeAttr('hidden');
+      }
+    });
+
+    // 외부 클릭 시 닫기
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.price-tooltip').length) {
+        $('.price-tooltip__btn').attr('aria-expanded', 'false');
+        $('.price-tooltip__layer').attr('hidden', true);
+      }
+    });
+  },
+  // 주문서 동의
+  orderAgree: function () {
+  $(document).on('click', '.order-agree__row', function () {
+    const $btn = $(this);
+    const isExpanded = $btn.attr('aria-expanded') === 'true';
+    const $content = $('#' + $btn.attr('aria-controls'));
+    const $toggle = $btn.find('.order-agree__toggle');
+
+    $btn.attr('aria-expanded', !isExpanded);
+    $toggle.text(isExpanded ? '보기' : '닫기');
+    isExpanded ? $content.attr('hidden', true) : $content.removeAttr('hidden');
+  });
+},
 };
 
 $(function () {
@@ -525,6 +610,9 @@ $(function () {
   UI.prodInfoMore();
   UI.prodBenefit();
   UI.reviewSort();
+  UI.paymentMethod();
+  UI.priceTooltip();
+  UI.orderAgree();
 });
 
 // resize 대응

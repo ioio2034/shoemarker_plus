@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-cart">
+ 
+      <!-- 하단 고정 요소가 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">주문서</h2>
+          </div>
+
+          <!-- Content -->
+          <div class="order-form">
+            <!-- 배송지 정보 -->
+            <div class="delivery order-block is-open">
+              <div type="button" class="order-block__header">
+                <h3 class="order-block__title">배송지정보</h3>
+              </div>
+              <div class="order-block__content">
+                <div class="order-block__inner">                  
+                  <!-- 배송지 미설정 상태 -->
+                  <p class="delivery__empty">배송지를 설정해 주세요</p>
+                  
+                  <!-- 배송지 설정 상태 
+                  <ul class="delivery__list">
+                    <li class="delivery__item">
+                      <span class="delivery__label">주문자 정보</span>
+                      <span class="delivery__value">홍길동</span>
+                    </li>
+                    <li class="delivery__item">
+                      <span class="delivery__label">받으시는 분</span>
+                      <span class="delivery__value">홍길동</span>
+                    </li>
+                    <li class="delivery__item">
+                      <span class="delivery__label">연락처</span>
+                      <span class="delivery__value">010-1234-5678</span>
+                    </li>
+                    <li class="delivery__item">
+                      <span class="delivery__label">주소</span>
+                      <span class="delivery__value">[00000] 서울특별시 송파구 올림픽로35길 137 18층</span>
+                    </li>
+                  </ul>
+                  -->
+                </div>
+                <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">설정</button>
+              </div>
+            </div>
+            <!-- //배송지 정보 -->
+
+            <div class="divider"></div>
+
+            <!-- 배송 요청사항 -->
+            <div class="order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">배송 요청사항</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="delivery-request">
+                    <!-- 요청사항 select -->
+                    <div class="select">
+                      <div class="select__box">
+                        <select class="select__field" aria-label="배송 요청사항 선택">
+                          <!-- placeholder -->
+                          <option value="" disabled selected hidden>배송 요청사항을 선택해 주세요.</option>
+                          <option value="">직접 입력</option>
+                          <option value="">부재 시 경비실에 맡겨 주세요!</option>
+                          <option value="">부재 시 문 앞에 놔주세요!</option>
+                          <option value="">택배함에 넣어주세요!</option>
+                          <option value="">배송 전 연락 주세요!</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- 직접 입력 textarea -->
+                    <div class="textarea">
+                      <textarea
+                        name="inquiryContent"
+                        id="inquiryContent" 
+                        class="textarea__field"
+                        placeholder="요청 사항을 입력해 주세요!"
+                        maxlength="100"
+                      ></textarea>
+                      <div class="textarea__count">
+                        <span class="textarea__count-current" id="currentCount">0</span>
+                        <span class="textarea__count-max"> / 100</span>
+                      </div>
+                    </div>
+
+                    <!-- 다음 배송도 계속 사용 -->
+                    <div class="checkbox">
+                      <input type="checkbox" id="saveDeliveryRequest" class="checkbox__input" />
+                      <label for="saveDeliveryRequest" class="checkbox__label">다음 배송에도 계속 사용</label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //배송 요청사항 -->
+
+            <div class="divider"></div>
+
+            <!-- 주문 상품 -->
+            <div class="order-block is-open">
+              <button type="button" class="order-block__header order-block__header--hide">
+                <h3 class="order-block__title">주문상품</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="order-group__content">
+
+                    <div class="order-item">
+                      <div class="order-item__thumb">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">89,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+
+                            <!-- 가격 툴팁 레이어 -->
+                            <div class="price-tooltip">
+                              <button
+                                type="button"
+                                class="price-tooltip__btn"
+                                aria-expanded="false"
+                                aria-label="할인내역 보기"
+                              ></button>
+                              <div class="price-tooltip__layer" hidden>
+                                <strong class="price-tooltip__title">할인내역</strong>
+                                <ul class="price-tooltip__list">
+                                  <li class="price-tooltip__item">
+                                    <span class="price-tooltip__label">상품할인</span>
+                                    <span class="price-tooltip__value price-tooltip__value--minus">
+                                      <span class="price-tooltip__num">-24,000</span><span class="price-tooltip__unit">원</span>
+                                    </span>
+                                  </li>
+                                </ul>
+                                <div class="price-tooltip__total">
+                                  <span class="price-tooltip__total-label">기본할인가</span>
+                                  <span class="price-tooltip__total-value">
+                                    <span class="price-tooltip__num">62,300</span><span class="price-tooltip__unit">원</span>
+                                  </span>
+                                </div>
+                                <p class="price-tooltip__desc">· 기본 할인 혜택 외 주문서에서 최대 할인 혜택을 확인 하실 수 있습니다.</p>
+                              </div>
+                            </div>
+                            <!-- //price-tooltip -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="order-item">
+                      <div class="order-item__thumb">
+                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                      </div>
+                      <div class="order-item__content">
+                        <div class="order-item__content-left">
+                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                          <ul class="order-item__meta">
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">옵션</span>
+                              <span class="order-item__meta-value">225 / White</span>
+                            </li>
+                            <li class="order-item__meta-row">
+                              <span class="order-item__meta-label">수량</span>
+                              <span class="order-item__meta-value">1개</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="order-item__price">
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">89,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                            <!-- 가격 툴팁 레이어 -->
+                            <div class="price-tooltip">
+                              <button
+                                type="button"
+                                class="price-tooltip__btn"
+                                aria-expanded="false"
+                                aria-label="할인내역 보기"
+                              ></button>
+                              <div class="price-tooltip__layer" hidden>
+                                <strong class="price-tooltip__title">할인내역</strong>
+                                <ul class="price-tooltip__list">
+                                  <li class="price-tooltip__item">
+                                    <span class="price-tooltip__label">상품할인</span>
+                                    <span class="price-tooltip__value price-tooltip__value--minus">
+                                      <span class="price-tooltip__num">-24,000</span><span class="price-tooltip__unit">원</span>
+                                    </span>
+                                  </li>
+                                </ul>
+                                <div class="price-tooltip__total">
+                                  <span class="price-tooltip__total-label">기본할인가</span>
+                                  <span class="price-tooltip__total-value">
+                                    <span class="price-tooltip__num">62,300</span><span class="price-tooltip__unit">원</span>
+                                  </span>
+                                </div>
+                                <p class="price-tooltip__desc">· 기본 할인 혜택 외 주문서에서 최대 할인 혜택을 확인 하실 수 있습니다.</p>
+                              </div>
+                            </div>
+                            <!-- //price-tooltip -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //주문 상품 -->
+
+            <div class="divider"></div>
+
+            <!-- 할인 혜택 -->
+            <div class="order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">할인혜택</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="discount-benefit">
+                    <span class="discount-benefit__label">할인혜택</span>
+                    <button type="button" class="btn btn--sm btn--line btn--secondary js-modal-open" data-target="#modal3">적용하기</button>
+                    <span class="discount-benefit__amount">
+                      <span class="discount-benefit__tag">(최대혜택 적용중)</span>                      
+                      <span class="discount-benefit__num">- 2,137,800</span><span class="discount-benefit__unit">원</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //할인 혜택 -->
+
+            <div class="divider"></div>
+
+            <!-- 결제 금액 -->
+            <div class="payment order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">결제금액</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="payment__list">
+                    <dl class="payment__item">
+                      <dt class="payment__label">상품합계금액</dt>
+                      <dd class="payment__value">
+                        <span class="payment__value-num">124,000</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item">
+                      <dt class="payment__label">할인금액</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-37,800</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--sub">
+                      <dt class="payment__label">상품가격할인</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-12,600</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--sub">
+                      <dt class="payment__label">상품쿠폰</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-12,600</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item">
+                      <dt class="payment__label">배송비</dt>
+                      <dd class="payment__value">
+                        <span class="payment__value-num">3,000</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--sub">
+                      <dt class="payment__label">배송비 쿠폰</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-3,000</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item">
+                      <dt class="payment__label">포인트 · 적립금</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-5,550</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--sub">
+                      <dt class="payment__label">포인트</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-2,000</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--sub">
+                      <dt class="payment__label">적립금</dt>
+                      <dd class="payment__value payment__value--minus">
+                        <span class="payment__value-num">-3,550</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                    <dl class="payment__item payment__item--total">
+                      <dt class="payment__label">총 결제금액</dt>
+                      <dd class="payment__value">
+                        <span class="payment__value-num">180,650</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //결제 금액 -->
+
+            <div class="divider"></div>
+
+            <!-- 적립혜택 -->
+            <div class="payment payment--point order-block is-open">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">적립혜택</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="payment__list">
+                    <dl class="payment__item">
+                      <dt class="payment__label">포인트 적립</dt>
+                      <dd class="payment__value">
+                        <span class="payment__value-num">100,000</span><span class="payment__value-unit">원</span>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //적립혜택 -->
+
+            <div class="divider"></div>
+
+            <!-- 결제수단 선택 -->
+            <!-- 아코디언 기능 없을 때 .order-block에 .order-block--static 클래스 추가 -->
+            <div class="order-block order-block--static">
+              <button type="button" class="order-block__header">
+                <h3 class="order-block__title">결제수단 선택</h3>
+              </button>
+              <div class="order-block__content">
+                <div class="order-block__inner">
+                  <div class="payment-method">
+
+                    <!-- 간편결제 -->
+                    <div class="payment-method__item is-active" id="payment-quick">
+                      <button type="button" class="payment-method__trigger" aria-expanded="true" aria-controls="payment-quick-content">
+                        <span class="payment-method__name">간편결제</span>
+                        <span class="payment-method__arrow" aria-hidden="true"></span>
+                      </button>
+                      <div class="payment-method__content" id="payment-quick-content">
+                        <ul class="payment-method__quick-list" aria-label="간편결제 수단 선택">
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--npay" aria-label="네이버페이">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--npay" aria-hidden="true"></span>
+                              N pay
+                            </button>
+                          </li>
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--kakaopay" aria-label="카카오페이">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--kakaopay" aria-hidden="true"></span>
+                              pay
+                            </button>
+                          </li>
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--payco" aria-label="페이코">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--payco" aria-hidden="true"></span>
+                              PAYCO
+                            </button>
+                          </li>
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--toss" aria-label="토스페이">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--toss" aria-hidden="true"></span>
+                              toss pay
+                            </button>
+                          </li>
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--applepay" aria-label="애플페이">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--applepay" aria-hidden="true"></span>
+                              Pay
+                            </button>
+                          </li>
+                          <li class="payment-method__quick-item">
+                            <button type="button" class="payment-method__quick-btn payment-method__quick-btn--samsung" aria-label="삼성페이">
+                              <span class="payment-method__quick-icon payment-method__quick-icon--samsung" aria-hidden="true"></span>
+                              SAMSUNG Pay
+                            </button>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- 신용카드 -->
+                    <div class="payment-method__item" id="payment-card">
+                      <button type="button" class="payment-method__trigger" aria-expanded="false" aria-controls="payment-card-content">
+                        <span class="payment-method__name">신용카드</span>
+                        <span class="payment-method__arrow" aria-hidden="true"></span>
+                      </button>
+                      <div class="payment-method__content" id="payment-card-content" hidden>
+                        <!-- 카드 선택 select -->
+                        <div class="select">
+                          <div class="select__box">
+                            <select class="select__field" aria-label="카드 선택">
+                              <!-- placeholder -->
+                              <option value="" disabled selected hidden>카드를 선택해 주세요!</option>
+                              <option value="kb">KB국민카드</option>
+                              <option value="shinhan">신한카드</option>
+                              <option value="hyundai">현대카드</option>
+                              <option value="samsung">삼성카드</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- 할부 선택 select -->
+                        <div class="select">
+                          <div class="select__box">
+                            <select class="select__field" aria-label="할부 선택">
+                              <option value="0" selected>일시불</option>
+                              <option value="2">2개월</option>
+                              <option value="3">3개월</option>
+                              <option value="6">6개월</option>
+                              <option value="12">12개월</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <a href="#" class="payment-method__guide-link">카드 혜택 및 무이자 할부 안내!</a>
+                      </div>
+                    </div>
+
+                    <!-- 계좌이체 -->
+                    <div class="payment-method__item" id="payment-transfer">
+                      <button type="button" class="payment-method__trigger">
+                        <span class="payment-method__name">계좌이체</span>
+                      </button>
+                      <!-- 계좌이체는 하단 컨텐츠 없음 -->
+                    </div>
+
+                    <!-- 다음 주문도 사용 체크박스 -->
+                    <div class="checkbox">
+                      <input type="checkbox" id="savePaymentMethod" class="checkbox__input" />
+                      <label for="savePaymentMethod" class="checkbox__label">다음 주문에도 선택한 결제 수단을 사용할게요!</label>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //결제수단 선택 -->
+
+            <!-- 결제 동의 -->
+            <div class="order-agree">
+              <p class="order-agree__title">주문 내용을 확인했으며, 결제에 동의 합니다.</p>
+              <ul class="order-agree__list">
+                <li class="order-agree__item">
+                  <button type="button" class="order-agree__row" aria-expanded="false" aria-controls="agree-content-1">
+                    <span class="order-agree__label">결제대행서비스 약관 모두동의</span>
+                    <span class="order-agree__toggle">보기</span>
+                  </button>
+                  <div class="order-agree__content" id="agree-content-1" hidden>
+                    <!-- 내용 영역 (임시) -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nulla dolore excepturi? Nihil totam molestiae error necessitatibus soluta ipsa nobis voluptas, commodi ipsum accusamus minus porro enim quis voluptatibus recusandae ad sequi, alias magni atque quidem temporibus ut. Ipsam reprehenderit natus sequi in sapiente aperiam consequuntur necessitatibus exercitationem, magnam fugiat iusto dolores voluptates? Quos, officiis saepe consectetur excepturi enim quas? Consequuntur, dolores a saepe nisi, aliquid ducimus optio aperiam non veniam, labore repellendus dignissimos pariatur eveniet totam quibusdam voluptate? Quaerat, debitis qui possimus illum vitae sunt praesentium. Earum neque autem suscipit, facere deleniti eligendi quas, similique corporis, repellendus possimus praesentium.</p>
+                  </div>
+                </li>
+                <li class="order-agree__item">
+                  <button type="button" class="order-agree__row" aria-expanded="false" aria-controls="agree-content-2">
+                    <span class="order-agree__label">구매조건 확인 및 개인정보 수집/이용/제3자 제공 동의</span>
+                    <span class="order-agree__toggle">보기</span>
+                  </button>
+                  <div class="order-agree__content" id="agree-content-2" hidden>
+                    <!-- 내용 영역 (임시) -->
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nulla dolore excepturi? Nihil totam molestiae error necessitatibus soluta ipsa nobis voluptas, commodi ipsum accusamus minus porro enim quis voluptatibus recusandae ad sequi, alias magni atque quidem temporibus ut. Ipsam reprehenderit natus sequi in sapiente aperiam consequuntur necessitatibus exercitationem, magnam fugiat iusto dolores voluptates? Quos, officiis saepe consectetur excepturi enim quas? Consequuntur, dolores a saepe nisi, aliquid ducimus optio aperiam non veniam, labore repellendus dignissimos pariatur eveniet totam quibusdam voluptate? Quaerat, debitis qui possimus illum vitae sunt praesentium. Earum neque autem suscipit, facere deleniti eligendi quas, similique corporis, repellendus possimus praesentium.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //결제 동의 -->
+
+            <!-- 결제 버튼 -->
+            <div class="btn-wrap btn-wrap--fixed">
+              <button type="button" class="btn btn--primary">
+                <span>80,650원 결제하기</span>
+              </button>
+            </div>
+
+          </div>
+          <!-- //order-form -->
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- 배송지 설정 modal -->
+  <div id="modal1" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">배송지 변경</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <!-- 등록된 배송지가 없을 경우 is-empty 클래스 추가 -->
+        <div class="delivery-address">
+          <!-- 등록된 배송지가 없을 경우 
+          <div class="empty empty--center">
+            <div class="empty__content">
+              <span class="empty__icon empty__icon--message"></span>
+              <p class="empty__text">
+                등록된 배송지 정보가 없습니다! <br>배송지를 입력해 주세요.
+              </p>
+            </div>
+          </div>
+          -->
+          <!-- 등록된 배송지 리스트 -->
+          <ul class="delivery-list">
+            <li class="delivery-list__item is-default">
+              <div class="delivery-list__content">
+                <div class="delivery-list__top">
+                  <div class="delivery-list__header">
+                    <span class="delivery-list__name">우리집</span>
+                    <span class="badge badge--round">기본배송지</span>
+                  </div>
+                  <div class="delivery-list__actions">
+                    <button type="button" class="btn-link">수정</button>
+                  </div>
+                </div>
+                <ul class="delivery-list__info">
+                  <li class="delivery-list__info-item">
+                    <span class="delivery-list__label">주소</span>
+                    <span class="delivery-list__value">서울특별시 강남구 논현로 899 101-708호</span>
+                  </li>
+                  <li class="delivery-list__info-item">
+                    <span class="delivery-list__label">연락처</span>
+                    <span class="delivery-list__value">홍길동 010-1234-5678</span>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="delivery-list__item">
+              <div class="delivery-list__content">
+                <div class="delivery-list__top">
+                  <div class="delivery-list__header">
+                    <span class="delivery-list__name">회사</span>
+                  </div>
+                  <div class="delivery-list__actions">
+                    <button type="button" class="btn-link btn-link--delete">삭제</button>
+                    <button type="button" class="btn-link">수정</button>
+                  </div>
+                </div>
+                <ul class="delivery-list__info">
+                  <li class="delivery-list__info-item">
+                    <span class="delivery-list__label">주소</span>
+                    <span class="delivery-list__value">서울특별시 강남구 논현로 899 101-708호</span>
+                  </li>
+                  <li class="delivery-list__info-item">
+                    <span class="delivery-list__label">연락처</span>
+                    <span class="delivery-list__value">홍길동 010-1234-5678</span>
+                  </li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn--md btn--block btn--line btn--secondary">기본배송지로 설정</button>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button type="button" class="btn btn--primary js-modal-open" data-target="#modal2">새로운 배송지 등록</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 배송지 등록 및 수정 modal -->
+  <div id="modal2" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">배송지 등록 및 수정</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <!-- 새로운 배송지 등록 컨텐츠 -->
+          <div class="delivery-form">
+            <!-- 배송지명 -->
+            <div class="form__field is-required">
+              <label for="input1" class="form__label">배송지명</label>
+              <div class="radio-group radio-group--col3">
+                <div class="radio-btn">
+                  <input type="radio" id="radio1" name="deliveryName" class="radio-btn__input" checked />
+                  <label for="radio1" class="radio-btn__label">우리집</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio2" name="deliveryName" class="radio-btn__input" />
+                  <label for="radio2" class="radio-btn__label">회사</label>
+                </div>
+                <div class="radio-btn">
+                  <input type="radio" id="radio3" name="deliveryName" class="radio-btn__input" />
+                  <label for="radio3" class="radio-btn__label">직접입력</label>
+                </div>
+              </div>
+              <input type="text" id="input1" class="form__input"/>
+            </div>
+            <!-- 받는 사람 -->
+            <div class="form__field is-required">
+              <label for="input2" class="form__label">받는사람</label>
+              <input type="text" id="input2" class="form__input"/>
+            </div>
+            <!-- 배송지 주소 -->
+            <div class="form__field is-required">
+              <span class="form__label">배송지 주소</span>
+              <div class="form__address">
+                <input type="text" id="postCode" class="form__input" value="05510" readonly/>
+                <input type="text" id="address" class="form__input" value="서울시 송파구 오금로 58" readonly/>
+                <input type="text" id="addressDetail" class="form__input" placeholder="상세주소를 입력해 주세요."/>
+              </div>
+              <button type="button" class="btn btn--line btn--md btn--block">주소검색</button>
+            </div>
+            <!-- 연락처 -->
+            <div class="form__field is-required">
+              <label for="input3" class="form__label">연락처</label>
+              <input type="text" id="input3" class="form__input" value="" placeholder="- 없이 입력해 주세요."/>
+            </div>
+            <!-- 수령방법 -->
+            <div class="pickup">
+              <div class="select is-required">
+                <label for="pickup" class="select__label">수령방법</label>
+                <div class="select__box">
+                  <select id="pickup" class="select__field">
+                    <!-- placeholder -->
+                    <option value="" disabled selected hidden>선택해 주세요.</option>
+                    <option value="">문앞</option>
+                    <option value="">택배함</option>
+                    <option value="">기타</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 기타일 경우 -->
+              <input type="text" id="input4" class="form__input" value="" placeholder="내용을 입력해 주세요." />
+            </div>
+
+            <!-- 체크박스 -->
+            <div class="checkbox">
+              <input type="checkbox" id="check1" class="checkbox__input" checked>
+              <label for="check1" class="checkbox__label">기본배송지로 선택하기</label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button type="button" class="btn btn--line">취소</button>
+        <button type="button" class="btn btn--primary">배송지 등록</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 혜택 적용 modal -->
+  <div id="modal3" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">혜택 적용</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <!-- 혜택 적용 컨텐츠 -->
+          <div class="benefit-modal">
+
+            <div class="benefit-modal__section">
+              <!-- 상품 카드 -->
+              <div class="benefit-modal__product">
+                <div class="order-item">
+                  <div class="order-item__thumb">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                  </div>
+                  <div class="order-item__content">
+                    <div class="order-item__content-left">
+                      <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                      <ul class="order-item__meta">
+                        <li class="order-item__meta-row">
+                          <span class="order-item__meta-label">옵션</span>
+                          <span class="order-item__meta-value">225 / White</span>
+                        </li>
+                        <li class="order-item__meta-row">
+                          <span class="order-item__meta-label">수량</span>
+                          <span class="order-item__meta-value">1개</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="order-item__price">
+                      <div class="order-item__price-origin">
+                        <span class="price">
+                          <span class="price__num">219,000</span>
+                          <span class="price__unit">원</span>
+                        </span>
+                      </div>
+                      <div class="order-item__price-cost">
+                        <span class="price">
+                          <span class="price__num">89,000</span>
+                          <span class="price__unit">원</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- 쿠폰 -->
+              <div class="benefit-modal__coupon">
+                <ul class="coupon-list">
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="coupon1" name="coupon" class="radio__input" />
+                      <label for="coupon1" class="radio__label">
+                        <div class="coupon-item">
+                          <p class="coupon-item__name">쿠폰 1</p>
+                          <p class="coupon-item__desc">슈머니 정회원 10% 할인 쿠폰</p>
+                          <p class="coupon-item__date">2026-01-15(12:00) - 2026-12-01(24:00)</p>
+                        </div>
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="coupon2" name="coupon" class="radio__input" checked />
+                      <label for="coupon2" class="radio__label">
+                        <div class="coupon-item">
+                          <p class="coupon-item__name">쿠폰 2</p>
+                          <p class="coupon-item__desc">장바구니 5% 할인 쿠폰</p>
+                          <p class="coupon-item__date">2026-01-15(12:00) - 2026-12-01(24:00)</p>
+                        </div>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 포인트 -->
+            <div class="benefit-modal__section">
+              <h3 class="benefit-modal__title">포인트</h3>
+              <ul class="benefit-modal__info-list">
+                <li class="benefit-modal__info-item">
+                  <span class="benefit-modal__info-label">보유 포인트</span>
+                  <span class="benefit-modal__info-value">
+                    <span class="benefit-modal__info-num">100,000</span><span class="benefit-modal__info-unit">P</span>
+                  </span>
+                </li>
+                <li class="benefit-modal__info-item">
+                  <span class="benefit-modal__info-label">적용가능 포인트</span>
+                  <span class="benefit-modal__info-value">
+                    <span class="benefit-modal__info-num">50</span><span class="benefit-modal__info-unit">P</span>
+                  </span>
+                </li>
+              </ul>
+              <div class="benefit-modal__input-row">
+                <div class="form__control">
+                  <input type="number" class="form__input" placeholder="사용할 포인트를 입력하세요!" />
+                </div>
+                <button type="button" class="btn btn--line btn--secondary">모두사용</button>
+              </div>
+              <p class="benefit-modal__notice">· 포인트는 상품 구매 금액1,000원 이상 부터 10원 단위로 사용가능 하며 구매금액의 최대50% 사용 할 수 있습니다.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- 슈즈 상품권 -->
+            <div class="benefit-modal__section">
+              <h3 class="benefit-modal__title">슈즈 상품권</h3>
+              <ul class="benefit-modal__info-list">
+                <li class="benefit-modal__info-item">
+                  <span class="benefit-modal__info-label">보유 슈즈 상품권 금액</span>
+                  <span class="benefit-modal__info-value">
+                    <span class="benefit-modal__info-num">0</span><span class="benefit-modal__info-unit">원</span>
+                  </span>
+                </li>
+                <li class="benefit-modal__info-item">
+                  <span class="benefit-modal__info-label">적용가능 상품권 금액</span>
+                  <span class="benefit-modal__info-value">
+                    <span class="benefit-modal__info-num">0</span><span class="benefit-modal__info-unit">원</span>
+                  </span>
+                </li>
+              </ul>
+              <div class="benefit-modal__input-row">
+                <div class="form__control">
+                  <input type="number" class="form__input" value="1,000,000" placeholder="사용할 상품권 금액을 입력하세요!" />
+                </div>
+                <button type="button" class="btn btn--line btn--secondary">모두사용</button>
+              </div>
+              <p class="benefit-modal__notice">· 슈즈상품권은 최소 5,000원 부터 현금처럼 사용 가능합니다.</p>
+            </div>
+
+          </div>
+          <!-- //benefit-modal -->
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <button type="button" class="btn btn--primary">적용하기</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+
+    window.addEventListener('load', function () {
+      
+    });
+  </script>
+</body>
+</html>

@@ -287,15 +287,3 @@ body {
     }
   }
 }
-
-// 장바구니
-.page-cart {
-  .section {
-    &__header {
-      display: none;
-      @include tablet {
-        display: flex;
-      }
-    }
-  }
-}

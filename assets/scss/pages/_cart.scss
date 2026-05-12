@@ -1,0 +1,340 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 주문서
+.order-form {
+  @include flex-col;
+  gap: 15px;
+  @include tablet {
+    gap: 0;
+  }
+  // 배송지정보
+  .delivery {
+    .btn {
+      position: absolute;
+      right: 0;
+      top: 20px;
+      @include tablet {
+        top: -44px;
+      }      
+    }
+  }
+  // 배송 요청사항
+  .delivery-request {
+    @include flex-col;
+    gap: 8px;
+    .checkbox {
+      margin-top: 8px;
+    }
+  }
+  // 할인 혜택
+  .discount-benefit {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    &__label {
+      color: $grayscale-800;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    &__amount {
+      margin-left: auto;
+      color: $red;
+      text-align: right;
+    }
+    &__tag {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__num {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+    &__unit {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  // 결제금액
+  .payment__item {
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  // 결제수단 선택
+  .payment-method {
+    @include flex-col;
+    align-items: start;
+    gap: 8px;
+    &__item {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid $gray-30;
+      transition: border-color 0.2s;
+      &.is-active {
+        border-color: $gray-80;
+        .payment-method__name {
+          font-weight: 600;
+        }
+      }
+    }
+    &__trigger {
+      @include flex(center, space-between);
+      width: 100%;
+      height: 40px;
+      padding: 10px 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      &[aria-expanded="true"] {
+        .payment-method__arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &__name {
+      color: $grayscale-800;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    &__arrow {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      @include bgimage('icon_chevron_down_20', 'svg');
+      transition: transform 0.2s;
+    }
+    &__content {
+      @include flex-col;
+      gap: 8px;
+      padding: 0 16px 10px;
+      &[hidden] {
+        display: none;
+      }
+    }
+    // 간편 결제
+    &__quick-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    &__quick-btn {
+      @include flex(center, center);
+      width: 100%;
+      height: 42px;
+      padding: 0;
+      border-radius: 6px;
+      border: 1px solid #DCE3EB;
+      font-size: 0;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      &.is-active {
+        border-color: $grayscale-800;
+      }
+    }
+    &__quick-icon {
+      display: inline-block;
+      width: 80px;
+      height: 30px;      
+      &--npay {
+        @include bgimage('img_npay', 'png');
+        background-size: 100% auto;
+      }
+      &--kakaopay {
+        @include bgimage('img_kakaopay', 'png');
+        background-size: 100% auto;
+      }
+      &--payco {
+        @include bgimage('img_payco', 'png');
+        background-size: 100% auto;
+      }
+      &--toss {
+        @include bgimage('img_toss', 'png');
+        background-size: 100% auto;
+      }
+      &--applepay {
+        @include bgimage('img_applepay', 'png');
+        background-size: 100% auto;
+      }
+      &--samsung {
+        @include bgimage('img_samsung', 'png');
+        background-size: 100% auto;
+      }
+    }
+    &__guide-link {
+      margin-top: 8px;
+      color: $blue;
+      font-size: 14px;
+      line-height: 20px;
+      text-decoration-line: underline;
+      text-underline-position: from-font;
+    }
+    .checkbox {
+      margin-top: 6px;
+    }
+    // 결제 동의
+  }
+  // 결제 동의
+  .order-agree {
+    @include flex-col;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 6px;
+    background: $gray-5;
+    @include tablet {
+      margin: 0 24px;
+    }
+    &__title {
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    &__list {
+      @include flex-col;
+      gap: 12px;
+    }
+    &__row {
+      @include flex(center, space-between);
+      gap: 4px;
+      width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+    &__label {
+      color: $gray-70;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__toggle {
+      flex-shrink: 0;
+      color: $blue;
+      font-size: 12px;
+      line-height: 16px;
+      text-decoration-line: underline;
+      text-underline-position: from-font;
+    }
+    &__content {
+      margin-top: 12px;
+    }
+  }
+}
+// 혜택 적용 팝업
+.benefit-modal {
+  @include tablet {
+    padding: 0 8px;
+  }
+  .divider {
+    @include tablet {
+      width: calc(100% + 48px);
+      margin: 0 -24px;
+    }
+  }
+  &__section {
+    @include flex-col;
+    gap: 16px;
+    padding: 24px 0;
+    border-top: 1px solid $gray-30;
+    &:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+    @include tablet {
+      border-top: 0;
+    }
+  }
+  &__title {
+    color: $grayscale-800;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+  &__info-list {
+    @include flex-col;
+    gap: 8px;
+  }
+  &__info-item {
+    @include flex(center, space-between);
+  }
+  &__info-label {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__info-value {
+    color: $grayscale-800;
+    text-align: right;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &__info-num {
+    font-weight: 600;
+  }
+  &__input-row {
+    display: flex;
+    gap: 4px;
+    .form__control {
+      flex: 1;
+    }
+    .btn {
+      flex-shrink: 0;
+    }
+  }
+  &__notice {
+    margin-top: -8px;
+    color: $red;
+    font-size: 12px;
+    line-height: 16px;
+    word-break: keep-all;
+  }
+  //쿠폰 리스트
+  .coupon-list {
+    @include flex-col;
+    gap: 16px;
+    padding: 12px 8px;
+    border: 1px solid $gray-30;
+    border-radius: 8px;
+    .radio {
+      width: 100%;
+      &__input:checked {
+        & + .radio__label {
+          font-weight: 400;
+          .coupon-item__name {
+            font-weight: 600;
+          }
+        }
+      }
+      &__label {
+        align-items: flex-start;
+      }
+    }
+  }
+  .coupon-item {
+    @include flex-col;
+    gap: 4px;
+    &__name {
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+    &__desc {
+      color: $gray-70;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+    &__date {
+      color: $grayscale-600;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}

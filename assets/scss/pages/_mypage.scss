@@ -322,6 +322,9 @@
   }
   // 비용
   &__price-cost {
+    display: flex;
+    align-items: center;
+    gap: 2px;
     .price {
       color: $gray-80;
       font-size: 18px;
@@ -337,6 +340,101 @@
         font-weight: 400;
       }
     }
+  }
+}
+// 가격 레이어
+.price-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  &__btn {
+    @include inline-flex;
+    width: 16px;
+    height: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    @include bgimage('icon_question', 'svg');
+  }
+  &__layer {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: 280px;
+    padding: 16px;
+    background: $white;
+    border: 1px solid $gray-80;
+    border-radius: 6px;
+    z-index: 1;
+    @include tablet {
+      left: 50%;
+      top: calc(100% + 10px);
+      transform: translateX(-50%);
+    }
+  }
+  &__title {
+    display: block;
+    margin-bottom: 9px;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  &__list {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-10;
+  }
+  &__item {
+    @include flex(center, space-between);
+  }
+  &__label {
+    color: $gray-80;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  &__value {
+    font-size: 12px;
+    &--minus {
+      .price-tooltip__num,
+      .price-tooltip__unit {
+        color: $red;
+      }
+      .price-tooltip__num {
+        font-weight: 500;
+      }
+    }
+  }
+  &__num {
+    font-weight: 700;
+  }
+  &__total {
+    @include flex(center, space-between);
+    padding: 12px 0;
+    border-bottom: 1px solid $gray-20;
+    margin-bottom: 16px;
+  }
+  &__total-label {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  &__total-value {
+    color: $gray-80;
+    font-size: 14px;
+    .price-tooltip__num {
+      font-weight: 700;
+    }
+  }
+
+  &__desc {
+    color: $grayscale-600;
+    font-size: 12px;
+    line-height: 16px;
+    word-break: keep-all;
   }
 }
 // 배송지 정보
@@ -1064,6 +1162,14 @@
       }
     }
   }
+  &--static {
+    .order-block__header {
+      cursor: default;
+      &::after {
+        display: none;
+      }
+    }
+  }
   &__header {
     @include flex(center, space-between);
     width: 100%;
@@ -1104,7 +1210,6 @@
   }
   &__content {
     position: relative;
-    overflow: hidden;
     height: auto;
     transition: height 0.3s ease;
     @include tablet {
@@ -2065,6 +2170,17 @@
         content: ':';
         padding-left: 4px;
       }
+    }
+  }
+}
+// 배송지 관리 레이어
+.modal {
+  .delivery-address {
+    @include tablet {
+      padding: 0;
+    }
+    &.is-empty {
+      max-height: 100%;
     }
   }
 }
