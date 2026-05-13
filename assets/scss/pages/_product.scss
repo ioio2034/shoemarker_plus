@@ -87,6 +87,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
   &__btn {
     @include inline-flex;
@@ -105,6 +109,14 @@
       background: $gray-10;
       color: $gray-30;
       cursor: default;
+    }
+    @include tablet {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -0.14px;
     }
   }
   &__guide {
@@ -245,7 +257,7 @@
     display: flex;
     align-items: center;
     gap: 2px;
-    color: $green;
+    color: $gray-80;
     font-size: 24px;
     line-height: 140%;
     letter-spacing: -1px;
@@ -260,6 +272,10 @@
   align-items: center;
   gap: 10px;
   margin-top: 24px;
+  &__icons {
+    display: flex;
+    gap: 16px;
+  }
   .btn-icon {
     @include inline-flex;
     width: 57px;
@@ -268,6 +284,11 @@
     border-radius: 4px;
     border: 1px solid $gray-30;
     flex-shrink: 0;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
   .btn {
     flex: 1;
@@ -278,22 +299,48 @@
     line-height: 140%;
     letter-spacing: -0.18px;
   }
-  &--sm {
-    gap: 6px;
-    width: 100%;
-    margin-top: 0;
+  &__buy {
+    color: #EF4400;
+  }
+  &--black {
+    @include flex(center, space-between);
+    gap: 0;
+    padding: 20px 24px;
+    border-radius: 6px;
+    background: $black;
+    @include tablet {
+      width: 100%;
+      margin-top: 0;
+      border-radius: 0;
+    }
     .btn-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 0;
+      border: 0;
     }
     .btn {
-      height: 48px;
-      padding: 14px 24px;
-      font-size: 14px;
+      flex: auto;
+      height: auto;
+      padding: 0;
+      border-radius: 0;
       font-weight: 600;
-      line-height: 20px;
+      line-height: 26px;
       letter-spacing: 0;
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      & + .btn {
+        &::before {
+          content: '';
+          display: block;
+          margin-right: 16px;
+          width: 1px;
+          height: 14px;
+          background: $white;
+        }
+      }
     }
   }
 }
@@ -480,6 +527,7 @@
       .item-summary {
         @include flex-col;
         gap: 4px;
+        margin-bottom: 16px;
         &__brand {
           color: $gray-80;
           font-size: 14px;
@@ -545,13 +593,6 @@
           font-weight: 400;
           line-height: 12px;
         }
-        &__actions {
-          .btn-icon {
-            padding: 10px;
-            width: 44px;
-            height: 44px;
-          }
-        }
       }
       .price {
         padding-bottom: 24px;
@@ -599,19 +640,19 @@
         &__coupon-btn {
           margin-left: auto;
           @include inline-flex;
-          padding: 12px 20px;
+          padding: 10px 16px;
           border-radius: 4px;
-          border: 1px solid $green;
-          color: $green;
+          border: 1px solid $gray-80;
+          color: $gray-80;
           font-size: 14px;
           font-weight: 500;
           line-height: 140%;
           letter-spacing: -0.14px;
           white-space: nowrap;
           @include tablet {
-            border-radius: 6px;
-            font-weight: 600;
-            line-height: 20px;
+            padding: 8px 16px;
+            font-size: 12px;
+            line-height: 16px;
             letter-spacing: 0;
           }
         }
@@ -770,7 +811,7 @@
         margin-top: 16px;
         padding: 8px 16px;
         border-radius: 6px;
-        background: $green;
+        background: $gray-80;
         &__text {
           display: flex;
           align-items: center;
@@ -1225,7 +1266,7 @@
           }
           &__fill {
             height: 100%;
-            background: $green;
+            background: $gray-80;
             border-radius: 999px;
           }
         }
@@ -1314,11 +1355,8 @@
               line-height: 12px;
               letter-spacing: 0;
             }
-            &--new {
-              background: $green;
-            }
             &--repurchase {
-              background: #FF8913;
+              background: $gray-70;
             }
           }
           &__date {
@@ -1472,6 +1510,14 @@
     display: none;
     @include tablet {
       display: flex;
+      padding: 0;
     }
+  }
+}
+
+// 모바일 구매하기 bottom sheet
+#buySheet {
+  .bottom-sheet__footer {
+    padding: 0;
   }
 }

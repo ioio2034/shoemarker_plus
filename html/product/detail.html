@@ -175,14 +175,6 @@
                         </div>
                         <span class="item-summary__review-count">(14)</span>
                       </div>
-                      <div class="item-summary__actions">
-                        <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
-                          <span class="btn-icon__icon"></span>
-                        </button>
-                        <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
-                          <span class="btn-icon__icon"></span>
-                        </button>
-                      </div>
                     </div>
                   </div>
                   <!-- //item-summary -->
@@ -417,12 +409,20 @@
                   </div>
                   <!-- //total -->
                   <!-- buy-actions : 구매 버튼 그룹 -->
-                  <div class="buy-actions">
-                    <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
-                      <span class="btn-icon__icon"></span>
-                    </button>
-                    <button type="button" class="btn btn--line">장바구니</button>
-                    <button type="button" class="btn btn--primary">바로구매</button>
+                  <div class="buy-actions buy-actions--black">
+                    <div class="buy-actions__icons">
+                      <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                      <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
+                        <span class="btn-icon__icon"></span>
+                      </button>
+                    </div>
+                    <div class="buy-actions__btns">
+                      <button type="button" class="btn">선물하기</button>
+                      <button type="button" class="btn">장바구니</button>
+                      <button type="button" class="btn buy-actions__buy">구매하기</button>
+                    </div>
                   </div>
                   <!-- //buy-actions -->
                 </div>
@@ -814,10 +814,10 @@
                         <!-- //sort__layer -->
                       </div>
                       <!-- //sort -->
-                      <button type="button" class="btn-search" aria-label="검색">
+                      <!-- <button type="button" class="btn-search" aria-label="검색">
                         <span class="btn-search__icon" aria-hidden="true"></span>
                         <span class="btn-search__text">검색</span>
-                      </button>
+                      </button> -->
                     </div>
                     <!-- select 필터 -->
                     <div class="review-filter__selects" role="group" aria-label="리뷰 필터">
@@ -924,7 +924,6 @@
                         </div>
                         <span class="review-item__author">김은******</span>
                         <div class="review-item__badge-group">
-                          <span class="review-item__badge review-item__badge--new">NEW</span>
                           <span class="review-item__badge review-item__badge--repurchase">재구매</span>
                         </div>
                         <span class="review-item__date">2026.05.31</span>
@@ -977,7 +976,6 @@
                         </div>
                         <span class="review-item__author">김은******</span>
                         <div class="review-item__badge-group">
-                          <span class="review-item__badge review-item__badge--new">NEW</span>
                           <span class="review-item__badge review-item__badge--repurchase">재구매</span>
                         </div>
                         <span class="review-item__date">2026.05.31</span>
@@ -1030,7 +1028,6 @@
                         </div>
                         <span class="review-item__author">김은******</span>
                         <div class="review-item__badge-group">
-                          <span class="review-item__badge review-item__badge--new">NEW</span>
                           <span class="review-item__badge review-item__badge--repurchase">재구매</span>
                         </div>
                         <span class="review-item__date">2026.05.31</span>
@@ -1432,12 +1429,20 @@
 
             <!-- 구매 버튼 -->
             <div class="cta cta--fixed">
-              <div class="buy-actions buy-actions--sm">
-                <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
-                  <span class="btn-icon__icon"></span>
-                </button>
-                <button type="button" class="btn btn--line js-bottom-sheet-open" data-target="#buySheet">장바구니</button>
-                <button type="button" class="btn btn--primary js-bottom-sheet-open" data-target="#buySheet">바로구매</button>
+              <div class="buy-actions buy-actions--black">
+                <div class="buy-actions__icons">
+                  <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
+                    <span class="btn-icon__icon"></span>
+                  </button>
+                  <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
+                    <span class="btn-icon__icon"></span>
+                  </button>
+                </div>
+                <div class="buy-actions__btns">
+                  <button type="button" class="btn">선물하기</button>
+                  <button type="button" class="btn js-bottom-sheet-open" data-target="#buySheet">장바구니</button>
+                  <button type="button" class="btn buy-actions__buy js-bottom-sheet-open" data-target="#buySheet">구매하기</button>
+                </div>
               </div>
             </div>
           </div>
@@ -1599,12 +1604,20 @@
         </div>
       </div>
       <div class="bottom-sheet__footer">
-        <div class="buy-actions buy-actions--sm">
-          <button type="button" class="btn-icon btn-icon--gift" aria-label="선물하기">
-            <span class="btn-icon__icon"></span>
-          </button>
-          <button type="button" class="btn btn--line">장바구니</button>
-          <button type="button" class="btn btn--primary">바로구매</button>
+        <div class="buy-actions buy-actions--black">
+          <div class="buy-actions__icons">
+            <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
+              <span class="btn-icon__icon"></span>
+            </button>
+          </div>
+          <div class="buy-actions__btns">
+            <button type="button" class="btn">선물하기</button>
+            <button type="button" class="btn">장바구니</button>
+            <button type="button" class="btn buy-actions__buy">구매하기</button>
+          </div>
         </div>
       </div>
     </div>

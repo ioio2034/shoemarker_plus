@@ -286,6 +286,11 @@
       @include bgimage('icon_share', 'svg');
     }
   }
+  &--share-w {
+    .btn-icon__icon {
+      @include bgimage('icon_share_w', 'svg');
+    }
+  }
   &--like {
     .btn-icon__icon {
       @include bgimage('icon_like_off', 'svg');
