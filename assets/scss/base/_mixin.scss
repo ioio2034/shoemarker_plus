@@ -1,21 +1,29 @@
 @use "sass:map";
 @use 'variables' as *;
 
+$is-pc: false !default;
+
 @mixin mobile {
-  @media (max-width: map.get($breakpoints, 'md')) {
-    @content;
+  @if not $is-pc {
+    @media (max-width: map.get($breakpoints, 'md')) {
+      @content;
+    }
   }
 }
 
 @mixin tablet {
-  @media (max-width: map.get($breakpoints, 'lg')) {
-    @content;
+  @if not $is-pc {
+    @media (max-width: map.get($breakpoints, 'lg')) {
+      @content;
+    }
   }
 }
 
 @mixin desktop {
-  @media (max-width: map.get($breakpoints, 'xl')) {
-    @content;
+  @if not $is-pc {
+    @media (max-width: map.get($breakpoints, 'xl')) {
+      @content;
+    }
   }
 }
 

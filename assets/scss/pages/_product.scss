@@ -912,7 +912,6 @@
     &__main {
       grid-column: 1;
       min-width: 0;
-      @include tablet 
     }
     &__aside {
       grid-column: 2;

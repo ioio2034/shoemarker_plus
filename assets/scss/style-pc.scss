@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+// base
+@use 'base/variables' as *;
+@use 'base/mixin' as * with ($is-pc: true);
+@use 'base/reset';
+@use 'base/font';
+@use 'base/helper';
+
+// layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/container';
+@use 'layout/lnb';
+@use 'layout/tabbar';
+
+// components
+@use 'components/alert';
+@use 'components/modal';
+@use 'components/bottomsheet';
+
+@use 'components/badge';
+@use 'components/button';
+@use 'components/list';
+@use 'components/accordion';
+@use 'components/tabs';
+@use 'components/empty';
+@use 'components/productcard';
+
+@use 'components/input';
+@use 'components/checkbox';
+@use 'components/radio';
+@use 'components/select';
+@use 'components/textarea';
+@use 'components/daterange';
+@use 'components/loading';
+@use 'components/rating';
+@use 'components/sort';
+
+// pages
+// @use 'pages/main';
+@use 'pages/login';
+@use 'pages/mypage';
+@use 'pages/product';
+@use 'pages/brand';
+@use 'pages/cart';
+
+#wrap {
+  min-width: 1280px;
+}
