@@ -1521,3 +1521,62 @@
     padding: 0;
   }
 }
+
+// 쿠폰 받기 bottom sheet
+#couponSheet {
+  .coupon-list {
+    @include flex-col;
+    gap: 16px;
+  }
+  .coupon-item {
+    @include flex(center, space-between);
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    &--owned {
+      .coupon-item__action {
+        .btn {
+          border-color: $gray-30;
+          background: $gray-5;
+          color: $gray-30;
+          cursor: default;
+        }
+      }
+    }
+    &__info {
+      flex: 1;
+      min-width: 0;
+    }
+    &__name {
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+    &__rate {
+      display: inline-flex;
+      align-items: baseline;
+      color: $red;
+    }
+    &__rate-num {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    &__rate-unit {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 26px;
+    }
+    &__detail {
+      @include flex-col;
+      gap: 2px;
+      margin-top: 4px;
+    }
+    &__detail-row {
+      color: $gray-60;
+      font-size: 11px;
+      line-height: 14px;
+    }
+  }
+}
