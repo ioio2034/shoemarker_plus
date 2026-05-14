@@ -393,6 +393,9 @@
   }
   // 상품 그룹
   .cart-group {
+    & + .cart-group {
+      margin-top: 20px;
+    }
     &__brand {
       padding: 15px 20px;
       border-radius: 6px 6px 0 0;
@@ -408,6 +411,12 @@
         border: 0;
         background: $gray-5;        
       }
+    }
+    &__content {
+      padding: 10px 20px 20px;
+      border-radius: 0 0 6px 6px;
+      border: 1px solid $gray-30;
+      border-top: 0;
     }
     // 배송비 요약
     &__summary {
@@ -426,6 +435,164 @@
         line-height: 20px;
         letter-spacing: 0;
       }
+    }
+  }
+  // 상품 아이템
+  .cart-item {
+    position: relative;
+    @include flex(center, space-between);
+    padding: 10px 20px 10px 0;
+    & + .cart-item {
+      border-top: 1px solid $gray-30;
+    }
+    &__left {
+      display: flex;
+    }
+    &__check {
+      margin-right: 10px;
+    }
+    &__thumb {
+      position: relative;
+      flex-shrink: 0;
+      overflow: hidden;
+      width: 128px;
+      height: 128px;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+    }
+    &__info {
+      @include flex-col;
+      gap: 8px;
+      margin-left: 20px;
+      align-self: center;
+    }
+    &__name {
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+    }
+    &__meta {
+      @include flex-col;
+      gap: 4px;
+    }
+    &__meta-row {
+      &::before {
+        content: "∙";
+        display: inline-block;
+        width: 8px;
+        text-align: left;
+      }
+    }
+    &__meta-label,
+    &__meta-value {
+      color: $gray-70;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+    }
+    &__meta-label {
+      &::after {
+        content: ':';
+        margin-left: 4px;
+      }
+    }
+    &__price {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .price {
+      display: inline-flex;
+      align-items: center;
+    }
+    // 정가
+    &__price-origin {
+      .price {
+        color: $gray-40;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        &__num {
+          text-decoration: line-through;
+        }
+      }
+    }
+    // 비용
+    &__price-cost {
+      display: flex;
+      align-items: center;
+      .price {
+        color: $gray-80;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        &__unit {
+          font-weight: 400;
+        }
+      }
+    }
+    // 가격 레이어
+    .price-tooltip {
+      &__layer {
+        left: 56%;
+        transform: translateX(-56%);
+      }
+    }
+    &__controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .btn {
+        border-radius: 2px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: -0.13px;
+      }
+    }
+    .qty {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      width: fit-content;
+      padding: 7px 8px;
+      border-radius: 2px;
+      border: 1px solid $gray-30;
+      background: $white;
+      &__count {
+        width: 32px;
+        padding: 0;
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: center;
+      }
+      &__btn {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        &--minus {
+          @include bgimage('icon_minus', 'svg');
+        }
+        &--plus {
+          @include bgimage('icon_plus', 'svg');
+        }
+      }
+    }
+    &__actions {
+      display: flex;
+      gap: 10px;
+    }
+    &__btn-buy {
+      width: 95px;
+    }
+    &__remove {
+      position: absolute;
+      top: 10px;
+      right: 4px;
     }
   }
   // 상품 추천
@@ -468,23 +635,143 @@
       }
     }
   }
+  // MO 전용 : 결제금액 요약 + 주문버튼
+  .cart-summary {
+    display: none;
+    padding: 0 24px;
+    @include tablet {
+      display: block;
+    }
+  }
+  // MO 전용 하단 고정 버튼
+  .cta {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
 }
-.page-cart {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 330px;
-  column-gap: 40px;
-  align-items: start;
-  max-width: 1280px;
-  margin: 81px auto 0;
-  aside {
-    grid-column: 2;
-    grid-row: 1 / -1;
-    position: sticky;
-    top: 172px;
-    height: auto;
-    align-self: start;
+// PC 전용 : 우측 사이드바
+.cart-aside {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  position: sticky;
+  top: 172px;
+  height: auto;
+  align-self: start;
+  border-radius: 6px;
+  border: 1px solid $black;
+  @include tablet {
+    display: none;
+  }
+  // 배송지
+  &__delivery {
+    @include flex-col;
     padding: 20px;
-    border-radius: 6px;
-    border: 1px solid $black;
+    border-radius: 6px 6px 0 0;
+    background: $gray-5;
+  }
+  &__delivery-header {
+    @include flex(center, space-between);
+  }
+  &__delivery-name {
+    color: $black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+  }
+  &__delivery-addr {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid $gray-30;
+    color: $gray-80;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+  }
+  // 결제금액
+  &__payment {
+    padding: 20px 20px 0;
+    .payment {
+      &__item {
+        & + .payment__item {
+          padding-top: 15px;
+          margin-top: 15px;
+          border-color: $grayscale-75;
+        }
+        &.payment__item--sub {
+          padding-top: 5px;
+          margin-top: 0;
+          border-top: 0;
+        }
+      }
+      &__label {
+        font-size: 14px;
+        letter-spacing: -0.14px;
+      }
+      &__value {
+        font-size: 14px;
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+  // 총 결제금액
+  &__total {    
+    @include flex(center, space-between);
+    padding: 15px 20px 20px;
+  }
+  &__total-label {
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+  }
+  &__total-price {
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.18px;
+  }
+  &__total-num {
+    font-weight: 700;
+  }
+  // 안내
+  &__notice {
+    padding: 0 20px 20px;
+    color: $grayscale-600;
+    font-size: 13px;
+    line-height: 140%;
+    letter-spacing: -0.13px;
+  }
+  // 주문 버튼
+  &__btn {
+    padding: 0 20px 20px;
+    .btn {
+      height: 57px;
+      padding: 16px 24px;
+      border-radius: 4px;
+      background: $gray-80;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.18px;
+    }
+  }
+}
+// 페이지 전용 레이아웃
+.page-cart {
+  &.has-aside {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    column-gap: 40px;
+    align-items: start;
+    max-width: 1280px;
+    margin: 81px auto 0;
+    @include tablet {
+    display: block;
+    max-width: 100%;
+    margin-top: 0;
+    }
   }
 }

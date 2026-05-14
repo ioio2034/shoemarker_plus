@@ -306,6 +306,12 @@
       @include bgimage('icon_gift', 'svg');
     }
   }
+  &--remove {
+    .btn-icon__icon {
+      @include bgimage('icon_delete_20', 'svg');
+      background-size: 100% auto;
+    }
+  }
 }
 
 .btn-cart {
