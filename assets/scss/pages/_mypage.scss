@@ -555,8 +555,9 @@
           letter-spacing: 0;
         }
         &::before {
-          content: '∙';
+          content: '·';
           display: inline-block;
+          margin-right: 4px;
         }
       }
       .payment__value {

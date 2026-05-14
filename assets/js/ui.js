@@ -584,6 +584,26 @@ let UI = {
       }
     });
   },
+  // 장바구니 결제금액 요약 토글
+  cartSummary: function () {
+    const $toggle = $('.cart-summary__toggle');
+
+    if (!$toggle.length) return;
+
+    $toggle.on('click', function () {
+      const $btn = $(this);
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+      const $detail = $('#' + $btn.attr('aria-controls'));
+
+      $btn.attr('aria-expanded', !isExpanded);
+
+      if (isExpanded) {
+        $detail.removeClass('is-open');
+      } else {
+        $detail.addClass('is-open');
+      }
+    });
+  },
 };
 
 $(function () {
@@ -603,6 +623,7 @@ $(function () {
   UI.reviewSort();
   UI.paymentMethod();
   UI.priceTooltip();
+  UI.cartSummary();
 });
 
 // resize 대응

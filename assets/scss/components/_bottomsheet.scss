@@ -12,20 +12,24 @@ body.sheet-open {
   z-index: 999;
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  contain: layout style paint;
+  backface-visibility: hidden;
   &.is-open {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
   }
   &.is-open &__content {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   &.is-closing {
     opacity: 0;
     visibility: hidden;
   }
   &.is-closing &__content {
-    transform: translateY(100%);
+    transform: translate3d(0, 100%, 0);
   }
   &__dim {
     position: absolute;
@@ -40,7 +44,7 @@ body.sheet-open {
     max-width: 720px;
     max-height: 64dvh;
     background: #fff;
-    transform: translateY(100%);
+    transform: translate3d(0, 100%, 0);
     transition: transform 0.3s ease;
     @include tablet {
       max-width: 100%;
@@ -101,6 +105,7 @@ body.sheet-open {
   &__footer {
     display: flex;
     padding: 8px 16px;
+    gap: 6px;
     &--no-padding {
       padding: 0;
     }

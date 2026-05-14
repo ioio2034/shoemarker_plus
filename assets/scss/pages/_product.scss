@@ -64,7 +64,6 @@
       object-fit: cover;
     }
   }
-
 }
 .size-selector {
   @include flex-col;
@@ -139,6 +138,98 @@
     line-height: 16px;
   }
 }
+.qty-selector {
+  @include flex-col;
+  gap: 8px;
+  @include tablet {
+    gap: 4px;
+  }
+  &__label {
+    color: $black;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    @include tablet {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+  &__content {
+    @include flex(center, space-between);
+    padding: 12px 20px;
+    border-radius: 6px;
+    background: $grayscale-50;
+    @include tablet {
+      padding: 0;
+      border-radius: 0;
+      background: $white;
+    }
+  }
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
+    .price {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  &__price-origin {
+    .price {
+      color: $gray-40;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      &__num {
+        text-decoration: line-through;
+      }
+    }
+  }
+  &__price-cost {
+    .price {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      &__unit {
+        font-weight: 400;
+      }
+    }
+  }
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  padding: 7px 8px;
+  border-radius: 2px;
+  border: 1px solid $gray-60;
+  background: $white;
+  &__count {
+    width: 32px;
+    padding: 0;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+  }
+  &__btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    &--minus {
+      @include bgimage('icon_minus', 'svg');
+    }
+    &--plus {
+      @include bgimage('icon_plus', 'svg');
+    }
+  }
+}
 .option-list {
   display: flex;
   flex-direction: column;
@@ -181,36 +272,6 @@
     object-fit: cover;
     border: 1px solid $gray-30;
     background: lightgray 50% / cover no-repeat;
-  }
-  .qty {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    width: fit-content;
-    padding: 7px 8px;
-    border-radius: 2px;
-    border: 1px solid $gray-60;
-    background: $white;
-    &__count {
-      width: 32px;
-      padding: 0;
-      color: $gray-80;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-      text-align: center;
-    }
-    &__btn {
-      width: 20px;
-      height: 20px;
-      padding: 0;
-      &--minus {
-        @include bgimage('icon_minus', 'svg');
-      }
-      &--plus {
-        @include bgimage('icon_plus', 'svg');
-      }
-    }
   }
   &__price {
     display: flex;

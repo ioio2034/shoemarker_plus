@@ -53,13 +53,15 @@ body.modal-open {
   &__header {
     position: relative;
     @include flex(center, space-between);
-    padding: 0 40px;
+    padding-bottom: 20px;
+    margin: 0 40px;
+    border-bottom: 1px solid $gray-20;
     @include tablet {
       justify-content: center;
       flex-shrink: 0;
       height: 62px;
       padding: 0;
-      border-bottom: 1px solid $gray-20;
+      margin: 0;      
     }
   }
   &__title {
@@ -107,6 +109,11 @@ body.modal-open {
       padding: 24px 16px;
       max-height: 100%;
       flex: 1;
+    }
+  }
+  .content {
+    & + .content {
+      margin-top: 24px;
     }
   }
   &__footer {
