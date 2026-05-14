@@ -992,6 +992,9 @@
         }
       }
       .product {
+        @include tablet {
+          overflow: visible;
+        }
         .product-swiper__prev,
         .product-swiper__next {
           top: 38%;

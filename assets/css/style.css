@@ -18055,6 +18055,11 @@ body.sheet-open {
     letter-spacing: 0;
   }
 }
+@media (max-width: 1024px) {
+  .product-detail .prod-summary .prod-recommend .product {
+    overflow: visible;
+  }
+}
 .product-detail .prod-summary .prod-recommend .product .product-swiper__prev,
 .product-detail .prod-summary .prod-recommend .product .product-swiper__next {
   top: 38%;
