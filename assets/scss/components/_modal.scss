@@ -111,9 +111,10 @@ body.modal-open {
   }
   &__footer {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     padding: 0 40px;
     @include tablet {
+      gap: 8px;
       padding: 8px 16px;
     }
     .btn {

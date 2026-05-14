@@ -11769,7 +11769,7 @@ body.modal-open {
 }
 .modal__footer {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   padding: 0 40px;
 }
 .modal__footer .btn {
@@ -11877,7 +11877,14 @@ body.sheet-open {
   margin-top: 16px;
 }
 .bottom-sheet__footer {
+  display: flex;
   padding: 8px 16px;
+}
+.bottom-sheet__footer--no-padding {
+  padding: 0;
+}
+.bottom-sheet__footer .btn {
+  flex: 1;
 }
 
 .badge {
@@ -16127,7 +16134,6 @@ body.sheet-open {
   grid-row: 1/-1;
   position: sticky;
   top: 81px;
-  height: calc(100vh - 81px);
   align-self: start;
 }
 .product-detail .prod-content__aside .option-panel {
@@ -16516,10 +16522,6 @@ body.sheet-open {
 }
 .product-detail .cta {
   display: none;
-}
-
-#buySheet .bottom-sheet__footer {
-  padding: 0;
 }
 
 #couponSheet .coupon-list {
@@ -16964,6 +16966,12 @@ body.sheet-open {
 .cart-list .cart-item + .cart-item {
   border-top: 1px solid #D8D8D8;
 }
+.cart-list .cart-item:first-child {
+  padding-top: 0;
+}
+.cart-list .cart-item:first-child .cart-item__remove {
+  top: 0;
+}
 .cart-list .cart-item.is-soldout .cart-item__thumb::after {
   content: "품절";
   display: flex;
@@ -17112,6 +17120,9 @@ body.sheet-open {
   display: flex;
   gap: 10px;
 }
+.cart-list .cart-item__actions-mo {
+  display: none;
+}
 .cart-list .cart-item__btn-buy {
   width: 95px;
 }
@@ -17153,7 +17164,7 @@ body.sheet-open {
   grid-column: 2;
   grid-row: 1/-1;
   position: sticky;
-  top: 172px;
+  top: 200px;
   height: auto;
   align-self: start;
   border-radius: 6px;
@@ -17267,6 +17278,7 @@ body.sheet-open {
 }
 
 .page-cart.has-aside {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 330px;
   -moz-column-gap: 40px;
@@ -17276,7 +17288,7 @@ body.sheet-open {
   margin: 81px auto 80px;
 }
 .page-cart .section__inner {
-  padding-bottom: 0;
+  padding: 70px 0 0;
 }
 
 #wrap {

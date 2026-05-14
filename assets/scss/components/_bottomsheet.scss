@@ -99,6 +99,13 @@ body.sheet-open {
     }
   }
   &__footer {
+    display: flex;
     padding: 8px 16px;
+    &--no-padding {
+      padding: 0;
+    }
+    .btn {
+      flex: 1;
+    }
   }
 }

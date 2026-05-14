@@ -959,7 +959,6 @@
       grid-row: 1 / -1;
       position: sticky;
       top: 81px;
-      height: calc(100vh - 81px);
       align-self: start;
       @include tablet {
         display: none;
@@ -1512,13 +1511,6 @@
       display: flex;
       padding: 0;
     }
-  }
-}
-
-// 모바일 구매하기 bottom sheet
-#buySheet {
-  .bottom-sheet__footer {
-    padding: 0;
   }
 }
 
