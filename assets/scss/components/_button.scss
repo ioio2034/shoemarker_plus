@@ -48,12 +48,21 @@
   }
   // style
   &--primary {
-    background-color: $gray-90; 
+    background-color: $gray-90;
+    &:disabled {
+      background-color: $gray-10;
+      color: $gray-40;
+    }
   }
   &--line {
     background-color: $white;
     border: 1px solid $gray-80;
     color: $gray-80;
+    &:disabled {
+      background-color: $gray-10;
+      border-color: $gray-30;
+      color: $gray-40;
+    }
   }
   &--secondary {
     border-color: $gray-30;

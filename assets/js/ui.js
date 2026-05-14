@@ -584,19 +584,6 @@ let UI = {
       }
     });
   },
-  // 주문서 동의
-  orderAgree: function () {
-  $(document).on('click', '.order-agree__row', function () {
-    const $btn = $(this);
-    const isExpanded = $btn.attr('aria-expanded') === 'true';
-    const $content = $('#' + $btn.attr('aria-controls'));
-    const $toggle = $btn.find('.order-agree__toggle');
-
-    $btn.attr('aria-expanded', !isExpanded);
-    $toggle.text(isExpanded ? '보기' : '닫기');
-    isExpanded ? $content.attr('hidden', true) : $content.removeAttr('hidden');
-  });
-},
 };
 
 $(function () {
@@ -616,7 +603,6 @@ $(function () {
   UI.reviewSort();
   UI.paymentMethod();
   UI.priceTooltip();
-  UI.orderAgree();
 });
 
 // resize 대응

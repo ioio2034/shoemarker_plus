@@ -17,7 +17,8 @@
     <header id="header" class="header"></header>
 
     <!-- Content -->
-    <main class="container page-cart">
+    <!-- lnb 있을 경우 has-aside 추가 -->
+    <main class="container page-cart has-aside">
  
       <!-- 하단 고정 요소가 있을 경우 section--fixed 추가 -->
       <section class="section section--fixed">
@@ -33,9 +34,10 @@
           <!-- Content -->
           <div class="order-form">
             <!-- 배송지 정보 -->
-            <div class="delivery order-block is-open">
+            <div class="delivery order-block order-block--static">
               <div type="button" class="order-block__header">
                 <h3 class="order-block__title">배송지정보</h3>
+                <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">설정</button>
               </div>
               <div class="order-block__content">
                 <div class="order-block__inner">                  
@@ -62,8 +64,7 @@
                     </li>
                   </ul>
                   -->
-                </div>
-                <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">설정</button>
+                </div>                
               </div>
             </div>
             <!-- //배송지 정보 -->
@@ -507,24 +508,16 @@
               <p class="order-agree__title">주문 내용을 확인했으며, 결제에 동의 합니다.</p>
               <ul class="order-agree__list">
                 <li class="order-agree__item">
-                  <button type="button" class="order-agree__row" aria-expanded="false" aria-controls="agree-content-1">
+                  <button type="button" class="order-agree__row js-modal-open" aria-label="약관 보기" data-target="#modal4">
                     <span class="order-agree__label">결제대행서비스 약관 모두동의</span>
                     <span class="order-agree__toggle">보기</span>
                   </button>
-                  <div class="order-agree__content" id="agree-content-1" hidden>
-                    <!-- 내용 영역 (임시) -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nulla dolore excepturi? Nihil totam molestiae error necessitatibus soluta ipsa nobis voluptas, commodi ipsum accusamus minus porro enim quis voluptatibus recusandae ad sequi, alias magni atque quidem temporibus ut. Ipsam reprehenderit natus sequi in sapiente aperiam consequuntur necessitatibus exercitationem, magnam fugiat iusto dolores voluptates? Quos, officiis saepe consectetur excepturi enim quas? Consequuntur, dolores a saepe nisi, aliquid ducimus optio aperiam non veniam, labore repellendus dignissimos pariatur eveniet totam quibusdam voluptate? Quaerat, debitis qui possimus illum vitae sunt praesentium. Earum neque autem suscipit, facere deleniti eligendi quas, similique corporis, repellendus possimus praesentium.</p>
-                  </div>
                 </li>
                 <li class="order-agree__item">
-                  <button type="button" class="order-agree__row" aria-expanded="false" aria-controls="agree-content-2">
+                  <button type="button" class="order-agree__row js-modal-open" aria-label="약관 보기" data-target="#modal5">
                     <span class="order-agree__label">구매조건 확인 및 개인정보 수집/이용/제3자 제공 동의</span>
                     <span class="order-agree__toggle">보기</span>
                   </button>
-                  <div class="order-agree__content" id="agree-content-2" hidden>
-                    <!-- 내용 영역 (임시) -->
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nulla dolore excepturi? Nihil totam molestiae error necessitatibus soluta ipsa nobis voluptas, commodi ipsum accusamus minus porro enim quis voluptatibus recusandae ad sequi, alias magni atque quidem temporibus ut. Ipsam reprehenderit natus sequi in sapiente aperiam consequuntur necessitatibus exercitationem, magnam fugiat iusto dolores voluptates? Quos, officiis saepe consectetur excepturi enim quas? Consequuntur, dolores a saepe nisi, aliquid ducimus optio aperiam non veniam, labore repellendus dignissimos pariatur eveniet totam quibusdam voluptate? Quaerat, debitis qui possimus illum vitae sunt praesentium. Earum neque autem suscipit, facere deleniti eligendi quas, similique corporis, repellendus possimus praesentium.</p>
-                  </div>
                 </li>
               </ul>
             </div>
@@ -542,6 +535,74 @@
 
         </div>
       </section>
+
+      <!-- PC 전용 : 우측 사이드바 (sticky) -->
+      <aside class="cart-aside">
+        <div class="cart-aside__inner">
+          <!-- 타이틀 -->
+          <div class="cart-aside__header">
+            <h4 class="cart-aside__title">결제금액</h4>
+          </div>
+
+          <!-- 결제금액 -->
+          <div class="cart-aside__payment">
+            <dl class="payment__item">
+              <dt class="payment__label">상품금액</dt>
+              <dd class="payment__value"><span class="payment__value-num">282,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item">
+              <dt class="payment__label">할인금액</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-52,600</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item payment__item--sub">
+              <dt class="payment__label">상품가격할인</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-40,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item payment__item--sub">
+              <dt class="payment__label">상품쿠폰</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-12,600</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item">
+              <dt class="payment__label">배송비</dt>
+              <dd class="payment__value"><span class="payment__value-num">3,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item payment__item--sub">
+              <dt class="payment__label">배송비 쿠폰</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-3,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item">
+              <dt class="payment__label">포인트 · 적립금</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-2,600</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item payment__item--sub">
+              <dt class="payment__label">포인트</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-1,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+            <dl class="payment__item payment__item--sub">
+              <dt class="payment__label">적립금</dt>
+              <dd class="payment__value payment__value--minus"><span class="payment__value-num">-1,000</span><span class="payment__value-unit">원</span></dd>
+            </dl>
+          </div>
+
+          <!-- 총 결제금액 -->
+          <div class="cart-aside__total">
+            <span class="cart-aside__total-label">총 결제금액</span>
+            <span class="cart-aside__total-price">
+              <span class="cart-aside__total-num">188,700</span><span class="cart-aside__total-unit">원</span>
+            </span>
+          </div>
+
+          <p class="cart-aside__notice">· 주문 내용을 확인했으며, 결제에 동의합니다.</p>
+
+          <!-- 주문 버튼 -->
+          <div class="cart-aside__btn">
+            <button type="button" class="btn btn--block">
+              180,650원 결제하기
+            </button>
+          </div>
+
+        </div>        
+      </aside>
     </main>
 
     <!-- Footer -->
@@ -881,6 +942,48 @@
         <button type="button" class="btn btn--primary">적용하기</button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- 결제대행서비스 약관 모두동의 modal -->
+  <div id="modal4" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">이벤트/마케팅 수신 동의</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 결제대행서비스 약관 모두동의 modal -->
+  <div id="modal5" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">구매조건 확인 및 개인정보 수집/이용/제3자 제공 동의</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <p>Admin 등록 약관 내용 표기 (내용 넣으면 높이가 늘어납니다.)</p>
+        </div>
+      </div>
     </div>
   </div>
 
