@@ -354,7 +354,7 @@
   .btn {
     flex: 1;
     height: 57px;
-    padding: 16px 24px;
+    padding: 16px 18px;
     border-radius: 4px;
     font-size: 18px;
     line-height: 140%;
@@ -362,6 +362,13 @@
   }
   &__buy {
     color: #EF4400;
+  }
+  &__npay {
+    text-indent: -9999px;
+    @include bgimage('img_npay2', 'png');
+    background-size: 63px auto;
+    background-position: center;
+    background-color: #00DE5A;
   }
   &--black {
     @include flex(center, space-between);
@@ -381,6 +388,7 @@
       border: 0;
     }
     .btn {
+      position: relative;
       flex: auto;
       height: auto;
       padding: 0;
@@ -393,14 +401,28 @@
         line-height: 20px;
       }
       & + .btn {
+        margin-left: 16px;
         &::before {
           content: '';
-          display: block;
-          margin-right: 16px;
+          position: absolute;
+          left: -16px;
+          top: 50%;
+          transform: translateY(-50%);
           width: 1px;
           height: 14px;
           background: $white;
         }
+      }
+    }
+    // 네이버페이
+    .buy-actions__npay {
+      width: 63px;
+      @include bgimage('img_npay_g','png');
+      background-size: 63px auto;
+      background-position: right center;
+      @include tablet {
+        width: 52px;
+        background-size: 52px auto;
       }
     }
   }

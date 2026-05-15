@@ -15670,7 +15670,7 @@ body.sheet-open {
 .buy-actions .btn {
   flex: 1;
   height: 57px;
-  padding: 16px 24px;
+  padding: 16px 18px;
   border-radius: 4px;
   font-size: 18px;
   line-height: 140%;
@@ -15678,6 +15678,13 @@ body.sheet-open {
 }
 .buy-actions__buy {
   color: #EF4400;
+}
+.buy-actions__npay {
+  text-indent: -9999px;
+  background: url("../images/img_npay2.png") no-repeat;
+  background-size: 63px auto;
+  background-position: center;
+  background-color: #00DE5A;
 }
 .buy-actions--black {
   display: flex;
@@ -15695,6 +15702,7 @@ body.sheet-open {
   border: 0;
 }
 .buy-actions--black .btn {
+  position: relative;
   flex: auto;
   height: auto;
   padding: 0;
@@ -15703,13 +15711,24 @@ body.sheet-open {
   line-height: 26px;
   letter-spacing: 0;
 }
+.buy-actions--black .btn + .btn {
+  margin-left: 16px;
+}
 .buy-actions--black .btn + .btn::before {
   content: "";
-  display: block;
-  margin-right: 16px;
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 1px;
   height: 14px;
   background: #FFFFFF;
+}
+.buy-actions--black .buy-actions__npay {
+  width: 63px;
+  background: url("../images/img_npay_g.png") no-repeat;
+  background-size: 63px auto;
+  background-position: right center;
 }
 
 .product-detail {
