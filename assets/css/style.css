@@ -17404,6 +17404,7 @@ body.sheet-open {
   color: #EF4400;
 }
 .buy-actions__npay {
+  font-size: 0 !important;
   text-indent: -9999px;
   background: url("../images/img_npay2.png") no-repeat;
   background-size: 63px auto;
@@ -17466,6 +17467,8 @@ body.sheet-open {
   background: url("../images/img_npay_g.png") no-repeat;
   background-size: 63px auto;
   background-position: right center;
+  font-size: 0;
+  text-indent: -9999px;
 }
 @media (max-width: 1024px) {
   .buy-actions--black .buy-actions__npay {

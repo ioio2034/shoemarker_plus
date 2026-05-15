@@ -364,6 +364,7 @@
     color: #EF4400;
   }
   &__npay {
+    font-size: 0 !important;
     text-indent: -9999px;
     @include bgimage('img_npay2', 'png');
     background-size: 63px auto;
@@ -420,6 +421,8 @@
       @include bgimage('img_npay_g','png');
       background-size: 63px auto;
       background-position: right center;
+      font-size: 0;
+      text-indent: -9999px;
       @include tablet {
         width: 52px;
         background-size: 52px auto;
