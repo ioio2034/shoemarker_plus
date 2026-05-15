@@ -267,7 +267,13 @@
                       로그인 및 회원 가입 후 다양한 혜택을 받으세요.
                     </span>
                   </a>
-                  <!-- //login-banner -->
+                  <!-- card-banner : 무이자 할부 혜택 안내 배너 -->
+                  <a href="#" class="card-banner js-modal-open" data-target="#modal2" aria-label="무이자 할부 혜택 안내">
+                    <span class="card-banner__text">
+                      무이자 할부 혜택 안내
+                    </span>
+                  </a>
+                  <!-- //card-banner -->
                   <!-- color-selector : 컬러 선택 -->
                   <div class="color-selector">
                     <p class="color-selector__label">컬러</p>
@@ -1716,6 +1722,24 @@
       </div>
       <div class="modal__footer">
         <button type="button" class="btn btn--primary">쿠폰 전체 다운로드</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 무이자 할부 혜택 안내 modal -->
+  <div id="modal2" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">무이자 할부 혜택 안내</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+      <div class="modal__body">
+        <img src="../../assets/images/img_card_sample.png" alt="무이자 할부 혜택 안내 이미지 예시">
       </div>
     </div>
   </div>
