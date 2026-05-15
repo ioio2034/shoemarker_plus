@@ -604,7 +604,22 @@ let UI = {
       }
     });
   },
+  // toggle
+  toggle: function () {
+    $(document).on('click', '.js-toggle', function () {
+      const $btn = $(this);
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+      const target = $btn.data('target');
+      const $target = $(target);
+
+      if (!$target.length) return;
+
+      $btn.attr('aria-expanded', !isExpanded);
+      $target.toggleClass('is-open', !isExpanded);
+    });
+  },
 };
+
 
 $(function () {
   UI.alert();
@@ -624,6 +639,7 @@ $(function () {
   UI.paymentMethod();
   UI.priceTooltip();
   UI.cartSummary();
+  UI.toggle();
 });
 
 // resize 대응

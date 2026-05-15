@@ -1,0 +1,28 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.js-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  &::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    @include bgimage('icon_chevron_down_16', 'svg');
+    transition: transform 0.3s ease;
+  }
+  &[aria-expanded="true"] {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+  &__content {
+    display: none !important;
+    &.is-open {
+      display: flex !important;
+    }
+  }
+}

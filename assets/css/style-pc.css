@@ -13332,6 +13332,30 @@ body.sheet-open {
   cursor: pointer;
 }
 
+.js-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+}
+.js-toggle::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/icon_chevron_down_16.svg") no-repeat;
+  transition: transform 0.3s ease;
+}
+.js-toggle[aria-expanded=true]::after {
+  transform: rotate(180deg);
+}
+.js-toggle__content {
+  display: none !important;
+}
+.js-toggle__content.is-open {
+  display: flex !important;
+}
+
 .login__inner {
   display: flex;
   flex-direction: column;
