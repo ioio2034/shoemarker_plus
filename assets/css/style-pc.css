@@ -17409,7 +17409,13 @@ body.sheet-open {
 .page-order .section__inner {
   padding: 70px 0 0;
 }
-
+.page-cart .section__title,
+.page-order .section__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -1px;
+}
 #wrap {
   min-width: 1280px;
 }

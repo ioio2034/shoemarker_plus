@@ -19761,7 +19761,22 @@ body.sheet-open {
 .page-order .section__inner {
   padding: 70px 0 0;
 }
-
+.page-cart .section__title,
+.page-order .section__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -1px;
+}
+@media (max-width: 1024px) {
+  .page-cart .section__title,
+  .page-order .section__title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0;
+  }
+}
 @media (max-width: 1024px) {
   .page-cart .section__inner {
     padding-bottom: calc(140px + env(safe-area-inset-bottom));

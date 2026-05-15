@@ -949,8 +949,24 @@
     margin-top: 0;
     }
   }
+  .section {
+    &__inner {
+      padding: 70px 0 0;
+    }
+    &__title {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -1px;
+      @include tablet {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        letter-spacing: 0;
+      }
+    }
+  }
   .section__inner {
-    padding: 70px 0 0;
   }
 }
 .page-cart {
