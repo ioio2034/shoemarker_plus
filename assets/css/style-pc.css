@@ -16296,6 +16296,7 @@ body.sheet-open {
   overflow-y: auto;
   max-height: calc(100vh - 81px);
   overscroll-behavior: contain;
+  padding-bottom: 4px;
 }
 .product-detail .prod-content .prod-tabs {
   position: sticky;
