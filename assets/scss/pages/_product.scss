@@ -1579,8 +1579,7 @@
 }
 
 // 쿠폰 받기 bottom sheet
-#couponSheet {
-  .coupon-list {
+.coupon-list {
     @include flex-col;
     gap: 16px;
   }
@@ -1635,4 +1634,3 @@
       line-height: 14px;
     }
   }
-}

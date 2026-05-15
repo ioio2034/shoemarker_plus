@@ -16585,12 +16585,13 @@ body.sheet-open {
   display: none;
 }
 
-#couponSheet .coupon-list {
+.coupon-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-#couponSheet .coupon-item {
+
+.coupon-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16598,44 +16599,44 @@ body.sheet-open {
   border-radius: 6px;
   border: 1px solid #D8D8D8;
 }
-#couponSheet .coupon-item--owned .coupon-item__action .btn {
+.coupon-item--owned .coupon-item__action .btn {
   border-color: #D8D8D8;
   background: #F8F8F8;
   color: #D8D8D8;
   cursor: default;
 }
-#couponSheet .coupon-item__info {
+.coupon-item__info {
   flex: 1;
   min-width: 0;
 }
-#couponSheet .coupon-item__name {
+.coupon-item__name {
   color: #2D2D2D;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
 }
-#couponSheet .coupon-item__rate {
+.coupon-item__rate {
   display: inline-flex;
   align-items: baseline;
   color: #FE4C58;
 }
-#couponSheet .coupon-item__rate-num {
+.coupon-item__rate-num {
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
 }
-#couponSheet .coupon-item__rate-unit {
+.coupon-item__rate-unit {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
 }
-#couponSheet .coupon-item__detail {
+.coupon-item__detail {
   display: flex;
   flex-direction: column;
   gap: 2px;
   margin-top: 4px;
 }
-#couponSheet .coupon-item__detail-row {
+.coupon-item__detail-row {
   color: #717171;
   font-size: 11px;
   line-height: 14px;

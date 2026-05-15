@@ -188,7 +188,7 @@
                         <span class="price__rate">5%</span>
                         <span class="price__num">229,000</span><span class="price__unit">원</span>
                       </div>
-                      <button type="button" class="price__coupon-btn js-bottom-sheet-open" data-target="#couponSheet">쿠폰받기</button>
+                      <button type="button" class="price__coupon-btn js-modal-open" data-target="#modal1">쿠폰받기</button>
                     </div>
                   </div>
                   <!-- //price -->
@@ -1623,94 +1623,94 @@
     </div>
   </div>
 
-  <!-- 쿠폰 받기 bottom sheet -->
-  <div class="bottom-sheet" id="couponSheet">
+  <!-- 쿠폰 받기 modal -->
+  <div id="modal1" class="modal">
     <!-- dim -->
-    <div class="bottom-sheet__dim"></div>
-    <!-- content -->
-    <div class="bottom-sheet__content">
-      <div class="bottom-sheet__indicator"></div>
-      <div class="bottom-sheet__header">
-        <h3 class="bottom-sheet__title">쿠폰받기</h3>
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">쿠폰받기</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
       </div>
-      <div class="bottom-sheet__body">
-        <div class="bottom-sheet__section">
-          <ul class="coupon-list">
-            <!-- 보유쿠폰 상태 -->
-            <li class="coupon-item coupon-item--owned">
-              <div class="coupon-item__info">
-                <p class="coupon-item__name">회원가입 할인 쿠폰</p>
-                <p class="coupon-item__rate">
-                  <span class="coupon-item__rate-num">20</span>
-                  <span class="coupon-item__rate-unit">%</span>
-                </p>
-                <ul class="coupon-item__detail">
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">최대할인금액</span>
-                    <span class="coupon-item__detail-value">: 23,980원</span>
-                  </li>
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">할인율</span>
-                    <span class="coupon-item__detail-value">36%</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="coupon-item__action">
-                <button type="button" class="btn btn--md btn--line" disabled>보유쿠폰</button>
-              </div>
-            </li>
-            <!-- 쿠폰받기 상태 -->
-            <li class="coupon-item">
-              <div class="coupon-item__info">
-                <p class="coupon-item__name">브랜드데이 쿠폰</p>
-                <p class="coupon-item__rate">
-                  <span class="coupon-item__rate-num">30</span>
-                  <span class="coupon-item__rate-unit">%</span>
-                </p>
-                <ul class="coupon-item__detail">
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">최대할인금액</span>
-                    <span class="coupon-item__detail-value">: 23,980원</span>
-                  </li>
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">할인율</span>
-                    <span class="coupon-item__detail-value">36%</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="coupon-item__action">
-                <button type="button" class="btn btn--md btn--line">쿠폰받기</button>
-              </div>
-            </li>
-            <!-- 금액 쿠폰 -->
-            <li class="coupon-item">
-              <div class="coupon-item__info">
-                <p class="coupon-item__name">배송료 쿠폰</p>
-                <p class="coupon-item__rate coupon-item__rate--price">
-                  <span class="coupon-item__rate-num">3,000</span>
-                  <span class="coupon-item__rate-unit">원</span>
-                </p>
-                <ul class="coupon-item__detail">
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">최대할인금액</span>
-                    <span class="coupon-item__detail-value">: 23,980원</span>
-                  </li>
-                  <li class="coupon-item__detail-row">
-                    <span class="coupon-item__detail-label">할인율</span>
-                    <span class="coupon-item__detail-value">36%</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="coupon-item__action">
-                <button type="button" class="btn btn--md btn--line">쿠폰받기</button>
-              </div>
-            </li>
-          </ul>
-
-        </div>
+      <div class="modal__body">
+        <!-- 쿠폰 리스트 -->
+        <ul class="coupon-list">
+          <!-- 보유쿠폰 상태 -->
+          <li class="coupon-item coupon-item--owned">
+            <div class="coupon-item__info">
+              <p class="coupon-item__name">회원가입 할인 쿠폰</p>
+              <p class="coupon-item__rate">
+                <span class="coupon-item__rate-num">20</span>
+                <span class="coupon-item__rate-unit">%</span>
+              </p>
+              <ul class="coupon-item__detail">
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">최대할인금액</span>
+                  <span class="coupon-item__detail-value">: 23,980원</span>
+                </li>
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">할인율</span>
+                  <span class="coupon-item__detail-value">36%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="coupon-item__action">
+              <button type="button" class="btn btn--md btn--line" disabled>보유쿠폰</button>
+            </div>
+          </li>
+          <!-- 쿠폰받기 상태 -->
+          <li class="coupon-item">
+            <div class="coupon-item__info">
+              <p class="coupon-item__name">브랜드데이 쿠폰</p>
+              <p class="coupon-item__rate">
+                <span class="coupon-item__rate-num">30</span>
+                <span class="coupon-item__rate-unit">%</span>
+              </p>
+              <ul class="coupon-item__detail">
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">최대할인금액</span>
+                  <span class="coupon-item__detail-value">: 23,980원</span>
+                </li>
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">할인율</span>
+                  <span class="coupon-item__detail-value">36%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="coupon-item__action">
+              <button type="button" class="btn btn--md btn--line">쿠폰받기</button>
+            </div>
+          </li>
+          <!-- 금액 쿠폰 -->
+          <li class="coupon-item">
+            <div class="coupon-item__info">
+              <p class="coupon-item__name">배송료 쿠폰</p>
+              <p class="coupon-item__rate coupon-item__rate--price">
+                <span class="coupon-item__rate-num">3,000</span>
+                <span class="coupon-item__rate-unit">원</span>
+              </p>
+              <ul class="coupon-item__detail">
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">최대할인금액</span>
+                  <span class="coupon-item__detail-value">: 23,980원</span>
+                </li>
+                <li class="coupon-item__detail-row">
+                  <span class="coupon-item__detail-label">할인율</span>
+                  <span class="coupon-item__detail-value">36%</span>
+                </li>
+              </ul>
+            </div>
+            <div class="coupon-item__action">
+              <button type="button" class="btn btn--md btn--line">쿠폰받기</button>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="bottom-sheet__footer">
-        <button type="button" class="btn btn--primary btn--block">쿠폰 전체 다운로드</button>
+      <div class="modal__footer">
+        <button type="button" class="btn btn--primary">쿠폰 전체 다운로드</button>
       </div>
     </div>
   </div>
