@@ -38,6 +38,7 @@ SCSS는 역할 단위로 분리하여 관리하며, `style.scss`에서 통합하
 | `_footer.scss` | 푸터 레이아웃 |
 | `_container.scss` | 공통 레이아웃 |
 | `style.scss` | SCSS 통합 및 컴파일 진입 파일 |
+| `style-pc.scss` | PC SCSS 통합 및 컴파일 진입 파일(media query 차단) |
 
 ### 📌 SCSS 작성 규칙
 - SCSS는 `@use` 기반 모듈 시스템 사용
@@ -50,7 +51,6 @@ SCSS는 역할 단위로 분리하여 관리하며, `style.scss`에서 통합하
 - 구조 변경 없이 스타일 분기 방식 적용
 - 동일 마크업 기준으로 디바이스별 스타일 제어
 - PC/Mobile 구조가 다른 영역은 .--pc / .--mobile 형식으로 분리
-- display 제어는 media query에서 처리
 
 ## 📂 Directory Structure
 ```
@@ -59,6 +59,7 @@ project/
 ├─ assets/
 │  ├─ css/
 │  │  ├─ style.css
+│  │  ├─ style-pc.css
 │  │  └─ swiper-bundle.min.css
 │  ├─ fonts/
 │  ├─ images/
@@ -66,6 +67,7 @@ project/
 │  │  └─ ui.js
 │  └─ scss/
 │     ├─ style.scss
+│     ├─ style-pc.scss
 │     ├─ base/
 │     │  ├─ _font.scss
 │     │  ├─ _helper.scss
@@ -106,6 +108,7 @@ project/
 
 ## ⚠️ Notes
 - HTML은 디바이스별로 분리하지 않고 단일 구조로 유지하며, 반응형 처리는 CSS(Media Query)를 통해 제어
-- 단, PC / Mobile 구조가 완전히 다른 경우에 한해 `. --pc / . --mobile` 클래스를 사용하여 예외적으로 분리 적용
-- 페이지 구분은 .page-xxx 클래스 사용
-- 스타일 수정 시 공통 컴포넌트 확인 후 수정
+- 페이지 구분은 `.page-xxx` 클래스 사용
+- 스타일 수정 시 공통 컴포넌트 영향 여부 확인 후 수정
+- 기본 스타일은 Media Query가 포함된 통합 CSS 파일 기준으로 작업
+- 작업 진행 중 PC/모바일 도메인 분리 이슈로 인해, Media Query를 제거한 PC 전용 CSS 파일이 별도로 추가됨
