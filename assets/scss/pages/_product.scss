@@ -1623,11 +1623,12 @@
   }
 }
 
-// 쿠폰 받기 bottom sheet
-.coupon-list {
-    @include flex-col;
-    gap: 16px;
-  }
+// 쿠폰 받기 modal
+.coupon-download {
+  .coupon-list {
+      @include flex-col;
+      gap: 16px;
+    }
   .coupon-item {
     @include flex(center, space-between);
     padding: 16px;
@@ -1679,3 +1680,4 @@
       line-height: 14px;
     }
   }
+}
