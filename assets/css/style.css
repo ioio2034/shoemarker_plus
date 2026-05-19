@@ -13558,9 +13558,6 @@ body.sheet-open {
   display: inline-flex;
   align-items: center;
 }
-.radio + .radio {
-  margin-left: 12px;
-}
 .radio__input {
   position: absolute !important;
   width: 1px !important;
@@ -14650,6 +14647,11 @@ body.sheet-open {
   color: #555555;
   font-size: 12px;
   font-weight: 400;
+  line-height: 16px;
+}
+.order-group__delivery-cost {
+  color: #FE4C58;
+  font-size: 12px;
   line-height: 16px;
 }
 .order-group__body {
@@ -15804,6 +15806,17 @@ body.sheet-open {
 @media (max-width: 1024px) {
   .order-block__header--hide {
     display: none;
+  }
+}
+.order-block__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+@media (max-width: 1024px) {
+  .order-block__left {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 .order-block__title {
@@ -19657,6 +19670,17 @@ body.sheet-open {
     gap: 0;
   }
 }
+.order-form .delivery .order-block__header {
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .order-form .delivery .order-block__header .btn {
+    position: absolute;
+    right: 0;
+    top: 34px;
+    z-index: 1;
+  }
+}
 .order-form .delivery-request {
   display: flex;
   flex-direction: column;
@@ -19664,6 +19688,28 @@ body.sheet-open {
 }
 .order-form .delivery-request .checkbox {
   margin-top: 8px;
+}
+.order-form .order-product .order-card + .order-card {
+  margin-top: 16px;
+}
+.order-form .order-product .order-card__box {
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .order-form .order-product .order-card__box {
+    border-radius: 6px;
+    border: 1px solid #D8D8D8;
+  }
+}
+.order-form .order-product .order-group__body {
+  padding: 16px 24px 16px 0;
+}
+@media (max-width: 1024px) {
+  .order-form .order-product .order-group__body {
+    padding: 20px 16px;
+  }
 }
 .order-form .discount-benefit {
   display: flex;
@@ -19988,6 +20034,133 @@ body.sheet-open {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  .order-info {
+    gap: 24px;
+    padding: 24px;
+  }
+}
+.order-info__box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .order-info__box {
+    gap: 16px;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+  }
+}
+.order-info__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .order-info__header {
+    padding-bottom: 8px;
+  }
+}
+.order-info__title {
+  flex-shrink: 0;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -0.18px;
+}
+@media (max-width: 1024px) {
+  .order-info__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+}
+.order-info__summary {
+  text-align: right;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.16px;
+}
+@media (max-width: 1024px) {
+  .order-info__summary {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+  }
+}
+.order-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1024px) {
+  .order-info__content {
+    gap: 8px;
+  }
+}
+.order-info__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #555555;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+}
+@media (max-width: 1024px) {
+  .order-info__row {
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+}
+.order-info__label {
+  flex-shrink: 0;
+}
+.order-info__label::before {
+  content: "·";
+  margin-right: 4px;
+}
+.order-info__value {
+  text-align: right;
+}
+.order-info__notice {
+  padding: 6px 4px;
+  border-radius: 4px;
+  background: #F8F8F8;
+  color: #FE4C58;
+  font-size: 13px;
+  line-height: 140%;
+  letter-spacing: -0.13px;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .order-info__notice {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
 }
 
 .cart-list .cart-action {
@@ -20497,7 +20670,7 @@ body.sheet-open {
   grid-column: 2;
   grid-row: 1/-1;
   position: sticky;
-  top: 200px;
+  top: 212px;
   height: auto;
   align-self: start;
   border-radius: 6px;

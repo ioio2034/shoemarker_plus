@@ -8,12 +8,53 @@
   @include tablet {
     gap: 0;
   }
+  // 배송지
+  .delivery {
+    .order-block {
+      &__header {
+        position: relative;
+        .btn {
+          @include tablet {
+            position: absolute;
+            right: 0;
+            top: 34px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
   // 배송 요청사항
   .delivery-request {
     @include flex-col;
     gap: 8px;
     .checkbox {
       margin-top: 8px;
+    }
+  }
+  // 주문상품
+  .order-product {
+    .order-card {
+      & + .order-card {
+        margin-top: 16px;
+      }
+      &__box {
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid $gray-30;
+        @include tablet {
+          border-radius: 6px;
+          border: 1px solid $gray-30;
+        }
+      }
+    }
+    .order-group {
+      &__body {
+        padding: 16px 24px 16px 0;
+        @include tablet {
+          padding: 20px 16px;
+        }
+      }
     }
   }
   // 할인 혜택
@@ -330,6 +371,110 @@
       font-size: 12px;
       font-weight: 400;
       line-height: 16px;
+    }
+  }
+}
+// 주문 완료 > 주문 정보
+.order-info {
+  @include flex-col;
+  gap: 20px;
+  @include tablet {
+    gap: 24px;
+    padding: 24px;
+  }
+  &__box {
+    @include flex-col;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    @include tablet {
+      gap: 16px;
+      padding: 0;
+      border-radius: 0;
+      border: 0;
+    }
+  }
+  &__header {
+    @include flex(center, space-between);
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-30;
+    @include tablet {
+      padding-bottom: 8px;
+    }
+  }
+  &__title {
+    flex-shrink: 0;
+    color: $gray-80;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.18px;
+    @include tablet {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+  &__summary {
+    text-align: right;
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+    @include tablet {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0
+    }
+  }
+  &__content {
+    @include flex-col;
+    gap: 10px;
+    @include tablet {
+      gap: 8px;
+    }
+  }
+  &__row {
+    @include flex(center, space-between);
+    gap: 10px;
+    color: $gray-70;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      align-items: flex-start;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0;
+    }
+  }
+  &__label {
+    flex-shrink: 0;
+    &::before {
+      content: '·';
+      margin-right: 4px;
+    }
+  }
+  &__value {
+    text-align: right;
+  }
+  &__notice {
+    padding: 6px 4px;
+    border-radius: 4px;
+    background: $gray-5;
+    color: $red;
+    font-size: 13px;
+    line-height: 140%;
+    letter-spacing: -0.13px;
+    text-align: center;
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0;
     }
   }
 }
@@ -812,7 +957,7 @@
   grid-column: 2;
   grid-row: 1 / -1;
   position: sticky;
-  top: 200px;
+  top: 212px;
   height: auto;
   align-self: start;
   border-radius: 6px;

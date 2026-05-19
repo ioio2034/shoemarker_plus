@@ -4,9 +4,9 @@
 .radio {
   display: inline-flex;
   align-items: center;
-  & + .radio {
-    margin-left: 12px;
-  }
+  // & + .radio {
+  //   margin-left: 12px;
+  // }
   &__input {
     @include inputhide;
     width: 24px;

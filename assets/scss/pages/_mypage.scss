@@ -115,6 +115,11 @@
     font-weight: 400;
     line-height: 16px;
   }
+  &__delivery-cost {
+    color: $red;
+    font-size: 12px;
+    line-height: 16px;
+  }
   &__body {
     @include flex(center, space-between);
     gap: 40px;
@@ -1194,6 +1199,15 @@
       @include tablet {
         display: none;
       }
+    }
+  }
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @include tablet {
+      width: 100%;
+      justify-content: space-between;
     }
   }
   &__title {

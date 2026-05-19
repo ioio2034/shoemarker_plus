@@ -18,7 +18,11 @@
     <header id="header" class="header"></header>
 
     <!-- Content -->
-    <main class="container page-order-complete">
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-order-complete has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
       
       <section class="section">
         <div class="section__inner">
@@ -43,13 +47,75 @@
                 </div>                
                 <div class="claim-done__box">
                   <ul class="claim-done__list">
+                    <li class="pb10">고객님의 주문이 정상적으로 접수되었습니다. <br class="is-mo">빠르게 준비하여 발송해 드리겠습니다.</li>
                     <li>주문번호: 20260318-123456</li>
                     <li>주문일시: 2026-03-18 14:32</li>
                   </ul>
                 </div>
               </div>
             </div>
-          
+
+            <div class="divider"></div>
+            <!-- 주문 정보 -->
+            <div class="order-info">
+              <div class="order-info__box">
+                <div class="order-info__header">
+                  <h3 class="order-info__title">결제정보</h3>
+                  <p class="order-info__summary">80,600원</p>
+                </div>
+                <div class="order-info__content">
+                  <div class="order-info__row">
+                    <span class="order-info__label">결제방법</span>
+                    <span class="order-info__value">현대카드 M(VISA) 일시불</span>
+                  </div>
+                  <div class="order-info__row">
+                    <span class="order-info__label">결제일</span>
+                    <span class="order-info__value">0000-00-00 00:00:00</span>
+                  </div>
+                  <div class="order-info__row">
+                    <span class="order-info__label">배송비</span>
+                    <span class="order-info__value">0원</span>
+                  </div>
+                  <div class="order-info__row">
+                    <span class="order-info__label">총 1개 결제금액</span>
+                    <span class="order-info__value">149,000원</span>
+                  </div>
+                </div>
+              </div>
+              <div class="order-info__box">
+                <div class="order-info__header">
+                  <h3 class="order-info__title">주문자 정보</h3>
+                  <p class="order-info__summary">홍길동</p>
+                </div>
+                <div class="order-info__content">
+                  <div class="order-info__row">
+                    <span class="order-info__label">연락처</span>
+                    <span class="order-info__value">010-0000-0000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="order-info__box">
+                <div class="order-info__header">
+                  <h3 class="order-info__title">배송지 정보(n개)</h3>
+                  <p class="order-info__summary">우리집</p>
+                </div>
+                <div class="order-info__content">
+                  <div class="order-info__row">
+                    <span class="order-info__label">배송지 주소</span>
+                    <span class="order-info__value">서울특별시 마포구 00로00길 00아파트 00-0000</span>
+                  </div>
+                  <div class="order-info__row">
+                    <span class="order-info__label">받는 사람</span>
+                    <span class="order-info__value">홍길동</span>
+                  </div>
+                  <div class="order-info__row">
+                    <span class="order-info__label">연락처</span>
+                    <span class="order-info__value">010-0000-0000</span>
+                  </div>
+                </div>
+              </div>
+              <p class="order-info__notice">전체 배송지 정보는 주문 내역에서 확인 가능합니다.</p>
+            </div>
             <div class="divider"></div>
             
             <div class="order__content">

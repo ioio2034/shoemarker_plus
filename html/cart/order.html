@@ -36,7 +36,19 @@
             <!-- 배송지 정보 -->
             <div class="delivery order-block order-block--static">
               <div type="button" class="order-block__header">
-                <h3 class="order-block__title">배송지정보</h3>
+                <div class="order-block__left">
+                  <h3 class="order-block__title">배송지정보</h3>
+                  <div class="radio-group">
+                    <div class="radio">
+                      <input type="radio" id="radio1" name="radioSet" class="radio__input" />
+                      <label for="radio1" class="radio__label">단일 배송</label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="radio2" name="radioSet" class="radio__input" />
+                      <label for="radio2" class="radio__label">복수 배송</label>
+                    </div>
+                  </div>
+                </div>
                 <button type="button" class="btn btn--md btn--line btn--secondary js-modal-open" data-target="#modal1">설정</button>
               </div>
               <div class="order-block__content">
@@ -124,141 +136,153 @@
             <div class="divider"></div>
 
             <!-- 주문 상품 -->
-            <div class="order-block is-open">
-              <button type="button" class="order-block__header order-block__header--hide">
+            <div class="order-product order-block is-open">
+              <button type="button" class="order-block__header">
                 <h3 class="order-block__title">주문상품</h3>
               </button>
               <div class="order-block__content">
                 <div class="order-block__inner">
-                  <div class="order-group__content">
-
-                    <div class="order-item">
-                      <div class="order-item__thumb">
-                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
-                      </div>
-                      <div class="order-item__content">
-                        <div class="order-item__content-left">
-                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
-                          <ul class="order-item__meta">
-                            <li class="order-item__meta-row">
-                              <span class="order-item__meta-label">옵션</span>
-                              <span class="order-item__meta-value">225 / White</span>
-                            </li>
-                            <li class="order-item__meta-row">
-                              <span class="order-item__meta-label">수량</span>
-                              <span class="order-item__meta-value">1개</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="order-item__price">
-                          <div class="order-item__price-origin">
-                            <span class="price">
-                              <span class="price__num">219,000</span>
-                              <span class="price__unit">원</span>
-                            </span>
+                  <div class="order-card">
+                    <div class="order-card__box">
+                      <div class="order-group">
+                        <div class="order-group__head">
+                          <span class="order-group__status">벤더명</span>
+                          <div class="order-group__schedule">
+                            <span class="order-group__delivery-cost">무료배송</span>
                           </div>
-                          <div class="order-item__price-cost">
-                            <span class="price">
-                              <span class="price__num">89,000</span>
-                              <span class="price__unit">원</span>
-                            </span>
-
-                            <!-- 가격 툴팁 레이어 -->
-                            <div class="price-tooltip">
-                              <button
-                                type="button"
-                                class="price-tooltip__btn"
-                                aria-expanded="false"
-                                aria-label="할인내역 보기"
-                              ></button>
-                              <div class="price-tooltip__layer" hidden>
-                                <strong class="price-tooltip__title">할인내역</strong>
-                                <ul class="price-tooltip__list">
-                                  <li class="price-tooltip__item">
-                                    <span class="price-tooltip__label">상품할인</span>
-                                    <span class="price-tooltip__value price-tooltip__value--minus">
-                                      <span class="price-tooltip__num">-24,000</span><span class="price-tooltip__unit">원</span>
-                                    </span>
-                                  </li>
-                                </ul>
-                                <div class="price-tooltip__total">
-                                  <span class="price-tooltip__total-label">기본할인가</span>
-                                  <span class="price-tooltip__total-value">
-                                    <span class="price-tooltip__num">62,300</span><span class="price-tooltip__unit">원</span>
-                                  </span>
+                        </div>
+                        <div class="order-group__body">
+                          <div class="order-group__content">
+                            <!-- [s] item -->
+                            <div class="order-item">
+                              <div class="order-item__thumb">
+                                <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                              </div>
+                              <div class="order-item__content">
+                                <div class="order-item__content-left">
+                                  <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                                  <ul class="order-item__meta">
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">옵션</span>
+                                      <span class="order-item__meta-value">225 / White</span>
+                                    </li>
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">수량</span>
+                                      <span class="order-item__meta-value">1개</span>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <p class="price-tooltip__desc">· 기본 할인 혜택 외 주문서에서 최대 할인 혜택을 확인 하실 수 있습니다.</p>
+                                <div class="order-item__price">
+                                  <div class="order-item__price-origin">
+                                    <span class="price">
+                                      <span class="price__num">219,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                  </div>
+                                  <div class="order-item__price-cost">
+                                    <span class="price">
+                                      <span class="price__num">89,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                  </div>
+                                  <div class="radio-group">
+                                    <div class="radio">
+                                      <input type="radio" id="radio3" name="radioSet2" class="radio__input" />
+                                      <label for="radio3" class="radio__label">일반 판매가</label>
+                                    </div>
+                                    <div class="radio">
+                                      <input type="radio" id="radio4" name="radioSet2" class="radio__input" />
+                                      <label for="radio4" class="radio__label">슈머니 가</label>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <!-- //price-tooltip -->
+                            <!-- [e] item -->
                           </div>
                         </div>
                       </div>
                     </div>
-
-                    <div class="order-item">
-                      <div class="order-item__thumb">
-                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
-                      </div>
-                      <div class="order-item__content">
-                        <div class="order-item__content-left">
-                          <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
-                          <ul class="order-item__meta">
-                            <li class="order-item__meta-row">
-                              <span class="order-item__meta-label">옵션</span>
-                              <span class="order-item__meta-value">225 / White</span>
-                            </li>
-                            <li class="order-item__meta-row">
-                              <span class="order-item__meta-label">수량</span>
-                              <span class="order-item__meta-value">1개</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="order-item__price">
-                          <div class="order-item__price-origin">
-                            <span class="price">
-                              <span class="price__num">219,000</span>
-                              <span class="price__unit">원</span>
-                            </span>
+                  </div>
+                  <div class="order-card">
+                    <div class="order-card__box">
+                      <div class="order-group">
+                        <div class="order-group__head">
+                          <span class="order-group__status">벤더명</span>
+                          <div class="order-group__schedule">
+                            <span class="order-group__delivery-cost">배송비 : 2,500원</span>
                           </div>
-                          <div class="order-item__price-cost">
-                            <span class="price">
-                              <span class="price__num">89,000</span>
-                              <span class="price__unit">원</span>
-                            </span>
-                            <!-- 가격 툴팁 레이어 -->
-                            <div class="price-tooltip">
-                              <button
-                                type="button"
-                                class="price-tooltip__btn"
-                                aria-expanded="false"
-                                aria-label="할인내역 보기"
-                              ></button>
-                              <div class="price-tooltip__layer" hidden>
-                                <strong class="price-tooltip__title">할인내역</strong>
-                                <ul class="price-tooltip__list">
-                                  <li class="price-tooltip__item">
-                                    <span class="price-tooltip__label">상품할인</span>
-                                    <span class="price-tooltip__value price-tooltip__value--minus">
-                                      <span class="price-tooltip__num">-24,000</span><span class="price-tooltip__unit">원</span>
-                                    </span>
-                                  </li>
-                                </ul>
-                                <div class="price-tooltip__total">
-                                  <span class="price-tooltip__total-label">기본할인가</span>
-                                  <span class="price-tooltip__total-value">
-                                    <span class="price-tooltip__num">62,300</span><span class="price-tooltip__unit">원</span>
-                                  </span>
+                        </div>
+                        <div class="order-group__body">
+                          <div class="order-group__content">
+                            <!-- [s] item -->
+                            <div class="order-item">
+                              <div class="order-item__thumb">
+                                <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                              </div>
+                              <div class="order-item__content">
+                                <div class="order-item__content-left">
+                                  <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                                  <ul class="order-item__meta">
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">옵션</span>
+                                      <span class="order-item__meta-value">225 / White</span>
+                                    </li>
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">수량</span>
+                                      <span class="order-item__meta-value">1개</span>
+                                    </li>
+                                  </ul>
                                 </div>
-                                <p class="price-tooltip__desc">· 기본 할인 혜택 외 주문서에서 최대 할인 혜택을 확인 하실 수 있습니다.</p>
+                                <div class="order-item__price">
+                                  <div class="order-item__price-origin">
+                                    <span class="price">
+                                      <span class="price__num">219,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                  </div>
+                                  <div class="order-item__price-cost">
+                                    <span class="price">
+                                      <span class="price__num">89,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                    <!-- 가격 툴팁 레이어 -->
+                                    <div class="price-tooltip">
+                                      <button
+                                        type="button"
+                                        class="price-tooltip__btn"
+                                        aria-expanded="false"
+                                        aria-label="할인내역 보기"
+                                      ></button>
+                                      <div class="price-tooltip__layer" hidden>
+                                        <strong class="price-tooltip__title">할인내역</strong>
+                                        <ul class="price-tooltip__list">
+                                          <li class="price-tooltip__item">
+                                            <span class="price-tooltip__label">상품할인</span>
+                                            <span class="price-tooltip__value price-tooltip__value--minus">
+                                              <span class="price-tooltip__num">-24,000</span><span class="price-tooltip__unit">원</span>
+                                            </span>
+                                          </li>
+                                        </ul>
+                                        <div class="price-tooltip__total">
+                                          <span class="price-tooltip__total-label">기본할인가</span>
+                                          <span class="price-tooltip__total-value">
+                                            <span class="price-tooltip__num">62,300</span><span class="price-tooltip__unit">원</span>
+                                          </span>
+                                        </div>
+                                        <p class="price-tooltip__desc">· 기본 할인 혜택 외 주문서에서 최대 할인 혜택을 확인 하실 수 있습니다.</p>
+                                      </div>
+                                    </div>
+                                    <!-- //price-tooltip -->
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <!-- //price-tooltip -->
+                            <!-- [e] item -->
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
