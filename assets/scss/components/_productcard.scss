@@ -96,6 +96,24 @@
       font-size: 11px;
       line-height: 12px;
     }
+    &--rank {
+      left: 16px;
+      top: 16px;
+      padding: 8px;
+      background: $gray-80;
+      font-family: $font-base;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      @include tablet {
+        left: 8px;
+        top: 8px;
+        padding: 4px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 12px;
+      }
+    }
   }
   &__img {
     width: 100%;

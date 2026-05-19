@@ -373,3 +373,22 @@
     letter-spacing: -0.14px;
   }
 }
+
+.btn-reset {
+  @include inline-flex;
+  gap: 4px;
+  padding: 2px 0;
+  &__icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    @include bgimage('icon_reset', 'png');
+    background-size: cover;
+  }
+  &__text {
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}

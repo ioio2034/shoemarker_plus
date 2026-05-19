@@ -287,3 +287,24 @@ body {
     }
   }
 }
+
+// 브랜드 홈
+.page-brand {
+  &.container {
+    margin-top: 0;
+  }
+  .section {
+    overflow: visible;
+    &__inner {
+      @include tablet {
+        padding: 0 0 32px;
+      }
+    }
+    &__header {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+}

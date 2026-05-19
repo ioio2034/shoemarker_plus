@@ -618,6 +618,58 @@ let UI = {
       $target.toggleClass('is-open', !isExpanded);
     });
   },
+  // heder scroll
+  headerScroll: function () {
+    const $header = $('#header');
+
+    if (!$header.length) return;
+
+    const handleScroll = () => {
+      const currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      $header.toggleClass('scrolled', currentScroll > 0);
+    };
+
+    $(window).on('scroll', handleScroll);
+
+    handleScroll();
+  },
+  // 브랜드 필터
+  brandFilter: function () {
+    $('.brand-filter--pc .brand-filter__item').each(function () {
+      const $item = $(this);
+      const $btn = $item.find('.brand-filter__btn');
+      const $sub = $item.find('.brand-filter__sub');
+
+      $sub.css('transition', 'none');
+
+      // 초기 상태 — is-open 있으면 펼침
+      if ($item.hasClass('is-open')) {
+        $sub.css('max-height', $sub[0].scrollHeight + 'px');
+      } else {
+        $sub.css('max-height', 0);
+      }
+
+      setTimeout(function () {
+        $sub.css('transition', '');
+      }, 0);
+
+      $btn.on('click', function (e) {
+        if ($(e.target).closest('.checkbox').length) return;
+
+        const isOpen = $item.hasClass('is-open');
+
+        if (isOpen) {
+          $item.removeClass('is-open');
+          $sub.css('max-height', 0);
+        } else {
+          $item.addClass('is-open');
+          $sub.css('max-height', $sub[0].scrollHeight + 'px');
+        }
+      });
+    });
+  },
 };
 
 
@@ -640,6 +692,8 @@ $(function () {
   UI.priceTooltip();
   UI.cartSummary();
   UI.toggle();
+  UI.headerScroll();
+  UI.brandFilter();
 });
 
 // resize 대응

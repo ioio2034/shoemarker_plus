@@ -1,4 +1,658 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
-.brand {}
+// 브랜드 페이지 공통
+.page-brand {
+  // 브랜드 비주얼 영역
+  .brand-visual {    
+    &__img {
+      overflow: hidden;
+      height: 680px;
+      @include tablet {
+        height: auto;
+      }
+      picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom center;
+      }
+    }
+  }
+  // 브랜드 탭
+  .brand-tab {
+    background: $gray-5;
+    border-bottom: 1px solid $grayscale-100;
+    &__list {
+      position: relative;
+      display: flex;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto -1px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { 
+        display: none; 
+      }
+      @include tablet {
+        gap: 16px;
+        padding: 0 24px;
+      }
+    }
+    &__btn {
+      position: relative;
+      @include inline-flex;
+      flex: 1 0 auto;
+      white-space: nowrap;
+      padding: 13px 4px;
+      color: $gray-70;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      @include tablet {
+        flex: 0 0 auto;
+        min-width: fit-content;
+        padding: 10px 8px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: $grayscale-900;
+        opacity: 0;
+      }
+      &.is-active {
+        color: $gray-80;
+        font-weight: 600;
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+//브랜드 홈
+.brand {
+  // 공통 스타일
+  // 타이틀
+  &__title {
+    color: $gray-80;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    @include tablet {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+  // 상품 리스트
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 12px;
+      row-gap: 32px;
+    }
+  }
+  // 브랜드 배너
+  .brand-banner {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 40px;
+    @include tablet {
+      padding: 24px;
+      margin-bottom: 0;
+    }
+    &__list {
+      display: flex;
+    }
+    &__content {
+      @include flex-col;
+      gap: 4px;
+      padding: 16px;
+      border-radius: 8px;
+      @include tablet {
+        padding: 12px 16px;
+      }
+      &--black {
+        background: linear-gradient(90deg, #121212 0%, #515151 100%);
+        box-shadow: 0 4px 16px 0 rgba(33, 36, 44, 0.08);
+      }
+      &--green {
+        background: linear-gradient(90deg, #00883E 0%, #2CBE6E 100%);
+        box-shadow: 0 4px 16px 0 rgba(33, 36, 44, 0.08);
+      }
+      &--purple {
+        background: linear-gradient(90deg, #9333EA 0%, #C084FC 100%);
+        box-shadow: 0 4px 16px 0 rgba(33, 36, 44, 0.08);
+      }
+    }
+    &__title {
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 140%;
+      @include tablet {
+        font-size: 14px;
+      }
+    }
+    &__desc {
+      color: $white;
+      font-size: 14px;
+      line-height: 140%;
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+    .swiper-pagination {
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+    }
+    .swiper-pagination-bullet-active {
+      background: $gray-80;
+    }
+  }
+  // 브랜드 베스트 상품
+  .brand-best {
+    @include flex-col;
+    gap: 16px;
+    @include tablet {
+      padding: 32px 24px;
+    }
+  }
+  // 추천 스타일링
+  .brand-styling {
+    overflow: hidden;
+    width: 100%;
+    min-height: 560px;
+    padding: 56px 40px;
+    margin-top: 80px;
+    @include bgimage('bg_brand_styling', 'jpg');
+    background-size: auto 100%;
+    @include tablet {
+      padding: 37px 24px 45px;
+      margin-top: 0;
+    }
+    &__title {
+      margin-bottom: 16px;
+      color: $white;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 150%;
+      @include tablet {
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+    &__tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__tab {
+      @include inline-flex(center, center);
+      min-width: 76px;
+      padding: 8px 24px;
+      border-radius: 200px;
+      border: 1px solid $white;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      transition: border-color 0.2s;
+      &.is-active {
+        background: #D6D4CB;
+        border-color: #D6D4CB;
+        color: $black;
+        font-weight: 700;
+      }
+    }
+    &__swiper {
+      @include tablet {
+        overflow: visible;
+      }
+    }
+    &__slide {
+      width: 100%;
+    }
+    // 상품 카드
+    .product-card {
+      gap: 16px;
+      @include tablet {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+      &__link {
+        @include tablet {
+          width: auto;
+        }
+      }
+      &__img {
+        @include tablet {
+          width: 96px;
+          height: 96px;
+          border-radius: 12px;
+          background: $white;
+        }
+      }
+      &__brand {
+        color: $white;
+        font-size: 20px;
+        @include tablet {
+          font-size: 14px;
+          line-height: 140%;
+        }
+      }
+      &__name {
+        color: $white;
+        font-size: 16px;
+        line-height: 150%;
+        @include tablet {
+          margin-bottom: 2px;
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+      .price {
+        color: $white;
+        font-size: 16px;
+        &__num {
+          font-weight: 400;
+        }
+        @include tablet {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0;
+        }
+      }
+    }
+    // PC: 가로 5열 카드형
+    &__products--pc {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+      @include tablet {
+        display: none; // MO: 숨김
+      }
+    }
+    // MO: 카테고리 헤더
+    &__mo-header {
+      display: none;
+      @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+    &__mo-category {
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    // MO: 세로 리스트형
+    &__products--mo {
+      display: none;
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+    &__product-item {
+      @include tablet {
+        padding: 8px 0;
+        & + .brand-styling__product-item {
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        } 
+      }
+    }
+    // MO pagination
+    &__pagination {
+      display: none;      
+      @include tablet {
+        display: block;
+        text-align: center;
+        bottom: -32px !important;
+      }      
+      .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 1;
+        &-active {
+          background: $white;
+        }
+      }
+    }
+  }
+  // 브랜드 키워드 상품
+  .brand-keyword {
+    @include flex-col;
+    gap: 80px;
+    margin-top: 80px;
+    @include tablet {
+      gap: 40px;
+      padding: 32px 24px;
+      margin-top: 0;
+    }
+    &__group {
+      @include flex-col;
+      gap: 16px;
+    }      
+  }
+}
+// 브랜드 상세
+.brand-detail {
+    display: grid;
+    grid-template-columns: 276px minmax(0, 1fr);
+    column-gap: 48px;
+    align-items: start;
+    @include tablet {
+      display: block;
+    }
+  // 상품 필터 (PC: 좌측 사이드바, MO: 상단)
+  .brand-filter {
+    // 공통
+    .cost-range {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      &__item {
+        flex: 1;
+        .form__input {
+          height: 33px;
+          padding: 0 12px;
+        }
+      }
+      &__dash {
+        display: inline-block;
+        margin: 0 2px;
+      }
+      &__text {
+        display: inline-block;
+        margin-left: 2px;
+      }
+      &__btn {
+        @include inline-flex(center, center);
+        width: 33px;
+        height: 33px;
+        margin-left: 8px;
+        border-radius: 2px;
+        border: 1px solid $gray-30;
+        @include bgimage('icon_search_16', 'png');
+        background-size: 16px 16px;
+        background-position: center;
+      }
+    }
+    // pc
+    &--pc {
+      @include flex-col;
+      position: sticky;
+      top: 81px;
+      max-height: calc(100dvh - 81px);
+      align-self: start;
+      @include tablet {
+        display: none;
+      }
+      .brand-filter__btn {
+        @include flex(center, space-between);
+        gap: 8px;
+        width: 100%;
+        height: 64px;
+        padding: 0 8px 0 0;
+        color: $gray-80;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: -0.16px;
+        &::after {
+          @include before_after;
+          width: 24px;
+          height: 24px;
+          @include bgimage('icon_chevron_down_24', 'svg');
+          transition: transform 0.2s ease;
+        }
+      }
+    }
+    &__top {
+      @include flex(center, space-between);
+      gap: 8px;
+      flex-shrink: 0;
+      padding: 24px 8px 15px 0;
+    }
+    &__title {
+      color: $gray-80;
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+    &__list {
+      @include flex-col;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+    &__item {
+      overflow: hidden;
+      flex-shrink: 0;
+      border-top: 1px solid $gray-30;
+      &.is-open {
+        .brand-filter__btn {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    &__sub-list {
+      margin-bottom: 10px;
+    }
+    &__sub-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 0;
+    }
+    &__count {
+      color: $gray-40;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+    }
+    // mobile
+    &--mo {
+      display: none;      
+      @include tablet {
+        display: block;
+      }
+      .brand-filter__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex: 0 0 auto;
+        min-width: fit-content;
+        height: 32px;
+        padding: 0 12px;
+        border-radius: 20px;
+        border: 1px solid $gray-30;
+        color: $gray-80;
+        font-size: 14px;
+        line-height: 20px;
+        &::after {
+          content: '';
+          display: block;
+          width: 16px;
+          height: 16px;
+          @include bgimage('icon_chevron_down_16', 'svg');
+        }
+      }
+    }
+    &__scroll {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 24px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { display: none; }
+    }
+    &__icon-btn {
+      @include inline-flex(center, center);
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border-radius: 6px;
+      border: 1px solid $gray-80;
+    }
+    &__icon {
+      width: 16px;
+      height: 16px;
+      @include bgimage('icon_filter', 'svg');
+      background-size: cover;       
+    }
+  }
+  .brand-content {
+    @include flex-col;
+    gap: 16px;
+    @include tablet {
+      padding: 16px 24px;
+    }
+    &__header {
+      @include flex(center, space-between)
+    }
+    &__count {
+      color: $grayscale-800;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: -0.16px;
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+      }
+    }
+    &__count-num {
+      font-weight: 600;
+    }
+    &__sort {
+      .sort__layer {
+        left: auto;
+        right: 0;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 16px;
+      row-gap: 40px;
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 32px;
+      }
+    }
+  }
+}
+// 브랜드 필터 바텀시트
+#brandFilterSheet {
+  .bottom-sheet__body {
+    padding: 0;
+  }
+  .tab {
+    &__list {
+      gap: 12px;
+    }
+    &__panels {
+      min-height: 250px;
+      max-height: 250px;
+      overflow-y: auto;
+      padding: 0 24px;
+      margin: 20px 0 8px;
+    }
+  }
+  .brand-filter {
+    &__list {
+      @include flex-col;
+      gap: 12px;
+    }
+  }
+  .filter-tags {
+    margin-top: 12px;    
+  }
+}
+.filter-tags {
+  padding: 0 24px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    height: 16px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: $gray-10;
+  }
+  &__text {
+    color: $gray-70;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 14px;
+    white-space: nowrap;
+  }
+  &__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  &__remove-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    @include bgimage('icon_tag_remove', 'svg');
+  }
+}

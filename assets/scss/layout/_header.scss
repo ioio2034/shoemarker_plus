@@ -8,13 +8,18 @@
   width: 100%;
   height: 81px;
   border-bottom: 1px solid $gray-30;
-  background-color: $white;
+  background-color: $white;  
   z-index: 50;
   @include tablet {
     display: none;
     position: relative;
     height: auto;
     border-bottom: none;
+  }
+  &.scrolled:not(.header--dark) {
+    background-color: rgba($white, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
   &__inner {
     @include flex(center, space-between);
@@ -33,7 +38,7 @@
   }
   &__logo {
     width: 211px;
-    height: 30px;
+    height: 31px;
     text-indent: -9999px;
     @include bgimage('logo', 'svg');
     background-size: cover;
@@ -43,7 +48,7 @@
   }
   &__nav {
     display: flex;
-    gap: 40px;
+    gap: 32px;
     @include desktop {
       gap: 24px;
     }
@@ -63,8 +68,13 @@
     }
   }
   &--dark {
-    background-color: $black;
+    background-color: transparent;
     border-bottom-color: transparent;
+    &.scrolled {
+      background-color: rgba($color: $black, $alpha: 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
     .header__logo {
       width: 198px;
       height: 33px;
@@ -94,6 +104,10 @@
           @include bgimage('icon_mypage_w', 'svg'); 
         }
       }
+      &__badge {
+        background-color: $white;
+        color: $black;
+      }
     }
   }
 }
@@ -116,7 +130,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
   @include desktop {
     gap: 24px;
   }
@@ -158,13 +172,10 @@
     height: 100%;
     color: $gray-90;
     font-family: $font-en;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 150%;
     text-transform: uppercase;
-    @include desktop {
-      font-size: 18px;
-    }
     @include tablet {
       color: #222;
       font-weight: 500;
@@ -191,12 +202,9 @@
     .nav__link {
       color: $gray-80;
       font-family: $font-base;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 400;
       line-height: 150%;
-      @include desktop {
-        font-size: 16px;
-      }
     }
   }
 }
@@ -223,7 +231,7 @@
     right: 0;
     width: 14px;
     height: 14px;
-    background-color: #00883E;
+    background-color: #2D2D2D;
     border-radius: 50%;
     color: $white;
     font-family: $font-en;

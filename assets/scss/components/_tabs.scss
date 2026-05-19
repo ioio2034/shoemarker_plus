@@ -84,4 +84,36 @@
       padding: 10px 0 0;
     }
   }
+  // 둥근 버튼 타입
+  &--pill {
+    .tab__list {
+      position: relative;
+      gap: 8px;
+      padding: 0 24px;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { display: none; }      
+    }
+    .tab__btn {
+      flex: 0 0 auto;
+      width: fit-content;
+      height: 32px;
+      padding: 0 12px;
+      border-radius: 20px;
+      border: 1px solid $gray-30;
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      &.is-active {
+        background: $gray-80;
+        color: $white;
+      }
+    }
+  }
 }

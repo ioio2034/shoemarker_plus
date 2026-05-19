@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header header--dark"></header>
+
+    <!-- Content -->
+    <main class="container page-brand">
+
+      <!-- 브랜드 비주얼 -->
+      <section class="brand-visual">
+        <div class="brand-visual__img">
+          <picture>
+            <source
+              media="(max-width: 1024px)"
+              srcset="../../assets/images/img_brand_visual_mo.jpg"
+            />
+            <img
+              src="../../assets/images/img_brand_visual_pc.jpg"
+              alt="브랜드 비주얼 이미지"
+              class="styling-visual__img"
+            />
+          </picture>
+        </div>
+      </section>
+
+      <!-- 브랜드 탭 -->
+      <section class="brand-tab">
+        <div class="brand-tab__list" role="tablist">
+          <!-- 활성화 상태 is-active -->
+          <button type="button" role="tab" class="brand-tab__btn is-active">브랜드 홈</button>
+          <button type="button" role="tab" class="brand-tab__btn">러닝화</button>
+          <button type="button" role="tab" class="brand-tab__btn">스니커즈</button>
+          <button type="button" role="tab" class="brand-tab__btn">상의</button>
+          <button type="button" role="tab" class="brand-tab__btn">하의</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header section__header--dark">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <!-- Brand name -->
+            <h2 class="section__title">NIKE</h2>
+            <div class="section__util">
+              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="brand brand-home">
+            <!-- 브랜드 배너 (swiper) -->
+            <div class="brand-banner">
+              <div class="banner-swiper js-banner-swiper">
+                <ul class="brand-banner__list swiper-wrapper">
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--black">
+                      <p class="brand-banner__title">
+                        슈마커 플러스 오픈
+                      </p>
+                      <span class="brand-banner__desc">
+                        PROMOTION BY NIKE
+                      </span>
+                    </div>
+                  </li>
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--green">
+                      <p class="brand-banner__title">
+                        최대55% 할인 혜택
+                      </p>
+                      <span class="brand-banner__desc">
+                        NIKE ONLY 슈마커 플러스
+                      </span>
+                    </div>
+                  </li>
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--purple">
+                      <p class="brand-banner__title">
+                        슈마커 플러스 오픈
+                      </p>
+                      <span class="brand-banner__desc">
+                        PROMOTION BY NIKE
+                      </span>
+                    </div>
+                  </li>
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--black">
+                      <p class="brand-banner__title">
+                        슈마커 플러스 오픈
+                      </p>
+                      <span class="brand-banner__desc">
+                        PROMOTION BY NIKE
+                      </span>
+                    </div>
+                  </li>
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--green">
+                      <p class="brand-banner__title">
+                        최대55% 할인 혜택
+                      </p>
+                      <span class="brand-banner__desc">
+                        NIKE ONLY 슈마커 플러스
+                      </span>
+                    </div>
+                  </li>
+                  <li class="brand-banner__item swiper-slide">
+                    <div class="brand-banner__content brand-banner__content--purple">
+                      <p class="brand-banner__title">
+                        슈마커 플러스 오픈
+                      </p>
+                      <span class="brand-banner__desc">
+                        PROMOTION BY NIKE
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- //brand-banner -->
+            <div class="divider"></div>
+
+            <!-- 브랜드 베스트 상품 -->
+            <div class="brand-best">
+              <h3 class="brand__title">NIKE 베스트</h3>
+              <ul class="brand__list">
+                <!-- 1위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">1위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 2위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">2위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 3위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">3위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 4위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">4위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 5위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">5위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 6위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">6위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 7위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">7위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- 8위 -->
+                <li class="brand__item">
+                  <div class="product-card">
+                    <a href="#" class="product-card__link">
+                      <span class="product-card__label product-card__label--rank">8위</span>
+                      <div class="product-card__img">
+                        <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                      </div>
+                    </a>
+                    <a href="#" class="product-card__link">
+                      <div class="product-card__info">
+                        <span class="product-card__brand">NIKE</span>
+                        <span class="product-card__name">나이키 알파플라이 3글램</span>
+                        <div class="product-card__price">
+                          <!-- 할인 영역 -->
+                          <div class="product-card__cost">
+                            <span class="product-card__percent">10%</span>
+                            <span class="price">
+                              <span class="price__num">209,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //brand-best -->
+
+            <!-- 추천 스타일링 -->
+            <div class="brand-styling">
+              <h3 class="brand-styling__title">고객님을 위한<br class="is-mo"> 추천 스타일링 상품을<br class="is-mo"> 확인해보세요!</h3>
+              <!-- PC: 탭 버튼 / MO: pagination -->
+              <div class="brand-styling__tabs">
+                <button type="button" class="brand-styling__tab is-active" data-index="0">슈즈</button>
+                <button type="button" class="brand-styling__tab" data-index="1">반팔티셔츠</button>
+                <button type="button" class="brand-styling__tab" data-index="2">모자</button>
+                <button type="button" class="brand-styling__tab" data-index="3">스니커즈</button>
+                <button type="button" class="brand-styling__tab" data-index="4">상의</button>
+                <button type="button" class="brand-styling__tab" data-index="5">하의</button>
+              </div>
+              <!-- 스와이퍼 (PC: 탭으로 제어 / MO: 드래그 스와이프) -->
+              <div class="brand-styling__swiper swiper js-brand-styling-swiper">
+                <!-- PC: 가로 카드형 -->
+                <ul class="brand-styling__list swiper-wrapper">
+
+                  <!-- 슬라이드 1: 슈즈 -->
+                  <li class="brand-styling__slide swiper-slide">                    
+                    <ul class="brand-styling__products brand-styling__products--pc">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 보메로 프리미엄" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 보메로 프리미엄</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">289,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 ACG 울트라플라이 트레일" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 ACG 울트라플라이 트레일</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">319,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 베이퍼 플라이 4" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 베이퍼 플라이 4</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 베이퍼 플라이 4" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 베이퍼 플라이 4</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <!-- MO: 세로 리스트형 -->
+                    <div class="brand-styling__mo-header">
+                      <span class="brand-styling__mo-category">슈즈</span>
+                    </div>
+                    <ul class="brand-styling__products brand-styling__products--mo">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- //슬라이드 1 -->
+
+                  <!-- 슬라이드 2: 반팔티셔츠 -->
+                  <li class="brand-styling__slide swiper-slide">
+                    <ul class="brand-styling__products brand-styling__products--pc">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!-- MO: 세로 리스트형 -->
+                    <div class="brand-styling__mo-header">
+                      <span class="brand-styling__mo-category">반팔티셔츠</span>
+                    </div>
+                    <ul class="brand-styling__products brand-styling__products--mo">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- //슬라이드 2 -->
+
+                  <!-- 슬라이드 3: 모자 -->
+                  <li class="brand-styling__slide swiper-slide">
+                    <ul class="brand-styling__products brand-styling__products--pc">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                    <!-- MO: 세로 리스트형 -->
+                    <div class="brand-styling__mo-header">
+                      <span class="brand-styling__mo-category">모자</span>
+                    </div>
+                    <ul class="brand-styling__products brand-styling__products--mo">
+                      <li class="brand-styling__product-item">
+                        <div class="product-card">
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__img">
+                              <img src="../../assets/images/img_product_thumb_02.jpg" alt="나이키 알파플라이 3글램" />
+                            </div>
+                          </a>
+                          <a href="#" class="product-card__link">
+                            <div class="product-card__info">
+                              <span class="product-card__brand">NIKE</span>
+                              <span class="product-card__name">나이키 알파플라이 3글램</span>
+                              <div class="product-card__price">
+                                <div class="product-card__cost">
+                                  <span class="price">
+                                    <span class="price__num">349,000</span>
+                                    <span class="price__unit">원</span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- //슬라이드 3 -->
+
+                </ul>
+                <!-- MO pagination -->
+                <div class="swiper-pagination brand-styling__pagination"></div>
+              </div>
+
+            </div>
+            <!-- //brand-styling -->
+
+            <!-- 브랜드 키워드 상품 -->
+            <div class="brand-keyword">
+              <div class="brand-keyword__group">
+                <h3 class="brand__title">#2026 트랜드 NIKE</h3>
+                <ul class="brand__list">
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="brand-keyword__group">
+                <h3 class="brand__title">#JUST RUN</h3>
+                <ul class="brand__list">
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="brand__item">
+                    <div class="product-card">
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__img">
+                          <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                        </div>
+                      </a>
+                      <a href="#" class="product-card__link">
+                        <div class="product-card__info">
+                          <span class="product-card__brand">NIKE</span>
+                          <span class="product-card__name">나이키 알파플라이 3글램</span>
+                          <div class="product-card__price">
+                            <!-- 할인 영역 -->
+                            <div class="product-card__cost">
+                              <span class="product-card__percent">10%</span>
+                              <span class="price">
+                                <span class="price__num">209,000</span>
+                                <span class="price__unit">원</span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- //brand-keyword -->
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+    
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+
+    window.addEventListener('load', function () {
+      // 브랜드 배너 슬라이드
+      const swiperEls = document.querySelectorAll('.js-banner-swiper');
+      if (!swiperEls.length) return;
+
+      swiperEls.forEach(function (swiperEl) {
+        new Swiper(swiperEl, {
+          pagination: {
+            el: swiperEl.querySelector('.swiper-pagination'),
+            clickable: true,
+            enabled: false,
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 2.1,
+              spaceBetween: 8,
+              freeMode: true,
+              pagination: {
+                enabled: false,
+              },
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 12,
+              freeMode: false,
+              pagination: {
+                enabled: true,
+              },
+            },
+          },
+        });
+      });
+
+      const isMobile = window.innerWidth <= 1024;
+      // 추천 스타일링 슬라이드
+      const stylingSwiper = new Swiper('.js-brand-styling-swiper', {
+        pagination: {
+          el: '.brand-styling__pagination', 
+          clickable: true,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.2,
+            spaceBetween: 24,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          }
+        },
+      });
+      // PC: 탭 클릭으로 슬라이드 이동
+      if (!isMobile) {
+        document.querySelectorAll('.brand-styling__tab').forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            const index = parseInt(this.dataset.index);
+
+            document.querySelectorAll('.brand-styling__tab').forEach(function (t) {
+              t.classList.remove('is-active');
+            });
+            this.classList.add('is-active');
+
+            stylingSwiper.slideTo(index);
+          });
+        });
+
+        // 스와이퍼 슬라이드 변경 시 탭 동기화
+        stylingSwiper.on('slideChange', function () {
+          const index = stylingSwiper.activeIndex;
+          document.querySelectorAll('.brand-styling__tab').forEach(function (t, i) {
+            t.classList.toggle('is-active', i === index);
+          });
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
