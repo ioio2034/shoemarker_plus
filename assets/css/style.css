@@ -11863,7 +11863,7 @@ body.is-loading {
 }
 @media (max-width: 1024px) {
   .page-brand .section__inner {
-    padding: 0 0 32px;
+    padding: 0 0 calc(88px + env(safe-area-inset-bottom));
   }
 }
 .page-brand .section__header {

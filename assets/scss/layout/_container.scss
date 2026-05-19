@@ -297,7 +297,7 @@ body {
     overflow: visible;
     &__inner {
       @include tablet {
-        padding: 0 0 32px;
+        padding: 0 0 calc(88px + env(safe-area-inset-bottom));
       }
     }
     &__header {
