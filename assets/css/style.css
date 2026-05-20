@@ -14121,8 +14121,22 @@ body.sheet-open {
 @media (max-width: 1024px) {
   .login__inner {
     max-width: 100%;
-    padding: 40px 24px 0;
+    padding: 24px 24px 0;
   }
+}
+.login .tab__list {
+  padding: 0;
+}
+.login .tab__panels {
+  padding: 24px 0 0;
+}
+.login .tab__panel {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+}
+.login .tab__panel.is-active {
+  display: flex;
 }
 .login__form {
   display: flex;
@@ -14522,6 +14536,12 @@ body.sheet-open {
 @media (max-width: 1024px) {
   .page-join .result__content {
     padding: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-join--guest .join__text {
+    padding-top: 24px;
   }
 }
 

@@ -13447,6 +13447,20 @@ body.sheet-open {
   max-width: 390px;
   margin: 0 auto;
 }
+.login .tab__list {
+  padding: 0;
+}
+.login .tab__panels {
+  padding: 24px 0 0;
+}
+.login .tab__panel {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+}
+.login .tab__panel.is-active {
+  display: flex;
+}
 .login__form {
   display: flex;
   flex-direction: column;
