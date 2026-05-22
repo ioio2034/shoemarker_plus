@@ -15774,6 +15774,7 @@ body.sheet-open {
   align-items: center;
   justify-content: space-between;
   gap: 0;
+  width: 100%;
   padding: 20px 24px;
   border-radius: 6px;
   background: #000000;

@@ -245,6 +245,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include tablet {
+    margin-top: 0;
+    padding: 16px 0;
+  }
   &__label {
     color: $gray-80;
     font-size: 16px;
@@ -259,6 +263,10 @@
     font-size: 24px;
     line-height: 140%;
     letter-spacing: -1px;
+    @include tablet {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+    }
   }
   &__price-num {
     font-weight: 700;
@@ -298,6 +306,7 @@
   &--black {
     @include flex(center, space-between);
     gap: 0;
+    width: 100%;
     padding: 20px 24px;
     border-radius: 6px;
     background: $black;
@@ -1640,7 +1649,6 @@
     }
   }
 }
-
 // 관련 상품 선택하기 modal
 .related-prod {
   padding: 0 8px;

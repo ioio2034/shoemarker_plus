@@ -17453,6 +17453,12 @@ body.sheet-open {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 1024px) {
+  .total {
+    margin-top: 0;
+    padding: 16px 0;
+  }
+}
 .total__label {
   color: #2D2D2D;
   font-size: 16px;
@@ -17467,6 +17473,12 @@ body.sheet-open {
   font-size: 24px;
   line-height: 140%;
   letter-spacing: -1px;
+}
+@media (max-width: 1024px) {
+  .total__price {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+  }
 }
 .total__price-num {
   font-weight: 700;
@@ -17508,6 +17520,7 @@ body.sheet-open {
   align-items: center;
   justify-content: space-between;
   gap: 0;
+  width: 100%;
   padding: 20px 24px;
   border-radius: 6px;
   background: #000000;
