@@ -180,10 +180,20 @@
   background: $grayscale-50;
   &__header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
   }
+  &__info {
+    @include flex-col;
+    gap: 4px;
+  }
   &__name {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+  }
+  &__option {
     color: $gray-80;
     font-size: 14px;
     font-weight: 500;

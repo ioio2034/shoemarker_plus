@@ -17384,10 +17384,21 @@ body.sheet-open {
 }
 .option-item__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
+.option-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .option-item__name {
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+}
+.option-item__option {
   color: #2D2D2D;
   font-size: 14px;
   font-weight: 500;
