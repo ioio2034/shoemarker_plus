@@ -893,6 +893,16 @@
           margin-top: 24px;
         }
       }
+      .benefit-tag {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 24px;
+        @include tablet {
+          margin-top: 16px;
+        }
+      }
       .delivery {
         padding: 24px 0;
         margin-top: 24px;
