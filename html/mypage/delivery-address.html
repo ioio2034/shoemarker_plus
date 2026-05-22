@@ -49,12 +49,17 @@
             -->
             
             <ul class="delivery-list">
-              <!-- 기본배송지일 경우 is-default 클래스 & badge 추가 -->
+              <!-- 기본배송지일 경우 delivery-list__item에 is-default 클래스 & badge 추가 -->
               <li class="delivery-list__item is-default">
                 <div class="delivery-list__content">
                   <div class="delivery-list__top">
                     <div class="delivery-list__header">
-                      <span class="delivery-list__name">우리집</span>
+                      <div class="radio">
+                        <input type="radio" id="address1" name="coupon" class="radio__input" checked />
+                        <label for="address1" class="radio__label">
+                          <span class="delivery-list__name">우리집</span>
+                        </label>
+                      </div>
                       <!-- 기본배송지 badge -->
                       <span class="badge badge--round">기본배송지</span>
                     </div>
@@ -78,7 +83,12 @@
                 <div class="delivery-list__content">
                   <div class="delivery-list__top">
                     <div class="delivery-list__header">
-                      <span class="delivery-list__name">회사</span>
+                      <div class="radio">
+                        <input type="radio" id="address2" name="coupon" class="radio__input" />
+                        <label for="address2" class="radio__label">
+                          <span class="delivery-list__name">회사</span>
+                        </label>
+                      </div>
                     </div>
                     <div class="delivery-list__actions">
                       <button type="button" class="btn-link btn-link--delete">삭제</button>
