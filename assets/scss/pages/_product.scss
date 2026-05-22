@@ -954,6 +954,12 @@
           display: none;
         }
       }
+      .related-btn {
+        margin-top: 24px;
+        @include tablet {
+          display: none;
+        }
+      }
       .buy-actions {
         @include tablet {
           display: none;
@@ -1631,6 +1637,124 @@
       color: $gray-60;
       font-size: 11px;
       line-height: 14px;
+    }
+  }
+}
+
+// 관련 상품 선택하기 modal
+.related-prod {
+  padding: 0 8px;
+  @include flex-col;
+  gap: 16px;
+  .order-group {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-30;
+  }
+  .order-item {
+    &__content-left {
+      @include flex-col;
+      gap: 6px;
+    }
+    &__price {
+      align-items: flex-start;
+    }
+    .select {
+      @include tablet {
+        max-width: 100px;
+      }
+      &__box {
+        &::after {
+          @include tablet {
+            right: 8px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      &__field {
+        @include tablet {
+          height: 32px;
+          padding: 8px 8px 8px 16px;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+// 1+1 상품 선택하기 modal
+.bogo-prod {
+  padding: 0 8px;
+  &__box {
+    @include flex-col;
+    gap: 16px;
+    & + .bogo-prod__box {
+      margin-top: 24px;
+    }
+    &:first-child {
+      .order-group {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+      .order-item__price {
+        align-items: flex-end;
+        @include tablet {
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+  &__title {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: $gray-5;
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+    @include tablet {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0;
+    }
+  }
+  .order-group {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $gray-30;
+  }
+  .order-item {
+    &__content-left {
+      @include flex-col;
+      gap: 6px;
+    }
+    &__price {
+      align-items: flex-start;
+    }
+    .select {
+      @include tablet {
+        max-width: 100px;
+      }
+      &__box {
+        &::after {
+          @include tablet {
+            right: 8px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      &__field {
+        @include tablet {
+          height: 32px;
+          padding: 8px 8px 8px 16px;
+          font-size: 12px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+      }
     }
   }
 }

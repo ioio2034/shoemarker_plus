@@ -16324,6 +16324,9 @@ body.sheet-open {
   max-height: 220px;
   margin-top: 24px;
 }
+.product-detail .prod-summary .prod-option .related-btn {
+  margin-top: 24px;
+}
 .product-detail .prod-summary .prod-recommend {
   overflow: hidden;
   grid-column: 1;
@@ -16808,6 +16811,64 @@ body.sheet-open {
   line-height: 14px;
 }
 
+.related-prod {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.related-prod .order-group {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.related-prod .order-item__content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.related-prod .order-item__price {
+  align-items: flex-start;
+}
+.bogo-prod {
+  padding: 0 8px;
+}
+.bogo-prod__box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.bogo-prod__box + .bogo-prod__box {
+  margin-top: 24px;
+}
+.bogo-prod__box:first-child .order-group {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.bogo-prod__box:first-child .order-item__price {
+  align-items: flex-end;
+}
+.bogo-prod__title {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #F8F8F8;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.16px;
+}
+.bogo-prod .order-group {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #D8D8D8;
+}
+.bogo-prod .order-item__content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.bogo-prod .order-item__price {
+  align-items: flex-start;
+}
 .page-brand .brand-visual__img {
   overflow: hidden;
   height: 680px;

@@ -399,6 +399,11 @@
                     </p>
                   </div>
                   <!-- //total -->
+                  <!-- 관련 상품 보기 버튼 -->
+                  <div class="related-btn">
+                    <button type="button" class="btn btn--line btn--secondary btn--block js-modal-open" data-target="#modal4">관련상품 보기</button>
+                  </div>
+                  <!-- //관련 상품 보기 버튼 -->
                   <!-- buy-actions : 구매 버튼 그룹 -->
                   <div class="buy-actions buy-actions--black">
                     <div class="buy-actions__btns">
@@ -1294,18 +1299,6 @@
                   <div class="option-panel">
                     <!-- item-select -->
                     <div class="item-select">
-                      <!-- color-selector : 컬러 선택 -->
-                      <div class="select">
-                        <label for="colorSelector" class="select__label select__label--hide">컬러 선택</label>
-                        <div class="select__box">
-                          <select id="colorSelector" class="select__field">
-                            <!-- placeholder -->
-                            <option value="" disabled selected hidden>컬러</option>
-                            <option value="">Black</option>
-                            <option value="">White</option>
-                          </select>
-                        </div>
-                      </div>
                       <!-- size-selector : 사이즈 선택 -->
                        <div class="select">
                         <label for="sizeSelector" class="select__label select__label--hide">사이즈 선택</label>
@@ -1515,6 +1508,14 @@
           </div>
           <!-- //option-list -->
         </div>
+        <div class="bottom-sheet__section">
+          <!-- 관련 상품 보기 버튼 -->
+          <div class="related-btn">
+            <button type="button" class="btn btn--line btn--secondary btn--block js-modal-open" data-target="#modal4">관련상품 보기</button>
+          </div>
+          <!-- //관련 상품 보기 버튼 -->
+        </div>
+        
       </div>
       <div class="bottom-sheet__footer bottom-sheet__footer--no-padding">
         <div class="buy-actions buy-actions--black">
@@ -1733,6 +1734,443 @@
 
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 관련상품 보기 modal -->
+  <div id="modal4" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">관련상품 선택하기</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <div class="related-prod">
+            <div class="order-group order-group--selectable">
+              <div class="order-group__content">
+                <!-- [s] item -->
+                <div class="order-item">
+                  <div class="checkbox order-item__check">
+                    <input type="checkbox" id="check1" class="checkbox__input" />
+                    <label for="check1" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                  </div>
+                  <div class="order-item__thumb">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                  </div>
+                  <div class="order-item__content">
+                    <div class="order-item__content-left">
+                      <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                      <div class="order-item__price">
+                        <!-- 정가 -->
+                        <div class="order-item__price-origin">
+                          <span class="price">
+                            <span class="price__num">219,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 금액 -->
+                        <div class="order-item__price-cost">
+                          <span class="price">
+                            <span class="price__num">199,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select id="sizeSelect" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>옵션 선택</option>
+                            <option value="">220mm</option>
+                            <option value="">225mm</option>
+                            <option value="">230mm</option>
+                            <option value="">235mm</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] item -->
+              </div>
+            </div>
+            <div class="order-group order-group--selectable">
+              <div class="order-group__content">
+                <!-- [s] item -->
+                <div class="order-item">
+                  <div class="checkbox order-item__check">
+                    <input type="checkbox" id="check2" class="checkbox__input" />
+                    <label for="check2" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                  </div>
+                  <div class="order-item__thumb">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                  </div>
+                  <div class="order-item__content">
+                    <div class="order-item__content-left">
+                      <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                      <div class="order-item__price">
+                        <!-- 정가 -->
+                        <div class="order-item__price-origin">
+                          <span class="price">
+                            <span class="price__num">219,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 금액 -->
+                        <div class="order-item__price-cost">
+                          <span class="price">
+                            <span class="price__num">199,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select id="sizeSelect" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>옵션 선택</option>
+                            <option value="">220mm</option>
+                            <option value="">225mm</option>
+                            <option value="">230mm</option>
+                            <option value="">235mm</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] item -->
+              </div>
+            </div>
+            <div class="order-group order-group--selectable">
+              <div class="order-group__content">
+                <!-- [s] item -->
+                <div class="order-item">
+                  <div class="checkbox order-item__check">
+                    <input type="checkbox" id="check3" class="checkbox__input" />
+                    <label for="check3" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                  </div>
+                  <div class="order-item__thumb">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                  </div>
+                  <div class="order-item__content">
+                    <div class="order-item__content-left">
+                      <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                      <div class="order-item__price">
+                        <!-- 정가 -->
+                        <div class="order-item__price-origin">
+                          <span class="price">
+                            <span class="price__num">219,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 금액 -->
+                        <div class="order-item__price-cost">
+                          <span class="price">
+                            <span class="price__num">199,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select id="sizeSelect" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>옵션 선택</option>
+                            <option value="">220mm</option>
+                            <option value="">225mm</option>
+                            <option value="">230mm</option>
+                            <option value="">235mm</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] item -->
+              </div>
+            </div>
+            <div class="order-group order-group--selectable">
+              <div class="order-group__content">
+                <!-- [s] item -->
+                <div class="order-item">
+                  <div class="checkbox order-item__check">
+                    <input type="checkbox" id="check4" class="checkbox__input" />
+                    <label for="check4" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                  </div>
+                  <div class="order-item__thumb">
+                    <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                  </div>
+                  <div class="order-item__content">
+                    <div class="order-item__content-left">
+                      <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                      <div class="order-item__price">
+                        <!-- 정가 -->
+                        <div class="order-item__price-origin">
+                          <span class="price">
+                            <span class="price__num">219,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 금액 -->
+                        <div class="order-item__price-cost">
+                          <span class="price">
+                            <span class="price__num">199,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <div class="select__box">
+                          <select id="sizeSelect" class="select__field">
+                            <!-- placeholder -->
+                            <option value="" disabled selected hidden>옵션 선택</option>
+                            <option value="">220mm</option>
+                            <option value="">225mm</option>
+                            <option value="">230mm</option>
+                            <option value="">235mm</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- [e] item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn btn--primary">상품 선택하기</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 1+1 상품 선택하기 modal -->
+  <div id="modal5" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">1+1 상품 선택하기</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <div class="bogo-prod">
+            <div class="bogo-prod__box">
+              <p class="bogo-prod__title">상품 1</p>
+              <div class="order-group">
+                <div class="order-group__content">
+                  <!-- [s] item -->
+                  <div class="order-item">
+                    <div class="order-item__thumb">
+                      <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                    </div>
+                    <div class="order-item__content">
+                      <div class="order-item__content-left">
+                        <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                        <ul class="order-item__meta">
+                          <li class="order-item__meta-row">
+                            <span class="order-item__meta-label">옵션</span>
+                            <span class="order-item__meta-value">225 / White</span>
+                          </li>
+                          <li class="order-item__meta-row">
+                            <span class="order-item__mata-label">수량</span>
+                            <span class="order-item__meta-value">1개</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="order-item__price">
+                        <!-- 정가 -->
+                        <div class="order-item__price-origin">
+                          <span class="price">
+                            <span class="price__num">219,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                        <!-- 금액 -->
+                        <div class="order-item__price-cost">
+                          <span class="price">
+                            <span class="price__num">199,000</span>
+                            <span class="price__unit">원</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [e] item -->
+                </div>
+              </div>
+            </div>
+            <div class="bogo-prod__box">
+              <p class="bogo-prod__title">1+1 상품을 선택해 주세요.</p>
+              <div class="order-group order-group--selectable">
+                <div class="order-group__content">
+                  <!-- [s] item -->
+                  <div class="order-item">
+                    <div class="checkbox order-item__check">
+                      <input type="checkbox" id="check6" class="checkbox__input" />
+                      <label for="check6" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                    </div>
+                    <div class="order-item__thumb">
+                      <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                    </div>
+                    <div class="order-item__content">
+                      <div class="order-item__content-left">
+                        <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="select">
+                          <div class="select__box">
+                            <select id="sizeSelect" class="select__field">
+                              <!-- placeholder -->
+                              <option value="" disabled selected hidden>옵션 선택</option>
+                              <option value="">220mm</option>
+                              <option value="">225mm</option>
+                              <option value="">230mm</option>
+                              <option value="">235mm</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [e] item -->
+                </div>
+              </div>
+              <div class="order-group order-group--selectable">
+                <div class="order-group__content">
+                  <!-- [s] item -->
+                  <div class="order-item">
+                    <div class="checkbox order-item__check">
+                      <input type="checkbox" id="check7" class="checkbox__input" />
+                      <label for="check7" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                    </div>
+                    <div class="order-item__thumb">
+                      <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                    </div>
+                    <div class="order-item__content">
+                      <div class="order-item__content-left">
+                        <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="select">
+                          <div class="select__box">
+                            <select id="sizeSelect" class="select__field">
+                              <!-- placeholder -->
+                              <option value="" disabled selected hidden>옵션 선택</option>
+                              <option value="">220mm</option>
+                              <option value="">225mm</option>
+                              <option value="">230mm</option>
+                              <option value="">235mm</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [e] item -->
+                </div>
+              </div>
+              <div class="order-group order-group--selectable">
+                <div class="order-group__content">
+                  <!-- [s] item -->
+                  <div class="order-item">
+                    <div class="checkbox order-item__check">
+                      <input type="checkbox" id="check8" class="checkbox__input" />
+                      <label for="check8" class="checkbox__label checkbox__label--hide">상품 선택</label>
+                    </div>
+                    <div class="order-item__thumb">
+                      <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                    </div>
+                    <div class="order-item__content">
+                      <div class="order-item__content-left">
+                        <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                        <div class="order-item__price">
+                          <!-- 정가 -->
+                          <div class="order-item__price-origin">
+                            <span class="price">
+                              <span class="price__num">219,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                          <!-- 금액 -->
+                          <div class="order-item__price-cost">
+                            <span class="price">
+                              <span class="price__num">199,000</span>
+                              <span class="price__unit">원</span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="select">
+                          <div class="select__box">
+                            <select id="sizeSelect" class="select__field">
+                              <!-- placeholder -->
+                              <option value="" disabled selected hidden>옵션 선택</option>
+                              <option value="">220mm</option>
+                              <option value="">225mm</option>
+                              <option value="">230mm</option>
+                              <option value="">235mm</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- [e] item -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn btn--primary">1+1 상품 선택하기</button>
       </div>
 
     </div>
