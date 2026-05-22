@@ -17144,78 +17144,6 @@ body.sheet-open {
   margin-top: 20px;
 }
 
-.color-selector {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-@media (max-width: 1024px) {
-  .color-selector {
-    gap: 4px;
-  }
-}
-.color-selector__label {
-  color: #000000;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-}
-@media (max-width: 1024px) {
-  .color-selector__label {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-  }
-}
-.color-selector__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-.color-selector__list li {
-  font-size: 0;
-}
-.color-selector__btn {
-  position: relative;
-  overflow: hidden;
-  width: 50px;
-  height: 50px;
-  padding: 0;
-  aspect-ratio: 1/1;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-.color-selector__btn.is-active {
-  border-color: #2D2D2D;
-}
-.color-selector__btn.is-soldout {
-  cursor: default;
-}
-.color-selector__btn.is-soldout::after {
-  content: "품절";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  color: #FFFFFF;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 140%;
-  letter-spacing: -0.13px;
-  z-index: 1;
-}
-.color-selector__btn img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .size-selector {
   display: flex;
   flex-direction: column;
@@ -17511,21 +17439,6 @@ body.sheet-open {
   gap: 10px;
   margin-top: 24px;
 }
-.buy-actions__icons {
-  display: flex;
-  gap: 16px;
-}
-.buy-actions .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 57px;
-  height: 57px;
-  padding: 0;
-  border-radius: 4px;
-  border: 1px solid #D8D8D8;
-  flex-shrink: 0;
-}
 .buy-actions__btns {
   display: flex;
   align-items: center;
@@ -17567,6 +17480,9 @@ body.sheet-open {
     border-radius: 0;
   }
 }
+.buy-actions--black .buy-actions__btns {
+  width: 100%;
+}
 .buy-actions--black .btn-icon {
   width: 24px;
   height: 24px;
@@ -17575,7 +17491,6 @@ body.sheet-open {
 }
 .buy-actions--black .btn {
   position: relative;
-  flex: auto;
   height: auto;
   padding: 0;
   border-radius: 0;
@@ -17589,9 +17504,6 @@ body.sheet-open {
     line-height: 20px;
   }
 }
-.buy-actions--black .btn + .btn {
-  margin-left: 16px;
-}
 .buy-actions--black .btn + .btn::before {
   content: "";
   position: absolute;
@@ -17601,12 +17513,18 @@ body.sheet-open {
   width: 1px;
   height: 14px;
   background: #FFFFFF;
+  opacity: 0.5;
+}
+@media (max-width: 1024px) {
+  .buy-actions--black .btn + .btn::before {
+    left: -8px;
+  }
 }
 .buy-actions--black .buy-actions__npay {
   width: 63px;
   background: url("../images/img_npay_g.png") no-repeat;
   background-size: 63px auto;
-  background-position: right center;
+  background-position: center;
   font-size: 0;
   text-indent: -9999px;
 }
@@ -17843,9 +17761,11 @@ body.sheet-open {
 .product-detail .prod-summary .prod-option .item-summary__meta-wrap {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  row-gap: 8px;
 }
 .product-detail .prod-summary .prod-option .item-summary__meta {
   display: flex;
@@ -17886,6 +17806,31 @@ body.sheet-open {
   font-size: 11px;
   font-weight: 400;
   line-height: 12px;
+}
+.product-detail .prod-summary .prod-option .item-summary__actions {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .product-detail .prod-summary .prod-option .item-summary__actions {
+    gap: 8px;
+  }
+}
+.product-detail .prod-summary .prod-option .item-summary__actions .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  flex-shrink: 0;
+}
+@media (max-width: 1024px) {
+  .product-detail .prod-summary .prod-option .item-summary__actions .btn-icon {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+  }
 }
 .product-detail .prod-summary .prod-option .price {
   padding-bottom: 24px;
@@ -18153,14 +18098,6 @@ body.sheet-open {
   font-size: 14px;
   line-height: 140%;
   letter-spacing: -0.14px;
-}
-.product-detail .prod-summary .prod-option .color-selector {
-  margin-top: 24px;
-}
-@media (max-width: 1024px) {
-  .product-detail .prod-summary .prod-option .color-selector {
-    display: none;
-  }
 }
 .product-detail .prod-summary .prod-option .size-selector {
   margin-top: 24px;

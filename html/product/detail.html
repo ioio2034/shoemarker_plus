@@ -175,6 +175,15 @@
                         </div>
                         <span class="item-summary__review-count">(14)</span>
                       </div>
+                      <div class="item-summary__actions">
+                        <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
+                          <span class="btn-icon__icon"></span>
+                        </button>
+                        <!-- 찜하기 버튼 클릭 시 btn-icon--like에 is-active 추가 -->
+                        <button type="button" class="btn-icon btn-icon--like is-active" aria-label="찜하기">
+                          <span class="btn-icon__icon"></span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <!-- //item-summary -->
@@ -274,57 +283,6 @@
                     </span>
                   </a>
                   <!-- //card-banner -->
-                  <!-- color-selector : 컬러 선택 -->
-                  <div class="color-selector">
-                    <p class="color-selector__label">컬러</p>
-                    <ul class="color-selector__list" role="group" aria-label="컬러 선택">
-                      <li>
-                        <!-- 
-                          선택된 컬러 .color-selector__btn에 is-active 추가
-                          품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
-                        -->
-                        <button type="button" class="color-selector__btn is-active">
-                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
-                          <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
-                        </button>
-                      </li>
-                      <li>
-                        <button type="button" class="color-selector__btn">
-                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- //color-selector -->
                   <!-- size-selector : 사이즈 선택 -->
                   <div class="size-selector">
                     <p class="size-selector__label">사이즈</p>
@@ -424,17 +382,10 @@
                   <!-- //total -->
                   <!-- buy-actions : 구매 버튼 그룹 -->
                   <div class="buy-actions buy-actions--black">
-                    <div class="buy-actions__icons">
-                      <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
-                        <span class="btn-icon__icon"></span>
-                      </button>
-                      <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
-                        <span class="btn-icon__icon"></span>
-                      </button>
-                    </div>
                     <div class="buy-actions__btns">
                       <button type="button" class="btn">장바구니</button>
                       <button type="button" class="btn buy-actions__buy">바로구매</button>
+                      <button type="button" class="btn js-modal-open" data-target="#modal3">매장픽업</button>
                       <button type="butotn" class="btn buy-actions__npay">네이버페이</button>
                     </div>
                   </div>
@@ -1442,17 +1393,10 @@
             <!-- 구매 버튼 -->
             <div class="cta cta--fixed">
               <div class="buy-actions buy-actions--black">
-                <div class="buy-actions__icons">
-                  <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
-                    <span class="btn-icon__icon"></span>
-                  </button>
-                  <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
-                    <span class="btn-icon__icon"></span>
-                  </button>
-                </div>
                 <div class="buy-actions__btns">
                   <button type="button" class="btn js-bottom-sheet-open" data-target="#buySheet">장바구니</button>
                   <button type="button" class="btn buy-actions__buy js-bottom-sheet-open" data-target="#buySheet">바로구매</button>
+                  <button type="button" class="btn js-modal-open" data-target="#modal3">매장픽업</button>
                   <button type="button" class="btn buy-actions__npay">네이버페이</button>
                 </div>
               </div>
@@ -1479,59 +1423,6 @@
         <h3 class="bottom-sheet__title">옵션 선택</h3>
       </div>
       <div class="bottom-sheet__body">
-        <div class="bottom-sheet__section">
-          <!-- color-selector : 컬러 선택 -->
-          <div class="color-selector">
-            <p class="color-selector__label">컬러</p>
-            <ul class="color-selector__list" role="group" aria-label="컬러 선택">
-              <li>
-                <!-- 
-                  선택된 컬러 .color-selector__btn에 is-active 추가
-                  품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
-                -->
-                <button type="button" class="color-selector__btn is-active">
-                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
-                  <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
-                </button>
-              </li>
-              <li>
-                <button type="button" class="color-selector__btn">
-                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
-                </button>
-              </li>
-            </ul>
-          </div>
-          <!-- //color-selector -->
-        </div>
         <div class="bottom-sheet__section">
           <!-- size-selector : 사이즈 선택 -->
           <div class="size-selector">
@@ -1617,16 +1508,10 @@
       </div>
       <div class="bottom-sheet__footer bottom-sheet__footer--no-padding">
         <div class="buy-actions buy-actions--black">
-          <div class="buy-actions__icons">
-            <button type="button" class="btn-icon btn-icon--like" aria-label="찜하기">
-              <span class="btn-icon__icon"></span>
-            </button>
-            <button type="button" class="btn-icon btn-icon--share-w" aria-label="공유">
-              <span class="btn-icon__icon"></span>
-            </button>
-          </div>
           <div class="buy-actions__btns">
-            <button type="button" class="btn">장바구니</button>
+            <button type="button" class="btn js-bottom-sheet-open" data-target="#buySheet">장바구니</button>
+            <button type="button" class="btn buy-actions__buy js-bottom-sheet-open" data-target="#buySheet">바로구매</button>
+            <button type="button" class="btn js-modal-open" data-target="#modal3">매장픽업</button>
             <button type="button" class="btn buy-actions__npay">네이버페이</button>
           </div>
         </div>
@@ -1743,6 +1628,103 @@
       <div class="modal__body">
         <img src="../../assets/images/img_card_sample.png" alt="무이자 할부 혜택 안내 이미지 예시">
       </div>
+    </div>
+  </div>
+
+  <!-- 매장 찾기 modal -->
+  <div id="modal3" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">매장찾기</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <!-- 매장 찾기 컨텐츠 -->
+          <div class="store-finder">
+            <div class="search">
+              <div class="select">
+                <label for="region" class="select__label">지역선택</label>
+                <div class="select__box">
+                  <select id="region" class="select__field">
+                    <option value="" disabled selected hidden>선택해 주세요.</option>
+                    <option value="">서울</option>
+                    <option value="">경기</option>
+                    <option value="">대구</option>
+                    <option value="">대전</option>
+                    <option value="">부산</option>
+                    <option value="">광주</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search__field">
+                <input type="text" id="input1" class="form__input" value="" placeholder="매장명을 입력해 주세요." />
+                <button type="button" class="btn btn--lg btn--line btn--secondary">검색</button>
+              </div>
+            </div>
+            <div class="map">
+              <div class="map__area">
+                <div id="map" class="map__inner">
+                  <!-- 지도 샘플 이미지 -->
+                  <img src="../../assets/images/img_map_sample.jpg" alt="">
+                </div>
+              </div>
+            </div>
+            <ul class="store-list">
+              <li class="store-list__item">
+                <!-- 선택 시 is-active 클래스 추가 -->
+                <button type="button" class="store-list__btn is-active">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="store-list__item">
+                <button type="button" class="store-list__btn">
+                  <div class="store-list__info">
+                    <p class="store-list__name">거제디큐브시티점</p>
+                    <span class="store-list__address">경상남도 거제시 장평로 12 디큐브시티 거제점 3층</span>
+                    <span class="store-list__tel">055-680-0327</span>
+                  </div>
+                  <span class="store-list__icon" aria-hidden="true"></span>
+                </button>
+              </li>
+            </ul>
+            <button type="button" class="btn btn--lg btn--block btn--line btn--secondary">더보기</button>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 

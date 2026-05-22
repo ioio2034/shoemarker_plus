@@ -2,69 +2,6 @@
 @use '../base/variables' as *;
 
 // 페이지 공통
-.color-selector {
-  @include flex-col;
-  gap: 8px;
-  @include tablet {
-    gap: 4px;
-  }
-  &__label {
-    color: $black;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    @include tablet {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 20px;
-    }
-  }
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    li {
-      font-size: 0;
-    }
-  }
-  &__btn {
-    position: relative;
-    overflow: hidden;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    aspect-ratio: 1 / 1;
-    cursor: pointer;
-    border: 1px solid transparent;
-    &.is-active {
-      border-color: $gray-80;
-    }
-    &.is-soldout {
-      cursor: default;
-      &::after {
-        content: '품절';
-        @include flex;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        color: $white;
-        font-size: 13px;
-        font-weight: 500;
-        line-height: 140%;
-        letter-spacing: -0.13px;
-        z-index: 1;
-      }
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
 .size-selector {
   @include flex-col;
   gap: 8px;
@@ -332,20 +269,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 24px;
-  &__icons {
-    display: flex;
-    gap: 16px;
-  }
-  .btn-icon {
-    @include inline-flex;
-    width: 57px;
-    height: 57px;
-    padding: 0;
-    border-radius: 4px;
-    border: 1px solid $gray-30;
-    flex-shrink: 0;
-  }
+  margin-top: 24px;  
   &__btns {
     display: flex;
     align-items: center;
@@ -382,6 +306,9 @@
       margin-top: 0;
       border-radius: 0;
     }
+    .buy-actions__btns {
+      width: 100%;
+    }
     .btn-icon {
       width: 24px;
       height: 24px;
@@ -390,7 +317,6 @@
     }
     .btn {
       position: relative;
-      flex: auto;
       height: auto;
       padding: 0;
       border-radius: 0;
@@ -402,7 +328,7 @@
         line-height: 20px;
       }
       & + .btn {
-        margin-left: 16px;
+        // margin-left: 16px;
         &::before {
           content: '';
           position: absolute;
@@ -412,6 +338,10 @@
           width: 1px;
           height: 14px;
           background: $white;
+          opacity: 0.5;
+          @include tablet {
+            left: -8px;
+          }
         }
       }
     }
@@ -420,7 +350,7 @@
       width: 63px;
       @include bgimage('img_npay_g','png');
       background-size: 63px auto;
-      background-position: right center;
+      background-position: center;
       font-size: 0;
       text-indent: -9999px;
       @include tablet {
@@ -634,10 +564,10 @@
           }
         }
         &__meta-wrap {
-          display: flex;
-          align-items: center;
+          @include flex(center, space-between);
           flex-wrap: wrap;
           column-gap: 20px;
+          row-gap: 8px;
         }
         &__meta {
           display: flex;
@@ -678,6 +608,25 @@
           font-size: 11px;
           font-weight: 400;
           line-height: 12px;
+        }
+        &__actions {
+          display: flex;
+          align-items: center;
+          @include tablet {
+            gap: 8px;
+          }
+          .btn-icon {
+            @include inline-flex;
+            width: 44px;
+            height: 44px;
+            padding: 10px;
+            flex-shrink: 0;
+            @include tablet {
+              width: 24px;
+              height: 24px;
+              padding: 0;
+            }
+          }
         }
       }
       .price {
@@ -933,12 +882,6 @@
           font-size: 14px;
           line-height: 140%;
           letter-spacing: -0.14px;
-        }
-      }
-      .color-selector {
-        margin-top: 24px;
-        @include tablet {
-          display: none;
         }
       }
       .size-selector {
