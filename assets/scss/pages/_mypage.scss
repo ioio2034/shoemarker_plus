@@ -5,26 +5,32 @@
 // 상품 개별 카드
 .order-card {
   & + .order-card {
-    margin-top: 40px;
+    margin-top: 20px;
     @include tablet {
-      margin-top: 24px;
+      margin-top: 12px;
+    }
+  }
+  &:first-of-type {
+    .order-card__date {
+      margin-top: 0;
     }
   }
   &__date {
-    margin-bottom: 10px;
+    margin: 40px 0 10px;
     color: $grayscale-800;
     font-size: 18px;
     font-weight: 500;
     line-height: 140%;
     letter-spacing: -0.18px;
     @include tablet {
-      margin-bottom: 12px;
+      margin: 24px 0 12px;
       color: $gray-80;
       font-size: 16px;
       font-weight: 600;
       line-height: 24px;
       letter-spacing: 0;
     }
+    
   }
   &__box {
     border-radius: 6px;
@@ -99,9 +105,10 @@
     }
   }
   &__schedule {
-    display: flex;
-    align-items: center;
+    flex: 1;
+    @include flex(center, space-between);
     gap: 8px;
+    margin-left: 8px;
   }
   &__schedule-label {
     color: #2582E5;
@@ -110,6 +117,7 @@
     line-height: 16px;
   }
   &__schedule-date {
+    margin-left: auto;
     color: $gray-70;
     font-size: 12px;
     font-weight: 400;
@@ -119,6 +127,9 @@
     color: $red;
     font-size: 12px;
     line-height: 16px;
+  }
+  &__btns {
+    margin-left: auto;
   }
   &__body {
     @include flex(center, space-between);

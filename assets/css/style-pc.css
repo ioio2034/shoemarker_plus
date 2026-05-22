@@ -13789,10 +13789,13 @@ body.sheet-open {
 }
 
 .order-card + .order-card {
-  margin-top: 40px;
+  margin-top: 20px;
+}
+.order-card:first-of-type .order-card__date {
+  margin-top: 0;
 }
 .order-card__date {
-  margin-bottom: 10px;
+  margin: 40px 0 10px;
   color: #333333;
   font-size: 18px;
   font-weight: 500;
@@ -13853,9 +13856,12 @@ body.sheet-open {
   letter-spacing: -0.16px;
 }
 .order-group__schedule {
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 8px;
+  margin-left: 8px;
 }
 .order-group__schedule-label {
   color: #2582E5;
@@ -13864,6 +13870,7 @@ body.sheet-open {
   line-height: 16px;
 }
 .order-group__schedule-date {
+  margin-left: auto;
   color: #555555;
   font-size: 12px;
   font-weight: 400;
@@ -13873,6 +13880,9 @@ body.sheet-open {
   color: #FE4C58;
   font-size: 12px;
   line-height: 16px;
+}
+.order-group__btns {
+  margin-left: auto;
 }
 .order-group__body {
   display: flex;
