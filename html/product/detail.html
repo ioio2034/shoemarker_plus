@@ -285,27 +285,18 @@
                   <!-- //card-banner -->
                   <!-- size-selector : 사이즈 선택 -->
                   <div class="size-selector">
-                    <p class="size-selector__label">사이즈</p>
-                    <ul class="size-selector__list" role="group" aria-label="사이즈 선택">
-                      <!-- 
-                        선택된 사이즈 .size-selector__btn에 is-active 추가
-                        품절된 사이즈 .size-selector__btn에 is-soldout, disabled,  aria-disabled="true" 추가
-                      -->
-                      <li><button type="button" class="size-selector__btn is-soldout" aria-label="220mm 품절" disabled aria-disabled="true">220</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="225mm">225</button></li>
-                      <li><button type="button" class="size-selector__btn is-active" aria-label="230mm">230</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="245mm">245</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="250mm">250</button></li>
-                      <li><button type="button" class="size-selector__btn is-soldout" aria-label="255mm 품절" disabled aria-disabled="true">255</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="260mm">260</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="265mm">265</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="270mm">270</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="275mm">275</button></li>
-                      <li><button type="button" class="size-selector__btn" aria-label="280mm">280</button></li>
-                    </ul>
-                    <div class="size-selector__guide">
-                      <a href="#" class="size-selector__guide-link">사이즈 안내!</a>
-                      <p class="size-selector__guide-text">고객님의 체형과 유사한 분들이 선택한 사이즈를 참고하여 추천드립니다.</p>
+                    <label for="sizeSelect" class="size-selector__label">사이즈</label>
+                    <div class="select">
+                      <div class="select__box">
+                        <select id="sizeSelect" class="select__field">
+                          <!-- placeholder -->
+                          <option value="" disabled selected hidden>사이즈를 선택해 주세요.</option>
+                          <option value="">220mm</option>
+                          <option value="">225mm</option>
+                          <option value="">230mm</option>
+                          <option value="">235mm</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
                   <!-- //size-selector -->
@@ -1426,27 +1417,18 @@
         <div class="bottom-sheet__section">
           <!-- size-selector : 사이즈 선택 -->
           <div class="size-selector">
-            <p class="size-selector__label">사이즈</p>
-            <ul class="size-selector__list" role="group" aria-label="사이즈 선택">
-              <!-- 
-                선택된 사이즈 .size-selector__btn에 is-active 추가
-                품절된 사이즈 .size-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
-              -->
-              <li><button type="button" class="size-selector__btn is-soldout" aria-label="220mm 품절" disabled aria-disabled="true">220</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="225mm">225</button></li>
-              <li><button type="button" class="size-selector__btn is-active" aria-label="230mm">230</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="245mm">245</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="250mm">250</button></li>
-              <li><button type="button" class="size-selector__btn is-soldout" aria-label="255mm 품절" disabled aria-disabled="true">255</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="260mm">260</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="265mm">265</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="270mm">270</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="275mm">275</button></li>
-              <li><button type="button" class="size-selector__btn" aria-label="280mm">280</button></li>
-            </ul>
-            <div class="size-selector__guide">
-              <a href="#" class="size-selector__guide-link">사이즈 안내!</a>
-              <p class="size-selector__guide-text">고객님의 체형과 유사한 분들이 선택한 사이즈를 참고하여 추천드립니다.</p>
+            <label for="sizeSelect" class="size-selector__label">사이즈</label>
+            <div class="select">
+              <div class="select__box">
+                <select id="sizeSelect" class="select__field">
+                  <!-- placeholder -->
+                  <option value="" disabled selected hidden>사이즈를 선택해 주세요.</option>
+                  <option value="">220mm</option>
+                  <option value="">225mm</option>
+                  <option value="">230mm</option>
+                  <option value="">235mm</option>
+                </select>
+              </div>
             </div>
           </div>
           <!-- //size-selector -->
