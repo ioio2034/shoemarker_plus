@@ -1294,10 +1294,13 @@
   .store-list {
     @include flex-col;
     gap: 10px;
+    max-height: 245px;
+    overflow-y: auto;
     @include tablet {
       gap: 8px;
+      max-height: calc(100dvh - 458px);
     }
-    &__btn {
+    &__item {
       @include flex(center, space-between);
       gap: 4px;
       width: 100%;
@@ -1305,7 +1308,7 @@
       border-radius: 6px;
       border: 1px solid $gray-30;
       text-align: left;
-      &.is-active {
+      &:has(.radio__input:checked) {
         border-color: $gray-80;
         .store-list__icon {
           @include bgimage('icon_location_black', 'svg');
@@ -1313,7 +1316,6 @@
       }
     }
     &__name {
-      margin-bottom: 4px;
       color: $gray-80;
       font-size: 14px;
       font-weight: 500;

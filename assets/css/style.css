@@ -15973,13 +15973,16 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 245px;
+  overflow-y: auto;
 }
 @media (max-width: 1024px) {
   .store-finder .store-list {
     gap: 8px;
+    max-height: calc(100dvh - 458px);
   }
 }
-.store-finder .store-list__btn {
+.store-finder .store-list__item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15990,14 +15993,13 @@ body.sheet-open {
   border: 1px solid #D8D8D8;
   text-align: left;
 }
-.store-finder .store-list__btn.is-active {
+.store-finder .store-list__item:has(.radio__input:checked) {
   border-color: #2D2D2D;
 }
-.store-finder .store-list__btn.is-active .store-list__icon {
+.store-finder .store-list__item:has(.radio__input:checked) .store-list__icon {
   background: url("../images/icon_location_black.svg") no-repeat;
 }
 .store-finder .store-list__name {
-  margin-bottom: 4px;
   color: #2D2D2D;
   font-size: 14px;
   font-weight: 500;
