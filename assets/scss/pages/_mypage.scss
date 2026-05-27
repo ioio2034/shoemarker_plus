@@ -104,6 +104,14 @@
       letter-spacing: 0;
     }
   }
+  &__action {
+    padding: 0;
+    color: $red;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: underline;
+    text-underline-position: from-font;
+  }
   &__schedule {
     flex: 1;
     @include flex(center, space-between);

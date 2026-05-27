@@ -24,24 +24,15 @@
       }
     }
   }
-  // 배송 요청사항
-  .delivery-request {
-    @include flex-col;
-    gap: 8px;
-    .checkbox {
-      margin-top: 8px;
-    }
-  }
   // 주문상품
   .order-product {
     .order-card {
       & + .order-card {
-        margin-top: 16px;
+        margin-top: 30px;
       }
       &__box {
         border-radius: 0;
         border: 0;
-        border-bottom: 1px solid $gray-30;
         @include tablet {
           border-radius: 6px;
           border: 1px solid $gray-30;
@@ -54,6 +45,52 @@
         @include tablet {
           padding: 20px 16px;
         }
+      }
+    }
+    // 배송 개별 선택
+    .order-delivery {
+      @include tablet {
+        padding: 16px 0 20px;
+        margin: 0 16px;
+        border-top: 1px solid $gray-30;
+      }
+      &__head {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      &__label {
+        width: 80px;
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+      &__list {
+        @include flex-col;
+        gap: 8px;
+      }
+      &__item {
+        @include flex(center, space-between);
+        gap: 16px;
+        padding: 14px 12px;
+        border-radius: 6px;
+        border: 1px solid $gray-30;
+        &--disabled {
+          .order-delivery__text {
+            color: $gray-40;
+          }
+        }
+        .btn-link {
+          flex-shrink: 0;
+        }
+      }
+      &__text {
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
       }
     }
   }
@@ -195,6 +232,10 @@
         @include bgimage('img_samsung', 'png');
         background-size: 100% auto;
       }
+      &--lpay {
+        @include bgimage('img_lpay', 'png');
+        background-size: 100% auto;
+      }
     }
     &__guide-link {
       margin-top: 8px;
@@ -207,7 +248,40 @@
     .checkbox {
       margin-top: 6px;
     }
-    // 결제 동의
+    // 계좌이체 보증보험
+    .transfer-cont {
+      @include flex-col;
+      gap: 16px;
+    }
+    .transfer-desc {
+      color: $gray-60;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .transfer-notice {
+      @include flex-col;
+      gap: 4px;
+      &__title {
+        color: $gray-80;
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &__list {
+        @include flex-col;
+        gap: 4px;
+      }
+      &__item {
+        position: relative;
+        color: $gray-60;
+        font-size: 12px;
+        line-height: 16px;
+        &::before {
+          content: '·';
+          display: inline-block;
+          margin-right: 4px;
+        }
+      }
+    }
   }
   // 결제 동의
   .order-agree {
@@ -322,6 +396,36 @@
       flex-shrink: 0;
     }
   }
+  &__product {
+    .order-item {
+      &__price {
+        align-items: center;
+        flex-direction: row;
+        margin-top: 10px;
+      }
+      &__price-origin {
+        .price {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0;
+        }
+      }
+      &__price-cost {
+        .price {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  &__coupon {
+    .select {
+      & + .select {
+        margin-top: 8px;
+      }
+    }
+  }
   &__notice {
     margin-top: -8px;
     color: $red;
@@ -329,49 +433,49 @@
     line-height: 16px;
     word-break: keep-all;
   }
-  //쿠폰 리스트
-  .coupon-list {
+}
+// 배송 쿠폰 선택 팝업
+.delivery-coupon {
+  &__list {
     @include flex-col;
-    gap: 16px;
-    padding: 12px 8px;
+    gap: 8px;
+  }
+  &__item {
+    padding: 16px;
+    border-radius: 6px;
     border: 1px solid $gray-30;
-    border-radius: 8px;
-    .radio {
-      width: 100%;
-      &__input:checked {
-        & + .radio__label {
-          font-weight: 400;
-          .coupon-item__name {
-            font-weight: 600;
-          }
-        }
-      }
-      &__label {
-        align-items: flex-start;
-      }
+    &:has(.radio__input:checked) {
+      border-color: $gray-80;
     }
   }
-  .coupon-item {
+  .radio {
+    &__input:checked {
+      & + .radio__label {
+        font-weight: 400;
+        .delivery-coupon__name {
+          font-weight: 600;
+        }
+      }
+    }
+    &__label {
+      gap: 8px;
+    }
+  }
+  &__info {
     @include flex-col;
     gap: 4px;
-    &__name {
-      color: $gray-80;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-    }
-    &__desc {
-      color: $gray-70;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 16px;
-    }
-    &__date {
-      color: $grayscale-600;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 16px;
-    }
+  }
+  &__name {
+    color: $gray-80;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__desc {
+    color: $grayscale-500;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
   }
 }
 // 주문 완료 > 주문 정보

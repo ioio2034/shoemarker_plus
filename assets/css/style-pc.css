@@ -11944,7 +11944,6 @@ body.sheet-open {
 }
 .badge--red {
   border-color: #FE4C58;
-  background: #FFF5F6;
   color: #FE4C58;
 }
 
@@ -12546,6 +12545,38 @@ body.sheet-open {
 .tab--pill .tab__btn.is-active {
   background: #2D2D2D;
   color: #FFFFFF;
+}
+
+.table-row {
+  max-width: none;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8;
+}
+.table-row tbody tr {
+  border-bottom: 1px solid #D8D8D8;
+}
+.table-row tbody tr th {
+  height: 40px;
+  padding: 8px;
+  background: #F0F0F0;
+  color: #2D2D2D;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+.table-row tbody tr td {
+  min-height: 40px;
+  padding: 8px;
+  color: #2D2D2D;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  vertical-align: middle;
 }
 
 .empty {
@@ -13226,6 +13257,27 @@ body.sheet-open {
   transform: translateY(-50%) rotate(180deg);
 }
 
+.date-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.date-select .select__box::after {
+  right: 8px;
+  width: 16px;
+  height: 16px;
+}
+.date-select .select__field {
+  padding: 4px 8px;
+}
+.date-select__year {
+  min-width: 70px;
+}
+.date-select__month, .date-select__day {
+  min-width: 52px;
+}
+
 .textarea {
   position: relative;
 }
@@ -13893,6 +13945,14 @@ body.sheet-open {
   font-weight: 600;
   line-height: 140%;
   letter-spacing: -0.16px;
+}
+.order-group__action {
+  padding: 0;
+  color: #FE4C58;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: underline;
+  text-underline-position: from-font;
 }
 .order-group__schedule {
   flex: 1;
@@ -17461,24 +17521,54 @@ body.sheet-open {
 .order-form .delivery .order-block__header {
   position: relative;
 }
-.order-form .delivery-request {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.order-form .delivery-request .checkbox {
-  margin-top: 8px;
-}
 .order-form .order-product .order-card + .order-card {
-  margin-top: 16px;
+  margin-top: 30px;
 }
 .order-form .order-product .order-card__box {
   border-radius: 0;
   border: 0;
-  border-bottom: 1px solid #D8D8D8;
 }
 .order-form .order-product .order-group__body {
   padding: 16px 24px 16px 0;
+}
+.order-form .order-product .order-delivery__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.order-form .order-product .order-delivery__label {
+  width: 80px;
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.order-form .order-product .order-delivery__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.order-form .order-product .order-delivery__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 12px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+.order-form .order-product .order-delivery__item--disabled .order-delivery__text {
+  color: #C6C6C6;
+}
+.order-form .order-product .order-delivery__item .btn-link {
+  flex-shrink: 0;
+}
+.order-form .order-product .order-delivery__text {
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
 }
 .order-form .discount-benefit {
   display: flex;
@@ -17618,6 +17708,10 @@ body.sheet-open {
   background: url("../images/img_samsung.png") no-repeat;
   background-size: 100% auto;
 }
+.order-form .payment-method__quick-icon--lpay {
+  background: url("../images/img_lpay.png") no-repeat;
+  background-size: 100% auto;
+}
 .order-form .payment-method__guide-link {
   margin-top: 8px;
   color: #246BEB;
@@ -17628,6 +17722,42 @@ body.sheet-open {
 }
 .order-form .payment-method .checkbox {
   margin-top: 6px;
+}
+.order-form .payment-method .transfer-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.order-form .payment-method .transfer-desc {
+  color: #717171;
+  font-size: 12px;
+  line-height: 16px;
+}
+.order-form .payment-method .transfer-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.order-form .payment-method .transfer-notice__title {
+  color: #2D2D2D;
+  font-size: 14px;
+  line-height: 20px;
+}
+.order-form .payment-method .transfer-notice__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.order-form .payment-method .transfer-notice__item {
+  position: relative;
+  color: #717171;
+  font-size: 12px;
+  line-height: 16px;
+}
+.order-form .payment-method .transfer-notice__item::before {
+  content: "·";
+  display: inline-block;
+  margin-right: 4px;
 }
 .order-form .order-agree {
   display: flex;
@@ -17728,6 +17858,24 @@ body.sheet-open {
 .benefit-modal__input-row .btn {
   flex-shrink: 0;
 }
+.benefit-modal__product .order-item__price {
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.benefit-modal__product .order-item__price-origin .price {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+.benefit-modal__product .order-item__price-cost .price {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+.benefit-modal__coupon .select + .select {
+  margin-top: 8px;
+}
 .benefit-modal__notice {
   margin-top: -8px;
   color: #FE4C58;
@@ -17735,45 +17883,42 @@ body.sheet-open {
   line-height: 16px;
   word-break: keep-all;
 }
-.benefit-modal .coupon-list {
+
+.delivery-coupon__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 12px 8px;
+  gap: 8px;
+}
+.delivery-coupon__item {
+  padding: 16px;
+  border-radius: 6px;
   border: 1px solid #D8D8D8;
-  border-radius: 8px;
 }
-.benefit-modal .coupon-list .radio {
-  width: 100%;
+.delivery-coupon__item:has(.radio__input:checked) {
+  border-color: #2D2D2D;
 }
-.benefit-modal .coupon-list .radio__input:checked + .radio__label {
+.delivery-coupon .radio__input:checked + .radio__label {
   font-weight: 400;
 }
-.benefit-modal .coupon-list .radio__input:checked + .radio__label .coupon-item__name {
+.delivery-coupon .radio__input:checked + .radio__label .delivery-coupon__name {
   font-weight: 600;
 }
-.benefit-modal .coupon-list .radio__label {
-  align-items: flex-start;
+.delivery-coupon .radio__label {
+  gap: 8px;
 }
-.benefit-modal .coupon-item {
+.delivery-coupon__info {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.benefit-modal .coupon-item__name {
+.delivery-coupon__name {
   color: #2D2D2D;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 20px;
 }
-.benefit-modal .coupon-item__desc {
-  color: #555555;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-}
-.benefit-modal .coupon-item__date {
-  color: #666666;
+.delivery-coupon__desc {
+  color: #808080;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;

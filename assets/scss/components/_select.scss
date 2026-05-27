@@ -64,3 +64,29 @@
     }
   }
 } 
+// 생년월일
+.date-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  .select {
+    &__box {
+      &::after {
+        right: 8px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &__field {
+      padding: 4px 8px;
+    }
+  }
+  &__year {
+    min-width: 70px;
+  }
+  &__month,
+  &__day {
+    min-width: 52px;
+  }
+}
