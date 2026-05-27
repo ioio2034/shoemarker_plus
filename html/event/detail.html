@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-event">
+
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">이벤트</h2>
+            <div class="section__util">
+              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-detail">
+              <!-- 이벤트 타이틀 -->
+              <div class="event-detail__header">
+                <div class="event-detail__info">
+                  <h3 class="event-detail__name">6월 신용카드 혜택 안내</h3>
+                  <p class="event-detail__period">이벤트 기간 : <span>2026.06.01 ~ 2026.06.30</span></p>
+                </div>
+                <button type="button" class="btn-icon btn-icon--share" aria-label="공유">
+                  <span class="btn-icon__icon"></span>
+                </button>
+              </div>
+              <!-- 이벤트 본문 -->
+              <div class="event-detail__content">
+                <!-- 이미지 -->
+                <div class="event-detail__image">
+                  <img src="../../assets/images/img_event_sample.jpg" alt="6월 신용카드 결제 혜택" />
+                </div>
+                <!-- 안내사항 -->
+                <div class="event-detail__notice">
+                  <p class="event-detail__notice-tit">유의사항</p>
+                  <ul class="event-detail__notice-list">
+                    <li class="event-detail__notice-item">
+                      행사기간 : 2025년 6월 01일(일) ~ 6월 30일(월)
+                    </li>
+                    <li class="event-detail__notice-item">
+                      행사기간 : 2025년 6월 01일(일) ~ 6월 30일(월)
+                    </li>
+                    <li class="event-detail__notice-item">
+                      행사기간 : 2025년 6월 01일(일) ~ 6월 30일(월)
+                    </li>
+                    <li class="event-detail__notice-item">
+                      행사기간 : 2025년 6월 01일(일) ~ 6월 30일(월)
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

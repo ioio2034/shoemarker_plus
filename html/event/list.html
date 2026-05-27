@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-event">
+
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">이벤트</h2>
+            <div class="section__util">
+              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="event">
+            <ul class="event__list">
+              <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_event_thumb_01.jpg" alt="선물하기 가이드 이벤트 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">선물하기 가이드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+              <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_event_thumb_02.jpg" alt="슈마커 X 우리카드 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">신규 입점 브랜드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+              <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_event_thumb_03.jpg" alt="슈마커 X 삼성카드 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">신규 입점 브랜드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+               <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_event_thumb_01.jpg" alt="선물하기 가이드 이벤트 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">선물하기 가이드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+              <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_event_thumb_02.jpg" alt="슈마커 X 우리카드 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">신규 입점 브랜드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+              <li class="event__item">
+                <a class="event-card" href="#">
+                  <div class="event-card__thumb">
+                    <img class="event-card__image" src="../../assets/images/img_brand_visual_mo.jpg" alt="슈마커 X 삼성카드 썸네일" />
+                  </div>
+                  <div class="event-card__info">
+                    <strong class="event-card__name">신규 입점 브랜드</strong>
+                    <span class="event-card__period">2026.04.01 ~ 2026.04.30</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

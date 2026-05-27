@@ -1,0 +1,195 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 이벤트 페이지 공통
+.page-event {
+  .section {
+    &__inner {
+      @include tablet {
+        padding: 62px 0 calc(88px + env(safe-area-inset-bottom));
+      }
+    }
+    &__header {
+      margin-bottom: 24px;
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+    &__title {
+      padding-bottom: 16px;
+      font-size: 32px;
+      letter-spacing: -1px;
+      @include tablet {
+        padding-bottom: 0;
+        font-size: 20px;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+// 이벤트 리스트 페이지
+.event {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 16px;
+      row-gap: 24px;
+      padding: 24px;
+    }
+  }
+}
+.event-card {
+  @include flex-col;
+  gap: 16px;
+  &__thumb {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 411 / 500;
+    border-radius: 6px;
+    @include tablet {
+      aspect-ratio: 163 / 208;
+    }
+  }
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  &__info {
+    @include flex-col;
+    gap: 4px;
+  }
+  &__name {
+    color: $gray-80;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    @include tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &__period {
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+// 이벤트 상세 페이지
+.event-detail {
+  // 이벤트 헤더
+  &__header {
+    @include flex(center, space-between);
+    gap: 4px;
+    padding-bottom: 20px;
+    @include tablet {
+      padding: 16px 24px;
+    }
+  }
+  &__info {
+    flex: 1;
+    @include flex-col;
+    gap: 5px;
+    @include tablet {
+      gap: 8px;
+    }
+  }
+  &__name {
+    color: $grayscale-800;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.18px;
+    @include tablet {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+  &__period {
+    color: $grayscale-600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0;
+    }
+  }
+  .btn-icon--share {
+    width: 44px;
+    height: 50px;
+    padding: 13px 10px;
+    @include tablet {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+    }
+  }
+
+  // 이벤트 컨텐츠
+  &__content {
+    width: 100%;
+  }
+  &__image {
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &__notice {
+    padding: 20px 25px;
+    background: $gray-5;
+    @include tablet {
+      padding: 24px 16px;
+    }
+  }
+  &__notice-tit {
+    margin-bottom: 15px;
+    color: $gray-80;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.18px;
+    @include tablet {
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+  &__notice-list {
+    @include flex-col;
+    gap: 8px;
+    @include tablet {
+      gap: 4px;
+    }
+  }
+  &__notice-item {
+    color: $grayscale-600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0;
+    }
+    &::before {
+      content: '·';
+      display: inline-block;
+    }
+  }
+}
