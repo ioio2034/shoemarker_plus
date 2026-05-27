@@ -283,6 +283,57 @@
                     </span>
                   </a>
                   <!-- //card-banner -->
+                  <!-- color-selector : 컬러 선택 -->
+                  <div class="color-selector">
+                    <p class="color-selector__label">컬러</p>
+                    <ul class="color-selector__list" role="group" aria-label="컬러 선택">
+                      <li>
+                        <!-- 
+                          선택된 컬러 .color-selector__btn에 is-active 추가
+                          품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+                        -->
+                        <button type="button" class="color-selector__btn is-active">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
+                        </button>
+                      </li>
+                      <li>
+                        <button type="button" class="color-selector__btn">
+                          <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- //color-selector -->
                   <!-- size-selector : 사이즈 선택 -->
                   <div class="size-selector">
                     <label for="sizeSelect" class="size-selector__label">사이즈</label>
@@ -1441,6 +1492,59 @@
         <h3 class="bottom-sheet__title">옵션 선택</h3>
       </div>
       <div class="bottom-sheet__body">
+        <div class="bottom-sheet__section">
+          <!-- color-selector : 컬러 선택 -->
+          <div class="color-selector">
+            <p class="color-selector__label">컬러</p>
+            <ul class="color-selector__list" role="group" aria-label="컬러 선택">
+              <li>
+                <!-- 
+                  선택된 컬러 .color-selector__btn에 is-active 추가
+                  품절된 컬러 .color-selector__btn에 is-soldout, disabled, aria-disabled="true" 추가
+                -->
+                <button type="button" class="color-selector__btn is-active">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Black 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn is-soldout" disabled aria-disabled="true">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="White 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Coral 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Red 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Green 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Pink 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_01.jpg" alt="Dark 컬러" />
+                </button>
+              </li>
+              <li>
+                <button type="button" class="color-selector__btn">
+                  <img src="../../assets/images/img_color_sample_02.jpg" alt="Orange 컬러" />
+                </button>
+              </li>
+            </ul>
+          </div>
+          <!-- //color-selector -->
+        </div>
         <div class="bottom-sheet__section">
           <!-- size-selector : 사이즈 선택 -->
           <div class="size-selector">
