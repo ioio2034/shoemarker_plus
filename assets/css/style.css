@@ -14202,6 +14202,183 @@ body.sheet-open {
   display: flex !important;
 }
 
+.main {
+  background: #FFFFFF;
+}
+.main .section {
+  overflow: visible;
+  background: #FFFFFF;
+}
+.main .section__inner {
+  max-width: 100%;
+  min-height: auto;
+  padding: 0 24px;
+}
+.main .section__title {
+  padding: 0;
+  border-bottom: 0;
+  color: #1D1D1D;
+  font-family: "WorkSans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.main .section__desc {
+  color: #000000;
+  font-family: "WorkSans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.main .section--hero {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100dvh;
+}
+.main .section--trend {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background: url("../images/main/img_sec2_bg.jpg") no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+.main .section--trend::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.main .section--trend .section__desc {
+  color: #FFFFFF;
+}
+.main .section--trend .section__title {
+  color: #FFFFFF;
+}
+.main .section--best-hot {
+  padding-top: 60px;
+  padding-bottom: 24px;
+}
+.main .section--hot-deal {
+  padding-top: 24px;
+  padding-bottom: 40px;
+}
+.main .section--banner {
+  padding: 24px;
+}
+.main .section--benefit {
+  padding: 40px 0;
+}
+.main__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 56px;
+  background-color: #FFFFFF;
+  z-index: 1;
+}
+.main__divider::before {
+  content: "";
+  display: block;
+  width: calc(100% - 48px);
+  height: 8px;
+  background-color: #eee;
+}
+
+.hero-swiper__slide.swiper-slide-active .hero-swiper__title,
+.hero-swiper__slide.swiper-slide-active .hero-swiper__desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-swiper__link {
+  position: relative;
+}
+.hero-swiper__img-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 100dvh;
+}
+.hero-swiper__img-box img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-swiper__txt-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  left: 24px;
+  top: 35%;
+  transform: translateY(-35%);
+  z-index: 1;
+}
+.hero-swiper__title {
+  max-width: 297px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.4s ease-in-out 0.5s, opacity 0.5s ease 0.5s;
+}
+.hero-swiper__desc {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease-in-out 0.7s, opacity 0.7s ease 0.7s;
+}
+.hero-swiper__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 24px;
+  bottom: 35%;
+  transform: translateY(-35%);
+  z-index: 1;
+}
+.hero-swiper__fraction {
+  color: #FFFFFF !important;
+  font-family: "WorkSans", sans-serif;
+  font-size: 14px;
+  line-height: 120%;
+}
+.hero-swiper__fraction .swiper-pagination-current {
+  font-weight: 600;
+  opacity: 1;
+}
+.hero-swiper__fraction .swiper-pagination-total {
+  opacity: 0.7;
+}
+.hero-swiper__fraction-sep {
+  opacity: 0.7;
+}
+.hero-swiper__more {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icon_cir_more.svg") no-repeat;
+}
+
 .login__inner {
   display: flex;
   flex-direction: column;
@@ -19366,10 +19543,10 @@ body.sheet-open {
 }
 @media (max-width: 1024px) {
   .brand__list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     -moz-column-gap: 12px;
          column-gap: 12px;
-    row-gap: 32px;
+    row-gap: 24px;
   }
 }
 .brand .brand-banner {
@@ -19657,6 +19834,14 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+@media (max-width: 1024px) {
+  .brand .brand-keyword .brand__list {
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    row-gap: 32px;
+  }
 }
 
 .brand-detail {

@@ -17237,7 +17237,6 @@ body.sheet-open {
   flex-direction: column;
   gap: 16px;
 }
-
 .brand-detail {
   display: grid;
   grid-template-columns: 276px minmax(0, 1fr);
