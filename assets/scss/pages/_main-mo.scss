@@ -5,7 +5,9 @@
   background: $white;
   // main section common
   .section {    
+    position: relative;
     background: $white;
+    z-index: 1;
     &__inner {
       max-width: 100%;
       min-height: auto;
@@ -164,8 +166,8 @@
       gap: 8px;
       position: absolute;
       left: 24px;
-      top: 35%;
-      transform: translateY(-35%);
+      top: 30%;
+      transform: translateY(-30%);
       z-index: 1;
     }
     &__title {
@@ -403,6 +405,9 @@
   .banner {
     &__link {
       position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     &__img {
       width: 100%;
@@ -525,6 +530,7 @@
   }
   .brand {
     &__visual {
+      background: $white;
       img {
         width: 100%;
       }
@@ -542,6 +548,9 @@
     }
     &__link {
       position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     &__img {
       width: 100%;

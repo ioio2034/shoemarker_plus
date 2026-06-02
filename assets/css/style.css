@@ -14650,6 +14650,7 @@ body.sheet-open {
   color: #FFFFFF;
 }
 .ai-chat-layer__input-wrap {
+  overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
@@ -14676,6 +14677,7 @@ body.sheet-open {
 }
 .ai-chat-layer__input {
   flex: 1;
+  width: 100%;
   padding: 0;
   color: #FFFFFF;
   font-size: 16px;
@@ -14688,6 +14690,7 @@ body.sheet-open {
   align-items: center;
   justify-content: center;
   padding: 0;
+  flex-shrink: 0;
 }
 .ai-chat-layer__products {
   padding-top: 24px;
@@ -14790,7 +14793,9 @@ body.sheet-open {
   background: #FFFFFF;
 }
 .main .section {
+  position: relative;
   background: #FFFFFF;
+  z-index: 1;
 }
 .main .section__inner {
   max-width: 100%;
@@ -14939,8 +14944,8 @@ body.sheet-open {
   gap: 8px;
   position: absolute;
   left: 24px;
-  top: 35%;
-  transform: translateY(-35%);
+  top: 30%;
+  transform: translateY(-30%);
   z-index: 1;
 }
 .main .hero-swiper__title {
@@ -15158,6 +15163,9 @@ body.sheet-open {
 }
 .main .banner__link {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .main .banner__img {
   width: 100%;
@@ -15279,6 +15287,9 @@ body.sheet-open {
   background: url("../images/icon_clock.png") no-repeat;
   background-size: cover;
 }
+.main .brand__visual {
+  background: #FFFFFF;
+}
 .main .brand__visual img {
   width: 100%;
 }
@@ -15293,6 +15304,9 @@ body.sheet-open {
 }
 .main .benefit__link {
   position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .main .benefit__img {
   width: 100%;

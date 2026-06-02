@@ -341,6 +341,9 @@
   .banner {
     &__link {
       position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     &__img {
       width: 100%;
@@ -422,6 +425,9 @@
     }
     &__link {
       position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
     }
     &__img {
       width: 100%;
