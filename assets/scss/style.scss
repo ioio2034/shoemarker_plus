@@ -39,9 +39,10 @@
 @use 'components/rating';
 @use 'components/sort';
 @use 'components/toggle';
+@use 'components/floating';
 
 // pages
-// @use 'pages/main';
+@use 'pages/main-mo';
 @use 'pages/login';
 @use 'pages/mypage';
 @use 'pages/product';

@@ -19,6 +19,11 @@
     margin-top: 0;
     background: #F5F5F5;
   }
+  &--main {
+    @include tablet {
+      display: block;
+    }
+  }
   &__inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -126,9 +131,6 @@
     opacity: 0.7;
   }
   // mobile
-  &__biz {
-    
-  }
   &__biz-toggle {
     position: relative;
     display: inline-flex;
@@ -150,7 +152,20 @@
       background-position: center;
     }
   }
-  &__biz-content {
-
+}
+// main footer utill menu
+.footer-util {
+  background: #1D1D1D;
+  &__inner {
+    padding: 16px 24px;
+  }
+  &__list {
+    @include flex(center, space-between);
+  }
+  &__link {
+    color: $white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
   }
 }

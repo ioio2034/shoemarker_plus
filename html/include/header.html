@@ -1,9 +1,55 @@
 <div class="header__inner">
 
     <!-- logo -->
-    <h1 class="header__logo logo">
-      <a class="logo__link" href="#">SHOE MARKER +</a>
-    </h1>
+    <div class="header__logo-wrap">
+      <!-- 로고 -->
+      <h1 class="header__logo logo">
+        <a class="logo__link" href="#">SHOE MARKER +</a>
+      </h1>
+      <div class="brand-dropdown">
+        <!-- 브랜드 변경 -->
+        <button
+          class="brand-dropdown__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="brandDropdownLayer"
+          aria-label="브랜드 선택"
+        >
+          <span class="brand-dropdown__toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- 레이어 -->
+        <div
+          class="brand-dropdown__layer"
+          id="brandDropdownLayer"
+          aria-label="브랜드 목록"
+        >
+          <div class="brand-dropdown__content">
+            <ul class="brand-dropdown__list">
+              <li class="brand-dropdown__item">
+                <a class="brand-dropdown__link" href="#">
+                  <img src="../../assets/images/logo.svg" alt="SHOE MARKER +" />
+                </a>
+              </li>
+              <li class="brand-dropdown__item">
+                <a class="brand-dropdown__link" href="#">
+                  <img src="../../assets/images/logo_shoemarker.svg" alt="SHOE MARKER" />
+                </a>
+              </li>
+            </ul>
+            <button
+              class="brand-dropdown__close"
+              type="button"
+              aria-label="닫기"
+            >
+              <span class="brand-dropdown__close-text">닫기</span>
+              <span class="brand-dropdown__close-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- //brand-dropdown -->
+    </div>
 
     <!-- nav -->
     <nav class="header__nav">

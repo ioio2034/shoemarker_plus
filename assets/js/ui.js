@@ -620,20 +620,39 @@ let UI = {
   },
   // heder scroll
   headerScroll: function () {
-    const $header = $('#header');
+    const $win = $(window);
+    let lastScrollTop = 0;
+    const threshold = 5;
 
-    if (!$header.length) return;
+    $win.on('scroll', function () {
+      const $header = $('#header');
 
-    const handleScroll = () => {
-      const currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
+      if (!$header.length) return;
 
-      $header.toggleClass('scrolled', currentScroll > 0);
-    };
+      const rawScrollTop   = $win.scrollTop();
+      const windowHeight   = $win.height();
+      const documentHeight = $(document).height();
+      const maxScrollTop   = documentHeight - windowHeight;
+      const scrollTop      = Math.max(0, Math.min(rawScrollTop, maxScrollTop));
 
-    $(window).on('scroll', handleScroll);
+      if (scrollTop <= 0) {
+        $header.removeClass('scrolled is-hidden');
+        lastScrollTop = 0;
+        return;
+      }
 
-    handleScroll();
+      $header.addClass('scrolled');
+
+      if (Math.abs(scrollTop - lastScrollTop) <= threshold) return;
+
+      if (scrollTop > lastScrollTop) {
+        $header.addClass('is-hidden');
+      } else {
+        $header.removeClass('is-hidden');
+      }
+
+      lastScrollTop = scrollTop;
+    });
   },
   // 브랜드 필터
   brandFilter: function () {
@@ -670,6 +689,63 @@ let UI = {
       });
     });
   },
+  // header brand layer
+  brandDropdown: function () {
+    let resizeTimer;
+
+    $(window).on('resize', function () {
+      $('#brandDropdownLayer').addClass('no-transition');
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        $('#brandDropdownLayer').removeClass('no-transition');
+      }, 200);
+    });
+    $(document)
+      .on('click', '.brand-dropdown__toggle', function (e) {
+        e.stopPropagation();
+        const $toggle = $(this);
+        const $layer  = $('#brandDropdownLayer');
+        const isOpen  = $toggle.attr('aria-expanded') === 'true';
+        $toggle.attr('aria-expanded', String(!isOpen));
+        $layer.toggleClass('is-active', !isOpen);
+      })
+      .on('click', '.brand-dropdown__close', function () {
+        $('.brand-dropdown__toggle').attr('aria-expanded', 'false');
+        $('#brandDropdownLayer').removeClass('is-active');
+      })
+      .on('click', function (e) {
+        if (!$(e.target).closest('.brand-dropdown').length) {
+          $('.brand-dropdown__toggle').attr('aria-expanded', 'false');
+          $('#brandDropdownLayer').removeClass('is-active');
+        }
+      });
+  },
+  // ai chat layer
+  aiChatLayer: function () {
+    function openLayer() {
+      const $layer = $('#aiChatLayer');
+      $layer.addClass('is-active').attr('aria-hidden', 'false');
+      $('body').addClass('modal-open');
+    }
+
+    function closeLayer() {
+      const $layer = $('#aiChatLayer');
+      $layer.removeClass('is-active').attr('aria-hidden', 'true');
+      $('body').removeClass('modal-open');
+    }
+
+    $(document)
+      .on('click', '.ai-chat__trigger', function (e) {
+        e.preventDefault();
+        openLayer();
+      })
+      .on('click', '.ai-chat-layer__close', function () {
+        closeLayer();
+      })
+      .on('click', '.ai-chat-layer__dim', function () {
+        closeLayer();
+      });
+  },
 };
 
 
@@ -694,6 +770,8 @@ $(function () {
   UI.toggle();
   UI.headerScroll();
   UI.brandFilter();
+  UI.brandDropdown();
+  UI.aiChatLayer();
 });
 
 // resize 대응
