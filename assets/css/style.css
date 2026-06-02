@@ -11625,6 +11625,8 @@ img, video, canvas, svg {
 @media (max-width: 1024px) {
   .footer--main {
     display: block;
+    position: relative;
+    z-index: 1;
   }
 }
 .footer__inner {
@@ -11776,7 +11778,9 @@ img, video, canvas, svg {
 }
 
 .footer-util {
+  position: relative;
   background: #1D1D1D;
+  z-index: 1;
 }
 .footer-util__inner {
   padding: 16px 24px;
@@ -14790,6 +14794,7 @@ body.sheet-open {
 }
 
 .main {
+  padding-top: 100dvh;
   background: #FFFFFF;
 }
 .main .section {
@@ -14823,7 +14828,9 @@ body.sheet-open {
   text-transform: uppercase;
 }
 .main .section--hero {
-  position: sticky;
+  position: fixed;
+  inset: 0;
+  left: 0;
   top: 0;
   z-index: 0;
   height: 100dvh;

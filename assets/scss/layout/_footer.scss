@@ -22,6 +22,8 @@
   &--main {
     @include tablet {
       display: block;
+      position: relative;
+      z-index: 1;
     }
   }
   &__inner {
@@ -155,7 +157,9 @@
 }
 // main footer utill menu
 .footer-util {
+  position: relative;
   background: #1D1D1D;
+  z-index: 1;
   &__inner {
     padding: 16px 24px;
   }

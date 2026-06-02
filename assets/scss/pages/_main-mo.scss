@@ -2,6 +2,7 @@
 @use '../base/variables' as *;
 
 .main {
+  padding-top: 100dvh;
   background: $white;
   // main section common
   .section {    
@@ -35,7 +36,9 @@
     }
 
     &--hero {
-      position: sticky;
+      position: fixed;
+      inset: 0;
+      left: 0;
       top: 0;
       z-index: 0;
       height: 100dvh;
