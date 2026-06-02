@@ -14951,8 +14951,8 @@ body.sheet-open {
   gap: 8px;
   position: absolute;
   left: 24px;
-  top: 30%;
-  transform: translateY(-30%);
+  top: 35%;
+  transform: translateY(-35%);
   z-index: 1;
 }
 .main .hero-swiper__title {
@@ -14976,8 +14976,8 @@ body.sheet-open {
   gap: 8px;
   position: absolute;
   left: 24px;
-  bottom: 35%;
-  transform: translateY(-35%);
+  bottom: 32%;
+  transform: translateY(-32%);
   z-index: 1;
 }
 .main .hero-swiper__fraction {
