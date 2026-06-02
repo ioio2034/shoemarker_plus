@@ -34,9 +34,8 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     @include tablet {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 16px;
-      row-gap: 24px;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 24px;
       padding: 24px;
     }
   }
@@ -50,13 +49,17 @@
     aspect-ratio: 411 / 500;
     border-radius: 6px;
     @include tablet {
-      aspect-ratio: 163 / 208;
+      aspect-ratio: 342 / 208;
     }
   }
   &__image {
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
+    @include tablet {
+      width: 100%;
+      object-position: center;
+    }
   }
   &__info {
     @include flex-col;

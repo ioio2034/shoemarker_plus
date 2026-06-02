@@ -229,6 +229,16 @@
     left: 24px;
     bottom: 135px;
     z-index: 1;
+    &__icon-wrap {
+      width: 32px;
+      height: 32px;
+    }
+    &__btn {
+      padding: 5px 16px;
+    }
+    &__label {
+      font-size: 12px;
+    }
   }
   .trend {
     // tab
