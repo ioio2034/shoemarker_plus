@@ -14920,17 +14920,14 @@ body.sheet-open {
 }
 .main .hero-swiper__link {
   position: relative;
+  display: block;
+  height: 100dvh;
 }
 .main .hero-swiper__img-box {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding-top: 100dvh;
+  position: absolute;
+  inset: 0;
 }
 .main .hero-swiper__img-box img {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
