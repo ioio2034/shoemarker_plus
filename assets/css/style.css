@@ -14976,8 +14976,8 @@ body.sheet-open {
   gap: 8px;
   position: absolute;
   left: 24px;
-  bottom: 32%;
-  transform: translateY(-32%);
+  top: 66%;
+  transform: translateY(-66%);
   z-index: 1;
 }
 .main .hero-swiper__fraction {
