@@ -15781,6 +15781,9 @@ body.sheet-open {
   flex-shrink: 0;
   padding: 12px 20px;
 }
+.store-finder .map {
+  display: none;
+}
 .store-finder .map__area {
   overflow: hidden;
   height: 128px;
@@ -15801,7 +15804,7 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 245px;
+  max-height: 330px;
   overflow-y: auto;
 }
 .store-finder .store-list__item {

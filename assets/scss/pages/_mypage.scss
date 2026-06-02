@@ -1283,6 +1283,10 @@
     }
   }
   .map {
+    display: none;
+    @include tablet {
+      display: block;
+    }
     &__area {
       overflow: hidden;
       height: 128px;
@@ -1302,11 +1306,11 @@
   .store-list {
     @include flex-col;
     gap: 10px;
-    max-height: 245px;
+    max-height: 330px;
     overflow-y: auto;
     @include tablet {
       gap: 8px;
-      max-height: calc(100dvh - 458px);
+      max-height: calc(100dvh - 518px);
     }
     &__item {
       @include flex(center, space-between);
