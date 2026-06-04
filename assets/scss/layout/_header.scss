@@ -213,7 +213,7 @@
       transition: none !important;
     }
     &.is-active {
-      opacity: 1;
+      opacity: 1 !important;
       pointer-events: auto;
       transform: translateY(0);
 

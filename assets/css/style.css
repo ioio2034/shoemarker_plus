@@ -11365,7 +11365,7 @@ img, video, canvas, svg {
   transition: none !important;
 }
 .brand-dropdown__layer.is-active {
-  opacity: 1;
+  opacity: 1 !important;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -14447,8 +14447,7 @@ body.sheet-open {
 .floating-btns {
   position: fixed;
   right: 0;
-  bottom: 50%;
-  transform: translateY(-50%);
+  bottom: 20px;
   z-index: 1;
   display: inline-flex;
   flex-direction: column;
@@ -14533,7 +14532,6 @@ body.sheet-open {
   }
 }
 .ai-chat-layer {
-  display: none;
   position: fixed;
   inset: 0;
   left: 0;
@@ -14543,6 +14541,10 @@ body.sheet-open {
   height: 100%;
   max-height: 100%;
   z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
 }
 @media (max-width: 1024px) {
   .ai-chat-layer {
@@ -14552,7 +14554,10 @@ body.sheet-open {
   }
 }
 .ai-chat-layer.is-active {
-  display: block;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 .ai-chat-layer__dim {
   position: absolute;
