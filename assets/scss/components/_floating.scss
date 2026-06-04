@@ -4,9 +4,8 @@
 // 플로팅 버튼
 .floating-btns {
   position: fixed;
-  right: 0;
-  bottom: 50%;
-  transform: translateY(-50%);
+  right: 20px;
+  bottom: 20px;
   z-index: 1;
   display: inline-flex;
   flex-direction: column;
@@ -19,12 +18,20 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    &:hover {
+      .ai-chat__btn {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+      }
+    }
   }
   &__icon-wrap {
     width: 40px;
     height: 40px;
+    border-radius: 12px;
     box-shadow: 0 3.373px 26.981px -3.373px rgba(99, 140, 243, 0.32);
-    img {
+    img {      
       height: 100%;
       object-fit: cover;
     }
@@ -38,7 +45,13 @@
     padding: 5px 16px 5px 12px;
     border-radius: 8px;
     background: #1C1F28;
-    box-shadow: 0 0 33.248px 5.479px #3E2487;
+    opacity: 0;
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+    transition: transform .2s ease-in-out, opacity .2s ease;
+    @include tablet {
+      box-shadow: 0 0 33.248px 5.479px #3E2487;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -91,7 +104,6 @@
 }
 // ai-chat layer
 .ai-chat-layer {
-  display: none;
   position: fixed;
   inset: 0;
   left: 0;
@@ -101,6 +113,14 @@
   height: 100%;
   max-height: 100%;
   z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
   @include tablet {
     padding: 40px 32px 0;
     // padding: 57px 24px 0;
@@ -108,7 +128,13 @@
     background-size: cover;
   }
   &.is-active {
-    display: block;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0s linear 0s;
   }
   &__dim {
     position: absolute;
@@ -143,7 +169,10 @@
     }
   }
   &__panel {
-    @include absolute-center;
+    // @include absolute-center;
+    position: absolute;
+    right: 68px;
+    bottom: 68px;
     width: 652px;
     max-height: 804px;
     padding: 40px 40px 46px;

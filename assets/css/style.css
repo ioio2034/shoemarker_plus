@@ -14446,7 +14446,7 @@ body.sheet-open {
 
 .floating-btns {
   position: fixed;
-  right: 0;
+  right: 20px;
   bottom: 20px;
   z-index: 1;
   display: inline-flex;
@@ -14459,9 +14459,14 @@ body.sheet-open {
   align-items: center;
   gap: 12px;
 }
+.ai-chat__trigger:hover .ai-chat__btn {
+  opacity: 1;
+  transform: translateX(0);
+}
 .ai-chat__icon-wrap {
   width: 40px;
   height: 40px;
+  border-radius: 12px;
   box-shadow: 0 3.373px 26.981px -3.373px rgba(99, 140, 243, 0.32);
 }
 .ai-chat__icon-wrap img {
@@ -14478,7 +14483,14 @@ body.sheet-open {
   padding: 5px 16px 5px 12px;
   border-radius: 8px;
   background: #1C1F28;
-  box-shadow: 0 0 33.248px 5.479px #3E2487;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .ai-chat__btn {
+    box-shadow: 0 0 33.248px 5.479px #3E2487;
+  }
 }
 .ai-chat__btn::before {
   content: "";
@@ -14598,9 +14610,8 @@ body.sheet-open {
 }
 .ai-chat-layer__panel {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 68px;
+  bottom: 68px;
   width: 652px;
   max-height: 804px;
   padding: 40px 40px 46px;

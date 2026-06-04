@@ -3,6 +3,14 @@
 
 .main {
   background: $white;
+  & + .floating-btns {
+    align-items: flex-end;
+    .ai-chat {
+      &__icon-wrap {
+        order: 2;
+      }
+    }
+  }
   // main section common
   .section {    
     background: $white;
