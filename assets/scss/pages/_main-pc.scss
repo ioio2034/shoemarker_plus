@@ -139,14 +139,16 @@
       flex-direction: column;
       gap: 8px;
       @include absolute-center;
-      
       max-width: 1280px;
       width: 100%;
-      padding: 0 24px;
+      // padding: 0 24px;
       margin: 0 auto;
       z-index: 1;
+      img {
+        max-width: 570px;
+      }
     }
-    &__title {
+    &__title {      
       color: $white;
       font-family: 'Odibee Sans';
       font-size: 160px;
@@ -159,9 +161,9 @@
     &__desc {
       color: $white;
       font-family: $font-en;
-      font-size: 40px;
+      font-size: 35px;
       font-weight: 400;
-      line-height: 100%;
+      line-height: 120%;
       opacity: 0;
       -webkit-transform: translateX(20px);
       transform: translateX(20px);

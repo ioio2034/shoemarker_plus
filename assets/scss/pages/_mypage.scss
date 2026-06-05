@@ -2652,3 +2652,303 @@
     }
   }
 }
+
+//멤버십 안내 레이어
+.membership {
+  @include tablet {
+    padding: 0 8px;
+  }
+  .grade-card {
+    padding: 32px 24px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    @include bgimage('bg_membership', 'jpg');
+    background-size: cover;
+    @include tablet {
+      margin: -24px -24px 0;
+      border-radius: 0;
+    }
+    // 등급 안내
+    &__name {
+      color: $white;
+      font-size: 18px;
+      line-height: 26px;
+      @include tablet {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+    &__grade {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $white;
+      font-size: 18px;
+      line-height: 26px;
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &__grade-name {
+      margin-top: 4px;
+      color: $white;
+      font-family: $font-en;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 100%;
+      @include tablet {
+        font-size: 24px;
+      }
+    }
+    &__desc {
+      margin-top: 8px;
+      color: $white;
+      font-size: 14px;
+      line-height: 20px;
+      opacity: 0.8;
+      @include tablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+  // 등급
+  .grade-progress {
+    padding: 10px 16px;
+    margin-top: 30px;
+    border-radius: 6px;
+    background: $white;
+    @include tablet {
+      padding: 16px;
+      margin-top: 24px;
+    }
+    // 등급 정보
+    &__info {
+      @include flex(center, space-between);
+      margin-bottom: 16px;
+    }
+    &__info-item {
+      @include flex-col;
+      &:last-child {
+        text-align: right;
+      }
+    }
+    &__label {
+      display: inline-block;
+      margin-bottom: 4px;
+      color: $grayscale-800;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      @include tablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    &__sub,
+    &__amount {
+      color: $grayscale-600;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      @include tablet {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    // 등급 progress bar
+    &__bar {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    &__bar-track {
+      width: 100%;
+      height: 4px;
+      border-radius: 999px;
+      background: #DCE3EB;
+    }
+    &__bar-fill {
+      display: block;
+      height: 100%;
+      background: $grayscale-800;
+      border-radius: 99px;
+    }
+    // 말풍선
+    &__msg {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    &__msg-arrow {
+      display: block;
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-bottom-color: $gray-90;
+      z-index: 1;
+    }
+    &__msg-text {
+      display: block;
+      padding: 4px 8px;
+      border-radius: 99px;
+      background: $gray-90;
+      color: $white;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: -0.14px;  
+      text-align: center;
+      @include tablet {
+        padding: 3px 4px;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0
+      }
+    }
+  }
+  
+  // 등급별 혜택 안내
+  .benefit {
+    @include flex-col;
+    gap: 10px;
+    @include tablet {
+      gap: 8px;
+      margin-top: 32px;
+    }
+    &__title {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__tab {
+      .tab__list {
+        gap: 4px;
+      }
+      .tab__btn {
+        min-height: 40px;
+        padding: 8px;
+        line-height: 20px;
+        letter-spacing: 0;
+        &.is-active {
+          background: $gray-90;
+          font-weight: 600;
+        }
+      }
+      .tab__panels {
+        padding-top: 24px;
+      }
+      .tab__panel {
+        gap: 8px;
+      }
+    }
+    &__subtitle {
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      @include tablet {
+        font-weight: 500;
+      }
+    }
+    &__list {
+      @include flex-col;
+      gap: 4px;
+    }
+    &__item {
+      display: flex;
+      gap: 15px;
+      @include tablet {
+        gap: 8px;
+      }
+    }
+    &__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 60px;
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      @include tablet {
+        min-width: 52px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        letter-spacing: 0;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        @include tablet {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      &--point {
+        &::before {
+          @include bgimage('icon_point', 'svg');
+          background-size: cover;
+        }
+      }
+      &--coupon {
+        &::before {
+          @include bgimage('icon_coupon_02', 'svg');
+          background-size: cover;
+        }
+      }
+    }
+    &__desc {
+      color: $grayscale-600;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      @include tablet {
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0;
+      }
+      &::before {
+        content: '·';
+        margin-right: 4px;
+      }
+    }
+  }
+  // 안내
+  .notice {
+    @include flex-col;
+    gap: 8px;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: $gray-5;
+    &__title {
+      color: $gray-90;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: -0.14px;
+      @include tablet {
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+    }
+    .list {
+      li {
+        color: $grayscale-600;
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
