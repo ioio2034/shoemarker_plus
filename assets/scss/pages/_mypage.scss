@@ -3199,6 +3199,12 @@
           background-size: cover;
         }
       }
+      &--exchange {
+        &::before {
+          @include bgimage('icon_ruler', 'svg');
+          background-size: cover;
+        }
+      }
     }
     &__desc {
       color: $grayscale-600;

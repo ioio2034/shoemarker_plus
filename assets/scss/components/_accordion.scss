@@ -102,4 +102,36 @@
       }
     }
   }
+  // FAQ
+  &--faq {
+    .accordion__item {
+      padding: 0;
+    }
+    .accordion__header {
+      gap: 12px;
+      padding: 16px 0;
+      &::before {
+        content: 'Q';
+        display: block;
+        color: $gray-80;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        flex-shrink: 0;
+      }
+    }
+    .accordion__title {
+      margin-top: 4px;
+      font-weight: 600;
+    }
+    .accordion__body {
+      padding: 16px;
+      border-top: 1px solid $gray-30;
+      background: $grayscale-50;
+    }
+    .accordion__answer {
+      color: $grayscale-600;
+      font-weight: 400;
+    }
+  }
 }

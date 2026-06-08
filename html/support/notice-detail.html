@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-notice has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner"> 
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">공지사항</h2>
+          </div>
+
+          <div class="notice-detail">
+            <div class="notice-detail__header">
+              <h3 class="notice-detail__name">슈마커 플러스 멤버십 성정 기준 및 혜택 안내</h3>
+              <p class="notice-detail__date">2026.08.01(수)</p>
+            </div>
+            <div class="notice-detail__content">
+              <p>
+                1. 슈머니는 슈마커 온/오프라인 매장(일부매장 제외)에서 슈마커가 지정한 상품 구매시에만 사용이 가능하며,<br>
+                사용가능금액은 기간에 따라 변경됩니다.<br>
+                2. 슈머니는 대여나 양도의 대상이 되지 않으며, 현금화는 불가합니다.<br>
+                따라서 현금이나 물품으로 환불 또는 출금되지 않으며, 반품이나 교환/환불 등으로 발생하는 금액은 슈머니로 재적립됩니다.<br>
+                3. 슈머니 사용 중 기계/전산 오류로 인한 재지급 오류에 대해서 회사는 금액적인 책임을 지지 않으며,<br>
+                사용자의 요청에 의해 추후 개별 지급이 가능합니다.<br>
+                4. 슈머니 잔액은 매년 12월31일 24시에 자동으로 소멸되며, 매년 1월1일 00시에 새로 다시 지급됩니다.<br>
+                5. 기존 회원의 경우 슈머니가 자동으로 지급되며, 그 사용여부는 회원이 결정합니다.<br>
+                6. 슈머니 1일 사용금액과 수량에 대한 제한은 없으나, 회원이 보유한 슈머니 잔액을 초과할 수 없으며, <br>슈머니 사용가능 상품별 지정된 할인금액을 초과할 수 없습니다.
+              </p>
+              <img src="../../assets/images/img_card_sample.png" alt="">
+            </div>
+            <div class="btn-wrap btn-wrap--fixed">
+              <button type="button" class="btn btn--primary btn--lg btn--block">목록</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

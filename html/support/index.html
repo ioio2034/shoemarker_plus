@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-support has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner"> 
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">고객센터</h2>
+          </div>
+
+          <div class="support">
+            <div class="faq">
+              <div class="faq__top">
+                <div class="faq__header">
+                  <h3 class="faq__title">자주 묻는 질문</h3>
+                  <button type="button" class="btn-link">전체보기</button>
+                </div>
+                <div class="faq__search">
+                  <div class="form__search">
+                    <div class="form__field">
+                      <input
+                        type="text"
+                        class="form__input"
+                        placeholder="궁금한 점을 검색해 보세요."
+                        aria-label="FAQ 검색"
+                      />
+                    </div>
+                    <button type="button" class="form__search-btn" aria-label="검색">
+                      <span class="form__search-icon"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="faq__tabs">
+                <li class="faq__tab is-active">
+                  <a href="#" class="faq__tab-link">배송</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">취소/환불</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">반품/교환</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">주문/결제</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">배송</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">취소/환불</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">반품/교환</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">주문/결제</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">배송</a>
+                </li>
+                <li class="faq__tab">
+                  <a href="#" class="faq__tab-link">취소/환불</a>
+                </li>
+              </ul>
+              <div class="faq__list">
+                <div class="accordion accordion--faq">
+                  <div class="accordion__item">
+                    <button type="button" class="accordion__header">
+                      <div class="accordion__question">
+                        <div class="accordion__label">
+                          <span class="accordion__keyword">[상품]</span>
+                          <span>- 총 00건의 내용이 있습니다.</span>
+                        </div>
+                        <p class="accordion__title">
+                          쇼핑몰 사진과 실물의 색상이 다릅니다.
+                        </p>
+                      </div>
+                    </button>
+                    <div class="accordion__collapse">
+                      <div class="accordion__body">
+                        <p class="accordion__answer">
+                          상품 촬영 시 실제 색상과 최대한 유사한 색상을 표현하려고 노력하고 있으나 온라인 쇼핑몰 특성 상 상품이미지는출력되는 모니터 환경에 따라 조금씩 차이가 있는점 참고 부탁드립니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item">
+                    <button type="button" class="accordion__header">
+                      <div class="accordion__question">
+                        <div class="accordion__label">
+                          <span class="accordion__keyword">[상품]</span>
+                          <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                        </div>
+                        <p class="accordion__title">
+                          품절된 상품은 언제 재입고가 되나요?
+                        </p>
+                      </div>
+                    </button>
+                    <div class="accordion__collapse">
+                      <div class="accordion__body">
+                        <p class="accordion__answer">
+                          품절된 상품 및 사이즈에 대한 정확한 재입고 여부 안내가 어려운 점 양해부탁드립니다. <br> 오프라인 재고 확인을 원하실 경우 고객관리팀으로 연락 주시면 신속한 안내 도와드리겠습니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion__item">
+                    <button type="button" class="accordion__header">
+                      <div class="accordion__question">
+                        <div class="accordion__label">
+                          <span class="accordion__keyword">[상품]</span>
+                          <!-- <span>- 총 00건의 내용이 있습니다.</span> -->
+                        </div>
+                        <p class="accordion__title">
+                          모든 제품 정품이 맞나요?
+                        </p>
+                      </div>
+                    </button>
+                    <div class="accordion__collapse">
+                      <div class="accordion__body">
+                        <p class="accordion__answer">
+                          저희 슈마커는 각 브랜드 본사와 정식으로 계약을 맺어 상품 공급을 받는 공식인증업체입니다. <br> 모든 상품 100% 정품이기에 정식 A/S 진행 또한 가능하기에 믿고 구매해주셔도 됩니다. <br> (일부 병행수입 상품일 경우 A/S 진행 불가)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //faq -->
+            <div class="divider"></div>
+
+            <!-- 공지사항 -->
+            <div class="notice">
+              <div class="notice__header">
+                <h3 class="notice__title">공지사항</h3>
+                <button type="button" class="btn-link">전체보기</button>
+              </div>
+              <ul class="notice__list">
+                <li class="notice__item">
+                  <a href="#" class="notice__link">
+                    <span class="notice__text">슈마커 플러스 멤버십 성정 기준 및 혜택 안내 슈마커 플러스 멤버십 성정 기준 및 혜택 안내 슈마커 플러스 멤버십 성정 기준 및 혜택 안내 슈마커 플러스 멤버십 성정 기준 및 혜택 안내</span>
+                  </a>
+                </li>
+                <li class="notice__item">
+                  <a href="#" class="notice__link">
+                    <span class="notice__text">서비스 이용 제한 안내</span>
+                  </a>
+                </li>
+                <li class="notice__item">
+                  <a href="#" class="notice__link">
+                    <span class="notice__text">4.23(수) 시스템 점검 안내</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- //notice -->
+
+            <div class="divider"></div>
+            
+            <!-- 상담원 문의 -->
+            <div class="contact">
+              <h3 class="contact__title">상담원과 직접 이야기해 보세요!</h3>
+              <ul class="contact__list">
+                <li class="contact__item">
+                  <a href="#" class="contact__link">
+                    <div class="contact__info">
+                      <strong class="contact__name">카카오톡 상담하기</strong>
+                      <p class="contact__desc">상담 가능 시간 : 평일 09:00 ~ 16:30</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="contact__item">
+                  <a href="#" class="contact__link">
+                    <div class="contact__info">
+                      <strong class="contact__name">1:1 문의 상담 하기</strong>
+                      <p class="contact__desc">평일 업무시간 외에는 게시판을 이용해 주세요!</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="contact__item">
+                  <a href="tel:0800302809" class="contact__link">
+                    <div class="contact__info">
+                      <strong class="contact__name">080-030-2809</strong>
+                      <p class="contact__desc">상담 가능 시간 : 평일 09:00 ~ 16:30 (점심시간 : 11:50 ~ 13:00)</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- //contact -->
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

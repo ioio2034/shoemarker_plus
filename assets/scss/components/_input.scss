@@ -185,4 +185,36 @@
     height: 20px;
     padding: 0;
   }
+  // search
+  &__search {
+    @include flex(center, space-between);
+    gap: 8px;
+    height: 44px;
+    padding: 14px 12px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+    background: $white;
+    .form__field {
+      flex: 1;
+    }
+    .form__input {
+      height: 20px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+  &__search-btn {
+    @include inline-flex(center, center);
+    width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+  &__search-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    @include bgimage('icon_search_16', 'png');
+    background-size: cover;
+  }
 }
