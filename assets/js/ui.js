@@ -497,7 +497,7 @@ let UI = {
     $sortBtn.on('click', function () {
       const $btn = $(this);
       const isExpanded = $btn.attr('aria-expanded') === 'true';
-      const $layer = $('#' + $btn.attr('aria-controls'));
+      const $layer = $btn.siblings('.sort__layer');
 
       $btn.attr('aria-expanded', !isExpanded);
       $layer.toggleClass('is-open', !isExpanded);
@@ -519,7 +519,7 @@ let UI = {
 
     $(document).on('click', function (e) {
       if (!$(e.target).closest('.sort').length) {
-        $('.sort__btn').attr('aria-expanded', 'false');
+        $sortBtn.attr('aria-expanded', 'false');
         $('.sort__layer').removeClass('is-open');
       }
     });
@@ -746,6 +746,39 @@ let UI = {
         closeLayer();
       });
   },
+  // membership progress
+  membershipProgress: function () {
+    function setMsgPosition() {
+      const $track = $('.grade-progress__bar-track');
+      const $fill  = $('.grade-progress__bar-fill');
+      const $msg   = $('.grade-progress__msg');
+      const $arrow = $('.grade-progress__msg-arrow');
+
+      const trackWidth = $track.outerWidth();
+      const msgWidth   = $msg.outerWidth();
+      const fillPct    = parseFloat($fill[0].style.width);
+      const fillWidth  = trackWidth * (fillPct / 100);
+      const half       = msgWidth / 2;
+
+      const clamped = Math.min(Math.max(fillWidth, half), trackWidth - half);
+      $msg.css('left', clamped + 'px');
+
+      const arrowPadding = 16;
+      const arrowRaw     = half + (fillWidth - clamped);
+      const arrowClamped = Math.min(Math.max(arrowRaw, arrowPadding), msgWidth - arrowPadding);
+      $arrow.css('left', arrowClamped + 'px');
+    }
+
+    $(document).on('click', '.js-modal-open', function () {
+      setTimeout(setMsgPosition, 0);
+    });
+
+    $(window).on('resize', function () {
+      if ($('.grade-progress__bar-track').is(':visible')) {
+        setMsgPosition();
+      }
+    });
+  },
 };
 
 
@@ -772,6 +805,7 @@ $(function () {
   UI.brandFilter();
   UI.brandDropdown();
   UI.aiChatLayer();
+  UI.membershipProgress();
 });
 
 // resize 대응

@@ -2652,6 +2652,298 @@
     }
   }
 }
+// 쿠폰, 포인트함, 슈즈상품권 공통
+.reward-info {
+  @include flex-col;
+  gap: 10px;
+  @include tablet {
+    gap: 8px;
+    padding: 24px 16px;
+  }
+  &__available {
+    @include flex(center, space-between);
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: $gray-80;
+  }
+  &__label {
+    color: $white;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  &__count {
+    color: $white;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__num {
+    font-weight: 600;
+  }
+  &__register {
+    padding: 14px 12px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+  }
+  &__register-btn {
+    @include flex(center, space-between);
+    width: 100%;
+    color: $gray-80;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .js-toggle {
+    &::after {
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+    }
+  }
+  &__register-content {
+    padding-top: 12px;
+    width: 100%;
+    gap: 8px;
+    .form__field {
+      flex: 1;
+    }
+  }
+}
+.reward-cont {
+  margin-top: 40px;
+  @include tablet {
+    margin-top: 24px;
+  }
+  &__tab {
+    .tab__list {
+      padding: 0;
+      @include tablet {
+        padding: 0 24px;
+      }
+    }
+    .tab__panels {
+      padding: 0;
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 16px;
+      }
+    }
+  }
+}
+.reward-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid $gray-30;
+  &--pc {
+    @include tablet {
+      display: none;
+    }
+  }
+  &--mo {
+    display: none;
+    @include tablet {
+      @include flex(center, space-between);
+      flex-direction: row;
+    }
+  }
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .date-range {
+      flex: 1;
+      .form__control {
+        height: 33px;
+        padding: 8px 12px;
+      }
+    }
+  }
+  &__period,
+  &__type {
+    color: $black;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  &__type {
+    &::before {
+      content: '·';
+      display: inline-block;
+      margin-right: 2px;
+    }
+  }
+  &__btn {
+    padding: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+  &__btn-text {
+    color: $grayscale-800;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.48px;
+  }
+  &__btn-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    @include bgimage('icon_filter', 'svg');
+    background-size: cover;
+  }
+}
+.reward-notice {
+  @include flex-col;
+  gap: 8px;
+  padding: 16px;
+  margin-top: 40px;
+  border-radius: 6px;
+  background: $gray-5;
+  @include tablet {
+    margin-top: 24px;
+  }
+  &__title {
+    color: $gray-90;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+  }
+  .list {
+    li {
+      color: $grayscale-600;
+      letter-spacing: -0.14px;
+    }
+  }
+}
+
+// 쿠폰함
+.coupon {
+  margin-bottom: 20px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    @include tablet {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 8px;
+      padding: 0 24px;
+    }
+  }
+  &__item {
+    @include flex(center, space-between);
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid $gray-30;
+  }
+  &__item-body {
+    @include flex-col;
+  }
+  &__item-name {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__item-discount {
+    display: inline-flex;
+    align-items: baseline;
+  }
+  &__item-num {
+    color: $red;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+  &__item-unit {
+    color: $red;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  &__item-period {
+    display: inline-block;
+    margin-top: 4px;
+    color: $grayscale-500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  &__item-btn {
+    flex-shrink: 0;
+    @include inline-flex(center, center);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid $gray-80;
+    color: $gray-80;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+}
+// 포인트함
+.point {
+  .reward-cont {
+    @include tablet {
+      padding: 24px;
+      margin-top: 0;
+    }
+    &__tab {
+      .tab__list {
+        @include tablet {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .btn-wrap {
+    @include tablet {
+      margin-top: 24px;
+    }
+  }
+  &__item {
+    @include flex(center, space-between);
+    padding: 16px 0;
+    border-bottom: 1px solid $gray-30;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  &__item-body {
+    @include flex-col;
+    gap: 2px;
+  }
+  &__item-type {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  &__item-date,
+  &__item-desc {
+    color: $gray-70;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__item-amount {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    &--plus {
+      color: #2582E5;
+    }
+    &--minus {
+      color: #FE4C58;
+    }
+  }
+}
 
 //멤버십 안내 레이어
 .membership {

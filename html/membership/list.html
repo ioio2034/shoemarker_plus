@@ -25,11 +25,11 @@
           <picture>
             <source
               media="(max-width: 1024px)"
-              srcset="../../assets/images/img_brand_visual_mo.jpg"
+              srcset="../../assets/images/img_membership_visual_mo.jpg"
             />
             <img
-              src="../../assets/images/img_brand_visual_pc.jpg"
-              alt="브랜드 비주얼 이미지"
+              src="../../assets/images/img_membership_visual_pc.jpg"
+              alt="멤버십 전용관 비주얼 이미지"
               class="styling-visual__img"
             />
           </picture>
@@ -40,11 +40,10 @@
       <section class="brand-tab">
         <div class="brand-tab__list" role="tablist">
           <!-- 활성화 상태 is-active -->
-          <button type="button" role="tab" class="brand-tab__btn">브랜드 홈</button>
-          <button type="button" role="tab" class="brand-tab__btn is-active">러닝화</button>
-          <button type="button" role="tab" class="brand-tab__btn">스니커즈</button>
-          <button type="button" role="tab" class="brand-tab__btn">상의</button>
-          <button type="button" role="tab" class="brand-tab__btn">하의</button>
+          <button type="button" role="tab" class="brand-tab__btn">ALL</button>
+          <button type="button" role="tab" class="brand-tab__btn is-active">Running</button>
+          <button type="button" role="tab" class="brand-tab__btn">Life style</button>
+          <button type="button" role="tab" class="brand-tab__btn">Training</button>
         </div>
       </section>
 
@@ -74,6 +73,48 @@
                   <span class="btn_reset__text">초기화</span>
                   <span class="btn-reset__icon"></span>
                 </button>
+              </div>
+              <div class="brand-filter__selected">
+                <div class="filter-tags">
+                  <ul class="filter-tags__list">
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">남</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">런닝화</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">00만원 이상</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">270mm</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">블랙</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">00만원 미만</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <ul class="brand-filter__list">
                 <li class="brand-filter__item is-open">
@@ -261,6 +302,40 @@
                 <button type="button" class="brand-filter__btn js-bottom-sheet-open" data-target="#brandFilterSheet">색상</button>
                 <button type="button" class="brand-filter__btn js-bottom-sheet-open" data-target="#brandFilterSheet">가격</button>
                 <button type="button" class="brand-filter__btn js-bottom-sheet-open" data-target="#brandFilterSheet">브랜드</button>
+              </div>
+              <div class="brand-filter__selected">
+                <div class="brand-filter__tags-label">검색결과</div>
+                <div class="filter-tags">
+                  <ul class="filter-tags__list">
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">남</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">런닝화</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">00만원 이상</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                    <li class="filter-tags__item">
+                      <span class="filter-tags__text">270mm</span>
+                      <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                        <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <button type="button" class="btn-reset" aria-label="필터 초기화">
+                  <span class="btn-reset__icon"></span>
+                </button>
               </div>
             </div>
             <div class="divider"></div>

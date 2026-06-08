@@ -39,6 +39,40 @@
       padding: 24px;
     }
   }
+  &__item {
+    &.is-closed {
+      .event-card {
+        pointer-events: none;
+        &__thumb {
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+          }
+          &::after {
+            content: "이벤트가 종료되었습니다.";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+            font-size: 18px;
+            line-height: 26px;
+            z-index: 2;
+            @include tablet {
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .event-card {
   @include flex-col;
@@ -193,6 +227,67 @@
     &::before {
       content: '·';
       display: inline-block;
+    }
+  }
+
+  // 기획전 상품
+  .promo-prod {
+    margin-top: 40px;
+    @include tablet {
+      margin: 32px 0;
+    }
+    .tab__list {
+      padding: 0;
+      @include tablet {
+        padding: 0 24px;
+      }
+    }
+    .tab__panels {
+      padding: 20px 0 0;
+      @include tablet {
+        padding: 24px 0 0;
+      }
+    }
+    &__content {
+      @include flex-col;
+      gap: 16px;
+      @include tablet {
+        padding: 0 24px;
+      }
+    }
+    &__header {
+      @include flex(center, space-between)
+    }
+    &__count {
+      color: $grayscale-800;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 140%;
+      letter-spacing: -0.16px;
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+      }
+    }
+    &__count-num {
+      font-weight: 600;
+    }
+    &__sort {
+      .sort__layer {
+        left: auto;
+        right: 0;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 16px;
+      row-gap: 40px;
+      @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 32px;
+      }
     }
   }
 }

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-mypage has-lnb">
+
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">쿠폰함</h2>
+          </div>
+
+          <div class="coupon">
+
+            <div class="reward-info">
+              <div class="reward-info__available">
+                <span class="reward-info__label">사용가능 쿠폰</span>
+                <span class="reward-info__count">
+                  <span class="reward-info__num">11</span><span class="reward-info__unit">개</span>
+                </span>
+              </div>
+              <div class="reward-info__register">
+                <button type="button" class="reward-info__register-btn js-toggle" aria-expanded="false"  data-target="#coupon-detail">
+                  <span class="benefit-detail__name">쿠폰 등록하기</span>
+                </button>
+                <div class="reward-info__register-content js-toggle__content" id="coupon-detail">
+                  <div class="form__field">
+                    <input type="text" id="input1" class="form__input" value="" placeholder="쿠폰번호를 입력해 주세요." />
+                  </div>
+                  <button type="button" class="btn btn--lg btn--line btn--secondary">등록하기</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="divider"></div>
+
+            <div class="reward-cont">
+              <div class="reward-cont__tab tab tab--pill js-tabs">
+                <!-- 탭 메뉴 -->
+                <div class="tab__list" role="tablist">
+                  <!-- 활성화 상태 is-active -->
+                  <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">
+                    사용가능 쿠폰
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    사용완료 쿠폰
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    다운로드 가능 쿠폰
+                  </button>
+                  <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">
+                    사용기간 임박 쿠폰
+                  </button>
+                </div>
+                <!-- 탭 컨텐츠 -->
+                <div class="tab__panels">
+                  <div class="tab__panel js-tab-panel is-active">
+                    <ul class="coupon__list">
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <!-- 쿠폰이 없을 때 -->
+                    <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">쿠폰이 없습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <ul class="coupon__list">
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab__panel js-tab-panel">
+                    <ul class="coupon__list">
+                      <li class="coupon__item">
+                        <div class="coupon__item-body">
+                          <span class="coupon__item-name">APP 첫 로그인 쿠폰</span>
+                          <strong class="coupon__item-discount">
+                            <span class="coupon__item-num">30</span>
+                            <span class="coupon__item-unit">%</span>
+                          </strong>
+                          <span class="coupon__item-period">2026.06.10 ~ 2026.06.30</span>
+                        </div>
+                        <button type="button" class="coupon__item-btn">쿠폰받기</button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="btn-wrap btn-wrap--fixed">
+            <button type="button" class="btn btn--primary">쿠폰 전체 다운로드</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>
