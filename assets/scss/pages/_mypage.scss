@@ -1644,7 +1644,9 @@
 }
 // 회원정보 관리
 .pw-confirm {
-  padding: 24px;
+  @include tablet {
+    padding: 24px;
+  }
   &__title {
     margin-bottom: 8px;
     color: $gray-80;
@@ -2272,6 +2274,7 @@
     border: 1px solid $gray-30;
     border-radius: 6px;
     @include tablet {
+      gap: 24px;
       padding: 24px;
       border: 0;
       border-radius: 0;
@@ -2399,7 +2402,6 @@
 }
 // 상품 Q&A 상품 조회 모달
 .product-search {
-  padding: 0 0 20px;
   @include tablet {
     padding: 4px 8px 0;
   }
@@ -2817,8 +2819,9 @@
   }
   .list {
     li {
-      color: $grayscale-600;
-      letter-spacing: -0.14px;
+      color: $grayscale-500;
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 }
@@ -2941,6 +2944,74 @@
     }
     &--minus {
       color: #FE4C58;
+    }
+  }
+}
+// 회원탈퇴
+.withdraw {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    border: 1px solid $gray-30;
+    border-radius: 6px;
+    @include tablet {
+      gap: 24px;
+      padding: 24px;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+  &__reason {
+    .textarea {
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 12px;
+      }
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    color: $gray-80;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    @include tablet {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+  &__notice {
+    // @include flex-col;
+    // gap: 8px;
+    
+    .list {
+      padding: 16px;
+      border-radius: 6px;
+      background: $gray-10;
+      li {
+        color: $gray-70;
+      }
+    }
+  }
+  &__notice-title {
+    color: $gray-90;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+  }
+  .btn-wrap {
+    margin-top: 40px;
+    @include tablet {
+      margin-top: 0;
     }
   }
 }

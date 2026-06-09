@@ -16147,9 +16147,6 @@ body.sheet-open {
 .product-review .review-item__footer .btn {
   flex-shrink: 0;
 }
-.pw-confirm {
-  padding: 24px;
-}
 .pw-confirm__title {
   margin-bottom: 8px;
   color: #2D2D2D;
@@ -16659,9 +16656,6 @@ body.sheet-open {
   margin-top: 20px;
 }
 
-.product-search {
-  padding: 0 0 20px;
-}
 .product-search .order-card__date {
   padding-bottom: 10px;
   margin-bottom: 20px;
@@ -16941,8 +16935,9 @@ body.sheet-open {
   letter-spacing: -0.14px;
 }
 .reward-notice .list li {
-  color: #666666;
-  letter-spacing: -0.14px;
+  color: #808080;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .coupon {
@@ -17046,6 +17041,43 @@ body.sheet-open {
 }
 .point__item-amount--minus {
   color: #FE4C58;
+}
+
+.withdraw__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  border: 1px solid #D8D8D8;
+  border-radius: 6px;
+}
+.withdraw__reason .textarea {
+  margin-top: 20px;
+}
+.withdraw__title {
+  margin-bottom: 10px;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.withdraw__notice .list {
+  padding: 16px;
+  border-radius: 6px;
+  background: #F0F0F0;
+}
+.withdraw__notice .list li {
+  color: #555555;
+}
+.withdraw__notice-title {
+  color: #1D1D1D;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+}
+.withdraw .btn-wrap {
+  margin-top: 40px;
 }
 
 .membership .grade-card {
@@ -20689,6 +20721,10 @@ body.sheet-open {
 }
 .notice-detail .btn-wrap {
   margin-top: 40px;
+}
+
+.page-launch .section__header {
+  display: none;
 }
 
 #wrap {
