@@ -1,0 +1,219 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.page-launch {
+  .section {
+    &__header {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+}
+
+// 런칭관 홈
+.launch {
+  @include flex-col;
+  gap: 40px;
+  // 런칭 제품 슬라이드
+  .launch-slider {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 600px;
+    border-bottom: 1px solid $gray-30;
+    @include tablet {
+      display: none;
+    }
+    &__nav {
+      @include flex-col;
+      flex-shrink: 0;
+      width: 273px;
+      padding: 32px 0 0;      
+    }
+    &__nav-title {
+      margin-bottom: 50px;
+      color: $gray-80;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -1px;
+    }
+    &__nav-list {
+      @include flex-col;
+      gap: 24px;
+    }
+    &__nav-item {
+      position: relative;
+      padding-left: 47px;
+      color: $gray-60;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      transition: all 0.2s;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px;
+        height: 2px;
+        background: $gray-80;
+        opacity: 0;
+        transform: translate(-20px, -50%);
+        transition: all .5s cubic-bezier(.4,0,.2,1);
+      }
+      &.is-active {
+        color: $gray-80;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 26px;
+        &::before {
+          opacity: 1;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+    &__stage {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+    }
+    &__swiper {
+      position: absolute;
+      inset: 0;
+      .swiper-slide {
+        overflow: hidden;
+        padding: 64px 0 50px 40px;
+      }      
+    }
+    &__slide-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  // 런칭 제품 리스트
+  .launch-content {
+    @include flex-col;
+    gap: 20px;
+    &__title {
+      color: $gray-80;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: -1px;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 40px;
+      @include tablet {
+        @include flex-col;
+        gap: 16px;
+      }
+    }
+    &__item {
+      &.is-closed {
+        .launch-card {
+          pointer-events: none;
+          &__thumb {
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              inset: 0;
+              background-color: rgba(0, 0, 0, 0.6);
+              z-index: 1;
+            }
+            &::after {
+              content: "런칭이 종료되었습니다.";
+              position: absolute;
+              inset: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: $white;
+              font-size: 18px;
+              line-height: 26px;
+              z-index: 2;
+              @include tablet {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .launch-card {
+      @include flex-col;
+      &__thumb {
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 400 / 536;
+        @include tablet {
+          aspect-ratio: 390 / 236;
+        }
+      }
+      &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &__info {
+        @include flex(center, space-between);
+        gap: 4px;
+        padding: 16px 0;
+        @include tablet {
+          padding: 16px 24px;
+        }
+      }
+      &__name {
+        color: $gray-80;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        @include tablet {
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+        }
+      }
+      &__badge {
+        @include inline-flex(center, center);
+        flex-shrink: 0;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        &--ready {
+          background: $gray-50;
+          color: $white;
+        }
+        &--selling {
+          background: $gray-90;
+          color: $white;
+        }
+        &--ended {
+          background: $gray-30;
+          color: $gray-50;
+        }
+      }
+    }
+  }
+}
+
+// 런칭관 상세
+.launch-detail {}

@@ -20869,6 +20869,101 @@ body.sheet-open {
   -o-object-position: center;
      object-position: center;
 }
+.launch .launch-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.launch .launch-content__title {
+  color: #2D2D2D;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -1px;
+}
+.launch .launch-content__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+.launch .launch-content__item.is-closed .launch-card {
+  pointer-events: none;
+}
+.launch .launch-content__item.is-closed .launch-card__thumb {
+  position: relative;
+}
+.launch .launch-content__item.is-closed .launch-card__thumb::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.launch .launch-content__item.is-closed .launch-card__thumb::after {
+  content: "런칭이 종료되었습니다.";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 26px;
+  z-index: 2;
+}
+.launch .launch-content .launch-card {
+  display: flex;
+  flex-direction: column;
+}
+.launch .launch-content .launch-card__thumb {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 400/536;
+}
+.launch .launch-content .launch-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.launch .launch-content .launch-card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 16px 0;
+}
+.launch .launch-content .launch-card__name {
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+}
+.launch .launch-content .launch-card__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+.launch .launch-content .launch-card__badge--ready {
+  background: #8E8E8E;
+  color: #FFFFFF;
+}
+.launch .launch-content .launch-card__badge--selling {
+  background: #1D1D1D;
+  color: #FFFFFF;
+}
+.launch .launch-content .launch-card__badge--ended {
+  background: #D8D8D8;
+  color: #8E8E8E;
+}
+
 #wrap {
   min-width: 1280px;
 }

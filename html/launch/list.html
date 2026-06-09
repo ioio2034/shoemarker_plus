@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-launch">
+
+      <section class="section">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">런칭관</h2>
+            <div class="section__util">
+              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
+                <span class="btn-icon__icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="launch">
+            <!-- 런칭 제품 슬라이드 -->
+            <div class="launch-slider">
+              <!-- nav : data-name 기준으로 nav-item 생성 -->
+              <nav class="launch-slider__nav">
+                <h3 class="launch-slider__nav-title">런칭 제품</h3>
+                <ul class="launch-slider__nav-list" id="launchSliderNavList"></ul>
+              </nav>
+
+              <div class="launch-slider__stage">
+                <!-- swiper -->
+                <div class="swiper launch-slider__swiper" id="launchSliderSwiper">
+                  <div class="swiper-wrapper">
+                    <!-- data-name : 왼쪽 네비에 표시될 상품명 -->
+                    <div class="swiper-slide" data-name="나이키 에어맥스 모토 2">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 에어맥스 모토 2"/>
+                    </div>
+                    <div class="swiper-slide" data-name="나이키 알파플라이 3">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 알파플라이 3"/>
+                    </div>
+                    <div class="swiper-slide" data-name="나이키 G.T. 컷4 '빅터 웹반야마'">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 G.T. 컷4 '빅터 웹반야마'"/>
+                    </div>
+                    <div class="swiper-slide" data-name="나이키 에어 조던">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 에어 조던"/>
+                    </div>
+                    <div class="swiper-slide" data-name="나이키 페가수스 42">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 페가수스 42"/>
+                    </div>
+                    <div class="swiper-slide" data-name="나이키 에어맥스 95 '빅 버블'">
+                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 에어맥스 95 '빅 버블'"/>
+                    </div>
+                  </div>
+                  <!-- //swiper-wrapper -->
+                </div>
+              </div>
+            </div>
+            <!-- //launch-slider -->
+            <div class="launch-content">
+              <h3 class="launch-content__title">런칭관 준비중</h3>
+              <ul class="launch-content__list">
+                <!-- 종료 시 .launch-content__item에 is-closed 클래스 추가 -->
+                <li class="launch-content__item">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_01_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_01_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">나이키 ZOOMX 출시</span>
+                      <span class="launch-card__badge launch-card__badge--selling">판매중</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="launch-content__item">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_02_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_02_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">머큐리얼 슈퍼 플라이 출시 예정</span>
+                      <span class="launch-card__badge launch-card__badge--ready">준비중</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="launch-content__item">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_03_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_03_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">에어조던3</span>
+                      <span class="launch-card__badge launch-card__badge--ready">준비중</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="launch-content__item is-closed">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_01_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_01_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">나이키 ZOOMX 출시</span>
+                      <span class="launch-card__badge launch-card__badge--ended">종료</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="launch-content__item is-closed">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_02_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_02_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">머큐리얼 슈퍼 플라이 출시 예정</span>
+                      <span class="launch-card__badge launch-card__badge--ended">종료</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="launch-content__item is-closed">
+                  <a href="#" class="launch-card">
+                    <div class="launch-card__thumb">
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_thumb_03_mo.jpg"
+                          class="launch-card__img"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_thumb_03_pc.jpg"
+                          alt=""
+                          class="launch-card__img"
+                        />
+                      </picture>
+                    </div>
+                    <div class="launch-card__info">
+                      <span class="launch-card__name">에어조던3</span>
+                      <span class="launch-card__badge launch-card__badge--ended">종료</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- //launch-content -->
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+    
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+
+    window.addEventListener('load', function () {
+      const INITIAL_SLIDE = 0;
+      const slides = document.querySelectorAll('#launchSliderSwiper .swiper-slide');
+      const navList = document.getElementById('launchSliderNavList');
+
+      slides.forEach((slide, i) => {
+        const item = document.createElement('li');
+        item.className = 'launch-slider__nav-item'
+          + (i === INITIAL_SLIDE ? ' is-active' : '');
+        item.textContent = slide.dataset.name;
+        item.dataset.idx = i;
+        navList.appendChild(item);
+      });
+
+      slides[INITIAL_SLIDE].classList.add('is-visible');
+      const mainSw = new Swiper('#launchSliderSwiper', {
+        direction: 'vertical',
+        effect: 'coverflow',
+        coverflowEffect: {
+          rotate: 20,
+          depth: 100,
+          slideShadows: false,
+        },
+        speed: 680,
+        grabCursor: true,
+        initialSlide: INITIAL_SLIDE,
+        mousewheel: { sensitivity: 1, thresholdDelta: 30 },
+        keyboard: { enabled: true },        
+        on: {
+          slideChangeTransitionStart(sw) {
+            document.querySelectorAll('.launch-slider__nav-item').forEach((n, i) => {
+              n.classList.toggle('is-active', i === sw.realIndex);
+            });
+          },
+        },
+      });
+
+      navList.addEventListener('click', (e) => {
+        const item = e.target.closest('.launch-slider__nav-item');
+        if (item) mainSw.slideTo(+item.dataset.idx);
+      });
+    });
+  </script>
+</body>
+</html>
