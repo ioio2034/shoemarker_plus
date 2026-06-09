@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-mypage has-lnb">
+      
+      <!-- lnb -->
+      <aside id="lnb" class="lnb"></aside>
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">회원 탈퇴</h2>
+          </div>
+
+          <div class="withdraw">
+            <div class="withdraw__inner">
+              <div class="withdraw__reason">
+                <h3 class="withdraw__title">회원 탈퇴 사유를 선택해 주세요!</h3>
+                <div class="select__box">
+                  <select id="withdrawReason" class="select__field">
+                    <!-- placeholder -->
+                    <option value="" disabled selected hidden>사유를 선택해 주세요!</option>
+                    <option value="">상품 다양성 / 가격 불만</option>
+                    <option value="">교환/환불/품질 불만</option>
+                    <option value="">이용 빈도 낮음</option>
+                    <option value="">배송지연</option>
+                    <option value="">콜센터 대응 불만</option>
+                    <option value="">회원 혜택 / 쇼핑 혜택 부족</option>
+                    <option value="">1:1문의, Q&A 대응 불만</option>
+                    <option value="">기타, 단순 탈퇴</option>
+                  </select>
+                </div>
+              </div>
+              <div class="withdraw__select">
+                <h3 class="withdraw__title">탈퇴내용 작성</h3>
+                <div class="textarea">
+                  <textarea
+                    name="inquiryContent"
+                    id="inquiryContent" 
+                    class="textarea__field"
+                    placeholder="탈퇴하시는 사유를 입력해 주세요!"
+                    maxlength="200"
+                  ></textarea>
+                  <div class="textarea__count">
+                    <span class="textarea__count-current" id="currentCount">0</span>
+                    <span class="textarea__count-max"> / 200</span>
+                  </div>
+                </div>
+              </div>
+              <div class="withdraw__notice">
+                <h3 class="withdraw__notice-title">탈퇴 하시기 전 아래 내용을 확인해 주세요!</h3>
+                <ul class="list list--dot">
+                  <li>진행 중인 주문건이 있는 경우 배송확인이 끝난 후에 다시 탈퇴 신청을 부탁드립니다.</li>
+                  <li>탈퇴 즉시 그동안 보유하셨던 멤버십 등급, 거래정보, 쿠폰등의 정보가 삭제됩니다.</li>
+                  <li>회원 탈퇴 후에는 그 어떤 경우에도 철회/취소가 불가능합니다.</li>
+                  <li>동일한 아이디로 재 가입이 불가능합니다.</li>
+                  <li>회원 탈퇴 후 1개월동안(셀러의 경우 2개월) 회원의 성명, 아이디, 이메일(E-mail), 연락처 정보를 보관 하며, 로그기록, 접속아이피(IP)정보는 12개월간 보관합니다.</li>
+                  <li>거래 정보가 있는 경우, 판매 거래 정보관리를 위하여 구매와 관련된 상품정보, 아이디, 거래 내역 등에 대한 기본 정보는 탈퇴 후 5년간 보관합니다.</li>
+                </ul>
+              </div>
+              <div class="form__field is-required">
+                <label for="input1" class="form__label">비밀번호 입력</label>
+                <input type="password" id="input1" class="form__input" placeholder="비밀번호를 입력해 주세요.">
+              </div>
+
+            </div>
+            <div class="btn-wrap btn-wrap--fixed">
+              <button type="button" class="btn btn--line btn--secondary">취소하기</button>
+              <button type="button" class="btn btn--primary">탈퇴하기</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "lnb", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

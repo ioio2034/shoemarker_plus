@@ -308,3 +308,21 @@ body {
     }
   }
 }
+
+// 회원 탈퇴 완료
+.page-withdraw-done {
+  .section {
+    &__header {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+    &__inner {
+      padding: 80px 0;
+      @include tablet {
+        padding: 62px 0 calc(88px + env(safe-area-inset-bottom));
+      }
+    }
+  }
+}

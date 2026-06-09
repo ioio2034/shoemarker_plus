@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <!-- lnb 있을 경우 has-lnb 추가 -->
+    <main class="container page-mypage page-withdraw-done">
+
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
+        <div class="section__inner">
+          <!-- 타이틀 -->
+          <div class="section__header">
+            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+              <span class="btn-icon__icon"></span>
+            </button>
+            <h2 class="section__title">회원 탈퇴 완료</h2>
+          </div>
+
+          <div class="withdraw-done">
+            <h3 class="withdraw-done__title">회원 탈퇴 완료</h3>
+            <div class="withdraw-done__content">
+              <img src="../../assets/images/icon_user_x.svg" alt="" class="withdraw-done__img">
+              <h4 class="withdraw-done__heading">그동안 슈마커 플러스를 <br>이용해 주셔서 감사합니다</h4>
+              <p class="withdraw-done__desc">고객님의 회원탈퇴 처리가 완료되었습니다. <br>보다 나은 서비스로 보답할 수 있는 <br class="is-mo">슈마커플러스가 되겠습니다.</p>
+            </div>
+            <div class="btn-wrap btn-wrap--fixed">
+              <button type="button" class="btn btn--primary">홈으로 가기</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+  </div>
+
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

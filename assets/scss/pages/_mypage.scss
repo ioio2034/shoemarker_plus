@@ -2952,7 +2952,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     padding: 20px;
     border: 1px solid $gray-30;
     border-radius: 6px;
@@ -2961,14 +2961,6 @@
       padding: 24px;
       border: 0;
       border-radius: 0;
-    }
-  }
-  &__reason {
-    .textarea {
-      margin-top: 20px;
-      @include tablet {
-        margin-top: 12px;
-      }
     }
   }
   &__title {
@@ -2985,31 +2977,87 @@
     }
   }
   &__notice {
-    // @include flex-col;
-    // gap: 8px;
-    
-    .list {
-      padding: 16px;
-      border-radius: 6px;
-      background: $gray-10;
+    @include flex-col;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 6px;
+    background: $gray-5;
+    .list {      
       li {
-        color: $gray-70;
+        color: $grayscale-500;
+        font-size: 12px;
+        line-height: 16px;
       }
     }
   }
   &__notice-title {
-    color: $gray-90;
+    color: $grayscale-900;
     font-size: 14px;
     font-weight: 600;
-    line-height: 140%;
-    letter-spacing: -0.14px;
-    @include tablet {
-      font-weight: 500;
-      letter-spacing: 0;
-    }
+    line-height: 20px;
   }
   .btn-wrap {
     margin-top: 40px;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+}
+// 회원탈퇴 완료
+.withdraw-done {
+  @include flex-col;
+  width: 400px;
+  padding: 80px 0 100px;
+  margin: 0 auto;
+  @include tablet {
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    padding: 0 24px;
+  }
+  &__title {
+    margin-bottom: 40px;
+    color: $gray-80;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -1px;
+    text-align: center;
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+  &__content {
+    @include flex-col;
+    align-items: center;
+  }
+  &__img {
+    width: 44px;
+    height: 44px;
+  }
+  &__heading {
+    margin-top: 20px;
+    color: $gray-80;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    text-align: center;
+    @include tablet {
+      margin-top: 30px;
+    }
+  }
+  &__desc {
+    margin-top: 10px;
+    color: $grayscale-600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    text-align: center;
+  }
+  .btn-wrap {
+    margin-top: 30px;
     @include tablet {
       margin-top: 0;
     }
