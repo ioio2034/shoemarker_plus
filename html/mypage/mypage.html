@@ -484,6 +484,9 @@
     <!-- Tab bar -->
     <nav id="tabbar" class="tabbar"></nav>
 
+    <!-- 모바일 GNB -->
+    <div id="mobilegnb"></div>
+
     <!--
       Loading
       - 노출: body에 is-loading / .loading에 is-active 추가
@@ -671,7 +674,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "lnb", "footer", "tabbar"].forEach(id => {
+      ["header", "lnb", "footer", "tabbar", "mobilegnb"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;

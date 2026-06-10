@@ -1043,6 +1043,9 @@
     <!-- Tab bar -->
     <nav id="tabbar" class="tabbar"></nav>
 
+    <!-- 모바일 GNB -->
+    <div id="mobilegnb"></div>
+
   </div>
 
   <!-- ai-chat 레이어 -->
@@ -1168,10 +1171,7 @@
 
     </div>
     <!-- //ai-chat-layer__panel -->
-  </div>
-
-  <!-- 모바일 GNB -->
-  <div id="mobilegnb"></div>
+  </div>  
 
   <!-- Scripts  -->
   <script src="../../assets/js/jquery-3.7.1.min.js"></script>
@@ -1182,7 +1182,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "footer", "mobilegnb", "tabbar"].forEach(id => {
+      ["header", "footer", "tabbar", "mobilegnb"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;

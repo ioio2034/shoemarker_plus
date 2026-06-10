@@ -929,6 +929,9 @@
     <!-- Tab bar -->
     <nav id="tabbar" class="tabbar"></nav>
 
+    <!-- 모바일 GNB -->
+    <div id="mobilegnb"></div>
+
   </div>
 
   <!-- Scripts  -->
@@ -938,7 +941,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "footer", "tabbar"].forEach(id => {
+      ["header", "footer", "tabbar", "mobilegnb"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;
