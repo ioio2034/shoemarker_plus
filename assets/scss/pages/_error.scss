@@ -1,0 +1,36 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+// 에러페이지
+.page-error {
+  .section {
+    &__inner {
+      @include tablet {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.error {
+  @include flex(center, center);
+  min-height: inherit;
+  &__content {
+    @include flex-col;
+    gap: 40px;
+    width: 326px;
+    @include tablet {
+      width: 195px;
+    }
+  }
+  &__message {
+    color: $gray-80;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    @include tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
