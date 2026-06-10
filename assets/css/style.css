@@ -11766,7 +11766,7 @@ img, video, canvas, svg {
 }
 @media (max-width: 1024px) {
   .footer__inner {
-    padding: 24px;
+    padding: 24px 24px 102px;
   }
 }
 .footer__top {
@@ -11922,7 +11922,7 @@ img, video, canvas, svg {
   line-height: 150%;
 }
 
-/* main z-index: 1~20, header: 50~100, gnb, tab, tab bar: 101~200, footer, bottom button: 201~, bottom sheet: 999, modal: 1000, mobile menu: 2000 */
+/* main z-index: 1~20, header: 50~100, gnb, tab, tab bar: 101~200, footer, bottom button: 201~, bottom sheet: 999, modal: 1000 */
 body.is-loading {
   overflow: hidden;
   touch-action: none;
