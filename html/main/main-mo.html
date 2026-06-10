@@ -1170,6 +1170,9 @@
     <!-- //ai-chat-layer__panel -->
   </div>
 
+  <!-- 모바일 GNB -->
+  <div id="mobilegnb"></div>
+
   <!-- Scripts  -->
   <script src="../../assets/js/jquery-3.7.1.min.js"></script>
   <script src="../../assets/js/swiper-bundle.min.js"></script>
@@ -1179,7 +1182,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "footer", "tabbar"].forEach(id => {
+      ["header", "footer", "mobilegnb", "tabbar"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;

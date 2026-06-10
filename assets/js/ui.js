@@ -279,7 +279,7 @@ let UI = {
   // tab bar
   tabBar: function () {
     const $win = $(window);
-    const $tabbar = $('.tabbar');
+    const $tabbar = $('.tabbar__inner');
     let lastScrollTop = 0;
     const threshold = 5;
     const bottomOffset = 10;
@@ -779,6 +779,138 @@ let UI = {
       }
     });
   },
+  gnbMenu: function () {
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
+
+    let closeTimer;
+    let maxHeight = 0;
+    let wasDark = false;
+    const $header = $('.header');
+    const pcOnly = () => !window.matchMedia('(max-width: 768px)').matches;
+
+    function setMaxHeight() {
+      maxHeight = 0;
+      $('.nav__content').each(function () {
+        maxHeight = Math.max(maxHeight, $(this).outerHeight());
+      });
+    }
+
+    function openNav() {
+      if (!pcOnly()) return; 
+      wasDark = $header.hasClass('header--dark');
+      $header.removeClass('scrolled header--dark');
+    }
+
+    function closeNav() {
+      if (!pcOnly()) return; 
+      if ($(window).scrollTop() > 0) {
+        $header.addClass('scrolled');
+      }
+      if (wasDark) {
+        $header.addClass('header--dark');
+        wasDark = false;
+      }
+    }
+
+    function isNavOpen() {
+      return $('.nav__item.is-open').length > 0;
+    }
+
+    setTimeout(function () {
+      setMaxHeight();
+    }, 100);
+
+    $(window).on('load resize', function () {
+      setMaxHeight();
+    });
+
+    $(window).on('scroll', function () {
+      if (!pcOnly()) return; 
+      if (isNavOpen()) {
+        $header.removeClass('scrolled header--dark');
+      }
+    });
+
+    $(document).on('mouseenter', '.nav__item', function () {
+      if (!pcOnly()) return; 
+      clearTimeout(closeTimer);
+      const $content = $(this).children('.nav__content');
+
+      if (!$content.length) {
+        $('.nav__item').removeClass('is-open');
+        $('.nav__bg').removeClass('is-open').css('height', 0);
+        closeNav();
+        return;
+      }
+
+      if (!isNavOpen()) {
+        openNav();
+      } else {
+        $header.removeClass('scrolled header--dark');
+      }
+
+      $('.nav__item').removeClass('is-open');
+      $(this).addClass('is-open');
+      $('.nav__bg').addClass('is-open').css('height', maxHeight);
+    });
+
+    $(document).on('mouseleave', '.nav', function () {
+      closeTimer = setTimeout(function () {
+        $('.nav__item').removeClass('is-open');
+        $('.nav__bg').removeClass('is-open').css('height', 0);
+        closeNav();
+      }, 100);
+    });
+  },
+  mobileMenu: function () {
+
+    // 열기 — tabbar 버튼 클릭
+    function openGnb(tab) {
+      // 탭 전환
+      $('.mobile-gnb__tab').removeClass('is-active');
+      $(`.mobile-gnb__tab[data-tab="${tab}"]`).addClass('is-active');
+      $('.mobile-gnb__tab-content').removeClass('is-active');
+      $(`.mobile-gnb__tab-content[data-content="${tab}"]`).addClass('is-active');
+
+      $('.mobile-gnb').addClass('is-open').attr('aria-hidden', 'false').css({ transform: '', visibility: '' });
+      $('body').addClass('is-locked');
+    }
+
+    // 카테고리 탭으로 열기
+    $(document).on('click', '.tabbar__btn--menu', function () {
+      openGnb('category');
+    });
+
+    // 브랜드 탭으로 열기
+    $(document).on('click', '.tabbar__btn--brand', function () {
+      openGnb('brand');
+    });
+
+    // 닫기
+    $(document).on('click', '.mobile-gnb__close', function () {
+      $('.mobile-gnb').removeClass('is-open').attr('aria-hidden', 'true');
+      $('body').removeClass('is-locked');
+    });
+
+    // 탭 전환 (카테고리 / 브랜드)
+    $(document).on('click', '.mobile-gnb__tab', function () {
+      const tab = $(this).data('tab');
+      $('.mobile-gnb__tab').removeClass('is-active');
+      $(this).addClass('is-active');
+      $('.mobile-gnb__tab-content').removeClass('is-active');
+      $(`.mobile-gnb__tab-content[data-content="${tab}"]`).addClass('is-active');
+    });
+
+    // 1depth 카테고리 전환
+    $(document).on('click', '.mobile-gnb__depth1-item a', function () {
+      const $item = $(this).closest('.mobile-gnb__depth1-item');
+      const category = $item.data('category');
+      $('.mobile-gnb__depth1-item').removeClass('is-active');
+      $item.addClass('is-active');
+      $('.mobile-gnb__panel').removeClass('is-active');
+      $(`.mobile-gnb__panel[data-panel="${category}"]`).addClass('is-active');
+    });
+  },
 };
 
 
@@ -806,6 +938,8 @@ $(function () {
   UI.brandDropdown();
   UI.aiChatLayer();
   UI.membershipProgress();
+  UI.gnbMenu();
+  UI.mobileMenu();
 });
 
 // resize 대응

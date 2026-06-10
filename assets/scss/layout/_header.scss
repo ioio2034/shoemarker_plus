@@ -11,7 +11,6 @@
   background-color: $white;  
   z-index: 50;
   @include tablet {
-    display: none;
     position: relative;
     height: auto;
     border-bottom: none;
@@ -30,10 +29,7 @@
       padding: 24px;
     }
     @include tablet {
-      flex-direction: column;
-      align-items: start;
-      gap: 24px;
-      padding: 24px 0;
+      display: none;
     }
   }
   &__logo-wrap {
@@ -49,7 +45,7 @@
     height: 31px;
     text-indent: -9999px;
     @include bgimage('logo', 'svg');
-    background-size: cover;
+    background-size: 100% auto;
     @include tablet {
       width: 163px;
       height: 24px;
@@ -60,6 +56,9 @@
     gap: 32px;
     @include desktop {
       gap: 24px;
+    }
+    @media (max-width: 1160px) {
+      gap: 16px;
     }
     @include tablet {
       width: 100%;
@@ -82,17 +81,11 @@
     &.scrolled {
       background-color: rgba($color: $black, $alpha: 0.7);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);      
     }
     .header__logo {
-      width: 198px;
-      height: 33px;
       @include bgimage('logo_w', 'svg');
-      background-size: cover;
-      @include tablet {
-        width: 163px;
-        height: 26px;
-      }
+      background-size: 100% auto;
     }
     .brand-dropdown {
       &__toggle-icon {
@@ -106,6 +99,31 @@
     }
     .nav__link {
       color: $white;
+      &.is-open,
+      &:hover {
+        &::after {
+          background-color: $white;
+        }
+      }    
+    }
+    .nav__bg {
+      background: rgba($color: #000000, $alpha: 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav__depth2 {
+      > li {
+        > a {
+          color: $white;
+        }
+      }
+    }
+    .nav__depth3 {
+      > li {
+        > a {
+          color: $white;
+        }
+      }
     }
     .nav--etc {
       .nav__link {
@@ -145,15 +163,18 @@
       @include tablet {
         transform: translateY(-54px);
       }
-      .header__inner {
-        @include tablet {
-          padding: 16px 0;
-        }
+    }
+    .header__inner {
+      display: flex;
+      @include tablet {
+        flex-direction: column;
+        align-items: start;
+        gap: 24px;
+        padding: 16px 0;
       }
     }
   }
 }
-
 
 .logo {
   flex-shrink: 0;
@@ -329,6 +350,9 @@
   @include desktop {
     gap: 24px;
   }
+  @media (max-width: 1160px) {
+    gap: 16px; 
+  }
   @include tablet {
     display: flex;
     overflow-x: auto;
@@ -341,26 +365,19 @@
     }
   }
   &__item {
-    position: relative;
     @include flex;
-    flex-shrink: 0;
-    // &.is-active {
-    //   &::after {
-    //     display: none;
-    //     content: '';
-    //     position: absolute;
-    //     bottom: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 2px;
-    //     background-color: #222;
-    //     @include tablet {
-    //       display: block;
-    //     }
-    //   }
-    // }
+    flex-shrink: 0;   
+    &.is-open {
+      .nav__content {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        // transition: opacity .25s ease, visibility .25s ease;
+      }
+    }
   }
   &__link {
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
@@ -370,9 +387,114 @@
     font-weight: 600;
     line-height: 150%;
     text-transform: uppercase;
+    &.is-open,
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #222;
+      }
+    }
     @include tablet {
       color: #222;
       font-weight: 500;
+    }
+  }
+  // gnb 2depth 전체 메뉴
+  &__bg {
+    position: absolute;
+    top: 81px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: $white;
+    z-index: 1;
+    @include tablet {
+      display: none;
+    }
+    // &.is-open {
+    //   transition: height .25s ease;
+    // }
+  }
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 81px;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 1088px;
+    padding: 40px 0;
+    margin: 0 auto;
+    align-items: start;
+  }
+  &__depth2 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap: 24px;
+    > li {
+      > a {
+        display: block;
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+  &__depth3 {
+    @include flex-col;
+    gap: 16px;
+    margin-top: 24px;
+    > li {
+      > a {
+        display: block;
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;        
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+  &__banner {
+    display: flex;
+    gap: 10px;    
+  }
+  &__banner-item {
+    width: 210px;
+    height: 210px;
+  }
+  &__banner-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 16px;
     }
   }
 
@@ -383,6 +505,7 @@
       width: 1px;
       height: 24px;
       background-color: $gray-40;
+      flex-shrink: 0;
       @include desktop {
         height: 20px;
       }

@@ -1,0 +1,242 @@
+<!-- 모바일 전체메뉴 -->
+<div class="mobile-gnb" aria-hidden="true" style="transform: translateX(-100%); visibility: hidden;">
+  <div class="mobile-gnb__inner">
+    <!-- 탭 헤더 -->
+    <div class="mobile-gnb__head">
+      <div class="mobile-gnb__tabs">
+        <button class="mobile-gnb__tab is-active" data-tab="category" type="button">카테고리</button>
+        <button class="mobile-gnb__tab" data-tab="brand" type="button">브랜드</button>
+      </div>
+      <button class="mobile-gnb__close" type="button" aria-label="전체메뉴 닫기">
+        <span class="blind">닫기</span>
+      </button>
+    </div>
+    <!-- //mobile-gnb__head -->
+  
+    <!-- 검색 -->
+    <div class="mobile-gnb__search">
+      <a href="#" class="mobile-gnb__search-link">매일 100% 랜덤 포인트</a>
+    </div>
+  
+    <!-- 탭 콘텐츠 -->
+    <div class="mobile-gnb__body">
+      <!-- 카테고리 탭 -->
+      <div class="mobile-gnb__tab-content is-active" data-content="category">
+        <!-- 바로가기 : shortcut__item가 늘어나면 가로 스크롤 처리 -->
+        <div class="mobile-gnb__shortcut shortcut">
+          <a href="#" class="shortcut__item">
+            <img src="../../assets/images/img_shortcut_brand.png" alt="" class="shortcut__img">
+            <span class="shortcut__label">브랜드데이</span>
+          </a>
+          <a href="#" class="shortcut__item">
+            <img src="../../assets/images/img_shortcut_time.png" alt="" class="shortcut__img">
+            <span class="shortcut__label">타임딜</span>
+          </a>
+          <a href="#" class="shortcut__item">
+            <img src="../../assets/images/img_shortcut_point.png" alt="" class="shortcut__img">
+            <span class="shortcut__label">랜덤포인트</span>
+          </a>
+          <a href="#" class="shortcut__item">
+            <img src="../../assets/images/img_shortcut_benefit.png" alt="" class="shortcut__img">
+            <span class="shortcut__label">멤버십 혜택</span>
+          </a>
+        </div>
+        <div class="mobile-gnb__category">
+          <!-- 1depth 카테고리 목록 -->
+          <ul class="mobile-gnb__depth1">
+            <li class="mobile-gnb__depth1-item is-active" data-category="men">
+              <a href="#" class="mobile-gnb__depth1-link">MEN</a>
+            </li>
+            <li class="mobile-gnb__depth1-item" data-category="women">
+              <a href="#" class="mobile-gnb__depth1-link">WOMEN</a>
+            </li>
+            <li class="mobile-gnb__depth1-item" data-category="kids">
+              <a href="#" class="mobile-gnb__depth1-link">KIDS</a>
+            </li>
+            <li class="mobile-gnb__depth1-item" data-category="etc">
+              <a href="#" class="mobile-gnb__depth1-link">ETC</a>
+            </li>
+          </ul>
+          <!-- //mobile-gnb__depth1 -->
+  
+          <!-- 2~3depth 패널 -->
+          <div class="mobile-gnb__panel-wrap">
+  
+            <!-- MEN 패널 -->
+            <div class="mobile-gnb__panel is-active" data-panel="men">
+              <ul class="mobile-gnb__depth2">
+                <li>
+                  <a href="#">운동화</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">러닝화</a></li>
+                    <li><a href="#">스니커즈</a></li>
+                    <li><a href="#">아웃도어/트래킹</a></li>
+                    <li><a href="#">슬립온/뮬</a></li>
+                    <li><a href="#">캔버스/단화</a></li>
+                    <li><a href="#">피트니스화</a></li>
+                    <li><a href="#">기타 운동화</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">구두</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">로퍼</a></li>
+                    <li><a href="#">더비 슈즈</a></li>
+                    <li><a href="#">플랫슈즈</a></li>
+                    <li><a href="#">기타 구두</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">부츠/워커</a></li>
+                <li><a href="#">슬리퍼/샌들</a></li>
+                <li>
+                  <a href="#">의류</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">아우터</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+  
+            <!-- WOMEN 패널 -->
+            <div class="mobile-gnb__panel" data-panel="women">
+              <ul class="mobile-gnb__depth2">
+                <li>
+                  <a href="#">운동화</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">러닝화</a></li>
+                    <li><a href="#">스니커즈</a></li>
+                    <li><a href="#">아웃도어/트래킹</a></li>
+                    <li><a href="#">슬립온/뮬</a></li>
+                    <li><a href="#">캔버스/단화</a></li>
+                    <li><a href="#">피트니스화</a></li>
+                    <li><a href="#">기타 운동화</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">구두</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">로퍼</a></li>
+                    <li><a href="#">더비 슈즈</a></li>
+                    <li><a href="#">플랫슈즈</a></li>
+                    <li><a href="#">기타 구두</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">부츠/워커</a></li>
+                <li><a href="#">슬리퍼/샌들</a></li>
+                <li>
+                  <a href="#">의류</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">아우터</a></li>
+                    <li><a href="#">원피스</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+  
+            <!-- KIDS 패널 -->
+            <div class="mobile-gnb__panel" data-panel="kids">
+              <ul class="mobile-gnb__depth2">
+                <li><a href="#">캐릭터화</a></li>
+                <li><a href="#">스니커즈</a></li>
+                <li><a href="#">샌들/슬라이드</a></li>
+                <li><a href="#">부츠/패딩</a></li>
+                <li>
+                  <a href="#">운동화</a>
+                  <ul class="mobile-gnb__depth3">
+                    <li><a href="#">상의</a></li>
+                    <li><a href="#">하의</a></li>
+                    <li><a href="#">아우터</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+  
+            <!-- ETC 패널 -->
+            <div class="mobile-gnb__panel" data-panel="etc">
+              <ul class="mobile-gnb__depth2">
+                <li><a href="#">ALL</a></li>
+                <li><a href="#">모자</a></li>
+                <li><a href="#">가방</a></li>
+                <li><a href="#">양말</a></li>
+                <li><a href="#">슈케어 용품</a></li>
+                <li><a href="#">기타 잡화</a></li>              
+              </ul>
+            </div>
+  
+            <!-- BRAND 카테고리 패널 -->
+            <div class="mobile-gnb__panel" data-panel="brand-cat">
+              <ul class="mobile-gnb__depth2">
+                <li><button class="mobile-gnb__depth2-btn" type="button">NIKE</button></li>
+                <li><button class="mobile-gnb__depth2-btn" type="button">ADIDAS</button></li>
+                <li><button class="mobile-gnb__depth2-btn" type="button">NEW BALANCE</button></li>
+                <li><button class="mobile-gnb__depth2-btn" type="button">VANS</button></li>
+                <li><button class="mobile-gnb__depth2-btn" type="button">CONVERSE</button></li>
+                <li><button class="mobile-gnb__depth2-btn" type="button">JORDAN</button></li>
+              </ul>
+            </div>
+  
+          </div>
+          <!-- //mobile-gnb__panel-wrap -->
+        </div>
+      </div>
+      
+      <!-- 브랜드 탭 -->
+      <div class="mobile-gnb__tab-content" data-content="brand">
+        <ul class="mobile-gnb__brand">
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_nike.png" alt="NIKE">
+              </div>
+              <span class="mobile-gnb__brand-name">NIKE</span>
+            </a>
+          </li>
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_adidas.png" alt="ADIDAS">
+              </div>
+              <span class="mobile-gnb__brand-name">ADIDAS</span>
+            </a>
+          </li>
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_converse.png" alt="CONVERSE">
+              </div>
+              <span class="mobile-gnb__brand-name">CONVERSE</span>
+            </a>
+          </li>
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_newblance.png" alt="NEW BALANCE">
+              </div>
+              <span class="mobile-gnb__brand-name">NEW BALANCE</span>
+            </a>
+          </li>
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_asics.png" alt="ASICS">
+              </div>
+              <span class="mobile-gnb__brand-name">ASICS</span>
+            </a>
+          </li>
+          <li class="mobile-gnb__brand-item">
+            <a href="#" class="mobile-gnb__brand-link">
+              <div class="mobile-gnb__brand-img">
+                <img src="../../assets/images/gnb/img_gnb_brand_fila.png" alt="FILA">
+              </div>
+              <span class="mobile-gnb__brand-name">FILA</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
