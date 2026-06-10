@@ -911,6 +911,23 @@ let UI = {
       $(`.mobile-gnb__panel[data-panel="${category}"]`).addClass('is-active');
     });
   },
+  goTop: function () {
+    const $wrap = $('.floating-btns');
+    const $btn  = $('#goTop');
+
+    $(window).on('scroll', function () {
+      if ($(this).scrollTop() > 180) {
+        $wrap.addClass('is-visible');
+      } else {
+        $wrap.removeClass('is-visible');
+      }
+    });
+
+    $btn.on('click', function (e) {
+    e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  },
 };
 
 
@@ -940,6 +957,7 @@ $(function () {
   UI.membershipProgress();
   UI.gnbMenu();
   UI.mobileMenu();
+  UI.goTop();
 });
 
 // resize 대응

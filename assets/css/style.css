@@ -14968,6 +14968,15 @@ body.sheet-open {
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.floating-btns.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .ai-chat__trigger {

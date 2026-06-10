@@ -10,6 +10,15 @@
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 // ai-chat
