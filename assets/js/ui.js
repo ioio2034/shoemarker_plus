@@ -279,7 +279,7 @@ let UI = {
   // tab bar
   tabBar: function () {
     const $win = $(window);
-    const $tabbar = $('.tabbar__inner');
+    const $tabbar = $('.tabbar');
     let lastScrollTop = 0;
     const threshold = 5;
     const bottomOffset = 10;
