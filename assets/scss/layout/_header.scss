@@ -15,11 +15,6 @@
     height: auto;
     border-bottom: none;
   }
-  &.scrolled:not(.header--dark) {
-    background-color: rgba($white, 0.4);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
   &__inner {
     @include flex(center, space-between);
     width: 100%;

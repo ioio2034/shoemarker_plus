@@ -50,22 +50,83 @@
                   <div class="swiper-wrapper">
                     <!-- data-name : 왼쪽 네비에 표시될 상품명 -->
                     <div class="swiper-slide" data-name="나이키 에어맥스 모토 2">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 에어맥스 모토 2"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
                     </div>
                     <div class="swiper-slide" data-name="나이키 알파플라이 3">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 알파플라이 3"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
+
                     </div>
                     <div class="swiper-slide" data-name="나이키 G.T. 컷4 '빅터 웹반야마'">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 G.T. 컷4 '빅터 웹반야마'"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
                     </div>
                     <div class="swiper-slide" data-name="나이키 에어 조던">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 에어 조던"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
                     </div>
                     <div class="swiper-slide" data-name="나이키 페가수스 42">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_launch_slide_01.png" alt="나이키 페가수스 42"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
                     </div>
                     <div class="swiper-slide" data-name="나이키 에어맥스 95 '빅 버블'">
-                      <img class="launch-slider__slide-img" src="../../assets/images/img_brand_visual_mo.jpg" alt="나이키 에어맥스 95 '빅 버블'"/>
+                      <picture>
+                        <source
+                          media="(max-width: 1024px)"
+                          srcset="../../assets/images/img_launch_slide_01_mo.jpg"
+                        />
+                        <img
+                          src="../../assets/images/img_launch_slide_01_pc.jpg"
+                          alt=""
+                          class="launch-slider__slide-img"
+                        />
+                      </picture>
                     </div>
                   </div>
                   <!-- //swiper-wrapper -->
@@ -84,7 +145,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_01_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_01_pc.jpg"
@@ -106,7 +166,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_02_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_02_pc.jpg"
@@ -128,7 +187,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_03_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_03_pc.jpg"
@@ -150,7 +208,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_01_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_01_pc.jpg"
@@ -172,7 +229,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_02_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_02_pc.jpg"
@@ -194,7 +250,6 @@
                         <source
                           media="(max-width: 1024px)"
                           srcset="../../assets/images/img_launch_thumb_03_mo.jpg"
-                          class="launch-card__img"
                         />
                         <img
                           src="../../assets/images/img_launch_thumb_03_pc.jpg"
@@ -253,39 +308,63 @@
 
       slides.forEach((slide, i) => {
         const item = document.createElement('li');
-        item.className = 'launch-slider__nav-item'
-          + (i === INITIAL_SLIDE ? ' is-active' : '');
+        item.className = 'launch-slider__nav-item' + (i === INITIAL_SLIDE ? ' is-active' : '');
         item.textContent = slide.dataset.name;
         item.dataset.idx = i;
         navList.appendChild(item);
       });
 
-      slides[INITIAL_SLIDE].classList.add('is-visible');
-      const mainSw = new Swiper('#launchSliderSwiper', {
-        direction: 'vertical',
-        effect: 'coverflow',
-        coverflowEffect: {
-          rotate: 20,
-          depth: 100,
-          slideShadows: false,
-        },
-        speed: 680,
-        grabCursor: true,
-        initialSlide: INITIAL_SLIDE,
-        mousewheel: { sensitivity: 1, thresholdDelta: 30 },
-        keyboard: { enabled: true },        
-        on: {
-          slideChangeTransitionStart(sw) {
-            document.querySelectorAll('.launch-slider__nav-item').forEach((n, i) => {
-              n.classList.toggle('is-active', i === sw.realIndex);
-            });
-          },
-        },
-      });
+      let mainSw = null;
 
-      navList.addEventListener('click', (e) => {
-        const item = e.target.closest('.launch-slider__nav-item');
-        if (item) mainSw.slideTo(+item.dataset.idx);
+      function initSwiper(currentSlide = INITIAL_SLIDE) {
+        const isMobile = window.innerWidth <= 1024;
+
+        if (mainSw) mainSw.destroy(true, true);
+
+        mainSw = new Swiper('#launchSliderSwiper', {
+          direction: isMobile ? 'horizontal' : 'vertical',
+          effect: isMobile ? 'slide' : 'coverflow',
+          coverflowEffect: {
+            rotate: 20,
+            depth: 100,
+            slideShadows: false,
+          },
+          autoplay : {
+            delay : 4000,
+            disableOnInteraction : false,
+          },
+          loop : true,
+          loopAdditionalSlides : 1,
+          speed: 680,
+          grabCursor: true,
+          initialSlide: currentSlide,
+          on: {
+            slideChangeTransitionStart(sw) {
+              document.querySelectorAll('.launch-slider__nav-item').forEach((n, i) => {
+                n.classList.toggle('is-active', i === sw.realIndex);
+              });
+              const activeItem = navList.querySelector('.is-active');
+              if (activeItem) {
+                activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+              }
+            },
+          },
+        });
+
+        navList.addEventListener('click', (e) => {
+          const item = e.target.closest('.launch-slider__nav-item');
+          if (item) mainSw.slideTo(+item.dataset.idx);
+        });
+      }
+
+      initSwiper();
+
+      let resizeTimer = null;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          initSwiper(mainSw?.realIndex ?? INITIAL_SLIDE);
+        }, 300);
       });
     });
   </script>

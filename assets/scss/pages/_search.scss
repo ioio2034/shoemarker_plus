@@ -1,0 +1,280 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.page-search {
+  .section {
+    &__inner {
+      @include tablet {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.search {
+  @include flex-col;
+  gap: 40px;
+  @include tablet {
+    gap: 0;
+  }
+  // 상단
+  &__header {
+    @include flex(center, center);
+    gap: 16px;
+    padding: 16px 24px;
+    @include tablet {
+      justify-content: start;
+    }
+    .btn-icon--back {
+      display: none;
+      @include tablet {
+        display: inline-flex;
+      }
+    }
+  }
+  // 검색 입력
+  .search-input {
+    width: 100%;
+    max-width: 640px;
+    @include tablet {
+      max-width: 100%;
+    }
+    .form {
+      &__search {
+        height: 64px;
+        padding: 8px 24px;
+        border-radius: 8px;
+        border: 0;
+        background: #F5F5F5;
+        @include tablet {
+          height: 40px;
+          padding: 8px 16px;
+        }
+      }
+      &__input {
+        height: 48px;
+        color: $gray-80;
+        font-size: 18px;
+        line-height: 26px;
+        background: #F5F5F5;
+        @include tablet {
+          height: 34px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &::placeholder {
+          color: $gray-50;
+          font-size: 18px;
+          line-height: 26px;
+          @include tablet {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+      &__search-btn {
+        width: 24px;
+        height: 24px;
+      }
+      &__search-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  // 검색 결과
+  .search-result {
+    @include flex-col;
+    align-items: center;
+    gap: 4px;
+    @include tablet {
+      padding: 24px 16px;
+      align-items: flex-start;
+    }
+    &__title {
+      color: $gray-80;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &__keyword {
+      color: $red;
+      &::before {
+        content: '\2018';
+      }
+      &::after {
+        content: '\2019';
+      }
+    }
+    &__desc {
+      color: $gray-60;
+      font-size: 18px;
+      line-height: 26px;
+      @include tablet {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+    }
+  }
+  // 최근 검색어
+  .recent-search {
+    @include flex-col;
+    gap: 12px;
+    padding: 0 24px;
+    @include tablet {
+      padding: 24px;
+    }
+    &__head {
+      @include flex(center, space-between);
+    }
+    &__title {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    .btn--text {
+      color: $gray-80;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.48px;
+    }
+    &__list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    &__item {
+      @include inline-flex(center, center);
+      min-height: 32px;
+      padding: 0 8px 0 12px;
+      border-radius: 999px;
+      border: 1px solid $gray-30;
+    }
+    &__keyword {
+      color: $gray-70;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.84px;
+    }
+    &__remove {
+      padding: 0;
+      width: 20px;
+      height: 20px;
+      @include bgimage('icon_sheet_close', 'svg');
+      background-size: cover;
+    }
+  }
+  // 인기 검색어
+  .popular-search {
+    padding: 0 24px;
+    @include tablet {
+      padding: 24px;
+    }
+    &__title {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #EAEAEA;
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__list {
+      columns: 2;
+      column-gap: 0;
+    }
+    &__item {
+      display: flex;
+      gap: 8px;
+      padding: 16px 0;
+      border-bottom: 1px solid #E4E4E4;
+      break-inside: avoid;
+      &:nth-child(n+6) {
+        padding-left: 24px;
+      }
+    }
+    &__rank {
+      display: inline-block;
+      width: 16px;
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.84px;
+    }
+    &__keyword {
+      flex: 1;
+      @include flex(center, space-between);
+      width: 100%;
+      @include ellipsis;
+      color: $gray-80;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.84px;
+      &::after {
+        content: '등락없음';
+        display: block;
+        width: 16px;
+        height: 16px;
+        font-size: 0;
+        @include bgimage('icon_rank', 'png');
+        background-position: 0 0;
+      }
+      &.new {
+        &::after {
+          content: '신규';
+          width: 28px;
+          height: 20px;
+          background-position: 0 -48px;
+        }
+      }
+      &.up {
+        &::after {
+          content: '순위 상승';
+          background-position: 0 -16px;
+        }
+      }
+      &.down {
+        &::after {
+          content: '순위 하락';
+          background-position: 0 -32px;
+        }
+      }
+    }
+  }
+  // 검색 상품
+  .search-prod {}
+}
+
+// 검색 레이어
+.search-layer {
+  display: block;
+  position: absolute;
+  top: 81px;
+  left: 0;
+  width: 100%;
+  padding: 40px 0;
+  background: $white;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__inner {
+    @include flex-col;
+    gap: 32px;
+    max-width: 640px;
+    margin: 0 auto;
+  }  
+}

@@ -1165,7 +1165,7 @@
     .prod-tabs {
       position: sticky;
       top: 81px;
-      z-index: 101;
+      z-index: 40;
       background: $white;
       border-bottom: 1px solid $grayscale-100;
       @include tablet {

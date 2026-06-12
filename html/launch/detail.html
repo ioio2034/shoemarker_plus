@@ -17,9 +17,10 @@
     <header id="header" class="header"></header>
 
     <!-- Content -->
-    <main class="container page-launch">
+    <main class="container page-launch-detail">
 
-      <section class="section">
+      <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
+      <section class="section section--fixed">
         <div class="section__inner">
           <!-- 타이틀 -->
           <div class="section__header">
@@ -35,8 +36,76 @@
           </div>
 
           <!-- Content -->
-          <div class="launch launch-detail">
-            
+          <div class="launch-detail">
+            <!-- 상품 비주얼 영역 -->
+            <div class="launch-detail__visual">
+              <picture>
+                <source
+                  media="(max-width: 1024px)"
+                  srcset="../../assets/images/img_launch_detail_mo.jpg"
+                  class="launch-detail__visual-img"
+                />
+                <img
+                  src="../../assets/images/img_launch_detail_pc.jpg"
+                  alt=""
+                  class="launch-detail__visual-img"
+                />
+              </picture>
+            </div>
+            <!-- //launch-detail__visual -->
+            <!-- 상품 구매 -->
+            <div class="launch-detail__action">
+              <h3 class="launch-detail__name">나이키 에어 조던 레트로 3</h3>
+              <button type="button" class="launch-detail__btn">바로 구매</button>
+            </div>
+            <!-- //launch-detail__action -->
+            <!-- 상품 소개 설명 글이 있을 경우 -->
+            <div class="launch-detail__intro">
+              <p class="launch-detail__intro-desc">당신의 스피드를 선택하세요. <br>멈추지 않는 가속력의 수퍼플리아, 범접할 수 없는 <br>민첩성의 베이퍼. 6월 4일 출시 예정</p>
+              <span class="launch-detail__intro-date">7월 9일 출시</span>
+            </div>
+            <!-- //launch-detail__intro -->
+            <div class="launch-detail__info">
+              <!-- 상품 특징 -->
+              <div class="launch-detail__feature">
+                <p class="launch-detail__feature-desc">모든 전설의 시작. 1971년, 나이키는 ‘블루 리본 스포츠(Blue Ribbon Sports)’에서 사명을 변경함과 동시에 신발 제조 세계로의 거대한 첫발을 내디뎠습니다. 공동 창업자인 빌 바워만은 수년간 운동선수들의 신발을 개선하는 데 매진해 왔습니다. 어느 날 집에서 아내의 와플 기계를 유심히 보던 그는, 눈앞에 펼쳐진 격자무늬 패턴에서 즉각적인 영감을 얻게 됩니다. 그는 곧바로 와플 기계에 액체 우레탄을 부으며 실험에...</p>
+                <p class="launch-detail__feature-desc">Jacquemus+Nike Moon Shoe는 1인당 3켤레로 제한되며,</p>
+                <ul class="launch-detail__feature-list">
+                  <li>- 크링클 이팩트 나일론 소재 스니커즈</li>
+                  <li>- 가죽 스우시 및 뒷 부분의 오버레이</li>
+                  <li>- 슈레이스 팁의 엠보싱 미니 스우시</li>
+                  <li>- 텅의 Jacquemus로고 라벨</li>
+                  <li>- 인솔의 스트라이프 Jacquemus 로고 라벨 스티치</li>
+                  <li>- 재생 고무 소재 슬림 아웃솔</li>
+                  <li>- 오리지널 디자인을 연상시키는 빈티지 감성 포장</li>
+                  <li>- 나이키의 기원을 기리는 "Blue Ribbon Sports" 배지</li>
+                </ul>
+              </div>
+              <!-- //launch-detail__feature -->
+              <!-- 구매 가능 -->
+              <div class="launch-detail__store">
+                <p class="launch-detail__store-desc">Jacquemus + Nike « Moon Shoe »는 또한 다음 매장에서 구매하실 수 있습니다:</p>
+                <ul class="launch-detail__store-list">
+                  <li>Paris, Montaigne</li>
+                  <li>Paris, Galeries Lafayette</li>
+                  <li>Nice, Galeries Lafayette</li>
+                  <li>Courchevel</li>
+                  <li>New York, Soho</li>
+                  <li>Los Angeles, West Hollywood</li>
+                  <li>Montecito</li>
+                </ul>
+              </div>
+              <!-- launch-detail__store -->
+            </div>
+
+            <div class="btn-wrap btn-wrap--fixed">
+              <!-- 판매 중인 런칭 -->
+              <button type="button" class="btn btn--primary">구매하기</button>
+              <!-- 준비 중인 런칭 -->
+              <!-- <button type="button" class="btn btn--primary">알림받기</button> -->
+              <!-- 종료 -->
+              <!-- <button type="button" class="btn btn--primary" disabled>종료</button> -->
+            </div>
           </div>
 
         </div>
@@ -45,12 +114,6 @@
 
     <!-- Footer -->
     <footer id="footer" class="footer"></footer>
-    
-    <!-- Tab bar -->
-    <nav id="tabbar" class="tabbar"></nav>
-
-    <!-- 모바일 GNB -->
-    <div id="mobilegnb"></div>
 
   </div>
 
@@ -61,7 +124,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "footer", "tabbar", "mobilegnb"].forEach(id => {
+      ["header", "footer"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;
