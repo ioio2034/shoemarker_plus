@@ -242,5 +242,117 @@
       <a href="#" class="util__item util__item--mypage">
         <span class="blind">마이페이지</span>
       </a>
+      <div class="search search-layer" style="visibility: hidden;">
+        <div class="search-layer__inner">
+          <!-- 검색 입력 -->
+          <div class="search-input">
+            <div class="form__search">
+              <div class="form__field">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="무엇이든 물어보세요."
+                  aria-label="키워드 검색"
+                  autocomplete="off"
+                />
+              </div>
+              <button type="button" class="form__search-btn" aria-label="검색">
+                <span class="form__search-icon"></span>
+              </button>
+            </div>
+          </div>
+          <!-- //search-input -->
+          <!-- 최근 검색어 -->
+          <div class="recent-search">
+            <div class="recent-search__head">
+              <p class="recent-search__title">최근 검색어</p>
+              <button type="button" class="btn btn--text">전체삭제</button>
+            </div>
+            <ul class="recent-search__list">
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">에어맥스</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">에어포스</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">알파플라이</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">$입력한키워드</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">#입력한키워드</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">알파플라이</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">$입력한키워드</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+              <li class="recent-search__item">
+                <a href="#" class="recent-search__keyword">#입력한키워드</a>
+                <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+              </li>
+            </ul>
+          </div>
+          <!-- //recent-search -->
+          <!-- 인기 검색어 -->
+          <div class="popular-search">
+            <p class="popular-search__title">인기 검색어 top 10</p>
+            <ol class="popular-search__list">
+              <!-- .popular-search__keyword에 new, up, down 클래스 추가 -->
+              <li class="popular-search__item">
+                <span class="popular-search__rank">1</span>
+                <a href="#" class="popular-search__keyword new">나이키</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">2</span>
+                <a href="#" class="popular-search__keyword">아디다스</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">3</span>
+                <a href="#" class="popular-search__keyword up">뉴발란스</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">4</span>
+                <a href="#" class="popular-search__keyword up">러닝화</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">5</span>
+                <a href="#" class="popular-search__keyword up">스니커즈</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">6</span>
+                <a href="#" class="popular-search__keyword down">아식스</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">7</span>
+                <a href="#" class="popular-search__keyword">닥터마틴</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">8</span>
+                <a href="#" class="popular-search__keyword">휠라</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">9</span>
+                <a href="#" class="popular-search__keyword up">퓨마</a>
+              </li>
+              <li class="popular-search__item">
+                <span class="popular-search__rank">10</span>
+                <a href="#" class="popular-search__keyword up">어그</a>
+              </li>
+            </ol>
+          </div>
+          <!-- //popular-search -->
+        </div>
+      </div>
     </div>
   </div>

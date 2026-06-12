@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-search">
+      <section class="section">
+        <div class="section__inner">
+          
+          <div class="search">
+            <div class="search__header">
+              <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                <span class="btn-icon__icon"></span>
+              </button>
+              <!-- 검색 입력 -->
+              <div class="search-input">
+                <div class="form__search">
+                  <div class="form__field">
+                    <input
+                      type="text"
+                      class="form__input"
+                      placeholder="무엇이든 물어보세요."
+                      aria-label="키워드 검색"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <button type="button" class="form__search-btn" aria-label="검색">
+                    <span class="form__search-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <!-- 최근 검색어 -->
+            <div class="recent-search">
+              <div class="recent-search__head">
+                <p class="recent-search__title">최근 검색어</p>
+                <button type="button" class="btn btn--text">전체삭제</button>
+              </div>
+              <ul class="recent-search__list">
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">에어맥스</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">에어포스</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">알파플라이</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">$입력한키워드</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">#입력한키워드</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">알파플라이</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">$입력한키워드</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+                <li class="recent-search__item">
+                  <a href="#" class="recent-search__keyword">#입력한키워드</a>
+                  <button type="button" class="recent-search__remove" aria-label="키워드 삭제"></button>
+                </li>
+              </ul>
+            </div>
+            <div class="divider"></div>
+            <!-- 인기 검색어 -->
+            <div class="popular-search">
+              <p class="popular-search__title">인기 검색어 top 10</p>
+              <ol class="popular-search__list">
+                <!-- .popular-search__keyword에 new, up, down 클래스 추가 -->
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">1</span>
+                  <a href="#" class="popular-search__keyword new">나이키</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">2</span>
+                  <a href="#" class="popular-search__keyword">아디다스</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">3</span>
+                  <a href="#" class="popular-search__keyword up">뉴발란스</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">4</span>
+                  <a href="#" class="popular-search__keyword up">러닝화</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">5</span>
+                  <a href="#" class="popular-search__keyword up">스니커즈</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">6</span>
+                  <a href="#" class="popular-search__keyword down">아식스</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">7</span>
+                  <a href="#" class="popular-search__keyword">닥터마틴</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">8</span>
+                  <a href="#" class="popular-search__keyword">휠라</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">9</span>
+                  <a href="#" class="popular-search__keyword up">퓨마</a>
+                </li>
+                <li class="popular-search__item">
+                  <span class="popular-search__rank">10</span>
+                  <a href="#" class="popular-search__keyword up">어그</a>
+                </li>
+              </ol>
+            </div>
+            <!-- //popular-search -->
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+    <!-- 모바일 GNB -->
+    <div id="mobilegnb"></div>
+
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar", "mobilegnb"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

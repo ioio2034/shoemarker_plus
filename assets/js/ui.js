@@ -786,7 +786,7 @@ let UI = {
     let maxHeight = 0;
     let wasDark = false;
     const $header = $('.header');
-    const pcOnly = () => !window.matchMedia('(max-width: 768px)').matches;
+    const pcOnly = () => !window.matchMedia('(max-width: 1024px)').matches;
 
     function setMaxHeight() {
       maxHeight = 0;
@@ -928,6 +928,42 @@ let UI = {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   },
+  headerSearch: function () {
+    function closeSearchLayer() {
+      const $searchLayer = $('.search-layer');
+
+      if (!$searchLayer.hasClass('is-active')) return;
+
+      if ($searchLayer.data('was-dark')) {
+        $('.header').addClass('header--dark');
+      }
+
+      $searchLayer.removeClass('is-active');
+    }
+
+    $(document).on('click', '.util__item--search', function (e) {
+      e.preventDefault();
+
+      const $header = $('.header');
+      const $searchLayer = $('.search-layer');
+      const isDark = $header.hasClass('header--dark');
+
+      if (!$searchLayer.hasClass('is-active')) {
+        $searchLayer.data('was-dark', isDark);
+        if (isDark) $header.removeClass('header--dark');
+      }
+
+      $searchLayer.css('visibility', '').toggleClass('is-active');
+    });
+
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.util__item--search, .search-layer').length) {
+        closeSearchLayer();
+      }
+    });
+
+    $(window).on('scroll', closeSearchLayer);
+  },
 };
 
 
@@ -958,6 +994,7 @@ $(function () {
   UI.gnbMenu();
   UI.mobileMenu();
   UI.goTop();
+  UI.headerSearch();
 });
 
 // resize 대응

@@ -394,6 +394,25 @@
   }
 }
 
+.btn-filter {
+  display: inline-flex;
+  gap: 2px;
+  padding: 0 4px;
+  &__text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.48px;
+  }
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    @include bgimage('icon_filter', 'svg');
+    background-size: cover;
+  }
+}
+
 // 마이페이지 전용 actions button
 .action-buttons {
   display: flex;

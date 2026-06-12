@@ -12822,6 +12822,25 @@ body.sheet-open {
   line-height: 24px;
 }
 
+.btn-filter {
+  display: inline-flex;
+  gap: 2px;
+  padding: 0 4px;
+}
+.btn-filter__text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.48px;
+}
+.btn-filter__icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/icon_filter.svg") no-repeat;
+  background-size: cover;
+}
+
 .action-buttons {
   display: flex;
   align-items: center;
@@ -19488,6 +19507,7 @@ body.sheet-open {
   top: 81px;
   max-height: calc(100dvh - 81px);
   align-self: start;
+  overflow: hidden;
 }
 .brand-detail .brand-filter--pc .brand-filter__btn {
   display: flex;
@@ -19531,12 +19551,6 @@ body.sheet-open {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.brand-detail .brand-filter__list::-webkit-scrollbar {
-  display: none;
 }
 .brand-detail .brand-filter__item {
   overflow: hidden;
@@ -19621,6 +19635,7 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-top: 20px;
 }
 .brand-detail .brand-content__header {
   display: flex;
@@ -21440,6 +21455,12 @@ body.sheet-open {
   flex-direction: column;
   gap: 8px;
 }
+.launch-detail__feature > p {
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+}
 .launch-detail__feature-desc {
   color: #2D2D2D;
   font-size: 18px;
@@ -21479,6 +21500,9 @@ body.sheet-open {
   text-align: center;
 }
 
+.page-search .section {
+  overflow: visible;
+}
 .search {
   display: flex;
   flex-direction: column;
@@ -21560,7 +21584,9 @@ body.sheet-open {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-width: 640px;
   padding: 0 24px;
+  margin: 0 auto;
 }
 .search .recent-search__head {
   display: flex;
@@ -21609,7 +21635,9 @@ body.sheet-open {
   background-size: cover;
 }
 .search .popular-search {
+  width: 640px;
   padding: 0 24px;
+  margin: 0 auto;
 }
 .search .popular-search__title {
   padding-bottom: 8px;
@@ -21683,6 +21711,28 @@ body.sheet-open {
   content: "순위 하락";
   background-position: 0 -32px;
 }
+.search .recommend-prod {
+  padding: 0 24px;
+}
+.search .recommend-prod__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D8D8D8;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.search .recommend-prod .product .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  row-gap: 40px;
+}
+.search .search-prod .brand-detail .brand-content__sort .btn-filter {
+  display: none;
+}
+
 .search-layer {
   display: block;
   position: absolute;

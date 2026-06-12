@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>슈마커 플러스</title>
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Library -->
+  <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
+</head>
+<body>
+  <div id="wrap">
+
+    <!-- Header -->
+    <header id="header" class="header"></header>
+
+    <!-- Content -->
+    <main class="container page-search">
+      <section class="section">
+        <div class="section__inner">
+          
+          <div class="search">
+            <div class="search__header">
+              <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
+                <span class="btn-icon__icon"></span>
+              </button>
+              <!-- 검색 입력 -->
+              <div class="search-input">
+                <div class="form__search">
+                  <div class="form__field">
+                    <input
+                      type="text"
+                      class="form__input"
+                      placeholder="무엇이든 물어보세요."
+                      aria-label="키워드 검색"
+                      autocomplete="off"
+                      value="러닝화"
+                    />
+                  </div>
+                  <button type="button" class="form__search-btn" aria-label="검색">
+                    <span class="form__search-icon"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="search-result">
+              <p class="search-result__title">
+                <span class="search-result__keyword">러닝화</span>에 대한 
+                <span class="search-result__num">123</span>개의 검색 결과
+              </p>
+            </div>
+            <div class="divider"></div>
+            <!-- 검색 결과 상품 -->
+            <div class="search-prod">
+              <div class="brand brand-detail">
+                <!-- PC 전용 : 좌측 사이드바 필터 -->
+                <aside class="brand-filter brand-filter--pc">
+                  <div class="brand-filter__top">
+                    <h3 class="brand-filter__title">필터</h3>
+                    <button type="button" class="btn-reset" aria-label="필터 초기화">
+                      <span class="btn_reset__text">초기화</span>
+                      <span class="btn-reset__icon"></span>
+                    </button>
+                  </div>
+                  <ul class="brand-filter__list">
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">성별</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check1" class="checkbox__input">
+                              <label for="check1" class="checkbox__label">남</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check2" class="checkbox__input">
+                              <label for="check2" class="checkbox__label">여</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">카테고리</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check3" class="checkbox__input">
+                              <label for="check3" class="checkbox__label">러닝화</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check4" class="checkbox__input">
+                              <label for="check4" class="checkbox__label">스니커즈</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check5" class="checkbox__input">
+                              <label for="check5" class="checkbox__label">상의</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check6" class="checkbox__input">
+                              <label for="check6" class="checkbox__label">하의</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">사이즈</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check7" class="checkbox__input">
+                              <label for="check7" class="checkbox__label">220mm</label>
+                            </div>
+                            <div class="brand-filter__count">90개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check8" class="checkbox__input">
+                              <label for="check8" class="checkbox__label">225mm</label>
+                            </div>
+                            <div class="brand-filter__count">100개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check9" class="checkbox__input">
+                              <label for="check9" class="checkbox__label">230mm</label>
+                            </div>
+                            <div class="brand-filter__count">1개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">색상</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check10" class="checkbox__input">
+                              <label for="check10" class="checkbox__label">블랙</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check11" class="checkbox__input">
+                              <label for="check11" class="checkbox__label">네이비</label>
+                            </div>
+                            <div class="brand-filter__count">100개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check12" class="checkbox__input">
+                              <label for="check12" class="checkbox__label">레드</label>
+                            </div>
+                            <div class="brand-filter__count">1개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">가격</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check13" class="checkbox__input">
+                              <label for="check13" class="checkbox__label">1만원 이하</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check14" class="checkbox__input">
+                              <label for="check14" class="checkbox__label">1만원 ~ 5만원</label>
+                            </div>
+                            <div class="brand-filter__count">100개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check15" class="checkbox__input">
+                              <label for="check15" class="checkbox__label">5만원 ~ 10만원</label>
+                            </div>
+                            <div class="brand-filter__count">1개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="brand-filter__item is-open">
+                      <button type="button" class="brand-filter__btn">브랜드</button>
+                      <div class="brand-filter__sub">
+                        <ul class="brand-filter__sub-list">
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check16" class="checkbox__input">
+                              <label for="check16" class="checkbox__label">브랜드1</label>
+                            </div>
+                            <div class="brand-filter__count">12개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check17" class="checkbox__input">
+                              <label for="check17" class="checkbox__label">브랜드2</label>
+                            </div>
+                            <div class="brand-filter__count">100개</div>
+                          </li>
+                          <li class="brand-filter__sub-item">
+                            <div class="checkbox">
+                              <input type="checkbox" id="check18" class="checkbox__input">
+                              <label for="check18" class="checkbox__label">브랜드3</label>
+                            </div>
+                            <div class="brand-filter__count">1개</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </aside>
+                <!-- 상품 -->
+                <div class="brand-content">
+                  <div class="brand-content__header">
+                    <p class="brand-content__count">
+                      총 <span class="brand-content__count-num">123</span>개
+                    </p>
+                    <div class="brand-content__sort">
+                      <!-- 정렬 버튼 + 레이어, 필터 -->
+                      <div class="sort">
+                        <button type="button" class="sort__btn" aria-label="정렬" aria-expanded="false" aria-controls="sort-layer">
+                          <span class="sort__text">최신순</span>
+                          <span class="sort__icon" aria-hidden="true"></span>
+                        </button>
+                        <!-- 정렬 레이어 -->
+                        <div class="sort__layer" id="sort-layer">
+                          <ul class="sort__list">
+                            <li class="sort__item">
+                              <button type="button" class="sort__option is-active" data-value="latest">최신순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="popular">인기순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="rating">별점순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="price-low">낮은가격순</button>
+                            </li>
+                            <li class="sort__item">
+                              <button type="button" class="sort__option" data-value="price-high">높은가격순</button>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- //sort__layer -->
+                      </div>
+                      <button type="button" class="btn-filter js-bottom-sheet-open" data-target="#brandFilterSheet" aria-label="필터">
+                        <span class="btn-filter__text">필터</span>
+                        <span class="btn-filter__icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <ul class="brand-content__list">
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_02.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="brand-content__item">
+                      <div class="product-card">
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__img">
+                            <img src="../../assets/images/img_product_thumb_01.jpg" alt="상품 이름 나이키 알파플라이 3글램">
+                          </div>
+                        </a>
+                        <a href="#" class="product-card__link">
+                          <div class="product-card__info">
+                            <span class="product-card__brand">NIKE</span>
+                            <span class="product-card__name">나이키 알파플라이 3글램</span>
+                            <div class="product-card__price">
+                              <div class="product-card__cost">
+                                <span class="price">
+                                  <span class="price__num">209,000</span>
+                                  <span class="price__unit">원</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //search-prod -->
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Tab bar -->
+    <nav id="tabbar" class="tabbar"></nav>
+
+    <!-- 모바일 GNB -->
+    <div id="mobilegnb"></div>
+
+  </div>
+
+  <!-- bottom sheet -->
+  <div class="bottom-sheet" id="brandFilterSheet">
+    <!-- dim -->
+    <div class="bottom-sheet__dim"></div>
+    <!-- content -->
+    <div class="bottom-sheet__content">
+      <div class="bottom-sheet__indicator"></div>
+      <div class="bottom-sheet__header">
+        <h3 class="bottom-sheet__title">필터</h3>
+      </div>
+      <div class="bottom-sheet__body">
+        <!-- 필터 -->
+        <div class="brand-filter">
+          <div class="tab tab--pill js-tabs">
+            <!-- 탭 메뉴 -->
+            <div class="tab__list" role="tablist">
+              <!-- 활성화 상태 is-active -->
+              <button type="button" role="tab" class="tab__btn js-tab-btn is-active" aria-selected="true">성별</button>
+              <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">카테고리</button>
+              <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">사이즈</button>
+              <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">색상</button>
+              <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">가격</button>
+              <button type="button" role="tab" class="tab__btn js-tab-btn" aria-selected="false">브랜드</button>
+            </div>            
+            <!-- 탭 컨텐츠 -->
+            <div class="tab__panels">
+              <div class="tab__panel js-tab-panel is-active">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check19" class="checkbox__input">
+                      <label for="check19" class="checkbox__label">남</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check20" class="checkbox__input">
+                      <label for="check20" class="checkbox__label">여</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab__panel js-tab-panel">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check21" class="checkbox__input">
+                      <label for="check21" class="checkbox__label">러닝화</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check22" class="checkbox__input">
+                      <label for="check22" class="checkbox__label">스니커즈</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check23" class="checkbox__input">
+                      <label for="check23" class="checkbox__label">상의</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check24" class="checkbox__input">
+                      <label for="check24" class="checkbox__label">하의</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab__panel js-tab-panel">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check25" class="checkbox__input">
+                      <label for="check25" class="checkbox__label">220mm</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check26" class="checkbox__input">
+                      <label for="check26" class="checkbox__label">225mm</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check27" class="checkbox__input">
+                      <label for="check27" class="checkbox__label">230mm</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab__panel js-tab-panel">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check28" class="checkbox__input">
+                      <label for="check28" class="checkbox__label">블랙</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check29" class="checkbox__input">
+                      <label for="check29" class="checkbox__label">네이비</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check30" class="checkbox__input">
+                      <label for="check30" class="checkbox__label">레드</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab__panel js-tab-panel">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check31" class="checkbox__input">
+                      <label for="check31" class="checkbox__label">1만원 이하</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check32" class="checkbox__input">
+                      <label for="check32" class="checkbox__label">1만원 ~ 5만원</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check33" class="checkbox__input">
+                      <label for="check33" class="checkbox__label">5만원 ~ 10만원</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab__panel js-tab-panel">
+                <ul class="brand-filter__list">
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check34" class="checkbox__input">
+                      <label for="check34" class="checkbox__label">브랜드1</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check35" class="checkbox__input">
+                      <label for="check35" class="checkbox__label">브랜드2</label>
+                    </div>
+                  </li>
+                  <li class="brand-filter__item">
+                    <div class="checkbox">
+                      <input type="checkbox" id="check36" class="checkbox__input">
+                      <label for="check36" class="checkbox__label">브랜드3</label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="filter-tags">
+            <ul class="filter-tags__list">
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">남</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">런닝화</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">00만원 이상</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">270mm</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">블랙</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+              <li class="filter-tags__item">
+                <span class="filter-tags__text">00만원 미만</span>
+                <button type="button" class="filter-tags__remove" aria-label="필터 삭제">
+                  <span class="filter-tags__remove-icon" aria-hidden="true"></span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-sheet__footer">
+        <button type="button" class="btn btn--line btn--block">취소</button>
+        <button type="button" class="btn btn--primary btn--block">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts  -->
+  <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../../assets/js/swiper-bundle.min.js"></script>
+  <script src="../../assets/js/ui.js"></script>
+  <!-- Script for loading header and footer (퍼블용) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      ["header", "footer", "tabbar", "mobilegnb"].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const file = el.dataset.file || `${id}.html`;
+        fetch(`../include/${file}`)
+          .then(res => res.text())
+          .then(html => (el.innerHTML = html));
+      });
+    });
+  </script>
+</body>
+</html>

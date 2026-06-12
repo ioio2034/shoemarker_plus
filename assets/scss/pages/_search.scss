@@ -3,9 +3,14 @@
 
 .page-search {
   .section {
+    overflow: visible;
+    @include tablet {
+      overflow: hidden;
+    }
     &__inner {
       @include tablet {
         padding: 0;
+        padding-bottom: calc(78px + env(safe-area-inset-bottom));
       }
     }
   }
@@ -125,8 +130,11 @@
   .recent-search {
     @include flex-col;
     gap: 12px;
+    max-width: 640px;
     padding: 0 24px;
+    margin: 0 auto;
     @include tablet {
+      max-width: 100%;
       padding: 24px;
     }
     &__head {
@@ -174,8 +182,11 @@
   }
   // 인기 검색어
   .popular-search {
+    width: 640px;
     padding: 0 24px;
+    margin: 0 auto;
     @include tablet {
+      width: 100%;
       padding: 24px;
     }
     &__title {
@@ -250,8 +261,94 @@
       }
     }
   }
+  // 추천 상품
+  .recommend-prod {
+    padding: 0 24px;
+    @include tablet {
+      padding: 0;
+    }
+    &__title {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $gray-30;
+      color: $gray-80;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 26px;
+      @include tablet {
+        padding: 0 24px 12px;
+        border-bottom: 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+    }
+    .product {
+      &__inner {
+        @include tablet {
+          padding-top: 0;
+        }
+      }
+      .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: 16px;
+        row-gap: 40px;
+        @include tablet {
+          display: flex;
+          gap: 0;
+        }
+      }
+    }
+  }
   // 검색 상품
-  .search-prod {}
+  .search-prod {
+    .brand-detail {
+      .brand-content {
+        @include tablet {
+          padding: 24px;
+        }
+        &__header {
+          @include tablet {
+            padding-bottom: 8px;
+            border-bottom: 1px solid $gray-30;
+          }
+        }
+        &__sort {
+          @include tablet {
+            display: flex;
+            align-items: center;
+          }
+          .sort {
+            &__btn {
+              @include tablet {
+                gap: 4px;
+                padding: 0 4px;
+              }
+            }
+            &__text {
+              @include tablet {
+                font-size: 12px;
+                line-height: 16px;
+                letter-spacing: 0.48px;
+              }
+            }
+            &__icon {
+              @include tablet {
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+          .btn-filter {
+            display: none;
+            @include tablet {
+              display: inline-flex;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 // 검색 레이어
