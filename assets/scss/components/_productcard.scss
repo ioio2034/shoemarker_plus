@@ -115,9 +115,15 @@
       }
     }
     &--limited {
+      left: 24px;
+      top: 40px;
       padding: 4px 12px;
       border-radius: 20px;
       background: linear-gradient(39deg, #005BFF 31.31%, rgba(0, 133, 255, 0.76) 65.06%, rgba(62, 228, 175, 0.51) 101.68%, #3C95FD 157.92%);
+      @include tablet {
+        left: 12px;
+        top: 10px;
+      }      
     }
   }
   &__img {

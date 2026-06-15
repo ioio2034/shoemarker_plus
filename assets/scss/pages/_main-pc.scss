@@ -321,8 +321,8 @@
     }
     &__slide-prev {
       position: absolute;
-      top: 45%;
-      transform: translateY(-45%);
+      top: 35%;
+      transform: translateY(-35%);
       left: 0;
       width: 36px;
       height: 36px;
@@ -331,16 +331,13 @@
     }
     &__slide-next {
       position: absolute;
-      top: 45%;
-      transform: translateY(-45%);
+      top: 35%;
+      transform: translateY(-35%);
       right: 0;
       width: 36px;
       height: 36px;
       @include bgimage('icon_swiper_next', 'svg');
       z-index: 1;
-    }
-    .product-card {
-
     }
   }
   .banner {
@@ -384,51 +381,95 @@
         margin-bottom: 0;
       }
     }
-    .product {
-      &__list {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
+    &__swiper-btn {
+      font-size: 0;
     }
+    &__swiper-prev {
+      position: absolute;
+      top: 35%;
+      left: 0;
+      transform: translateY(-35%);
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_prev', 'svg');
+      z-index: 1;
+    }
+    &__swiper-next {
+      position: absolute;
+      top: 35%;
+      right: 0;
+      transform: translateY(-35%);
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_next', 'svg');
+      z-index: 1;
+    }
+  }
+  .limited-offer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
     .product-card {
-      aspect-ratio: 308 / 320;
-      border-radius: 12px;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
       background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, #F4F4F4 100%);
-      &__link {
-        padding: 32px;
-      }
-      &__label {
-        left: 16px;
-        top: 16px;
-        padding: 2px 6px;
-      }
       &__wish {
-        right: 16px;
-        top: 16px;
-        width: 24px;
-        height: 24px;
-        background-size: cover;
+        right: 24px;
+        top: 40px;
+      }
+      &__link {
+        position: relative;
+        justify-content: space-between;
+        padding: 40px 24px;
       }
       &__img {
-        flex: 1;
-        @include flex(center, center);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         aspect-ratio: unset;
-        border-radius: 0;
+        flex: 1;
         img {
           height: auto;
         }
       }
+      &__info {
+        gap: 4px;
+      }
       &__name {
         color: $gray-80;
-        font-family: $font-en;
         font-size: 20px;
         font-weight: 600;
+        line-height: 150%;
+      }
+      &__price {
+        flex-direction: row;
+        gap: 4px;
+      }
+      &__percent {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        letter-spacing: 0;
       }
       &__cost {
         .price {
-          font-size: 18px;
-          line-height: 26px;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 16px;
+          letter-spacing: 0;
+          &__unit {
+            font-weight: 600;
+          }
+        }
+      }
+      &__origin {
+        display: block;
+        margin-left: 4px;
+        .price {          
+          color: $gray-50;
+          font-size: 16px;
+          line-height: 100%;
+          letter-spacing: 0
         }
       }
     }
@@ -454,22 +495,44 @@
     }
   }
   .brand {
+    overflow: hidden;
     &__wrap {
       display: flex;
-      gap: 16px;
+      gap: 24px;
     }
     &__visual {
       img {
         width: 100%;
       }
     }
-    &__products {
+    &__link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    &__swiper {
       padding-top: 16px;
     }
-    .product__list {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+    &__swiper-btn {
+      font-size: 0;
+    }
+    &__swiper-prev {
+      position: absolute;
+      top: 72px;
+      left: 0;
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_prev', 'svg');
+      z-index: 1;
+    }
+    &__swiper-next {
+      position: absolute;
+      top: 72px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      @include bgimage('icon_swiper_next', 'svg');
+      z-index: 1;
     }
     .product-card {
       &__link {
@@ -481,6 +544,18 @@
     }
   }
   .benefit {
+    &__swiper {
+      padding-bottom: 40px;
+      .swiper-pagination {
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        transform: translateX(-50%);
+      }
+      .swiper-pagination-bullet-active {
+        background: $gray-80;
+      }
+    }
     &__list {
       display: flex;
     }
