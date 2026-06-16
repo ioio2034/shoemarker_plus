@@ -924,7 +924,7 @@ let UI = {
     });
 
     $btn.on('click', function (e) {
-    e.preventDefault();
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   },

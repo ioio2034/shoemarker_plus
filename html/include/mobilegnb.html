@@ -1,11 +1,10 @@
 <!-- 모바일 전체메뉴 -->
 <div class="mobile-gnb" aria-hidden="true" style="transform: translateX(-100%); visibility: hidden;">
   <div class="mobile-gnb__inner">
-    <!-- 탭 헤더 -->
+    <!--  헤더 -->
     <div class="mobile-gnb__head">
-      <div class="mobile-gnb__tabs">
-        <button class="mobile-gnb__tab is-active" data-tab="category" type="button">카테고리</button>
-        <button class="mobile-gnb__tab" data-tab="brand" type="button">브랜드</button>
+      <div class="mobile-gnb__search">
+        <a href="#" class="mobile-gnb__search-link">매일 100% 랜덤 포인트</a>
       </div>
       <button class="mobile-gnb__close" type="button" aria-label="전체메뉴 닫기">
         <span class="blind">닫기</span>
@@ -13,9 +12,16 @@
     </div>
     <!-- //mobile-gnb__head -->
   
-    <!-- 검색 -->
-    <div class="mobile-gnb__search">
-      <a href="#" class="mobile-gnb__search-link">매일 100% 랜덤 포인트</a>
+    <!-- 탭 메뉴 + 로그인 -->
+    <div class="mobile-gnb__actions">
+      <div class="mobile-gnb__tabs">
+        <button class="mobile-gnb__tab is-active" data-tab="category" type="button">카테고리</button>
+        <button class="mobile-gnb__tab" data-tab="brand" type="button">브랜드</button>
+      </div>
+      <div class="mobile-gnb__auth">
+        <a href="#" class="mobile-gnb__auth-btn">로그인/회원가입</a>
+        <!-- <a href="#" class="mobile-gnb__auth-btn">로그아웃</a> -->
+      </div>
     </div>
   
     <!-- 탭 콘텐츠 -->

@@ -32,12 +32,42 @@ body.is-locked {
   // tab head
   &__head {
     @include flex(center, space-between);
-    padding: 0 24px;
-    border-bottom: 1px solid $gray-30;
+    gap: 16px;
+    padding: 16px 24px;
+  }
+  // search
+  &__search {
+    flex: 1;
+  }
+  &__search-link {
+    @include flex(center, space-between);
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #F5F5F5;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    &::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      @include bgimage('icon_search_16', 'png');
+      background-size: cover;
+    }
+  }
+  &__close {
+    @include inline-flex(center, center);
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    @include bgimage('icon_close_24', 'svg');
   }
   &__tabs {
     display: flex;
     gap: 24px;
+    flex: 1;
   }
   &__tab {
     position: relative;
@@ -66,38 +96,20 @@ body.is-locked {
       }
     }
   }
-  &__close {
-    @include inline-flex(center, center);
-    padding: 0;
-    width: 24px;
-    height: 24px;
-    @include bgimage('icon_close_24', 'svg');
-  }
-  // search
-  &__search {
-    padding: 16px 24px;
-  }
-  &__search-link {
+  &__actions {
     @include flex(center, space-between);
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: #F5F5F5;
+    padding: 0 24px;
+    border-bottom: 1px solid $gray-30;
+  }
+  &__auth-btn {
     color: $gray-80;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 20px;
-    &::after {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 24px;
-      @include bgimage('icon_search_16', 'png');
-      background-size: cover;
-    }
   }
   // 바로가기
   &__shortcut {
-    padding: 0 24px 16px;
+    padding: 16px 24px;
     flex-shrink: 0;
   }
   .shortcut {    
