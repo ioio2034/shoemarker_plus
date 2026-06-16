@@ -11196,11 +11196,14 @@ img, video, canvas, svg {
 .header--dark .nav--etc::before {
   color: #FFFFFF;
 }
+.header--dark .util__item--logout {
+  background: url("../images/icon_logout_w.svg") no-repeat;
+}
 .header--dark .util__item--search {
   background: url("../images/icon_search_w.svg") no-repeat;
 }
 .header--dark .util__item--cart {
-  background: url("../images/icon_cart_32_w.svg") no-repeat;
+  background: url("../images/icon_cart_w.svg") no-repeat;
 }
 .header--dark .util__item--mypage {
   background: url("../images/icon_mypage_w.svg") no-repeat;
@@ -11236,11 +11239,15 @@ img, video, canvas, svg {
   height: 24px;
   padding: 0;
 }
+.brand-dropdown__toggle[aria-expanded=true] .brand-dropdown__toggle-icon {
+  transform: rotate(180deg);
+}
 .brand-dropdown__toggle-icon {
   display: inline-block;
   width: 24px;
   height: 24px;
   background: url("../images/icon_chevron_down_24.svg") no-repeat;
+  transition: transform 0.3s ease;
 }
 .brand-dropdown__layer {
   position: absolute;
@@ -11454,17 +11461,20 @@ img, video, canvas, svg {
 
 .util__item {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.util__item--logout {
+  background: url("../images/icon_logout.svg") no-repeat;
 }
 .util__item--search {
   background: url("../images/icon_search.svg") no-repeat;
 }
 .util__item--cart {
-  background: url("../images/icon_cart_32.svg") no-repeat;
+  background: url("../images/icon_cart.svg") no-repeat;
 }
 .util__item--mypage {
   background: url("../images/icon_mypage.svg") no-repeat;

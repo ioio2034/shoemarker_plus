@@ -130,11 +130,14 @@
     }
     .util {
       &__item {
+        &--logout {
+          @include bgimage('icon_logout_w', 'svg'); 
+        }
         &--search {
           @include bgimage('icon_search_w', 'svg'); 
         }
         &--cart {
-          @include bgimage('icon_cart_32_w', 'svg'); 
+          @include bgimage('icon_cart_w', 'svg'); 
         }
         &--mypage {
           @include bgimage('icon_mypage_w', 'svg'); 
@@ -198,12 +201,18 @@
       width: 18px;
       height: 18px;
     }
+    &[aria-expanded="true"]{
+      .brand-dropdown__toggle-icon {
+        transform: rotate(180deg);
+      }
+    }
   }
   &__toggle-icon {
     display: inline-block;
     width: 24px;
     height: 24px;
     @include bgimage('icon_chevron_down_24', 'svg');
+    transition: transform .3s ease;
     @include tablet {
       width: 18px;
       height: 18px;
@@ -524,14 +533,17 @@
 .util {
   &__item {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     @include flex;
+    &--logout {
+      @include bgimage('icon_logout', 'svg');
+    }
     &--search {
       @include bgimage('icon_search', 'svg');
     }
     &--cart {
-      @include bgimage('icon_cart_32', 'svg');
+      @include bgimage('icon_cart', 'svg');
     }
     &--mypage {
       @include bgimage('icon_mypage', 'svg');
