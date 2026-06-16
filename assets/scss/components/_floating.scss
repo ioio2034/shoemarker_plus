@@ -10,19 +10,17 @@
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
-  &.is-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
 }
 
 // ai-chat
 .ai-chat {
+  &.is-top {
+    .ai-chat__btn {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
   &__trigger {
     display: flex;
     align-items: center;
@@ -31,7 +29,7 @@
       .ai-chat__btn {
         opacity: 1;
         -webkit-transform: translateX(0);
-        transform: translateX(0)
+        transform: translateX(0);
       }
     }
   }
@@ -500,13 +498,25 @@
 // top
 #goTop {
   position: relative;
-  display: block;
+  display: none;
   width: 40px;
   height: 40px;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid $gray-30;
   background: $white;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  &.is-active {
+    display: block;
+  }
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
   &::before {
     content: '';
     @include absolute-center;

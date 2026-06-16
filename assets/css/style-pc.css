@@ -14170,17 +14170,12 @@ body.sheet-open {
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
-}
-.floating-btns.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
+.ai-chat.is-top .ai-chat__btn {
+  opacity: 1;
+  transform: translateX(0);
+}
 .ai-chat__trigger {
   display: flex;
   align-items: center;
@@ -14565,13 +14560,25 @@ body.sheet-open {
 
 #goTop {
   position: relative;
-  display: block;
+  display: none;
   width: 40px;
   height: 40px;
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #D8D8D8;
   background: #FFFFFF;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+#goTop.is-active {
+  display: block;
+}
+#goTop.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 #goTop::before {
   content: "";

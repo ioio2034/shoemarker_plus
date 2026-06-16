@@ -912,16 +912,35 @@ let UI = {
     });
   },
   goTop: function () {
-    const $wrap = $('.floating-btns');
-    const $btn  = $('#goTop');
+    const $btn    = $('#goTop');
+    const $aiChat = $('.ai-chat');
 
-    $(window).on('scroll', function () {
-      if ($(this).scrollTop() > 180) {
-        $wrap.addClass('is-visible');
-      } else {
-        $wrap.removeClass('is-visible');
-      }
-    });
+    function showTopBtn() {
+      if ($btn.hasClass('is-visible')) return;
+      $btn.addClass('is-active');
+      void $btn[0].offsetHeight;
+      $btn.addClass('is-visible');
+    }
+
+    function hideTopBtn() {
+      if (!$btn.hasClass('is-visible')) return;
+      $btn.removeClass('is-visible');
+      $btn.one('transitionend', function () {
+        if (!$btn.hasClass('is-visible')) {
+          $btn.removeClass('is-active');
+        }
+      });
+    }
+
+    function handleScroll() {
+      const scrollTop = $(window).scrollTop();
+
+      scrollTop > 200 ? showTopBtn() : hideTopBtn();
+      scrollTop <= 100 ? $aiChat.addClass('is-top') : $aiChat.removeClass('is-top');
+    }
+
+    handleScroll();
+    $(window).on('scroll', handleScroll);
 
     $btn.on('click', function (e) {
       e.preventDefault();
