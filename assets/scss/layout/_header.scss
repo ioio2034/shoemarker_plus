@@ -131,7 +131,7 @@
     .util {
       &__item {
         &--logout {
-          @include bgimage('icon_logout_w', 'svg'); 
+          @include bgimage('icon_login_w', 'svg'); 
         }
         &--search {
           @include bgimage('icon_search_w', 'svg'); 
@@ -536,8 +536,8 @@
     width: 34px;
     height: 34px;
     @include flex;
-    &--logout {
-      @include bgimage('icon_logout', 'svg');
+    &--login {
+      @include bgimage('icon_login', 'svg');
     }
     &--search {
       @include bgimage('icon_search', 'svg');
