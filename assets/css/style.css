@@ -11271,7 +11271,7 @@ img, video, canvas, svg {
   color: #FFFFFF;
 }
 .header--dark .util__item--logout {
-  background: url("../images/icon_logout_w.svg") no-repeat;
+  background: url("../images/icon_login_w.svg") no-repeat;
 }
 .header--dark .util__item--search {
   background: url("../images/icon_search_w.svg") no-repeat;
@@ -11702,8 +11702,8 @@ img, video, canvas, svg {
   align-items: center;
   justify-content: center;
 }
-.util__item--logout {
-  background: url("../images/icon_logout.svg") no-repeat;
+.util__item--login {
+  background: url("../images/icon_login.svg") no-repeat;
 }
 .util__item--search {
   background: url("../images/icon_search.svg") no-repeat;
@@ -12296,9 +12296,6 @@ body.is-loading {
   flex-direction: column;
   align-items: flex-start;
 }
-.lnb__item.is-open .lnb__link::after {
-  transform: rotate(180deg);
-}
 .lnb__link {
   display: flex;
   align-items: center;
@@ -12311,13 +12308,16 @@ body.is-loading {
   line-height: 140%;
   letter-spacing: -0.16px;
 }
-.lnb__link::after {
+.lnb__link[aria-expanded]::after {
   display: block;
   content: "";
   width: 24px;
   height: 24px;
   background: url("../images/icon_chevron_down_24.svg") no-repeat;
   transition: transform 0.2s ease;
+}
+.lnb__link[aria-expanded=true]::after {
+  transform: rotate(180deg);
 }
 .lnb__sub {
   overflow: hidden;

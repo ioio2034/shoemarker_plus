@@ -23,7 +23,6 @@
     line-height: 140%;
     letter-spacing: -1px;
   }
-  &__nav {}
   &__list {
     @include flex-col;
     gap: 30px;
@@ -32,14 +31,6 @@
   &__item {
     @include flex-col;
     align-items: flex-start;
-    
-    &.is-open {
-      .lnb__link {
-        &::after {
-          transform: rotate(180deg);
-        }
-      }
-    }
   }
   &__link {
     @include flex(center, space-between);
@@ -50,12 +41,15 @@
     font-weight: 600;
     line-height: 140%;
     letter-spacing: -0.16px;
-    &::after {
+    &[aria-expanded]::after {
       @include before_after;
       width: 24px;
       height: 24px;
       @include bgimage('icon_chevron_down_24', 'svg');
       transition: transform 0.2s ease;
+    }
+    &[aria-expanded="true"]::after {
+      transform: rotate(180deg);
     }
   }
 

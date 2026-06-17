@@ -22,7 +22,7 @@
     <main class="container page-notice has-lnb">
 
       <!-- lnb -->
-      <aside id="lnb" class="lnb"></aside>
+      <aside id="lnb-support" class="lnb"></aside>
 
       <!-- 하단 고정 버튼이 있을 경우 section--fixed 추가 -->
       <section class="section section--fixed">
@@ -79,7 +79,7 @@
   <!-- Script for loading header and footer (퍼블용) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      ["header", "lnb", "footer"].forEach(id => {
+      ["header", "lnb-support", "footer"].forEach(id => {
         const el = document.getElementById(id);
         if (!el) return;
         const file = el.dataset.file || `${id}.html`;
