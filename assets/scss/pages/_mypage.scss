@@ -967,10 +967,14 @@
     }
   }
   .menu {
-    display: none;    
+    display: none;
     @include tablet {
       @include flex-col;
+      width: 100%;
       padding: 0 24px;
+    }
+    &__list {
+      gap: 0;
     }
     &__item {
       padding: 16px 0;
@@ -982,12 +986,43 @@
       font-size: 16px;
       font-weight: 600;
       line-height: 24px;
+      letter-spacing: 0;
       &::after {
         content: '';
         display: block;
         width: 20px;
         height: 20px;
-        @include bgimage('icon_chevron_right_20', 'svg'); 
+        @include bgimage('icon_chevron_right_20', 'svg');
+      }
+    }
+    button.menu__link::after {
+      @include bgimage('icon_chevron_down_20', 'svg');
+      transition: transform 0.3s ease;
+    }
+    &__item.is-open > button.lnb__link::after {
+      transform: rotate(180deg);
+    }
+    // 2depth
+    &__sub-list {
+      @include flex-col;
+      gap: 16px;
+      padding: 24px 0 8px;
+    }
+    &__sub-item {
+      & + .menu__sub-item {
+        padding-top: 0;
+      }
+    }
+    &__sub-link {
+      display: block;
+      color: $gray-60;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      &::before {
+        content: '·';
+        display: inline-block;
+        margin-right: 4px;
       }
     }
   }
