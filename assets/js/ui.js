@@ -915,6 +915,8 @@ let UI = {
     const $btn    = $('#goTop');
     const $aiChat = $('.ai-chat');
 
+    if (!$btn.length) return;
+
     function showTopBtn() {
       if ($btn.hasClass('is-visible')) return;
       $btn.addClass('is-active');
