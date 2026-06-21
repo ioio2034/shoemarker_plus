@@ -443,6 +443,250 @@
   }
 }
 
+// 서브 메인
+.product-main {
+  @include tablet {
+    padding-top: 107px;
+  }
+  // 상단 이미지 슬라이드
+  .visual-bnr {
+    position: relative;
+    @include tablet {
+        padding-bottom: 24px;
+      }
+    &__swiper {
+      max-width: 1920px;
+      margin: 0 auto;      
+    }
+    &__slide {
+      position: relative;
+      width: 442px;
+      height: 587px;
+      @include tablet {
+        width: auto;
+        height: auto;
+      }
+      &.swiper-slide-prev,
+      &.swiper-slide-active,
+      &.swiper-slide-next {
+        &::after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      &.swiper-slide-prev,
+      &.swiper-slide-next {
+        &::after {
+          @include tablet {
+            opacity: 0.4;
+            visibility: visible;
+          }
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        @include tablet {
+          border-radius: 16px; 
+        }
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 442 / 587;
+        @include tablet {
+          border-radius: 16px;
+          aspect-ratio: 342 / 400;
+        }
+      }
+    }
+    &__link {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      @include tablet {
+        border-radius: 16px;
+      }
+    }
+    &__copy {
+      position: absolute;
+      left: 32px;
+      bottom: 120px;
+      @include flex-col;
+      gap: 8px;
+      @include tablet {
+        left: 24px;
+        bottom: auto;
+        top: 30%;
+        transform: translateY(-30%);
+      }
+    }
+    &__copy-title {
+      color: $white;
+      font-family: 'Odibee Sans';
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 100%;
+      text-transform: uppercase;
+    }
+    &__copy-desc {
+      color: $white;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 120%;
+      @include tablet {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    &__control {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      @include tablet {
+        position: absolute;
+        max-width: 100%;
+        right: 38px;
+        bottom: 40px;
+        z-index: 1;
+      }
+    }
+    &__bullets {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 4px;
+      background: $gray-30;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__bullet {
+      height: 100%;
+      padding: 0;
+      flex-grow: 1;
+      flex-basis: 0;
+      &.is-active {
+        background: $gray-90;
+      }
+    }
+    &__bottom {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    &__prev,
+    &__next {
+      display: block;
+      width: 14px;
+      height: 14px;
+      padding: 0;
+      @include tablet {
+        display: none;
+      }
+    }
+    &__prev {
+      @include bgimage('icon_chevron_left_14', 'svg');
+      background-size: cover;
+    }
+    &__next {
+      @include bgimage('icon_chevron_right_14', 'svg');
+      background-size: cover;
+    }
+    &__pagination {
+      @include flex(center, center);
+      gap: 6px;
+      max-width: 42px;
+      font-family: $font-en;
+      color: $gray-50;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;
+      @include tablet {
+        max-width: none;
+        padding: 6px 8px;
+        border-radius: 4px;
+        background: rgba($color: #000000, $alpha: 0.5);
+        color: rgba($color: $white, $alpha: 0.6);
+        line-height: 100%;
+      }
+      .swiper-pagination-current {
+        color: $gray-80;
+        @include tablet {
+          color: rgba($color: $white, $alpha: 1.0);
+        }
+      }
+    }
+    &__fraction-sep {
+      display: inline-block;
+      width: 1px;
+      height: 8px;
+      background: $gray-40;
+      flex-shrink: 0;
+    }
+  }
+  // 컨텐츠
+  .prod-list-wrap {
+    @include flex-col;
+    gap: 80px;
+    max-width: 1280px;
+    margin: 60px auto 80px;
+    @include tablet {
+      gap: 40px;
+      max-width: 100%;
+      margin: 0;
+      padding: 32px 24px;
+    }
+    .prod-group {
+      @include flex-col;
+      gap: 16px;
+      &__title {
+        color: $gray-80;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        @include tablet {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        @include tablet {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px 16px;
+        }
+      }
+    }
+  }
+}
+
+// 상품 리스트
+.product-list {
+  .brand-detail {
+    .brand-filter--pc {
+      top: 105px;
+      max-height: 100%;
+    }
+  }
+}
+
 // 상품 상세
 .product-detail {
   position: relative;
@@ -1582,6 +1826,22 @@
         }
       }
     }
+    // 상품 문의
+    .prod-inquiry {
+      margin-top: 60px;
+      @include tablet {
+        margin-top: 0;
+        padding: 24px;
+      }
+      &__title {
+        margin-bottom: 16px;
+        color: $grayscale-800;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 140%;
+        letter-spacing: -0.18px;
+      }
+    }
     // 룩&스타일
     .prod-styling {
       margin-top: 60px;
@@ -1842,6 +2102,51 @@
           line-height: 16px;
         }
       }
+    }
+  }
+}
+// 상품 문의하기 modal
+.inquiry-form {
+  @include flex-col;
+  gap: 20px;
+  .textarea {
+    &__label {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px; 
+    }
+  }
+  .reply-sms {
+    @include flex-col;
+    gap: 10px;
+    &__title {
+      color: $gray-80;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    &__cont {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      .radio-group {
+        flex: 0 0 auto;
+      }
+    }
+  }
+  .phone-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 280px;
+    .select {
+      flex: 0 0 100px;
+      &__field {
+        padding: 12px 32px 12px 12px;
+      }
+    }
+    .form__field {
+      flex-grow: 1;
     }
   }
 }

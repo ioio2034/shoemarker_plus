@@ -3,6 +3,15 @@
 
 .textarea {
   position: relative;
+  &.is-required {
+    .textarea__label {
+      &::after {
+        content: '*';
+        color: $red;
+        padding: 0 4px;
+      }
+    }
+  }
   &__label {
     display: block;
     margin-bottom: 4px;

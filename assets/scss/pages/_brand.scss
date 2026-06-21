@@ -522,6 +522,81 @@
       line-height: 140%;
       letter-spacing: -0.14px;
     }
+    // category (상품 리스트 페이지)
+    .category {
+      &__title {
+        padding-bottom: 28px;
+        border-bottom: 1px solid $gray-30;
+        color: $gray-80;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+      }
+      &__list {
+        padding-top: 24px;
+      }
+      &__depth2 {
+        @include flex-col;
+        > li {
+          & + li {
+            padding-top: 24px;
+          }
+          &.has-sub + li {
+            padding-top: 0;
+          }
+          &.is-current {
+            > a {
+              @include flex(center, space-between);
+              &::after {
+                content: '';
+                display: block;
+                width: 24px;
+                height: 24px;
+                @include bgimage('icon_check', 'svg');
+              }
+            }
+          }
+          > a {
+            display: block;
+            color: $gray-80;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+          }
+        }
+      }
+      &__depth3 {
+        @include flex-col;
+        gap: 16px;
+        padding: 16px 0;
+        margin: 16px 0;
+        border: 1px solid $gray-30;
+        border-width: 1px 0;
+        > li {
+          &.is-current {
+            > a {
+              @include flex(center, space-between);
+              color: $gray-80;
+              font-weight: 600;
+              &::after {
+              content: '';
+                display: block;
+                width: 24px;
+                height: 24px;
+                @include bgimage('icon_check', 'svg');
+              }
+            }
+          }
+          > a {
+            display: block;
+            color: $gray-60;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+          }
+        }
+      }
+    }
     // mobile
     &--mo {
       display: none;      
