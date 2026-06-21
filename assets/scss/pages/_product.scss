@@ -553,12 +553,13 @@
       align-items: center;
       gap: 16px;
       max-width: 1280px;
-      margin: 0 auto;
+      margin: 16px auto 0;
       @include tablet {
         position: absolute;
         max-width: 100%;
         right: 38px;
         bottom: 40px;
+        margin: 0;
         z-index: 1;
       }
     }

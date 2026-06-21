@@ -18369,7 +18369,7 @@ body.sheet-open {
   align-items: center;
   gap: 16px;
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 16px auto 0;
 }
 .product-main .visual-bnr__bullets {
   position: relative;
