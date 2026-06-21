@@ -130,8 +130,12 @@
     }
     .util {
       &__item {
-        &--logout {
+        &--login {
           @include bgimage('icon_login_w', 'svg'); 
+        }
+        &--logout {
+          @include bgimage('icon_login_w', 'svg');
+          transform: rotate(180deg);
         }
         &--search {
           @include bgimage('icon_search_w', 'svg'); 
@@ -562,6 +566,10 @@
     &--login {
       @include bgimage('icon_login', 'svg');
     }
+    &--logout {
+      @include bgimage('icon_login', 'svg');
+      transform: rotate(180deg)
+    }
     &--search {
       @include bgimage('icon_search', 'svg');
     }
@@ -574,8 +582,8 @@
   }
   &__badge {
     position: absolute;
-    top: 2px;
-    right: 0;
+    top: 7px;
+    right: 2px;
     width: 14px;
     height: 14px;
     background-color: #2D2D2D;

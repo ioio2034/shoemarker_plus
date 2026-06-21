@@ -11270,8 +11270,12 @@ img, video, canvas, svg {
 .header--dark .nav--etc::before {
   color: #FFFFFF;
 }
+.header--dark .util__item--login {
+  background: url("../images/icon_login_w.svg") no-repeat;
+}
 .header--dark .util__item--logout {
   background: url("../images/icon_login_w.svg") no-repeat;
+  transform: rotate(180deg);
 }
 .header--dark .util__item--search {
   background: url("../images/icon_search_w.svg") no-repeat;
@@ -11728,6 +11732,10 @@ img, video, canvas, svg {
 .util__item--login {
   background: url("../images/icon_login.svg") no-repeat;
 }
+.util__item--logout {
+  background: url("../images/icon_login.svg") no-repeat;
+  transform: rotate(180deg);
+}
 .util__item--search {
   background: url("../images/icon_search.svg") no-repeat;
 }
@@ -11739,8 +11747,8 @@ img, video, canvas, svg {
 }
 .util__badge {
   position: absolute;
-  top: 2px;
-  right: 0;
+  top: 7px;
+  right: 2px;
   width: 14px;
   height: 14px;
   background-color: #2D2D2D;
