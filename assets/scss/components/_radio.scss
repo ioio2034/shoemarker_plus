@@ -1,6 +1,10 @@
 @use '../base/mixin' as *;
 @use '../base/variables' as *;
 
+input[type="radio"] {
+  display: none;
+}
+
 .radio {
   display: inline-flex;
   align-items: center;

@@ -14405,6 +14405,10 @@ body.sheet-open {
   background-size: cover;
 }
 
+input[type=checkbox] {
+  display: none;
+}
+
 .checkbox {
   display: inline-flex;
   align-items: center;
@@ -14459,6 +14463,10 @@ body.sheet-open {
 }
 .checkbox__label--hide::before {
   margin: 0;
+}
+
+input[type=radio] {
+  display: none;
 }
 
 .radio {
