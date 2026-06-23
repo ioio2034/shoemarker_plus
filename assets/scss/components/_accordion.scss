@@ -72,6 +72,137 @@
     font-weight: 500;
     line-height: 20px;
   }
+  // 문의 상태
+  &__status {
+    flex-shrink: 0;
+    width: 100px;
+    color: $gray-80;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    text-align: left;
+    @include tablet {
+      width: 100%;
+      font-size: 12px;
+      letter-spacing: 0;
+    }
+  }
+  // 작성자 + 날짜
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+  &__date {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    &::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 12px;
+      background: $gray-30;
+    }
+  }
+  // 내용
+  &__qa {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    padding-left: 116px;
+    @include tablet {
+      gap: 8px;
+      padding: 0;
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      @include bgimage('icon_qna','png');
+      flex-shrink: 0;
+    }
+    &--question {
+      .accordion__qa-text {
+        padding-right: 80px;
+        @include tablet {
+          padding-right: 60px;
+        }
+      }
+      &::before {
+        background-position: 0 0;
+      }
+    }
+    &--answer {
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 16px;
+      }
+      &::before {
+        background-position: -20px 0;
+      }
+    }
+  }
+  &__qa-text {
+    color: $gray-80;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+  }
+  // 수정 + 삭제 버튼
+  &__qa-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @include tablet {
+      gap: 4px;
+    }
+  }
+  &__action-btn {
+    padding: 0;
+    color: $grayscale-600;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.14px;
+    @include tablet {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0;
+    }
+    & + .accordion__action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      @include tablet {
+        gap: 4px;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 12px;
+        background: #999;
+        @include tablet {
+          height: 10px;
+        }
+      }
+    }
+  }
 
   // Q&A
   &--qna {
@@ -132,6 +263,56 @@
     .accordion__answer {
       color: $grayscale-600;
       font-weight: 400;
+    }
+  }
+  // 상품 상세 문의
+  &--inquiry {
+    border-top: 1px solid $gray-80;
+    .accordion__item {
+      padding: 0;
+      border-bottom: 1px solid $gray-30;
+    }
+    .accordion__header {
+      align-items: center;
+      gap: 16px;
+      padding: 20px 76px 20px 16px;      
+      @include tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 12px;
+        gap: 6px;
+      }
+      &::after {
+        width: 60px;
+        height: 60px;
+        @include bgimage('icon_chevron_down_20', 'svg');
+        background-position: center;
+      }
+    }
+    .accordion__title {
+      flex: 1;
+      font-weight: 600;
+      text-align: left;
+      &.secret {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          @include bgimage('icon_secret', 'svg');
+          flex-shrink: 0;
+        }
+      }
+    }
+    .accordion__body {
+      padding: 20px 16px;
+      background: $gray-5;
+      @include tablet {
+        padding: 12px;
+      }
     }
   }
 }

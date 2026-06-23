@@ -1,0 +1,75 @@
+@use '../base/mixin' as *;
+@use '../base/variables' as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    > li {
+      height: 100%;
+      box-sizing: border-box;
+      & + li {
+        margin: 0;
+      }
+    }
+  }
+  &__btn {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    padding: 6px 0;
+    border-radius: 6px;
+    background: $white;
+    color: $gray-60;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 150%;
+
+    &--prev,
+    &--first,
+    &--end,
+    &--next {
+      position: relative;
+      text-indent: -9999px;
+      &::before {
+        @include before_after;
+        @include absolute-center;
+        width: 20px;
+        height: 20px;
+        @include bgimage('icon_pagination', 'png')
+      }
+    }
+    &--first {
+      &::before {
+        background-position: 0 0;
+      }
+    }
+    &--prev {
+      &::before {
+        background-position: -20px 0;
+      }
+    }
+    &--next {
+      &::before {
+        background-position: -40px 0;
+      }
+    }
+    &--end {
+      &::before {
+        background-position: -60px 0;
+      }
+    }
+    &.is-active {
+      background: $gray-80;
+      color: $white;
+      font-weight: 700;
+    }
+    &:disabled {
+      cursor: default;
+    }
+  }  
+}

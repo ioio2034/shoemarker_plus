@@ -719,6 +719,19 @@
                         class="prod-tabs__btn"
                         role="tab"
                         aria-selected="false"
+                        aria-controls="section-inquiry"
+                        data-target="section-inquiry"
+                      >
+                        상품문의
+                        <span class="prod-tabs__count">(10)</span>
+                      </button>
+                    </li>
+                    <li class="prod-tabs__item">
+                      <button
+                        type="button"
+                        class="prod-tabs__btn"
+                        role="tab"
+                        aria-selected="false"
                         aria-controls="section-styling"
                         data-target="section-styling"
                       >
@@ -1103,6 +1116,180 @@
                   <!-- //리뷰 목록 -->
                 </section>
                 <!-- //상품평 -->
+                <div class="divider"></div>
+                <!-- 상품문의 -->
+                <section class="prod-inquiry" id="section-inquiry" aria-label="상품문의">
+                  <div class="prod-inquiry__head">
+                    <h3 class="prod-inquiry__title">상품문의</h3>
+                    <button type="button" class="btn btn--line btn--secondary js-modal-open" data-target="#modal6">문의하기</button>
+                  </div>
+                  <!-- 총 개수 -->
+                  <p class="prod-inquiry__count">총 <span>1,290</span> 개</p>
+                  <!-- 문의 목록 / 없을 경우 is-empty 추가 -->
+                  <div class="prod-inquiry__list">
+                    <!-- [s] 문의 내역 없음 -->
+                    <!-- <div class="empty">
+                      <div class="empty__content">
+                        <span class="empty__icon empty__icon--message"></span>
+                        <p class="empty__text">등록된 상품 문의가 없습니다.</p>
+                      </div>
+                    </div> -->
+                    <!-- [e] 문의 내역 없음 -->
+                    <div class="accordion accordion--inquiry">
+                      <!-- [s] 답변대기 / 비공개 -->
+                      <div class="accordion__item">
+                        <button type="button" class="accordion__header">
+                          <span class="accordion__status">답변대기</span>
+                          <!-- 비공개일 경우 .secret 추가 -->
+                          <strong class="accordion__title">입금완료</strong>
+                          <div class="accordion__info">
+                            <span class="accordion__author">banana******</span>
+                            <span class="accordion__date">2026.03.02</span>
+                          </div>
+                        </button>
+                        <div class="accordion__collapse">
+                          <div class="accordion__body">
+                            <div class="accordion__qa accordion__qa--question">
+                              <p class="accordion__qa-text">배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요? 배송이 언제되는건가요?</p>
+                              <div class="accordion__qa-actions">
+                                <button type="button" class="accordion__action-btn">수정</button>
+                                <button type="button" class="accordion__action-btn">삭제</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] 답변완료 / 비공개 -->
+                      <!-- [s] 답변완료 -->
+                      <div class="accordion__item">
+                        <button type="button" class="accordion__header">
+                          <span class="accordion__status">답변완료</span>
+                          <!-- 비공개일 경우 .secret 추가 -->
+                          <strong class="accordion__title secret">재입고 문의</strong>
+                          <div class="accordion__info">
+                            <span class="accordion__author">banana******</span>
+                            <span class="accordion__date">2026.03.02</span>
+                          </div>
+                        </button>
+                        <div class="accordion__collapse">
+                          <div class="accordion__body">
+                            <div class="accordion__qa accordion__qa--question">
+                              <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                              <div class="accordion__qa-actions">
+                                <button type="button" class="accordion__action-btn">삭제</button>
+                              </div>
+                            </div>
+                            <div class="accordion__qa accordion__qa--answer">
+                              <p class="accordion__qa-text">
+                                안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] 답변완료 -->
+                      <!-- [s] 답변완료 -->
+                      <div class="accordion__item">
+                        <button type="button" class="accordion__header">
+                          <span class="accordion__status">답변완료</span>
+                          <!-- 비공개일 경우 .secret 추가 -->
+                          <strong class="accordion__title secret">재입고 문의</strong>
+                          <div class="accordion__info">
+                            <span class="accordion__author">banana******</span>
+                            <span class="accordion__date">2026.03.02</span>
+                          </div>
+                        </button>
+                        <div class="accordion__collapse">
+                          <div class="accordion__body">
+                            <div class="accordion__qa accordion__qa--question">
+                              <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                              <div class="accordion__qa-actions">
+                                <button type="button" class="accordion__action-btn">삭제</button>
+                              </div>
+                            </div>
+                            <div class="accordion__qa accordion__qa--answer">
+                              <p class="accordion__qa-text">
+                                안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] 답변완료 -->
+                      <!-- [s] 답변완료 -->
+                      <div class="accordion__item">
+                        <button type="button" class="accordion__header">
+                          <span class="accordion__status">답변완료</span>
+                          <!-- 비공개일 경우 .secret 추가 -->
+                          <strong class="accordion__title secret">재입고 문의</strong>
+                          <div class="accordion__info">
+                            <span class="accordion__author">banana******</span>
+                            <span class="accordion__date">2026.03.02</span>
+                          </div>
+                        </button>
+                        <div class="accordion__collapse">
+                          <div class="accordion__body">
+                            <div class="accordion__qa accordion__qa--question">
+                              <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                              <div class="accordion__qa-actions">
+                                <button type="button" class="accordion__action-btn">삭제</button>
+                              </div>
+                            </div>
+                            <div class="accordion__qa accordion__qa--answer">
+                              <p class="accordion__qa-text">
+                                안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] 답변완료 -->
+                      <!-- [s] 답변완료 -->
+                      <div class="accordion__item">
+                        <button type="button" class="accordion__header">
+                          <span class="accordion__status">답변완료</span>
+                          <!-- 비공개일 경우 .secret 추가 -->
+                          <strong class="accordion__title secret">재입고 문의</strong>
+                          <div class="accordion__info">
+                            <span class="accordion__author">banana******</span>
+                            <span class="accordion__date">2026.03.02</span>
+                          </div>
+                        </button>
+                        <div class="accordion__collapse">
+                          <div class="accordion__body">
+                            <div class="accordion__qa accordion__qa--question">
+                              <p class="accordion__qa-text">재입고 예정일이 언제 인가요??</p>
+                              <div class="accordion__qa-actions">
+                                <button type="button" class="accordion__action-btn">삭제</button>
+                              </div>
+                            </div>
+                            <div class="accordion__qa accordion__qa--answer">
+                              <p class="accordion__qa-text">
+                                안녕하세요 고객님, 해당 제품 아직 정확한 재입고 일자가 나와있지 않아 안내드리기가 어렵습니다. <br>만족스러운 답변을 드리지 못해 죄송합니다. <br>감사합니다. 좋은 하루 보내세요!
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [e] 답변완료 -->
+                    </div>
+                  </div>
+
+                  <div class="pagination">
+                    <button class="pagination__btn pagination__btn--first">처음으로</button>
+                    <button class="pagination__btn pagination__btn--prev">이전으로</button>
+                    <ul class="pagination__list">
+                      <li><button class="pagination__btn">1</button></li>
+                      <li><button class="pagination__btn">2</button></li>
+                      <li><button class="pagination__btn is-active">3</button></li>
+                      <li><button class="pagination__btn">4</button></li>
+                      <li><button class="pagination__btn">5</button></li>
+                    </ul>
+                    <button class="pagination__btn pagination__btn--next">다음으로</button>
+                    <button class="pagination__btn pagination__btn--end">끝으로</button>
+                  </div>
+                </section>
+                <!-- //상품문의 -->
                 <div class="divider"></div>
                 <!-- 룩&스타일 -->
                 <section class="prod-styling" id="section-styling" aria-label="슈마커 플러스 추천 스타일링">
@@ -2320,6 +2507,94 @@
         <button type="button" class="btn btn--primary">1+1 상품 선택하기</button>
       </div>
 
+    </div>
+  </div>
+
+  <!-- 상품 문의하기 modal -->
+  <div id="modal6" class="modal">
+    <!-- dim -->
+    <div class="modal__dim"></div>
+    <!-- modal content -->
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2 class="modal__title">상품 Q&A 작성</h2>
+        <button type="button" class="modal__close btn-icon btn-icon--close" aria-label="닫기">
+          <span class="btn-icon__icon"></span>
+        </button>
+      </div>
+
+      <div class="modal__body">
+        <div class="content">
+          <div class="inquiry-form">
+            <div class="select is-required">
+              <label for="select1" class="select__label">문의 유형 선택</label>
+              <div class="select__box">
+                <select id="select1" class="select__field">
+                  <!-- placeholder -->
+                  <option value="" disabled selected hidden>선택해 주세요.</option>
+                  <option value="">사이즈문의</option>
+                  <option value="">색상문의</option>
+                  <option value="">기타문의</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__field is-required">
+              <label for="input1" class="form__label">제목</label>
+              <input type="text" id="input1" class="form__input" value=""/>
+            </div>
+            <div class="textarea is-required">
+              <label for="textarea1" class="textarea__label">문의 내용 작성</label>
+              <textarea
+                name="textarea1"
+                id="textarea1" 
+                class="textarea__field"
+                placeholder="문의 내용을 입력해 주세요!"
+                maxlength="200"
+              ></textarea>
+              <div class="textarea__count">
+                <span class="textarea__count-current" id="currentCount">0</span>
+                <span class="textarea__count-max"> / 200</span>
+              </div>
+            </div>
+            <div class="reply-sms">
+              <p class="reply-sms__title">답변 문자 받기</p>
+              <div class="reply-sms__cont">
+                <div class="radio-group">
+                  <div class="radio">
+                    <input type="radio" id="radio6" name="radioSet3" class="radio__input">
+                    <label for="radio6" class="radio__label">예</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" id="radio7" name="radioSet3" class="radio__input">
+                    <label for="radio7" class="radio__label">아니오</label>
+                  </div>
+                </div>
+                <div class="phone-input">
+                  <div class="select">
+                    <div class="select__box">
+                      <select id="select2" class="select__field">
+                        <option value="" selected>010</option>
+                        <option value="">011</option>
+                        <option value="">016</option>
+                        <option value="">017</option>
+                        <option value="">018</option>
+                        <option value="">019</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form__field">
+                    <input type="tel" id="input2" class="form__input" placeholder="- 없이 입력해 주세요." value=""/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button type="button" class="btn btn--line">취소</button>
+        <button type="button" class="btn btn--primary">확인</button>
+      </div>
     </div>
   </div>
 
