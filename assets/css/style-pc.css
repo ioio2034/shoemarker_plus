@@ -20393,13 +20393,17 @@ input[type=radio] {
 }
 #brandFilterSheet .tab__list {
   gap: 12px;
+  padding: 0;
 }
 #brandFilterSheet .tab__panels {
   min-height: 250px;
   max-height: 250px;
   overflow-y: auto;
-  padding: 0 24px;
+  padding: 0;
   margin: 20px 0 8px;
+}
+#brandFilterSheet .brand-filter {
+  padding: 0 24px;
 }
 #brandFilterSheet .brand-filter__list {
   display: flex;
@@ -20408,6 +20412,7 @@ input[type=radio] {
 }
 #brandFilterSheet .filter-tags {
   margin-top: 12px;
+  padding: 0;
 }
 
 .filter-tags {
