@@ -1885,6 +1885,30 @@
           display: none;
         }
       }
+      &__btn {
+        display: none;
+        gap: 6px;
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 16px;
+        border-radius: 6px;
+        border: 1px solid $gray-30;
+        @include tablet {
+          @include flex(center, center);          
+        }
+      }      
+      &__btn-text {
+        color: $gray-80;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+      &__btn-icon {
+        @include inline-flex;
+        width: 20px;
+        height: 20px;
+        @include bgimage('icon_chevron_down_20', 'svg');
+      }
     }
     // 룩&스타일
     .prod-styling {

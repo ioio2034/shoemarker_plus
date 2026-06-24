@@ -22582,6 +22582,36 @@ input[type=radio] {
     display: none;
   }
 }
+.product-detail .prod-content .prod-inquiry__btn {
+  display: none;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 16px;
+  border-radius: 6px;
+  border: 1px solid #D8D8D8;
+}
+@media (max-width: 1024px) {
+  .product-detail .prod-content .prod-inquiry__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.product-detail .prod-content .prod-inquiry__btn-text {
+  color: #2D2D2D;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.product-detail .prod-content .prod-inquiry__btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: url("../images/icon_chevron_down_20.svg") no-repeat;
+}
 .product-detail .prod-content .prod-styling {
   margin-top: 60px;
 }
