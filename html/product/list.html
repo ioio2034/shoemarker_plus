@@ -14,26 +14,13 @@
   <div id="wrap">
 
     <!-- Header -->
-    <header id="header" class="header"></header>
+    <header id="header" class="header header--main"></header>
 
     <!-- Content -->
     <main class="container page-product">
 
       <section class="section">
         <div class="section__inner">
-          <!-- 타이틀 -->
-          <div class="section__header">
-            <button type="button" class="btn-icon btn-icon--back" aria-label="뒤로가기">
-              <span class="btn-icon__icon"></span>
-            </button>
-            <!-- category name -->
-            <h2 class="section__title">남성</h2>
-            <div class="section__util">
-              <button type="button" class="btn-icon btn-icon--cart" aria-label="장바구니 보기">
-                <span class="btn-icon__icon"></span>
-              </button>
-            </div>
-          </div>
 
           <!-- Content -->
           <div class="product-list">
@@ -263,9 +250,35 @@
                   <button type="button" class="brand-filter__btn js-bottom-sheet-open" data-target="#brandFilterSheet">브랜드</button>
                 </div>
               </div>
-              <div class="divider"></div>
               <!-- 상품 -->
               <div class="brand-content">
+                <!-- S : 2뎁스 메뉴 리스트 페이지일 경우 -->
+                <!-- <div class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li>
+                      <a href="#" class="breadcrumb__item">남성</a>
+                    </li>
+                    <li>
+                      <span class="breadcrumb__text">운동화</span></a>
+                    </li>
+                  </ol>
+                </div> -->
+                <!-- //E : 2뎁스 메뉴 리스트 페이지일 경우 -->
+                <!-- S : 3뎁스 메뉴 리스트 페이지일 경우 -->
+                <div class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li>
+                      <a href="#" class="breadcrumb__item">남성</a>
+                    </li>
+                    <li>
+                      <a href="#" class="breadcrumb__item">운동화</a>
+                    </li>
+                    <li>
+                      <span class="breadcrumb__text">러닝화</span></a>
+                    </li>
+                  </ol>
+                </div>
+                <!-- //E : 3뎁스 메뉴 리스트 페이지일 경우 -->
                 <div class="brand-content__header">
                   <p class="brand-content__count">
                     총 <span class="brand-content__count-num">1,290</span>개

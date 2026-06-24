@@ -18675,6 +18675,9 @@ input[type=radio] {
   top: 105px;
   max-height: 100%;
 }
+.product-list .brand-detail .brand-content .breadcrumb {
+  display: none;
+}
 
 .product-detail {
   position: relative;
@@ -19833,6 +19836,31 @@ input[type=radio] {
 }
 .inquiry-form .phone-input .form__field {
   flex-grow: 1;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.breadcrumb__list > li + li {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.breadcrumb__list > li + li::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: #D8D8D8;
+}
+.breadcrumb__item, .breadcrumb__text {
+  display: inline-block;
+  color: #2D2D2D;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
 }
 
 .page-brand .brand-visual__img {

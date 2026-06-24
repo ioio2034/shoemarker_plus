@@ -680,12 +680,26 @@
 
 // 상품 리스트
 .product-list {
+  @include tablet {
+    padding-top: 45px;
+  }
   .brand-detail {
     .brand-filter--pc {
       top: 105px;
       max-height: 100%;
     }
-  }
+    .brand-content {
+      @include tablet {
+        padding-top: 16px;
+      }
+      .breadcrumb {
+        display: none;
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+  }  
 }
 
 // 상품 상세
@@ -2216,5 +2230,36 @@
     .form__field {
       flex-grow: 1;
     }
+  }
+}
+
+// 브레드크럼
+.breadcrumb {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    > li {
+      & + li {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        &::before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 12px;
+          background: $gray-30;
+        }
+      }
+    }
+  }
+  &__item,
+  &__text {
+    display: inline-block;
+    color: $gray-80;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
   }
 }
