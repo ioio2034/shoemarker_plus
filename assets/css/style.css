@@ -11636,13 +11636,15 @@ img, video, canvas, svg {
 }
 .nav__depth2 {
   display: flex;
-  gap: 80px;
+  justify-content: space-between;
+  width: 100%;
 }
 .nav__depth2 > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 130px;
   padding: 8px;
   border-radius: 6px;
   background: #2D2D2D;
