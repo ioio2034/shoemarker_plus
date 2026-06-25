@@ -21008,7 +21008,7 @@ input[type=radio] {
 }
 @media (max-width: 1024px) {
   .product-main .visual-bnr {
-    padding-bottom: 24px;
+    padding-bottom: 32px;
   }
 }
 .product-main .visual-bnr__swiper {
@@ -21213,6 +21213,84 @@ input[type=radio] {
   height: 8px;
   background: #C6C6C6;
   flex-shrink: 0;
+}
+.product-main .sub-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 36px;
+}
+@media (max-width: 1024px) {
+  .product-main .sub-category {
+    padding: 0;
+  }
+}
+.product-main .sub-category__list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 1024px) {
+  .product-main .sub-category__list {
+    gap: 8px;
+    position: relative;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 0 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .product-main .sub-category__list::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .product-main .sub-category__list > li {
+    width: auto;
+    min-width: 0;
+    flex-shrink: 0;
+  }
+}
+.product-main .sub-category__list > li > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 32px;
+  border-radius: 999px;
+  border: 1px solid #D8D8D8;
+  color: #2D2D2D;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  transition: all 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .product-main .sub-category__list > li > a {
+    width: auto;
+    min-width: 0;
+    flex-shrink: 0;
+    height: 32px;
+    padding: 4px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+.product-main .sub-category__list > li > a.is-current {
+  background: #2D2D2D;
+  border-color: #2D2D2D;
+  color: #FFFFFF;
+  text-shadow: 0 0 0 currentColor;
+}
+@media (hover: hover) {
+  .product-main .sub-category__list > li > a:hover {
+    background: #2D2D2D;
+    border-color: #2D2D2D;
+    color: #FFFFFF;
+    text-shadow: 0 0 0 currentColor;
+  }
 }
 .product-main .prod-list-wrap {
   display: flex;
