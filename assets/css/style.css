@@ -23534,8 +23534,6 @@ input[type=radio] {
 .brand-detail .brand-filter__sub-list.grid-col4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 4px;
-       column-gap: 4px;
 }
 .brand-detail .brand-filter__sub-item {
   display: flex;
