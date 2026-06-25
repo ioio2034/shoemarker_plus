@@ -698,6 +698,16 @@
           display: block;
         }
       }
+      .pagination {
+        @include tablet {
+          display: none;
+        }
+      }
+      .btn-wrap {
+        @include tablet {
+          margin-top: 24px;
+        }
+      }
     }
   }  
 }

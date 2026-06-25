@@ -15764,6 +15764,7 @@ input[type=radio] {
   display: flex;
   justify-content: center;
   height: 40px;
+  margin-top: 40px;
 }
 .pagination__list {
   display: flex;
@@ -21277,6 +21278,16 @@ input[type=radio] {
 @media (max-width: 1024px) {
   .product-list .brand-detail .brand-content .breadcrumb {
     display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .product-list .brand-detail .brand-content .pagination {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .product-list .brand-detail .brand-content .btn-wrap {
+    margin-top: 24px;
   }
 }
 
