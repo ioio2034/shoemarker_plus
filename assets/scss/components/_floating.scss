@@ -6,7 +6,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1;
+  z-index: 2;
   display: inline-flex;
   flex-direction: column;
   gap: 8px;
@@ -24,7 +24,7 @@
   &__trigger {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     &:hover {
       .ai-chat__btn {
         opacity: 1;
@@ -41,6 +41,13 @@
     img {      
       height: 100%;
       object-fit: cover;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
     }
   }
   &__btn {
@@ -502,7 +509,7 @@
   width: 40px;
   height: 40px;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 12px;
   border: 1px solid $gray-30;
   background: $white;
   opacity: 0;
