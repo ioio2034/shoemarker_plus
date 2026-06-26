@@ -18717,6 +18717,10 @@ input[type=radio] {
 .product-list .brand-detail .brand-content .breadcrumb {
   display: none;
 }
+.product-list .brand-detail .brand-content .btn-wrap {
+  display: none;
+}
+
 .product-detail {
   position: relative;
 }

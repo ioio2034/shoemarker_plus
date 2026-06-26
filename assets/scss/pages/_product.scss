@@ -773,7 +773,9 @@
         }
       }
       .btn-wrap {
+        display: none;
         @include tablet {
+          display: flex;
           margin-top: 24px;
         }
       }
