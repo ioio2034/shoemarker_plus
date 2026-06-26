@@ -22827,6 +22827,45 @@ input[type=radio] {
     background: url("../images/icon_chevron_down_20.svg") no-repeat;
   }
 }
+@media (max-width: 1024px) {
+  .product-detail .prod-content .prod-styling--vertical {
+    display: none;
+  }
+}
+.product-detail .prod-content .prod-styling--vertical .styling-visual {
+  width: 676px;
+  height: 676px;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-visual__img {
+  aspect-ratio: 676/676;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-product {
+  flex-shrink: 0;
+  max-height: 676px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-product::-webkit-scrollbar {
+  display: none;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-product .product {
+  padding-top: 0;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-product .product__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-detail .prod-content .prod-styling--vertical .styling-product .product__item {
+  width: 180px;
+  max-width: 180px;
+}
+.product-detail .prod-content .prod-styling__col-wrap {
+  display: flex;
+  align-items: start;
+  gap: 24px;
+}
 .product-detail .cta {
   display: none;
 }

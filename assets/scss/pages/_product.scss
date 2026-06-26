@@ -2081,6 +2081,40 @@
           }
         }
       }
+      &--vertical {
+        @include tablet {
+          display: none;
+        }
+        .styling-visual {
+          width: 676px;
+          height: 676px;
+          &__img {
+            aspect-ratio: 676 / 676;
+          }
+        }
+        .styling-product {
+          flex-shrink: 0;
+          max-height: 676px;
+          overflow-y: auto;
+          @include hide-scroll;
+          .product {
+            padding-top: 0;            
+            &__list {
+              @include flex-col;
+              gap: 20px;
+            }
+            &__item {
+              width: 180px;
+              max-width: 180px;
+            }
+          }
+        }
+      }
+      &__col-wrap {
+        display: flex;
+        align-items: start;
+        gap: 24px;
+      }
     }
   }
   // 구매 버튼
