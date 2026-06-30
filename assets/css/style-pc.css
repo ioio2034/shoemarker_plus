@@ -22359,7 +22359,7 @@ input[type=radio] {
   margin-top: 0;
 }
 .error .btn-wrap .btn {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
 }
 
 .page-search .section {

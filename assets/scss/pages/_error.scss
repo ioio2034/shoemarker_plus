@@ -19,7 +19,7 @@
     @include flex-col;
     gap: 40px;
     @include tablet {
-      
+      padding: 0 24px;
     }
   }
   &__message {
@@ -47,7 +47,7 @@
   .btn-wrap {
     margin-top: 0;
     .btn {
-      flex: 0 0 auto;
+      flex: 0 1 auto;
     }
   }
 }
