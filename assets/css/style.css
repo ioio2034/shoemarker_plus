@@ -22177,6 +22177,21 @@ input[type=radio] {
 .product-detail .prod-content__aside .option-item .qty {
   margin-top: 10px;
 }
+.product-detail .prod-content__aside .buy-actions {
+  padding: 20px 16px;
+}
+.product-detail .prod-content__aside .buy-actions__btns {
+  justify-content: space-between;
+}
+.product-detail .prod-content__aside .buy-actions__npay {
+  width: 52px;
+  background-size: 52px auto;
+}
+.product-detail .prod-content__aside .buy-actions .btn {
+  flex: none;
+  font-size: 14px;
+  line-height: 20px;
+}
 .product-detail .prod-content__aside-inner {
   overflow-y: auto;
   max-height: calc(100vh - 81px);

@@ -1495,6 +1495,21 @@
           margin-top: 10px;
         }
       }
+      .buy-actions {
+        padding: 20px 16px;
+        &__btns {
+          justify-content: space-between;
+        }
+        &__npay {
+          width: 52px;
+          background-size: 52px auto;
+        }
+        .btn {
+          flex: none;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
     }
     &__aside-inner {
       overflow-y: auto;
