@@ -13261,7 +13261,6 @@ body.sheet-open {
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -13284,6 +13283,31 @@ body.sheet-open {
 .tab--pill .tab__btn.is-active {
   background: #2D2D2D;
   color: #FFFFFF;
+}
+.tab--bar .tab__list {
+  position: relative;
+  gap: 24px;
+  width: 100%;
+  padding: 16px 24px;
+  background: #000000;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tab--bar .tab__list::-webkit-scrollbar {
+  display: none;
+}
+.tab--bar .tab__btn {
+  flex: 0 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+  color: #D8D8D8;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .table-row {
@@ -21490,6 +21514,9 @@ input[type=radio] {
   letter-spacing: -1px;
 }
 
+.page-event .section {
+  overflow: visible;
+}
 .page-event .section__header {
   margin-bottom: 24px;
 }
@@ -21632,11 +21659,15 @@ input[type=radio] {
   content: "·";
   display: inline-block;
 }
-.event-detail .promo-prod {
-  margin-top: 40px;
+.event-detail .promo-prod .tab {
+  position: relative;
 }
 .event-detail .promo-prod .tab__list {
-  padding: 0;
+  position: sticky;
+  top: 81px;
+  overflow: auto hidden;
+  width: 100%;
+  z-index: 10;
 }
 .event-detail .promo-prod .tab__panels {
   padding: 20px 0 0;

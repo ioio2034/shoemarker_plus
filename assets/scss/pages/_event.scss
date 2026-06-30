@@ -4,6 +4,7 @@
 // 이벤트 페이지 공통
 .page-event {
   .section {
+    overflow: visible;
     &__inner {
       @include tablet {
         padding: 62px 0 calc(88px + env(safe-area-inset-bottom));
@@ -232,20 +233,23 @@
 
   // 기획전 상품
   .promo-prod {
-    margin-top: 40px;
-    @include tablet {
-      margin: 32px 0;
-    }
-    .tab__list {
-      padding: 0;
-      @include tablet {
-        padding: 0 24px;
+    .tab {
+      position: relative;
+      &__list {
+        position: sticky;
+        top: 81px;
+        overflow: auto hidden;
+        width: 100%;
+        z-index: 10;
+        @include tablet {
+          top: 62px;
+        }
       }
-    }
-    .tab__panels {
-      padding: 20px 0 0;
-      @include tablet {
-        padding: 24px 0 0;
+      &__panels {
+        padding: 20px 0 0;
+        @include tablet {
+          padding: 24px 0 0;
+        }
       }
     }
     &__content {

@@ -94,10 +94,9 @@
       flex-wrap: nowrap;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      -webkit-overflow-scrolling: touch;
       -ms-overflow-style: none;
       scrollbar-width: none;
-      &::-webkit-scrollbar { display: none; }      
+      &::-webkit-scrollbar {display: none;}
     }
     .tab__btn {
       flex: 0 0 auto;
@@ -114,6 +113,31 @@
         background: $gray-80;
         color: $white;
       }
+    }
+  }
+  // 바 타입
+  &--bar {
+    .tab__list {
+      position: relative;
+      gap: 24px;
+      width: 100%;
+      padding: 16px 24px;
+      background: $black;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {display: none;}
+    }
+    .tab__btn {
+      flex: 0 0 auto;
+      width: fit-content;
+      padding: 0;
+      color: $gray-30;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
     }
   }
 }
