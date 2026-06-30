@@ -18,19 +18,36 @@
   &__content {
     @include flex-col;
     gap: 40px;
-    width: 326px;
     @include tablet {
-      width: 195px;
+      
     }
   }
   &__message {
-    color: $gray-80;
-    font-size: 24px;
-    line-height: 32px;
+    @include flex-col;
+    gap: 20px;
+    p {
+      color: $gray-80;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      @include tablet {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+  &__notice {
+    color: $gray-60;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.14px;
     text-align: center;
-    @include tablet {
-      font-size: 16px;
-      line-height: 24px;
+  }
+  .btn-wrap {
+    margin-top: 0;
+    .btn {
+      flex: 0 0 auto;
     }
   }
 }

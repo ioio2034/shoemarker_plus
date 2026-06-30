@@ -26601,24 +26601,37 @@ input[type=radio] {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 326px;
-}
-@media (max-width: 1024px) {
-  .error__content {
-    width: 195px;
-  }
 }
 .error__message {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.error__message p {
   color: #2D2D2D;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
   text-align: center;
 }
 @media (max-width: 1024px) {
-  .error__message {
+  .error__message p {
     font-size: 16px;
     line-height: 24px;
   }
+}
+.error__notice {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+  text-align: center;
+}
+.error .btn-wrap {
+  margin-top: 0;
+}
+.error .btn-wrap .btn {
+  flex: 0 0 auto;
 }
 
 .page-search .section {
