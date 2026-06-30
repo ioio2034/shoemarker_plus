@@ -21371,14 +21371,17 @@ input[type=radio] {
     display: none;
   }
 }
-.product-list .brand-detail .brand-content .btn-wrap {
+.product-list .brand-detail .brand-content .pagination + .btn-wrap {
   display: none;
 }
 @media (max-width: 1024px) {
-  .product-list .brand-detail .brand-content .btn-wrap {
+  .product-list .brand-detail .brand-content .pagination + .btn-wrap {
     display: flex;
     margin-top: 24px;
   }
+}
+.product-list .brand-detail .brand-content .empty + .btn-wrap {
+  margin-top: 0;
 }
 
 .product-detail {

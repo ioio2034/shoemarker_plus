@@ -18725,8 +18725,11 @@ input[type=radio] {
 .product-list .brand-detail .brand-content .breadcrumb {
   display: none;
 }
-.product-list .brand-detail .brand-content .btn-wrap {
+.product-list .brand-detail .brand-content .pagination + .btn-wrap {
   display: none;
+}
+.product-list .brand-detail .brand-content .empty + .btn-wrap {
+  margin-top: 0;
 }
 
 .product-detail {

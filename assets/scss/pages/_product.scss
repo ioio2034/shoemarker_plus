@@ -771,12 +771,17 @@
         @include tablet {
           display: none;
         }
+        & + .btn-wrap {
+          display: none;
+          @include tablet {
+            display: flex;
+            margin-top: 24px;
+          }
+        }
       }
-      .btn-wrap {
-        display: none;
-        @include tablet {
-          display: flex;
-          margin-top: 24px;
+      .empty {
+        & + .btn-wrap {
+          margin-top: 0;
         }
       }
     }
