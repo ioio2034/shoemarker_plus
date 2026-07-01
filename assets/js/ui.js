@@ -780,29 +780,28 @@ let UI = {
     });
   },
   gnbMenu: function () {
-    if (window.matchMedia('(max-width: 1024px)').matches) return;
+    // if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     let closeTimer;
-    let maxHeight = 0;
     let wasDark = false;
     const $header = $('.header');
     const pcOnly = () => !window.matchMedia('(max-width: 1024px)').matches;
 
-    function setMaxHeight() {
-      maxHeight = 0;
-      $('.nav__content').each(function () {
-        maxHeight = Math.max(maxHeight, $(this).outerHeight());
-      });
+    function getContentHeight($item) {
+      const $content = $item.children('.nav__content');
+      if (!$content.length) return 0;
+
+      return $content.outerHeight(true);
     }
 
     function openNav() {
-      if (!pcOnly()) return; 
+      if (!pcOnly()) return;
       wasDark = $header.hasClass('header--dark');
       $header.removeClass('scrolled header--dark');
     }
 
     function closeNav() {
-      if (!pcOnly()) return; 
+      if (!pcOnly()) return;
       if ($(window).scrollTop() > 0) {
         $header.addClass('scrolled');
       }
@@ -816,23 +815,34 @@ let UI = {
       return $('.nav__item.is-open').length > 0;
     }
 
-    setTimeout(function () {
-      setMaxHeight();
-    }, 100);
+    function activateDepth2($li) {
+      const $navContent = $li.closest('.nav__content');
+      const index = $li.index();
 
-    $(window).on('load resize', function () {
-      setMaxHeight();
-    });
+      $li.siblings().children('a').removeClass('is-active');
+      $li.children('a').addClass('is-active');
+
+      const $allDepth3 = $navContent.find('.nav__depth3');
+      $allDepth3.removeClass('is-active');
+      $allDepth3.eq(index).addClass('is-active');
+    }
+
+    function activateFirstDepth2($navItem) {
+      const $firstDepth2Li = $navItem.find('.nav__depth2 > li').first();
+      if ($firstDepth2Li.length) {
+        activateDepth2($firstDepth2Li);
+      }
+    }
 
     $(window).on('scroll', function () {
-      if (!pcOnly()) return; 
+      if (!pcOnly()) return;
       if (isNavOpen()) {
         $header.removeClass('scrolled header--dark');
       }
     });
 
     $(document).on('mouseenter', '.nav__item', function () {
-      if (!pcOnly()) return; 
+      if (!pcOnly()) return;
       clearTimeout(closeTimer);
       const $content = $(this).children('.nav__content');
 
@@ -851,13 +861,25 @@ let UI = {
 
       $('.nav__item').removeClass('is-open');
       $(this).addClass('is-open');
-      $('.nav__bg').addClass('is-open').css('height', maxHeight);
+
+      activateFirstDepth2($(this));
+
+      const currentHeight = getContentHeight($(this));
+      $('.nav__bg').addClass('is-open').css('height', currentHeight);
+    });
+
+    // 2뎁스 항목 hover 시 3·4뎁스 교체
+    $(document).on('mouseenter', '.nav__depth2 > li', function () {
+      if (!pcOnly()) return;
+      activateDepth2($(this));
     });
 
     $(document).on('mouseleave', '.nav', function () {
       closeTimer = setTimeout(function () {
         $('.nav__item').removeClass('is-open');
         $('.nav__bg').removeClass('is-open').css('height', 0);
+        // 모든 depth3 비활성화
+        $('.nav__depth3').removeClass('is-active');
         closeNav();
       }, 100);
     });
