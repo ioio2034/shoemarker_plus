@@ -352,9 +352,7 @@
   gap: 10px;
   margin-top: 24px;  
   &__btns {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    @include flex(center, space-between);
   }
   .btn {
     flex: 1;
@@ -377,8 +375,6 @@
     background-color: #00DE5A;
   }
   &--black {
-    @include flex(center, space-between);
-    gap: 0;
     width: 100%;
     padding: 20px 24px;
     border-radius: 6px;
@@ -410,20 +406,17 @@
         line-height: 20px;
       }
       & + .btn {
-        // margin-left: 16px;
         &::before {
           content: '';
+          display: inline-block;
           position: absolute;
-          left: -16px;
+          left: 0;
           top: 50%;
           transform: translateY(-50%);
           width: 1px;
           height: 14px;
           background: $white;
           opacity: 0.5;
-          @include tablet {
-            left: -8px;
-          }
         }
       }
     }
@@ -1497,15 +1490,11 @@
       }
       .buy-actions {
         padding: 20px 16px;
-        &__btns {
-          justify-content: space-between;
-        }
         &__npay {
           width: 52px;
           background-size: 52px auto;
         }
         .btn {
-          flex: none;
           font-size: 14px;
           line-height: 20px;
         }

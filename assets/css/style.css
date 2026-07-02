@@ -21011,7 +21011,7 @@ input[type=radio] {
 .buy-actions__btns {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
 }
 .buy-actions .btn {
   flex: 1;
@@ -21034,10 +21034,6 @@ input[type=radio] {
   background-color: #00DE5A;
 }
 .buy-actions--black {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
   width: 100%;
   padding: 20px 24px;
   border-radius: 6px;
@@ -21076,19 +21072,15 @@ input[type=radio] {
 }
 .buy-actions--black .btn + .btn::before {
   content: "";
+  display: inline-block;
   position: absolute;
-  left: -16px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
   height: 14px;
   background: #FFFFFF;
   opacity: 0.5;
-}
-@media (max-width: 1024px) {
-  .buy-actions--black .btn + .btn::before {
-    left: -8px;
-  }
 }
 .buy-actions--black .buy-actions__npay {
   width: 63px;
@@ -22255,15 +22247,11 @@ input[type=radio] {
 .product-detail .prod-content__aside .buy-actions {
   padding: 20px 16px;
 }
-.product-detail .prod-content__aside .buy-actions__btns {
-  justify-content: space-between;
-}
 .product-detail .prod-content__aside .buy-actions__npay {
   width: 52px;
   background-size: 52px auto;
 }
 .product-detail .prod-content__aside .buy-actions .btn {
-  flex: none;
   font-size: 14px;
   line-height: 20px;
 }
