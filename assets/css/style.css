@@ -25357,8 +25357,10 @@ input[type=radio] {
 }
 @media (max-width: 1024px) {
   .event__list {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    row-gap: 24px;
     padding: 24px;
   }
 }
@@ -25408,7 +25410,7 @@ input[type=radio] {
 }
 @media (max-width: 1024px) {
   .event-card__thumb {
-    aspect-ratio: 342/208;
+    aspect-ratio: 163/208;
   }
 }
 .event-card__image {
