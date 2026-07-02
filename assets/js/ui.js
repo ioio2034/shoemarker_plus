@@ -1007,6 +1007,55 @@ let UI = {
 
     $(window).on('scroll', closeSearchLayer);
   },
+  // 카테고리 선택 레이어
+  categorySelect: function () {
+    const $categoryBtn = $('.category__btn');
+    const $categoryLayer = $('.category__layer');
+    const $scrollArea = $('.category__list');
+
+    function closeAll() {
+      $categoryBtn.attr('aria-expanded', 'false');
+      $categoryLayer
+        .removeClass('is-open')
+        .removeAttr('style');
+    }
+
+    $categoryBtn.on('click', function () {
+      const $btn = $(this);
+      const $item = $btn.closest('.category__item');
+      const $layer = $item.find('.category__layer');
+      const isExpanded = $btn.attr('aria-expanded') === 'true';
+
+      closeAll();
+
+      if (!isExpanded) {
+        $btn.attr('aria-expanded', 'true');
+        $layer.addClass('is-open');
+
+        if (window.matchMedia('(max-width: 1024px)').matches) {
+          const rect = $btn[0].getBoundingClientRect();
+
+          let left = rect.left;
+          const viewportWidth = window.innerWidth;
+          $layer.css({
+            position: 'fixed',
+            left: left,
+            top: rect.bottom + 4,
+            zIndex: 1000
+          });
+        }
+      }
+    });
+
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.category').length) {
+        closeAll();
+      }
+    });
+
+    $(window).on('scroll', closeAll);
+    $scrollArea.on('scroll', closeAll);
+  },
 };
 
 
@@ -1038,6 +1087,7 @@ $(function () {
   UI.mobileMenu();
   UI.goTop();
   UI.headerSearch();
+  UI.categorySelect();
 });
 
 // resize 대응
