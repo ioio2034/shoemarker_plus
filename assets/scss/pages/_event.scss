@@ -255,9 +255,9 @@
       }
       &__panel {
         display: block;
-        scroll-margin-top: 160px;
+        scroll-margin-top: 152px;
         @include tablet {
-          scroll-margin-top: 140px;
+          scroll-margin-top: 138px;
         }
         & + .tab__panel {
           margin-top: 40px;

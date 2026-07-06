@@ -21776,7 +21776,7 @@ input[type=radio] {
 }
 .event-detail .promo-prod .tab__panel {
   display: block;
-  scroll-margin-top: 160px;
+  scroll-margin-top: 152px;
 }
 .event-detail .promo-prod .tab__panel + .tab__panel {
   margin-top: 40px;

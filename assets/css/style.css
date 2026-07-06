@@ -25663,11 +25663,11 @@ input[type=radio] {
 }
 .event-detail .promo-prod .tab__panel {
   display: block;
-  scroll-margin-top: 160px;
+  scroll-margin-top: 152px;
 }
 @media (max-width: 1024px) {
   .event-detail .promo-prod .tab__panel {
-    scroll-margin-top: 140px;
+    scroll-margin-top: 138px;
   }
 }
 .event-detail .promo-prod .tab__panel + .tab__panel {
