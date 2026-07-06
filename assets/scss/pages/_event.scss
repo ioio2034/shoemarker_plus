@@ -236,7 +236,8 @@
   .promo-prod {
     .tab {
       position: relative;
-      &__list {
+      &__list-wrap {
+        background: $black;
         position: sticky;
         top: 81px;
         overflow: auto hidden;
@@ -250,6 +251,19 @@
         padding: 20px 0 0;
         @include tablet {
           padding: 24px 0 0;
+        }
+      }
+      &__panel {
+        display: block;
+        scroll-margin-top: 160px;
+        @include tablet {
+          scroll-margin-top: 140px;
+        }
+        & + .tab__panel {
+          margin-top: 40px;
+          @include tablet {
+            margin-top: 32px;
+          }
         }
       }
     }

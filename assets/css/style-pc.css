@@ -10876,6 +10876,7 @@ html {
   -webkit-text-size-adjust: 100%;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 html, body,
@@ -21762,7 +21763,8 @@ input[type=radio] {
 .event-detail .promo-prod .tab {
   position: relative;
 }
-.event-detail .promo-prod .tab__list {
+.event-detail .promo-prod .tab__list-wrap {
+  background: #000000;
   position: sticky;
   top: 81px;
   overflow: auto hidden;
@@ -21771,6 +21773,13 @@ input[type=radio] {
 }
 .event-detail .promo-prod .tab__panels {
   padding: 20px 0 0;
+}
+.event-detail .promo-prod .tab__panel {
+  display: block;
+  scroll-margin-top: 160px;
+}
+.event-detail .promo-prod .tab__panel + .tab__panel {
+  margin-top: 40px;
 }
 .event-detail .promo-prod__content {
   display: flex;
