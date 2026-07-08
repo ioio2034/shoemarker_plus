@@ -92,6 +92,7 @@
                 <div class="order-block__inner">
                   <div class="order-card">
                     <div class="order-card__box">
+                      <!-- S : 상품 1-->
                       <div class="order-group">
                         <div class="order-group__head">
                           <span class="order-group__status">벤더명</span>
@@ -177,6 +178,94 @@
                         </ul>
                       </div>
                       <!-- //order-delivery -->
+                      <!-- E : 상품 1 -->
+                      <!-- S : 상품 2 -->
+                      <div class="order-group">
+                        <div class="order-group__head">
+                          <!-- <span class="order-group__status">벤더명</span> -->
+                          <button type="button" class="order-group__action js-modal-open" data-target="#modal6">쿠폰선택</button>
+                        </div>
+                        <div class="order-group__body">
+                          <div class="order-group__content">
+                            <!-- [s] item -->
+                            <div class="order-item">
+                              <div class="order-item__thumb">
+                                <img src="../../assets/images/img_product_thumb_01.jpg" alt="나이키 알파플라이 3글램" class="order-item__img">
+                              </div>
+                              <div class="order-item__content">
+                                <div class="order-item__content-left">
+                                  <h4 class="order-item__name">나이키 알파플라이 3글램</h4>
+                                  <ul class="order-item__meta">
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">옵션</span>
+                                      <span class="order-item__meta-value">225 / White</span>
+                                    </li>
+                                    <li class="order-item__meta-row">
+                                      <span class="order-item__meta-label">수량</span>
+                                      <span class="order-item__meta-value">1개</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div class="order-item__price">
+                                  <div class="order-item__price-origin">
+                                    <span class="price">
+                                      <span class="price__num">219,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                  </div>
+                                  <div class="order-item__price-cost">
+                                    <span class="price">
+                                      <span class="price__num">89,000</span>
+                                      <span class="price__unit">원</span>
+                                    </span>
+                                  </div>
+                                  <div class="radio-group">
+                                    <div class="radio">
+                                      <input type="radio" id="radio3" name="radioSet2" class="radio__input" />
+                                      <label for="radio3" class="radio__label">일반 판매가</label>
+                                    </div>
+                                    <div class="radio">
+                                      <input type="radio" id="radio4" name="radioSet2" class="radio__input" />
+                                      <label for="radio4" class="radio__label">슈머니 가</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- [e] item -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 복수 배송 선택 시 상품별로 배송지 선택 및 등록  -->
+                      <div class="order-delivery">
+                        <div class="order-delivery__head">
+                          <span class="order-delivery__label">배송지 선택</span>
+                          <div class="radio-group">
+                            <div class="radio">
+                              <input type="radio" id="radio5" name="radioSet3" class="radio__input" />
+                              <label for="radio5" class="radio__label">택배</label>
+                            </div>
+                            <div class="radio">
+                              <input type="radio" id="radio6" name="radioSet3" class="radio__input" />
+                              <label for="radio6" class="radio__label">매장픽업</label>
+                            </div>
+                          </div>
+                        </div>
+                        <ul class="order-delivery__list">
+                          <!-- 택배 배송 -->
+                          <li class="order-delivery__item">
+                            <span class="order-delivery__text">플러스 강동 아이파크점 서울 강동구 고덕비즈밸리로 51 3층</span>
+                            <a href="#" class="btn-link">배송지 설정</a>
+                          </li>
+                          <!-- 매장픽업 -->
+                          <li class="order-delivery__item order-delivery__item--disabled">
+                            <span class="order-delivery__text">픽업하실 매장을 선택해 주세요</span>
+                            <a href="#" class="btn-link">픽업매장 설정</a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- //order-delivery -->
+                      <!-- E : 상품 2 -->
                     </div>
                   </div>
                   <div class="order-card">

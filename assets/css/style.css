@@ -24140,12 +24140,23 @@ input[type=radio] {
     border: 1px solid #D8D8D8;
   }
 }
+.order-form .order-product .order-group__action {
+  margin-left: auto;
+}
 .order-form .order-product .order-group__body {
   padding: 16px 24px 16px 0;
 }
 @media (max-width: 1024px) {
   .order-form .order-product .order-group__body {
     padding: 20px 16px;
+  }
+}
+.order-form .order-product .order-delivery + .order-group {
+  margin-top: 20px;
+}
+@media (max-width: 1024px) {
+  .order-form .order-product .order-delivery + .order-group {
+    margin-top: 0;
   }
 }
 @media (max-width: 1024px) {

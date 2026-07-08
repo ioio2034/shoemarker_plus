@@ -20682,8 +20682,14 @@ input[type=radio] {
   border-radius: 0;
   border: 0;
 }
+.order-form .order-product .order-group__action {
+  margin-left: auto;
+}
 .order-form .order-product .order-group__body {
   padding: 16px 24px 16px 0;
+}
+.order-form .order-product .order-delivery + .order-group {
+  margin-top: 20px;
 }
 .order-form .order-product .order-delivery__head {
   display: flex;

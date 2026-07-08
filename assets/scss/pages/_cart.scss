@@ -40,6 +40,9 @@
       }
     }
     .order-group {
+      &__action {
+        margin-left: auto;
+      }
       &__body {
         padding: 16px 24px 16px 0;
         @include tablet {
@@ -49,6 +52,12 @@
     }
     // 배송 개별 선택
     .order-delivery {
+      & + .order-group {
+        margin-top: 20px;
+        @include tablet {
+          margin-top: 0;
+        }
+      }
       @include tablet {
         padding: 16px 0 20px;
         margin: 0 16px;
